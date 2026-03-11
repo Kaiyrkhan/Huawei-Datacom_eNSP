@@ -3,6 +3,10 @@
 #### Huawei AR6140E-9G-2AC Router
 
 ```shell
+display ip interface brief
+```
+
+```shell
 system-view
 sysname R1
 
@@ -10,8 +14,6 @@ interface GigabitEthernet0/0/0
  ip address 192.168.10.1 255.255.255.0
  undo shutdown
  quit
-
-display ip interface brief
 ```
 
 ```shell
