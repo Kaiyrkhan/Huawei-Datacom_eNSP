@@ -65,3 +65,7 @@ display ssh server status
 display current-configuration | include ssh
 display current-configuration | include stelnet
 ```
+
+```shell
+ssh student@192.168.10.1
+```
