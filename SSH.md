@@ -1,12 +1,6 @@
-# Remote Access Configuration using SSH
+# Remote Access Configuration using SSH/STelnet
 
 #### Huawei AR6140E-9G-2AC Router
-
-```shell
-ssh server-source -i Vlanif 1
-немесе
-ssh server-source all-interface
-```
 
 ```shell
 rsa local-key-pair create
@@ -18,8 +12,11 @@ Input the bits in the modulus[default = 2048]: 2048
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
- user privilege level 15
+
+display privilege state
 ```
+> user-interface vty 0 4  
+> user privilege level 15  
 
 ```shell
 aaa
@@ -33,6 +30,20 @@ aaa
 ```
 
 ```shell
+ssh server-source -i Vlanif 1
+немесе
+ssh server-source all-interface
+```
+
+```shell
+ssh server permit interface GigabitEthernet 0/0/0
+немесе
+ssh server permit interface all
+```
+
+```shell
 stelnet server enable
+
 display ssh server status
+display current-configuration | include ssh
 ```
