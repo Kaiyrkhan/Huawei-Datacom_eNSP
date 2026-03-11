@@ -16,6 +16,8 @@
 
 **Warning:** *Auto-Config is working. Before configuring the device, stop Auto-Config. If you perform configurations when Auto-Config is running, the DHCP, routing, DNS, and VTY configurations will be lost. Do you want to **stop Auto-Config?** [y/n]:* **y**  
 
+**Info:** *Auto-Config has been stopped.*  
+
 ```shell
 display ip interface brief
 ```
@@ -49,7 +51,7 @@ display privilege state
 
 ```shell
 rsa local-key-pair create
-Confirm to replace them? (y/n)[n]: y
+Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 2048]: 2048
 ```
 
