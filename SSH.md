@@ -9,6 +9,8 @@ display ssh server status
 
 ```shell
 rsa local-key-pair create
+Confirm to replace them? (y/n)[n]: y
+Input the bits in the modulus[default = 2048]: 2048
 ```
 
 ```shell
@@ -29,4 +31,10 @@ aaa
 ssh user student
 ssh user student authentication-type password
 ssh user student service-type stelnet
+```
+
+```shell
+ssh server-source all-interface
+немесе
+ssh server-source -i Vlanif 1
 ```
