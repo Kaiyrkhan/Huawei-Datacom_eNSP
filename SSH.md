@@ -10,6 +10,8 @@ interface GigabitEthernet0/0/0
  ip address 192.168.10.1 255.255.255.0
  undo shutdown
  quit
+
+display ip interface brief
 ```
 
 ```shell
@@ -59,4 +61,5 @@ stelnet server enable
 
 display ssh server status
 display current-configuration | include ssh
+display current-configuration | include stelnet
 ```
