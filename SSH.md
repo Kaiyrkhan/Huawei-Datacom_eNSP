@@ -7,7 +7,6 @@
 **New Username:** admin  
 **Password:** Huawei@123  
 **Confirm password:** Huawei@123  
-
 **Info:** *Configuration console exit, please retry to log on*  
 
 **Login authentication**  
@@ -15,7 +14,6 @@
 **Password:** Huawei@123  
 
 **Warning:** *Auto-Config is working. Before configuring the device, stop Auto-Config. If you perform configurations when Auto-Config is running, the DHCP, routing, DNS, and VTY configurations will be lost. Do you want to **stop Auto-Config?** [y/n]:* **y**  
-
 **Info:** *Auto-Config has been stopped.*  
 
 ```shell
