@@ -38,6 +38,7 @@ ssh server-source all-interface
 [Huawei] ssh user student service-type stelnet
 [Huawei] ssh user student authentication-type password
 ```
+> ssh user student service-type all  
 
 ```shell
 stelnet server enable
