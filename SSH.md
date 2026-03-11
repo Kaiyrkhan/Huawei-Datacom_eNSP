@@ -1,4 +1,4 @@
-# Remote Access Configuration using SSH/STelnet
+# Remote Access Configuration using SSH
 
 #### Huawei AR6140E-9G-2AC Router
 
