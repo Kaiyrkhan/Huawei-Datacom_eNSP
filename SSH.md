@@ -13,9 +13,10 @@ interface GigabitEthernet0/0/0
 ```
 
 ```shell
-rsa local-key-pair create
-Confirm to replace them? (y/n)[n]: y
-Input the bits in the modulus[default = 2048]: 2048
+aaa
+ local-user student password irreversible-cipher Huawei@123
+ local-user student service-type terminal ssh
+ local-user student privilege level 15
 ```
 
 ```shell
@@ -29,10 +30,9 @@ display privilege state
 > user privilege level 15  
 
 ```shell
-aaa
- local-user student password irreversible-cipher Huawei@123
- local-user student service-type terminal ssh
- local-user student privilege level 15
+rsa local-key-pair create
+Confirm to replace them? (y/n)[n]: y
+Input the bits in the modulus[default = 2048]: 2048
 ```
 
 ```shell
