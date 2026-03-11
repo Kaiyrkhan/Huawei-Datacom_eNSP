@@ -3,9 +3,9 @@
 #### Huawei AR6140E-9G-2AC Router
 
 ```shell
-ssh server-source all-interface
-немесе
 ssh server-source -i Vlanif 1
+немесе
+ssh server-source all-interface
 ```
 
 ```shell
