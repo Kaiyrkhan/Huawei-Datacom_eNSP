@@ -24,21 +24,19 @@ aaa
  local-user student service-type terminal ssh
  local-user student privilege level 15
 ```
-```shell
-[Huawei] ssh user student service-type stelnet
-[Huawei] ssh user student authentication-type password
-```
 
 ```shell
 ssh server-source -i Vlanif 1
 немесе
 ssh server-source all-interface
 ```
+> ssh server permit interface GigabitEthernet 0/0/0  
+> ssh server permit interface all  
 
 ```shell
-ssh server permit interface GigabitEthernet 0/0/0
-немесе
-ssh server permit interface all
+[Huawei] ssh user student
+[Huawei] ssh user student service-type stelnet
+[Huawei] ssh user student authentication-type password
 ```
 
 ```shell
