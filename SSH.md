@@ -24,4 +24,7 @@ aaa
 ```
 
 ```shell
+ssh user student
+ssh user student authentication-type password
+ssh user student service-type stelnet
 ```
