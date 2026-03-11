@@ -3,8 +3,9 @@
 #### Huawei AR6140E-9G-2AC Router
 
 ```shell
-stelnet server enable
-display ssh server status
+ssh server-source all-interface
+немесе
+ssh server-source -i Vlanif 1
 ```
 
 ```shell
@@ -26,15 +27,12 @@ aaa
  local-user student service-type terminal ssh
  local-user student privilege level 15
 ```
-
 ```shell
-ssh user student
-ssh user student authentication-type password
-ssh user student service-type stelnet
+[Huawei] ssh user student service-type stelnet
+[Huawei] ssh user student authentication-type password
 ```
 
 ```shell
-ssh server-source all-interface
-немесе
-ssh server-source -i Vlanif 1
+stelnet server enable
+display ssh server status
 ```
