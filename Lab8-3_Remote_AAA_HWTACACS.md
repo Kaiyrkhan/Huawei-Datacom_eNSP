@@ -29,7 +29,7 @@ CTRL+O, ENTER, CTRL+X
 student@ubuntu:~$ sudo netplan apply
 
 student@ubuntu:~$ ip address
-ens32: 192.168.0.104/24
+ens32: DHCP Assigned
 ens34: 172.16.128.10/24
 ```
 
