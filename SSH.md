@@ -35,6 +35,7 @@ display ip interface brief
 ```
 ![images](images/image1.png)
 
+**Configure Local User Authentication and Authorization**
 ```shell
 aaa
  local-user student password irreversible-cipher Huawei@123
@@ -42,13 +43,14 @@ aaa
  local-user student privilege level 15
 ```
 
+**Configure VTY Lines**
 ```shell
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
 ```
 
-Қосымша ақпарат!  
+**Қосымша ақпарат!**  
 > *жеке (individual) құқық (privilege) - student қолданушыға ғана тиесілі*  
 > aaa  
 > local-user student privilege level 15  
@@ -57,7 +59,7 @@ user-interface vty 0 4
 > user-interface vty 0 4  
 > user privilege level 15  
 
-**Generate RSA Key Pair**
+**Generate RSA Key**
 ```shell
 rsa local-key-pair create
 Warning: Confirm to replace them! Continue? [Y/N] Y
@@ -73,7 +75,7 @@ ssh server permit interface GigabitEthernet 0/0/2
 ssh server permit interface all
 ```
 
-Қосымша ақпарат!  
+**Қосымша ақпарат!**  
 > ssh server-source -i Vlanif 1  
 > ssh server-source all-interface  
 
@@ -81,6 +83,7 @@ ssh server permit interface all
 > [Huawei] ssh user student service-type stelnet  
 > [Huawei] ssh user student authentication-type password  
 
+**Enable SSH**
 ```shell
 stelnet server enable
 
@@ -89,6 +92,7 @@ display current-configuration | include ssh
 display current-configuration | include stelnet
 ```
 
+**Verification**
 ```shell
 ssh student@192.168.1.1
 ```
