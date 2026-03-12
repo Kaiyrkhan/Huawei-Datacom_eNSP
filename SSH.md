@@ -69,7 +69,6 @@ ssh server permit interface all
 > ssh server-source -i Vlanif 1  
 > ssh server-source all-interface  
 
-Қосымша ақпарат!  
 > [Huawei] ssh user student  
 > [Huawei] ssh user student service-type stelnet  
 > [Huawei] ssh user student authentication-type password  
