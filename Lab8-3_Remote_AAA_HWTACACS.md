@@ -134,8 +134,58 @@ student@ubuntu:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
 Access-Accept
 ```
 
+---
+
+**Create HWTACACS Server template**
 ```shell
-student@ubuntu:~$
+[R1] hwtacacs enable
+
+hwtacacs-server template HT
+ hwtacacs-server authentication 172.16.128.10 49
+ hwtacacs-server authorization 172.16.128.10 49
+ hwtacacs-server accounting 172.16.128.10 49
+ hwtacacs-server shared-key cipher Huawei123
+```
+
+**AAA Scheme configuration**
+```shell
+aaa
+authentication-scheme HWTACACS
+ authentication-mode hwtacacs local
+
+authorization-scheme HWTACACS
+ authorization-mode hwtacacs local
+
+accounting-scheme HWTACACS
+ accounting-mode hwtacacs
+ accounting start-fail online
+ accounting realtime 3
+```
+
+**AAA Domain configuration**
+```shell
+aaa
+domain LAB.LOCAL
+authentication-scheme HWTACACS
+authorization-scheme HWTACACS
+accounting-scheme HWTACACS
+hwtacacs-server HT
+```
+
+*Configure the global default domain for administrations*
+```shell
+[R1] domain LAB.LOCAL admin
+```
+
+**Verification**
+```shell
+display hwtacacs-server template HT
+display domain name LAB.LOCAL
+```
+
+
+
+```shell
 ```
 
 ### References
