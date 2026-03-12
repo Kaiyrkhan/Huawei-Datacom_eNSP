@@ -42,8 +42,6 @@ aaa
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
-
-display privilege state
 ```
 
 *жеке (individual) құқық (privilege) - student қолданушыға ғана тиесілі*  
@@ -61,23 +59,20 @@ Input the bits in the modulus[default = 2048]: 2048
 ```
 
 ```shell
-ssh server permit interface GigabitEthernet 0/0/0
 ssh server permit interface Vlanif77
+ssh server permit interface GigabitEthernet 0/0/2
 немесе
 ssh server permit interface all
 ```
-```shell
-ssh server-source -i Vlanif 1
-немесе
-ssh server-source all-interface
-```
 
-```shell
-[Huawei] ssh user student
-[Huawei] ssh user student service-type stelnet
-[Huawei] ssh user student authentication-type password
-```
-> ssh user student service-type all  
+Қосымша ақпарат!  
+> ssh server-source -i Vlanif 1  
+> ssh server-source all-interface  
+
+Қосымша ақпарат!  
+> [Huawei] ssh user student  
+> [Huawei] ssh user student service-type stelnet  
+> [Huawei] ssh user student authentication-type password  
 
 ```shell
 stelnet server enable
@@ -88,5 +83,5 @@ display current-configuration | include stelnet
 ```
 
 ```shell
-ssh student@192.168.10.1
+ssh student@192.168.1.1
 ```
