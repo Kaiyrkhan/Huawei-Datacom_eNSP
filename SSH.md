@@ -17,18 +17,19 @@
 **Info:** *Auto-Config has been stopped.*  
 
 ```shell
-display ip interface brief
-```
-
-```shell
 system-view
 sysname R1
 
-interface GigabitEthernet0/0/0
- ip address 192.168.77.1 255.255.255.0
- undo shutdown
- quit
+interface GigabitEthernet 0/0/9
+ portswitch
+ port link-type access
+ port default vlan 1
 ```
+
+```shell
+display ip interface brief
+```
+![images](images/image1.png)
 
 ```shell
 aaa
