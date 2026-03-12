@@ -7,12 +7,12 @@
 ### Scenario:
 1) Basic Device configuration
      - IP Address configuration
-2) RADIUS Server template configuration
+2) Create HWTACACS Server template
 3) AAA Scheme configuration
 4) AAA Domain configuration
-5) SSH Enable configuration
+5) SSH Enable
 6) VTY configuration
-7) Backup Local Admin configuration
+7) Backup Local Admin
 
 ```shell
 student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
