@@ -2,7 +2,7 @@
 > AAA (Authentication, Authorization, Accounting)  
 
 ### 🖧 Network Topology
-![Topology](images/Lab8_NetworkTopology_RemoteAAA.png)  
+![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
 
 ## Scenario:
 1) Basic Device configuration
