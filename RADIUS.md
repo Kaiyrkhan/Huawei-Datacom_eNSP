@@ -14,4 +14,4 @@
 6) VTY configuration
 7) Backup Local Admin configuration
 
-student@radius1:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
+student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
