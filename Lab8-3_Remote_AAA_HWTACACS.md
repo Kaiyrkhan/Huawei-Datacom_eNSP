@@ -6,7 +6,7 @@
 
 ### Scenario:
 1) Basic Device configuration
-     - IP Address configuration
+     - IP Address configuration (Linux and Router)
 2) Create HWTACACS Server template
 3) AAA Scheme configuration
 4) AAA Domain configuration
