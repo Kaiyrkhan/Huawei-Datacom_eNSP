@@ -1,6 +1,7 @@
 # Remote Access Configuration using SSH
 
 ### Huawei AR6140E-9G-2AC Router
+![images](images/Huawei_AR6140E-9G-2AC_Router.png)
 
 **Login authentication**  
 **Warning:** *An initial username and password are required for the first login via the console. Set a username and password and keep them safe. Otherwise you will not be able to login via the console.*  
