@@ -2,6 +2,9 @@
 
 ### Huawei AR6140E-9G-2AC Router
 ![images](images/Huawei_AR6140E-9G-2AC_Router.png)
+> Yellow - Layer 3 Routed Port  
+> Blue - Layer 2 SwitchPort  
+> MGMT - Management Port  
 
 **Login authentication**  
 **Warning:** *An initial username and password are required for the first login via the console. Set a username and password and keep them safe. Otherwise you will not be able to login via the console.*  
@@ -21,7 +24,7 @@
 system-view
 sysname R1
 
-interface GigabitEthernet 0/0/9
+interface GigabitEthernet 0/0/8
  portswitch
  port link-type access
  port default vlan 1
