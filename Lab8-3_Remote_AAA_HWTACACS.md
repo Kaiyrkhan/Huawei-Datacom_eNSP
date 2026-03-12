@@ -4,7 +4,7 @@
 ### 🖧 Network Topology
 ![Topology](images/Remote_AAA.png)  
 
-## Scenario:
+### Scenario:
 1) Basic Device configuration
      - IP Address configuration
 2) RADIUS Server template configuration
@@ -183,9 +183,34 @@ display hwtacacs-server template HT
 display domain name LAB.LOCAL
 ```
 
-
-
+**SSH enable**
 ```shell
+stelnet server enable
+display ssh server status
+
+rsa local-key-pair create
+```
+
+**VTY configuration**
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+```
+
+**Backup Local Admin (Failover)**
+```shell
+aaa
+ local-user student password irreversible-cipher Huawei@123
+ local-user student service-type terminal ssh
+ local-user student privilege level 15
+```
+
+**Verification**
+```shell
+[R1] test-aaa user1 Huawei@123 radius-template HT
+
+[R3] ssh user1@172.16.128.11
 ```
 
 ### References
