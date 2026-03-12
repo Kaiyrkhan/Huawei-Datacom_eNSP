@@ -57,12 +57,14 @@ user-interface vty 0 4
 > user-interface vty 0 4  
 > user privilege level 15  
 
+**Generate RSA Key Pair**
 ```shell
 rsa local-key-pair create
 Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 2048]: 2048
 ```
 
+**SSH server permit interface**
 ```shell
 ssh server permit interface Vlanif 1
 немесе
