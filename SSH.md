@@ -44,11 +44,12 @@ user-interface vty 0 4
  protocol inbound ssh
 ```
 
-*жеке (individual) құқық (privilege) - student қолданушыға ғана тиесілі*  
+Қосымша ақпарат!  
+> *жеке (individual) құқық (privilege) - student қолданушыға ғана тиесілі*  
 > aaa  
 > local-user student privilege level 15  
 
-жалпы (Global) құқық (privilege) - барлық қолданушыға қатысты  
+> жалпы (Global) құқық (privilege) - барлық қолданушыға қатысты  
 > user-interface vty 0 4  
 > user privilege level 15  
 
