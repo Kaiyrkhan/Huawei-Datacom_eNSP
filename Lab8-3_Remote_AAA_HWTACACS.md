@@ -1,4 +1,4 @@
-# Remote AAA configuration using RADIUS
+# Remote AAA configuration using HWTACACS
 > AAA (Authentication, Authorization, Accounting)  
 
 ### 🖧 Network Topology
