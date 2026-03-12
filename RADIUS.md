@@ -1,4 +1,4 @@
-# Remote AAA using RADIUS
+# Remote AAA configuration using RADIUS
 > AAA (Authentication, Authorization, Accounting)  
 
 ### 🖧 Network Topology
