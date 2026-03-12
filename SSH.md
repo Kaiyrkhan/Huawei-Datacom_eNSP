@@ -64,7 +64,8 @@ Input the bits in the modulus[default = 2048]: 2048
 ```
 
 ```shell
-ssh server permit interface Vlanif77
+ssh server permit interface Vlanif1
+немесе
 ssh server permit interface GigabitEthernet 0/0/2
 немесе
 ssh server permit interface all
