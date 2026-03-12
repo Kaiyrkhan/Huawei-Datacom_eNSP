@@ -12,7 +12,7 @@
 4) AAA Domain configuration
 5) SSH Enable
 6) VTY configuration
-7) Backup Local Admin
+7) Backup Local Admin (Failover)
 
 ```shell
 student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
