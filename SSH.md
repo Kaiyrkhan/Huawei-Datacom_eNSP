@@ -21,6 +21,16 @@
 **Info:** *Auto-Config has been stopped.*  
 
 ```shell
+display version
+```
+![images](images/image1.png)
+
+```shell
+display ip interface brief
+```
+![images](images/image2.png)
+
+```shell
 system-view
 sysname R1
 
@@ -29,11 +39,9 @@ interface GigabitEthernet 0/0/8
  port link-type access
  port default vlan 1
 ```
-
 ```shell
 display ip interface brief
 ```
-![images](images/image1.png)
 
 **Configure Local User Authentication and Authorization**
 ```shell
