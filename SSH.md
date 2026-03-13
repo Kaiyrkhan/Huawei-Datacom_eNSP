@@ -25,10 +25,13 @@ display version
 ```
 ![images](images/image1.png)
 
+#### 🖧 Network Topology
+![images](images/image2.png)
+
 ```shell
 display ip interface brief
 ```
-![images](images/image2.png)
+![images](images/image3.png)
 
 ```shell
 system-view
