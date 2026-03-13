@@ -1,5 +1,7 @@
 # Remote Access Configuration using SSH
 
+> **ЕСКЕРТУ!** *Бұл зертханалық жұмыс нақты физикалық құрылғыны (Physical Device) қолданып жасалған!*  
+
 ### Huawei AR6140E-9G-2AC Router
 ![images](images/Huawei_AR6140E-9G-2AC_Router.png)
 > Yellow - Layer 3 Routed Port  
