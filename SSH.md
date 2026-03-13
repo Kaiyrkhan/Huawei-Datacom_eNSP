@@ -37,6 +37,11 @@ display ip interface brief
 ![images](images/image3.png)
 
 ```shell
+ping 192.168.1.1
+```
+![images](images/image4.png)
+
+```shell
 system-view
 sysname R1
 
