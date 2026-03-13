@@ -25,7 +25,7 @@ display version
 ```
 ![images](images/image1.png)
 
-#### 🖧 Network Topology
+*Төмендегі топологияда көрсетілгендей, PC мен Router-ді Copper кабелмен байланыстырып қосамыз*
 ![images](images/image2.png)
 
 ```shell
