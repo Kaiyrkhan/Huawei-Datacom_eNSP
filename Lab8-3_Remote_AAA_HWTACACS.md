@@ -208,7 +208,7 @@ aaa
 
 **Verification**
 ```shell
-[R1] test-aaa user1 Huawei@123 radius-template HT
+[R1] test-aaa user1 Huawei@123 hwtacacs-server HT
 
 [R3] ssh user1@172.16.128.11
 ```
