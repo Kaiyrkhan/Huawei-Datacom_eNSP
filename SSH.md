@@ -26,7 +26,7 @@
 ```shell
 display version
 ```
-![images](images/image1.png)
+![images](images/AR6140E-9G-2AC_display_version.png)
 
 *Төмендегі топологияда көрсетілгендей, PC мен Router-ді Copper кабелмен байланыстырып қосамыз!*
 ![images](images/image2.png)
