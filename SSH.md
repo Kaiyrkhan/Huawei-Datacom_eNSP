@@ -29,22 +29,22 @@ display version
 ![images](images/AR6140E-9G-2AC_display_version.png)
 
 *Төмендегі топологияда көрсетілгендей, PC мен Router-ді Copper кабелмен байланыстырып қосамыз!*
-![images](images/image2.png)
+![images](images/AR6140E-9G-2AC_topology.png)
 
 ```shell
 display interface brief
 ```
-![images](images/image3.png)
+![images](images/AR6140E-9G-2AC_display_int_brief.png)
 
 ```shell
 display ip interface brief
 ```
-![images](images/image4.png)
+![images](images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
 ```shell
 ping 192.168.1.1
 ```
-![images](images/image5.png)
+![images](images/AR6140E-9G-2AC_ping.png)
 
 **Қосымша ақпарат!**  
 > interface GigabitEthernet 0/0/2  
@@ -111,7 +111,7 @@ display ssh server status
 display current-configuration | include ssh
 display current-configuration | include stelnet
 ```
-![images](images/image6.png)
+![images](images/AR6140E-9G-2AC_display_ssh_server_status.png)
 
 **Verification**
 ```shell
