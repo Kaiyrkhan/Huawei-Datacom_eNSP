@@ -22,6 +22,11 @@ display interface brief
 ```
 ![images](images/S3710-H24P4S-A_display_int_brief.png)
 
+```shell
+interface Vlanif 1
+ ip address 192.168.1.1 24
+```
+
 Step1 - Configure Local User Authentication and Authorization
 ```shell
 aaa
