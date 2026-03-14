@@ -32,27 +32,25 @@ display version
 ![images](images/image2.png)
 
 ```shell
-display ip interface brief
+display interface brief
 ```
 ![images](images/image3.png)
 
 ```shell
-ping 192.168.1.1
+display ip interface brief
 ```
 ![images](images/image4.png)
 
 ```shell
-system-view
-sysname R1
+ping 192.168.1.1
+```
+![images](images/image5.png)
 
-interface GigabitEthernet 0/0/8
- portswitch
- port link-type access
- port default vlan 1
-```
-```shell
-display ip interface brief
-```
+**Қосымша ақпарат!**  
+> interface GigabitEthernet 0/0/2  
+>  portswitch  
+>  port link-type access  
+>  port default vlan 1  
 
 **Configure Local User Authentication and Authorization**
 ```shell
@@ -113,6 +111,7 @@ display ssh server status
 display current-configuration | include ssh
 display current-configuration | include stelnet
 ```
+![images](images/image6.png)
 
 **Verification**
 ```shell
