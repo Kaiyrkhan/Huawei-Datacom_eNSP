@@ -118,7 +118,7 @@ display current-configuration | include stelnet
 ssh student@192.168.1.1
 ```
 
---- Huawei S3710-H24P4S-A Switch
+---
 
 > **Құрылғының моделі:** Huawei S3710-H24P4S-A Switch  
 
