@@ -105,7 +105,10 @@ ssh server permit interface all
 **Enable SSH**
 ```shell
 stelnet server enable
+```
+*Info: Succeeded in starting the STELNET server.*
 
+```shell
 display ssh server status
 display current-configuration | include ssh
 display current-configuration | include stelnet
