@@ -5,13 +5,14 @@
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
 
 ## Scenario:
-1) Basic Device configuration
-     - IP Address configuration
-2) Create RADIUS Server template
-3) AAA Scheme configuration
-4) AAA Domain configuration
-5) SSH Enable
-6) VTY configuration
-7) Backup Local Admin (Failover)
+1) Basic Device Configuration
+     - Configure the IP Address
+2) Create a RADIUS Server Template
+3) Configure the AAA Scheme
+4) Configure the AAA Domain
+5) Enable the SSH Server
+6) Configure the VTY User Interface
+7) Configure Local Backup Authentication
+8) Verify the Configuration
 
 student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
