@@ -238,7 +238,7 @@ aaa
 ```
 > student қолданушыны жүйеден жою: undo local-user student    
 
-Troubleshooting
+Troubleshooting Commands
 ```shell
 display cu section aaa
 display radius-server template LAN1
