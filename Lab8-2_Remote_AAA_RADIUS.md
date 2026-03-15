@@ -113,12 +113,13 @@ CTRL+O, ENTER, CTRL+X
 ```
 > ЕСКЕРТУ! Production ортада міндетті түрде MySQL/MariaDB сияқты мәліметтер қорын қолданып, құпиясөзді хэштеу керек!  
 
-Конфигурациядағы қатені тексеру
+конфигурациялық файлдың қатесін тексеру
 ```shell
 student@ubuntu:~$ sudo freeradius -CX
 "Configuration appears to be OK" деген хабарлама шықса, қате жоқ!
 ```
 
+Daemon-ды қайты жүктеу және автожүктеу қызметін қосу
 ```shell
 student@ubuntu:~$ sudo systemctl restart freeradius
 student@ubuntu:~$ sudo systemctl enable freeradius
