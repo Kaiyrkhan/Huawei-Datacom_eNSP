@@ -142,7 +142,7 @@ Access-Accept
 
 ```shell
 Network Engineer (Debian)
-student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Huawei123
+student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
 Access-Accept
 ```
 
@@ -198,6 +198,7 @@ Account test succeed!
 ```
 
 ```shell
+[R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123
 ```
 
 ```shell
