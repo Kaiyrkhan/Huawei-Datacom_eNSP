@@ -16,3 +16,18 @@
 8) Verify the Configuration
 
 student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
