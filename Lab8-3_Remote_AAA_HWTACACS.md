@@ -5,14 +5,15 @@
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
 
 ### Scenario:
-1) Basic Device configuration
-     - IP Address configuration (Linux and Router)
-2) Create HWTACACS Server template
-3) AAA Scheme configuration
-4) AAA Domain configuration
-5) SSH Enable
-6) VTY configuration
-7) Backup Local Admin (Failover)
+1) Basic Device Configuration
+	- Configure the IP Address (Linux and Router)
+2) Create a HWTACACS Server Template
+3) Configure the AAA Scheme
+4) Configure the AAA Domain
+5) Enable the SSH Server
+6) Configure the VTY User Interface
+7) Configure Local Backup Authentication
+8) Verify the Configuration
 
 ```shell
 student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
