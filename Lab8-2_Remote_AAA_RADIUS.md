@@ -4,7 +4,11 @@
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
 
-## Scenario:
+> **Ubuntu** — RADIUS Server  
+> **R1, R2 (Huawei VRP)** — RADIUS Client  
+> **Debian, R3 (Huawei VRP)** — Network Engineer  
+
+## Scenario (RADIUS Client):
 1) Basic Device Configuration
      - Configure the IP Address
 2) Create a RADIUS Server Template
