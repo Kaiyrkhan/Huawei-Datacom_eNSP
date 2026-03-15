@@ -15,6 +15,8 @@
 7) Configure Local Backup Authentication
 8) Verify the Configuration
 
+# RADIUS Server (Linux) конфигурациясы
+
 VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ ...  
 ![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
 
@@ -130,8 +132,17 @@ student@ubuntu:~$ sudo ufw reload
 > 1812 - Authentication Port Number  
 > 1813 - Accounting Port Number  
 
+Тексеру
 ```shell
 student@ubuntu:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
+```
+
+# RADIUS Client (Huawei VRP) конфигурациясы
+
+```shell
+```
+
+```shell
 ```
 
 ```shell
