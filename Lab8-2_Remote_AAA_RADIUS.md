@@ -48,9 +48,9 @@ network:
       addresses:
         - 172.16.128.10/24
 ```
-![images](images/ubuntu_50-cloud-init_yaml.png)
-
 > **ЕСКЕРТУ:** *YAML файлында бос орындар (indentation) өте маңызды. Әр қатарда 2 бос орын қолдануды ұмытпаңыз! (Tab пернесін қолданбаған дұрыс)*  
+
+![images](images/ubuntu_50-cloud-init_yaml.png)
 
 ```shell
 ```
