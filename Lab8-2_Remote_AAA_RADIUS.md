@@ -102,7 +102,6 @@ CTRL+O, ENTER, CTRL+X
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
 user1   Cleartext-Password := "Huawei@123"
-user2   Cleartext-Password := "Huawei@123"
 
 CTRL+O, ENTER, CTRL+X
 ```
@@ -132,7 +131,7 @@ student@ubuntu:~$ sudo ufw reload
 > 1813 - Accounting Port Number  
 
 ```shell
-student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
+student@ubuntu:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
 ```
 
 ```shell
