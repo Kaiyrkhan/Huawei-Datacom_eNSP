@@ -15,18 +15,24 @@
 7) Configure Local Backup Authentication
 8) Verify the Configuration
 
+VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings
+![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
+![images](images/VMwareWorkstationPro_VirtualNetworkEditor_VMnet2.png)
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
 ```
 
 ```shell
