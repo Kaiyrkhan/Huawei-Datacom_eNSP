@@ -62,10 +62,25 @@ sudo netplan try
 
 ```shell
 ip address
-немесе
-networkctl status
 ```
 ![images](images/ubuntu_ip_address_after.png)
+
+```shell
+networkctl status
+```
+![images](images/ubuntu_ip_address_networkctl_status.png)
+
+
+```shell
+```
+
+
+```shell
+```
+
+
+```shell
+```
 
 ```shell
 student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
