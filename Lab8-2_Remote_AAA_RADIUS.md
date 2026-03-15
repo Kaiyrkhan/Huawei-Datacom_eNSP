@@ -236,8 +236,7 @@ aaa
  local-user student service-type terminal ssh
  local-user student privilege level 15
 ```
-> "student" қолданушыны жүйеден жою   
-> undo local-user student  
+> student қолданушыны жүйеден жою: undo local-user student    
 
 Troubleshooting
 ```shell
