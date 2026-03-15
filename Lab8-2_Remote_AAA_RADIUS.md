@@ -107,6 +107,7 @@ user1   Cleartext-Password := "Huawei@123"
 
 CTRL+O, ENTER, CTRL+X
 ```
+> ЕСКЕРТУ! Production ортада міндетті түрде MySQL/MariaDB сияқты мәліметтер қорын қолданып, құпиясөзді хэштеу керек!  
 
 Конфигурациядағы қатені тексеру
 ```shell
@@ -134,12 +135,55 @@ student@ubuntu:~$ sudo ufw reload
 
 Тексеру
 ```shell
+RADIUS Server (Ubuntu)
 student@ubuntu:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
+Access-Accept
+```
+
+```shell
+Network Engineer (Debian)
+student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Huawei123
+Access-Accept
 ```
 
 # RADIUS Client (Huawei VRP) конфигурациясы
 
 ```shell
+radius-server template LAN1
+ radius-server authentication 172.16.128.10 1812 weight 80
+ radius-server accounting 172.16.128.10 1813 weight 80
+ radius-server shared-key cipher Datacom@123
+ quit
+```
+
+```shell
+aaa
+ authentication-scheme RADIUS
+  authentication-mode radius local
+  quit
+
+ accounting-scheme RADIUS
+  accounting-mode radius
+  quit
+```
+
+```shell
+ domain LAB.LOCAL
+  authentication-scheme RADIUS
+  accounting-scheme RADIUS
+  radius-server LAN1
+  quit
+ quit
+```
+
+```shell
+domain default domain LAB.LOCAL
+```
+> domain default_admin admin   
+
+```shell
+[R1] test-aaa user1 Huawei@123 radius-template LAN1
+Account test succeed!
 ```
 
 ```shell
