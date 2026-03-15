@@ -149,6 +149,17 @@ Access-Accept
 # RADIUS Client (Huawei VRP) конфигурациясы
 
 ```shell
+int g0/0/0
+ ip address 172.16.128.11 24
+display ip int brief
+```
+
+Ping from Router to Ubuntu
+```shell
+[R1] ping 172.16.128.10
+```
+
+```shell
 radius-server template LAN1
  radius-server authentication 172.16.128.10 1812 weight 80
  radius-server accounting 172.16.128.10 1813 weight 80
