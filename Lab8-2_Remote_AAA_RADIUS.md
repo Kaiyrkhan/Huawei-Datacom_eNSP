@@ -107,8 +107,29 @@ user2   Cleartext-Password := "Huawei@123"
 CTRL+O, ENTER, CTRL+X
 ```
 
+Конфигурациядағы қатені тексеру
 ```shell
+student@ubuntu:~$ sudo freeradius -CX
+"Configuration appears to be OK" деген хабарлама шықса, қате жоқ!
 ```
+
+```shell
+student@ubuntu:~$ sudo systemctl restart freeradius
+student@ubuntu:~$ sudo systemctl enable freeradius
+```
+
+UFW конфигурациясы
+```shell
+student@ubuntu:~$ sudo ufw status
+student@ubuntu:~$ sudo ufw enable
+```
+RADIUS порттарын ашу
+```shell
+student@ubuntu:~$ sudo ufw allow from 172.16.128.0/24 to any port 1812,1813 proto udp
+student@ubuntu:~$ sudo ufw reload
+```
+> 1812 - Authentication Port Number  
+> 1813 - Accounting Port Number  
 
 ```shell
 student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
