@@ -22,7 +22,12 @@ VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings
 ![images](images/VMwareWorkstationPro_VirtualNetworkEditor_VMnet2.png)
 
 ```shell
+student@ubuntu:~$ lsb_release -a
+Ubuntu 24.04.4 LTS
+student@ubuntu:~$ uname -rs
+Linux 6.8.0-101-generic x86_64 GNU/Linux
 ```
+![images](images/ubuntu_lsb_release_uname.png)
 
 ```shell
 ```
