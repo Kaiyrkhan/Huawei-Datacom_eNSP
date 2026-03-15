@@ -35,7 +35,22 @@ student@ubuntu:~$ ip address
 ![images](images/ubuntu_ip_address.png)
 
 ```shell
+student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens32:
+      dhcp4: true
+    ens34:
+      dhcp4: false
+      addresses:
+        - 172.16.128.10/24
 ```
+![images](images/ubuntu_50-cloud-init_yaml.png)
+
+> **ЕСКЕРТУ** *YAML файлында бос орындар (indentation) өте маңызды. Әр қатарда 2 бос орын қолдануды ұмытпаңыз (Tab пернесін қолданбаған дұрыс)*  
 
 ```shell
 ```
