@@ -30,7 +30,9 @@ Linux 6.8.0-101-generic x86_64 GNU/Linux
 ![images](images/ubuntu_lsb_release_uname.png)
 
 ```shell
+student@ubuntu:~$ ip address
 ```
+![images](images/ubuntu_ip_address.png)
 
 ```shell
 ```
