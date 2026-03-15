@@ -15,7 +15,7 @@
 7) Configure Local Backup Authentication
 8) Verify the Configuration
 
-VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings
+VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings  
 ![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
 ![images](images/VMwareWorkstationPro_VirtualNetworkEditor_VMnet2.png)
 
