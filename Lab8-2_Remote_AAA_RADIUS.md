@@ -70,11 +70,10 @@ student@ubuntu:~$ networkctl status
 ```
 ![images](images/ubuntu_ip_address_networkctl_status.png)
 
-
+Ping from Ubuntu to Host Machine (Loopback 1)
 ```shell
-student@ubuntu:~$ 
+student@ubuntu:~$ ping -c4 172.16.128.254
 ```
-
 
 ```shell
 student@ubuntu:~$ 
