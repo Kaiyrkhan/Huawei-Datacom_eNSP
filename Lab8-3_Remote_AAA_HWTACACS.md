@@ -141,7 +141,7 @@ Access-Accept
 ```shell
 [R1] hwtacacs enable
 
-hwtacacs-server template HT
+hwtacacs-server template HQ-HWTACACS
  hwtacacs-server authentication 172.16.128.10 49
  hwtacacs-server authorization 172.16.128.10 49
  hwtacacs-server accounting 172.16.128.10 49
@@ -170,17 +170,15 @@ domain LAB.LOCAL
 authentication-scheme HWTACACS
 authorization-scheme HWTACACS
 accounting-scheme HWTACACS
-hwtacacs-server HT
+hwtacacs-server HQ-HWTACACS
 ```
 
 *Configure the global default domain for administrations*
 ```shell
 [R1] domain LAB.LOCAL admin
 ```
-
-**Verify the Configuration**
 ```shell
-display hwtacacs-server template HT
+display hwtacacs-server template HQ-HWTACACS
 display domain name LAB.LOCAL
 ```
 
@@ -209,7 +207,7 @@ aaa
 
 **Verify the Configuration**
 ```shell
-[R1] test-aaa user1 Huawei@123 hwtacacs-server HT
+[R1] test-aaa user1 Huawei@123 hwtacacs-server HQ-HWTACACS
 
 [R3] ssh user1@172.16.128.11
 ```
