@@ -61,7 +61,7 @@ id = spawnd {
 }
 
 id = tacacs {
-    key = Huawei123
+    key = Datacom@123
 
     user = user1 {
         password = cleartext Huawei@123
@@ -137,7 +137,7 @@ Access-Accept
 
 ---
 
-**Create HWTACACS Server template**
+**Create a HWTACACS Server Template**
 ```shell
 [R1] hwtacacs enable
 
@@ -148,7 +148,7 @@ hwtacacs-server template HT
  hwtacacs-server shared-key cipher Huawei123
 ```
 
-**AAA Scheme configuration**
+**Configure the AAA Scheme**
 ```shell
 aaa
 authentication-scheme HWTACACS
@@ -163,7 +163,7 @@ accounting-scheme HWTACACS
  accounting realtime 3
 ```
 
-**AAA Domain configuration**
+**Configure the AAA Domain**
 ```shell
 aaa
 domain LAB.LOCAL
@@ -178,13 +178,13 @@ hwtacacs-server HT
 [R1] domain LAB.LOCAL admin
 ```
 
-**Verification**
+**Verify the Configuration**
 ```shell
 display hwtacacs-server template HT
 display domain name LAB.LOCAL
 ```
 
-**SSH enable**
+**Enable the SSH Server**
 ```shell
 stelnet server enable
 display ssh server status
@@ -192,14 +192,14 @@ display ssh server status
 rsa local-key-pair create
 ```
 
-**VTY configuration**
+**Configure the VTY User Interface**
 ```shell
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
 ```
 
-**Backup Local Admin (Failover)**
+**Configure Local Backup Authentication**
 ```shell
 aaa
  local-user student password irreversible-cipher Huawei@123
@@ -207,7 +207,7 @@ aaa
  local-user student privilege level 15
 ```
 
-**Verification**
+**Verify the Configuration**
 ```shell
 [R1] test-aaa user1 Huawei@123 hwtacacs-server HT
 
