@@ -16,7 +16,7 @@
 8) Verify the Configuration
 
 VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ Network Adapter  
-![images](images/VMwareWorkstationPro_NetworkAdapter_2.png)
+![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
 
 VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings  
 ![images](images/VMwareWorkstationPro_VirtualNetworkEditor_VMnet2.png)
