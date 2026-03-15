@@ -238,6 +238,7 @@ aaa
 ```
 > undo local-user student  
 
+Troubleshooting
 ```shell
 display cu section aaa
 display radius-server template LAN1
