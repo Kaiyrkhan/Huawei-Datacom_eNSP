@@ -86,9 +86,9 @@ student@ubuntu:~$ sudo apt update
 student@ubuntu:~$ sudo apt install -y freeradius freeradius-utils
 ```
 
-FreeRADIUS пакеттінің конфигурациялық файлдары
+FreeRADIUS пакеттінің конфигурациялық файлдар тізімі
 ```shell
-student@ubuntu:~$ ls -l /etc/freeradius/3.0/
+student@ubuntu:~$ sudo ls -l /etc/freeradius/3.0/
 ```
 
 RADIUS клиенттерді қосу
