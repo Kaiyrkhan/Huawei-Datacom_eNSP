@@ -15,7 +15,7 @@
 7) Configure Local Backup Authentication
 8) Verify the Configuration
 
-VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ Network Adapter  
+VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ ...  
 ![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
 
 VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings  
