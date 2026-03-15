@@ -55,27 +55,29 @@ CTRL+O, ENTER, CTRL+X
 ![images](images/ubuntu_50-cloud-init_yaml.png)
 
 ```shell
-sudo netplan apply
+student@ubuntu:~$ sudo netplan apply
 немесе
-sudo netplan try
+student@ubuntu:~$ sudo netplan try
 ```
 
 ```shell
-ip address
+student@ubuntu:~$ ip address
 ```
 ![images](images/ubuntu_ip_address_after.png)
 
 ```shell
-networkctl status
+student@ubuntu:~$ networkctl status
 ```
 ![images](images/ubuntu_ip_address_networkctl_status.png)
 
 
 ```shell
+student@ubuntu:~$ 
 ```
 
 
 ```shell
+student@ubuntu:~$ 
 ```
 
 
