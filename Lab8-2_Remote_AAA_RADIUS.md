@@ -36,7 +36,6 @@ student@ubuntu:~$ ip address
 
 ```shell
 student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
-
 network:
   version: 2
   renderer: networkd
@@ -75,10 +74,38 @@ Ping from Ubuntu to Host Machine (Loopback 1)
 student@ubuntu:~$ ping -c4 172.16.128.254
 ```
 
+FreeRADIUS пакеттін (package) орнату
 ```shell
-student@ubuntu:~$ 
+student@ubuntu:~$ sudo apt update
+student@ubuntu:~$ sudo apt install -y freeradius freeradius-utils
 ```
 
+FreeRADIUS пакеттінің конфигурациялық файлдары
+```shell
+student@ubuntu:~$ ls -l /etc/freeradius/3.0/
+```
+
+RADIUS клиенттерді қосу
+```shell
+student@ubuntu:~$ sudo nano /etc/freeradius/3.0/clients.conf
+client 172.16.128.11 {
+    ipaddr = 172.16.128.11
+    secret = Datacom@123
+    shortname = R1
+    require_message_authenticator = no
+    nastype = other
+}
+
+CTRL+O, ENTER, CTRL+X
+```
+Қолданушыларды қосу
+```shell
+student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
+user1   Cleartext-Password := "Huawei@123"
+user2   Cleartext-Password := "Huawei@123"
+
+CTRL+O, ENTER, CTRL+X
+```
 
 ```shell
 ```
