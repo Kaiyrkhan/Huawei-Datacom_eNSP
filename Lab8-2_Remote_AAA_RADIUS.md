@@ -153,6 +153,7 @@ Access-Accept
 
 # RADIUS Client (Huawei VRP) конфигурациясы
 
+Configure the IP Address
 ```shell
 int g0/0/0
  ip address 172.16.128.11 24
@@ -164,6 +165,7 @@ Ping from Router to Ubuntu
 [R1] ping 172.16.128.10
 ```
 
+Create a RADIUS Server Template
 ```shell
 radius-server template LAN1
  radius-server authentication 172.16.128.10 1812 weight 80
@@ -172,6 +174,7 @@ radius-server template LAN1
  quit
 ```
 
+Configure the AAA Scheme
 ```shell
 aaa
  authentication-scheme RADIUS
@@ -183,6 +186,7 @@ aaa
   quit
 ```
 
+Configure the AAA Domain
 ```shell
  domain LAB.LOCAL
   authentication-scheme RADIUS
@@ -195,15 +199,50 @@ aaa
 ```shell
 domain default domain LAB.LOCAL
 ```
-> domain default_admin admin   
+> Configure the Global default Domain for administrations  
+> domain default_admin admin  
+> domain LAB.LOCAL admin   
 
+Verify the Configuration
 ```shell
 [R1] test-aaa user1 Huawei@123 radius-template LAN1
 Account test succeed!
 ```
-
 ```shell
 [R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123
+```
+
+Enable the SSH Server
+```shell
+stelnet server enable
+display ssh server status
+
+rsa local-key-pair create
+Confirm to replace them? (y/n)[n]: y
+Input the bits in the modulus[default = 2048]: 2048
+```
+
+Configure the VTY User Interface
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+```
+
+Configure Local Backup Authentication
+```shell
+aaa
+ local-user student password irreversible-cipher Huawei@123
+ local-user student service-type terminal ssh
+ local-user student privilege level 15
+```
+> undo local-user student  
+
+```shell
+display cu section aaa
+display radius-server template LAN1
+display domain name LAB.LOCAL
+
 ```
 
 ```shell
