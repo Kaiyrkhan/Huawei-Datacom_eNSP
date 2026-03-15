@@ -32,7 +32,7 @@ Linux 6.8.0-101-generic x86_64 GNU/Linux
 ```shell
 student@ubuntu:~$ ip address
 ```
-![images](images/ubuntu_ip_address.png)
+![images](images/ubuntu_ip_address_before.png)
 
 ```shell
 student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
@@ -55,7 +55,17 @@ CTRL+O, ENTER, CTRL+X
 ![images](images/ubuntu_50-cloud-init_yaml.png)
 
 ```shell
+sudo netplan apply
+немесе
+sudo netplan try
 ```
+
+```shell
+ip address
+немесе
+networkctl status
+```
+![images](images/ubuntu_ip_address_after.png)
 
 ```shell
 student@debian:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
