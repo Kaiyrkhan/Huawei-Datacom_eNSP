@@ -4,7 +4,7 @@
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
 
-### Scenario:
+### Scenario (HWTACACS Client):
 1) Basic Device Configuration
 	- Configure the IP Address (Linux and Router)
 2) Create a HWTACACS Server Template
@@ -108,7 +108,8 @@ student@ubuntu:~$ sudo apt install net-tools
 student@ubuntu:~$ netstat -an | grep 49
 ```
 
-**Create Daemon Service**
+**Create Daemon Service (systemd) File**
+> Creating a systemd Service Unit  
 ```shell
 student@ubuntu:~$ sudo nano /etc/systemd/system/tac_plus.service
 [Unit]
@@ -141,11 +142,11 @@ Access-Accept
 ```shell
 [R1] hwtacacs enable
 
-hwtacacs-server template HQ-HWTACACS
+hwtacacs-server template LAN2
  hwtacacs-server authentication 172.16.128.10 49
  hwtacacs-server authorization 172.16.128.10 49
  hwtacacs-server accounting 172.16.128.10 49
- hwtacacs-server shared-key cipher Huawei123
+ hwtacacs-server shared-key cipher Datacom@123
 ```
 
 **Configure the AAA Scheme**
@@ -170,7 +171,7 @@ domain LAB.LOCAL
 authentication-scheme HWTACACS
 authorization-scheme HWTACACS
 accounting-scheme HWTACACS
-hwtacacs-server HQ-HWTACACS
+hwtacacs-server LAN2
 ```
 
 *Configure the global default domain for administrations*
@@ -178,7 +179,7 @@ hwtacacs-server HQ-HWTACACS
 [R1] domain LAB.LOCAL admin
 ```
 ```shell
-display hwtacacs-server template HQ-HWTACACS
+display hwtacacs-server template LAN2
 display domain name LAB.LOCAL
 ```
 
@@ -207,7 +208,7 @@ aaa
 
 **Verify the Configuration**
 ```shell
-[R1] test-aaa user1 Huawei@123 hwtacacs-server HQ-HWTACACS
+[R1] test-aaa user1 Huawei@123 hwtacacs-server LAN2
 
 [R3] ssh user1@172.16.128.11
 ```
