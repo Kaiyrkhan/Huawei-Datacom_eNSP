@@ -126,9 +126,9 @@ CTRL+O, ENTER, CTRL+X
 Huawei Vendor-Specific Attributes (VSA) қосу
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
-user1     Cleartext-Password := "Huawei@123"
-     Huawei-Exec-Privilege = 15,
-     Service-Type = NAS-Prompt-User
+user1   Cleartext-Password := "Huawei@123"
+        Huawei-Exec-Privilege = 15,
+        Service-Type = NAS-Prompt-User
 
 CTRL+O, ENTER, CTRL+X
 ```
