@@ -159,19 +159,48 @@ student@ubuntu:~$ sudo ufw status
 > 1812 - Authentication Port Number  
 > 1813 - Accounting Port Number  
 
-Тексеру
+Verify the Configuration
 ```shell
 RADIUS Server (Ubuntu)
 student@ubuntu:~$ sudo radtest user1 Huawei@123 127.0.0.1 0 testing123
-Access-Accept
+Received Access-Accept
 ```
+![images](images/ubuntu_radtest_loopback.png)
+
+```shell
+student@ubuntu:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
+Received Access-Accept
+```
+![images](images/ubuntu_radtest_ens34.png)
+
+```shell
+student@debian:~$ ip address
+```
+![images](images/debian_ip_address_before.png)
+
+```shell
+student@debian:~$ sudo nano /etc/network/interfaces
+# allow-hotplug ens32
+auto ens32
+iface ens32 inet dhcp
+auto ens34
+iface ens34 inet static
+        address 172.16.128.102
+        netmask 255.255.255.0
+```
+
+```shell
+student@debian:~$ ip address
+```
+![images](images/debian_ip_address_after.png)
 
 ```shell
 Network Engineer (Debian)
 student@debian:~$ sudo apt install -y freeradius-utils
 student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
-Access-Accept
+Received Access-Accept
 ```
+![images](images/debian_radtest_radius_server.png)
 
 # RADIUS Client (Huawei VRP) конфигурациясы
 
