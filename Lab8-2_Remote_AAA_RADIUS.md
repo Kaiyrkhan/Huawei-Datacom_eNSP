@@ -85,6 +85,9 @@ Ping from Ubuntu to Host Machine (Loopback 1)
 student@ubuntu:~$ ping -c4 172.16.128.254
 ```
 
+Turn off Windows Defender Firewall
+![images](images/windows_firewall_off.png)
+
 FreeRADIUS пакеттін (package) орнату
 ```shell
 student@ubuntu:~$ sudo apt update
