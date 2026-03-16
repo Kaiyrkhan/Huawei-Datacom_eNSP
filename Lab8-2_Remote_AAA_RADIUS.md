@@ -2,7 +2,7 @@
 > AAA (Authentication, Authorization, Accounting)  
 
 ### 🖧 Network Topology
-![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
+![Topology](images/Lab8_NetworkTopology_Remote_AAA_RADIUS.png)  
 
 > **Ubuntu** — RADIUS Server  
 > **R1, R2 (Huawei VRP)** — RADIUS Client  
