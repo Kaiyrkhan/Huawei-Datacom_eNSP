@@ -301,15 +301,16 @@ RADIUS серверді "Debug" режимге қосу
 ```shell
 student@ubuntu:~$ sudo systemctl stop freeradius
 student@ubuntu:~$ sudo freeradius -X
-```
-*FreeRADIUS Version 3.2.5
+
+FreeRADIUS Version 3.2.5
 Copyright (C) 1999-2023 The FreeRADIUS server project and contributors
 There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE
 You may redistribute copies of FreeRADIUS under the terms of the
 GNU General Public License
 For more information about these matters, see the file named COPYRIGHT
-Starting - reading configuration files ...*  
+Starting - reading configuration files ... 
+```
 
 ```shell
 [R1] test-aaa user1 Huawei@123 radius-template LAN1
