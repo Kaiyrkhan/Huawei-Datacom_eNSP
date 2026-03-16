@@ -157,6 +157,7 @@ Access-Accept
 
 ```shell
 Network Engineer (Debian)
+student@debian:~$ sudo apt install -y freeradius-utils
 student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
 Access-Accept
 ```
