@@ -6,9 +6,9 @@
 
 | Device Name | Role             | Operating System | IP Address        |
 | ----------- | ---------------- | ---------------- | ----------------- |
-| ubuntu      | RADIUS Server    | Linux            | 172.16.128.10/24  |
-| R1          | RADIUS Client    | Huawei VRP       | 172.16.128.11/24  |
-| R2          | RADIUS Client    | Huawei VRP       | 172.16.128.12/24  |
+| ubuntu      | HWTACACS Server  | Linux            | 172.16.128.10/24  |
+| R1          | HWTACACS Client  | Huawei VRP       | 172.16.128.11/24  |
+| R2          | HWTACACS Client  | Huawei VRP       | 172.16.128.12/24  |
 | R3          | Network Engineer | Huawei VRP       | 172.16.128.101/24 |
 | debian      | Network Engineer | Linux            | 172.16.128.102/24 |
 
