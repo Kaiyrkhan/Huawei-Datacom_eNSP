@@ -283,27 +283,50 @@ Configure the AAA Domain
 ```
 
 ```shell
-domain default domain LAB.LOCAL
+domain LAB.LOCAL admin
 ```
 > Configure the Global default Domain for administrations  
 > domain default_admin admin  
 > domain LAB.LOCAL admin   
 
+> domain default domain LAB.LOCAL  
+
 Verify the Configuration
 ```shell
 [R1] test-aaa user1 Huawei@123 radius-template LAN1
-Info: Account test succeed!
 Info: Account test time out!
+```
+
+RADIUS серверді "Debug" режимге қосу
+```shell
+student@ubuntu:~$ sudo systemctl stop freeradius
+student@ubuntu:~$ sudo freeradius -X
+```
+```shell
+[R1] test-aaa user1 Huawei@123 radius-template LAN1
+Info: Account test succeed!
+```
+```shell
+FreeRADIUS Version 3.2.5
+Copyright (C) 1999-2023 The FreeRADIUS server project and contributors
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE
+You may redistribute copies of FreeRADIUS under the terms of the
+GNU General Public License
+For more information about these matters, see the file named COPYRIGHT
+Starting - reading configuration files ...
+
+CTRL+C
+
+student@ubuntu:~$ sudo systemctl start freeradius
+student@ubuntu:~$ sudo systemctl enable freeradius
+
+[R1]test-aaa user1 Huawei@123 radius-template LAN1
+Info: Account test succeed!
 ```
 
 Қосымша ақпарат!
 > [R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123  
-
-Қосымша ақпарат!
-> RADIUS серверді "Debug" режимге қосу  
-> student@ubuntu:~$ sudo systemctl stop freeradius  
-> student@ubuntu:~$ sudo freeradius -X  
-> [R1] test-aaa user1 Huawei@123 radius-template LAN1  
 
 Enable the SSH Server
 ```shell
