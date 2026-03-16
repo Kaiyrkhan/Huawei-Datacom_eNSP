@@ -104,16 +104,25 @@ student@ubuntu:~$ sudo ls -l /etc/freeradius/3.0/
 RADIUS клиенттерді қосу
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/clients.conf
-client 172.16.128.11 {
+# IPv4 Client
+client 172.16.128.0 {
+    ipaddr = 172.16.128.0/24
+    secret = Datacom@123
+}
+CTRL+O, ENTER, CTRL+X
+```
+немесе
+```shell
+# IPv4 Client
+client RADIUS_Client1 {
     ipaddr = 172.16.128.11
     secret = Datacom@123
     shortname = R1
     require_message_authenticator = no
     nastype = other
 }
-
-CTRL+O, ENTER, CTRL+X
 ```
+
 Қолданушыларды қосу
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
