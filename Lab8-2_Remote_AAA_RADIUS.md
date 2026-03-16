@@ -92,6 +92,9 @@ FreeRADIUS пакеттін (package) орнату
 student@ubuntu:~$ sudo apt update
 student@ubuntu:~$ sudo apt install -y freeradius freeradius-utils
 ```
+```shell
+student@ubuntu:~$ sudo systemctl status freeradius
+```
 
 FreeRADIUS пакеттінің конфигурациялық файлдар тізімі
 ```shell
