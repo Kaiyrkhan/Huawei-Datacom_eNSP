@@ -267,6 +267,7 @@ aaa
   authentication-mode radius local
   quit
 
+aaa
  accounting-scheme RADIUS
   accounting-mode radius
   quit
@@ -274,6 +275,7 @@ aaa
 
 Configure the AAA Domain
 ```shell
+aaa
  domain LAB.LOCAL
   authentication-scheme RADIUS
   accounting-scheme RADIUS
