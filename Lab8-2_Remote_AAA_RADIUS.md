@@ -271,7 +271,7 @@ Save the server's public key? (y/n)[n]: y
 Enter password: Huawei@123
 
 R1-ге SSH арқылы кіргеннен кейін, төмендегі командаларды орындап көріңіз!
-[R1] display privilege state
+[R1] display privilege state — Privilege Level тексеру
 [R1] display users
 ```
 
