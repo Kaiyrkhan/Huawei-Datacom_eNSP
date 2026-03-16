@@ -29,7 +29,7 @@
 VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ ...  
 ![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
 
-VMware Workstation Pro ➜ Etit ➜ Virtual Network Editor ➜ Change Settings  
+VMware Workstation Pro ➜ Edit ➜ Virtual Network Editor ➜ Change Settings  
 ![images](images/VMwareWorkstationPro_VirtualNetworkEditor_VMnet2.png)
 
 ```shell
@@ -153,6 +153,7 @@ student@ubuntu:~$ sudo ufw enable
 RADIUS порттарын ашу
 ```shell
 student@ubuntu:~$ sudo ufw allow from 172.16.128.0/24 to any port 1812,1813 proto udp
+student@ubuntu:~$ sudo ufw allow from 172.16.128.0/24 to any port 22 proto tcp
 student@ubuntu:~$ sudo ufw reload
 student@ubuntu:~$ sudo ufw status
 ```
