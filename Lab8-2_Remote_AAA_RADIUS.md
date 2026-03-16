@@ -188,6 +188,7 @@ iface ens34 inet static
         address 172.16.128.102
         netmask 255.255.255.0
 ```
+![images](images/debian_ip_address_interfaces_file.png)
 
 ```shell
 student@debian:~$ ip address
