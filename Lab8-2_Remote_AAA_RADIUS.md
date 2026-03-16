@@ -321,7 +321,8 @@ student@ubuntu:~$ tail -f /var/log/freeradius/radacct/172.16.128.11/detail-YYYYM
 Access Control List (ACL)
 ```shell
 [R1] acl 2000
-      rule permit source 172.16.128.100 0.0.0.0
+      rule permit source 172.16.128.101 0.0.0.0
+      rule permit source 172.16.128.102 0.0.0.0
       rule deny source any
       quit
 
