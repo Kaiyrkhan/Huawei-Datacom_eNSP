@@ -228,22 +228,37 @@ Configure the IP Address
 ```shell
 int g0/0/0
  ip address 172.16.128.11 24
+
 display ip int brief
+Interface                         IP Address/Mask      Physical   Protocol  
+GigabitEthernet0/0/0              172.16.128.11/24     up         up        
+GigabitEthernet0/0/1              unassigned           down       down      
+GigabitEthernet0/0/2              unassigned           down       down      
+
 ```
 
 Ping from Router to Ubuntu
 ```shell
 [R1] ping 172.16.128.10
+Reply from 172.16.128.10: bytes=56 Sequence=1 ttl=64 time=40 ms
+Reply from 172.16.128.10: bytes=56 Sequence=2 ttl=64 time=20 ms
 ```
 
 Create a RADIUS Server Template
 ```shell
 radius-server template LAN1
- radius-server authentication 172.16.128.10 1812 weight 80
- radius-server accounting 172.16.128.10 1813 weight 80
+ radius-server authentication 172.16.128.10 1812
+ radius-server accounting 172.16.128.10 1813
  radius-server shared-key cipher Datacom@123
  quit
 ```
+
+Қосымша ақпарат!
+> radius-server template LAN1  
+>  radius-server authentication 172.16.128.10 1812 weight 80  
+>  radius-server accounting 172.16.128.10 1813 weight 80  
+>  radius-server authentication 172.16.128.9 1812 weight 20  
+>  radius-server accounting 172.16.128.9 1813 weight 20  
 
 Configure the AAA Scheme
 ```shell
