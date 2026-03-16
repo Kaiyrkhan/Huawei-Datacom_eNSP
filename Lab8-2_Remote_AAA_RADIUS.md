@@ -292,11 +292,12 @@ domain default domain LAB.LOCAL
 Verify the Configuration
 ```shell
 [R1] test-aaa user1 Huawei@123 radius-template LAN1
-Account test succeed!
+Info: Account test succeed!
+Info: Account test time out!
 ```
-```shell
-[R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123
-```
+
+Қосымша ақпарат!
+> [R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123  
 
 Қосымша ақпарат!
 > RADIUS серверді "Debug" режимге қосу  
@@ -333,6 +334,7 @@ aaa
 Troubleshooting Commands
 ```shell
 display cu section aaa
+display radius-server configuration template LAN1
 display radius-server template LAN1
 display domain name LAB.LOCAL
 ```
