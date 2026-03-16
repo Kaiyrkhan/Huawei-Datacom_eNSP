@@ -151,6 +151,12 @@ student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
 Access-Accept
 ```
 
+Қосымша ақпарат!
+> RADIUS серверді "Debug" режимге қосу  
+> student@ubuntu:~$ sudo systemctl stop freeradius  
+> student@ubuntu:~$ sudo freeradius -X  
+> [R1] test-aaa user1 Huawei@123 radius-template LAN1  
+
 # RADIUS Client (Huawei VRP) конфигурациясы
 
 Configure the IP Address
