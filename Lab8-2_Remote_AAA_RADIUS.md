@@ -113,7 +113,17 @@ CTRL+O, ENTER, CTRL+X
 ```
 > ЕСКЕРТУ! Production ортада міндетті түрде MySQL/MariaDB сияқты мәліметтер қорын қолданып, құпиясөзді хэштеу керек!  
 
-конфигурациялық файлдың қатесін тексеру
+Huawei Vendor-Specific Attributes (VSA) қосу
+```shell
+student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
+user1     Cleartext-Password := "Huawei@123"
+     Huawei-Exec-Privilege = 15,
+     Service-Type = NAS-Prompt-User
+
+CTRL+O, ENTER, CTRL+X
+```
+
+Конфигурациялық файлдың қатесін тексеру
 ```shell
 student@ubuntu:~$ sudo freeradius -CX
 "Configuration appears to be OK" деген хабарлама шықса, қате жоқ!
@@ -150,12 +160,6 @@ Network Engineer (Debian)
 student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
 Access-Accept
 ```
-
-Қосымша ақпарат!
-> RADIUS серверді "Debug" режимге қосу  
-> student@ubuntu:~$ sudo systemctl stop freeradius  
-> student@ubuntu:~$ sudo freeradius -X  
-> [R1] test-aaa user1 Huawei@123 radius-template LAN1  
 
 # RADIUS Client (Huawei VRP) конфигурациясы
 
@@ -218,6 +222,12 @@ Account test succeed!
 [R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123
 ```
 
+Қосымша ақпарат!
+> RADIUS серверді "Debug" режимге қосу  
+> student@ubuntu:~$ sudo systemctl stop freeradius  
+> student@ubuntu:~$ sudo freeradius -X  
+> [R1] test-aaa user1 Huawei@123 radius-template LAN1  
+
 Enable the SSH Server
 ```shell
 stelnet server enable
@@ -249,8 +259,23 @@ Troubleshooting Commands
 display cu section aaa
 display radius-server template LAN1
 display domain name LAB.LOCAL
-
 ```
 
+Network Engineer (Huawei VRP Router)
 ```shell
+[R3] ssh client first-time enable
+[R3] stelnet 172.16.128.11
+Please input the username: user1
+The server is not authenticated. Continue to access it? (y/n)[n]: y
+Save the server's public key? (y/n)[n]: y
+Enter password: Huawei@123
+
+R1-ге SSH арқылы кіргеннен кейін, төмендегі командаларды орындап көріңіз!
+[R1] display privilege state
+[R1] display users
+```
+
+Network Engineer (Debian Linux)
+```shell
+student@debian:~$ ssh user1@172.16.128.11
 ```
