@@ -279,3 +279,43 @@ Network Engineer (Debian Linux)
 ```shell
 student@debian:~$ ssh user1@172.16.128.11
 ```
+
+Accounting
+```shell
+student@ubuntu:~$ sudo ls -l /var/log/freeradius/radacct/
+student@ubuntu:~$ sudo ls -l /var/log/freeradius/radacct/172.16.128.11/
+student@ubuntu:~$ tail -f /var/log/freeradius/radacct/172.16.128.11/detail-YYYYMMDD
+```
+```shell
+aaa
+ recording-scheme RADIUS
+ recording-mode radius LAN1
+ quit
+```
+```shell
+aaa
+ domain LAB.LOCAL
+ command-recording-scheme RADIUS
+ quit
+```
+```shell
+[R1] command-privilege level 15 recording-scheme RADIUS
+```
+```shell
+[R3] stelnet 172.16.128.11
+     <R1> system-view
+     [R1] display version
+```
+```shell
+student@ubuntu:~$ sudo ls -l /var/log/freeradius/radacct/172.16.128.11/
+student@ubuntu:~$ tail -f /var/log/freeradius/radacct/172.16.128.11/detail-YYYYMMDD
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
