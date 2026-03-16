@@ -4,13 +4,14 @@
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_HWTACACS.png)  
 
-| Device Name | Role             | Operating System | IP Address        |
-| ----------- | ---------------- | ---------------- | ----------------- |
-| ubuntu      | HWTACACS Server  | Linux            | 172.16.128.10/24  |
-| R1          | HWTACACS Client  | Huawei VRP       | 172.16.128.11/24  |
-| R2          | HWTACACS Client  | Huawei VRP       | 172.16.128.12/24  |
-| R3          | Network Engineer | Huawei VRP       | 172.16.128.101/24 |
-| debian      | Network Engineer | Linux            | 172.16.128.102/24 |
+| Device Name  | Role             | Operating System | IP Address        |
+| ------------ | ---------------- | ---------------- | ----------------- |
+| ubuntu       | HWTACACS Server  | Linux            | 172.16.128.10/24  |
+| R1           | HWTACACS Client  | Huawei VRP       | 172.16.128.11/24  |
+| R2           | HWTACACS Client  | Huawei VRP       | 172.16.128.12/24  |
+| R3           | Network Engineer | Huawei VRP       | 172.16.128.101/24 |
+| debian       | Network Engineer | Linux            | 172.16.128.102/24 |
+| Host Machine | Bridge           | Windows          | 172.16.128.254/24 |
 
 ### Scenario (HWTACACS Client):
 1) Basic Device Configuration
