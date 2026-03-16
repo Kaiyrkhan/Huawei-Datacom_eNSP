@@ -4,10 +4,6 @@
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_RADIUS.png)  
 
-> **Ubuntu** — RADIUS Server  
-> **R1, R2 (Huawei VRP)** — RADIUS Client  
-> **Debian, R3 (Huawei VRP)** — Network Engineer  
-
 | Device Name  | Role             | Operating System | IP Address        |
 | ------------ | ---------------- | ---------------- | ----------------- |
 | ubuntu       | RADIUS Server    | Linux            | 172.16.128.10/24  |
