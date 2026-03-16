@@ -173,6 +173,8 @@ Received Access-Accept
 ```
 ![images](images/ubuntu_radtest_ens34.png)
 
+# Network Engineer (Debian) конфигурациясы
+
 ```shell
 student@debian:~$ ip address
 ```
