@@ -287,16 +287,16 @@ student@ubuntu:~$ sudo ls -l /var/log/freeradius/radacct/172.16.128.11/
 student@ubuntu:~$ tail -f /var/log/freeradius/radacct/172.16.128.11/detail-YYYYMMDD
 ```
 ```shell
-aaa
- recording-scheme RADIUS
- recording-mode radius LAN1
- quit
+[R1] aaa
+      recording-scheme RADIUS
+      recording-mode radius LAN1
+      quit
 ```
 ```shell
-aaa
- domain LAB.LOCAL
- command-recording-scheme RADIUS
- quit
+[R1] aaa
+      domain LAB.LOCAL
+      command-recording-scheme RADIUS
+      quit
 ```
 ```shell
 [R1] command-privilege level 15 recording-scheme RADIUS
@@ -309,6 +309,31 @@ aaa
 ```shell
 student@ubuntu:~$ sudo ls -l /var/log/freeradius/radacct/172.16.128.11/
 student@ubuntu:~$ tail -f /var/log/freeradius/radacct/172.16.128.11/detail-YYYYMMDD
+```
+
+```shell
+[R1] radius-server template LAN1
+     radius-server source interface g0/0/0
+     quit
+```
+
+Access Control List (ACL)
+```shell
+[R1] acl 2000
+      rule permit source 172.16.128.100 0.0.0.0
+      rule deny source any
+      quit
+
+[R1] user-interface vty 0 4
+      acl 2000 inbound
+      quit
+```
+
+Idle-Timeout (Автоматты түрде сессияны жабу)
+```shell
+[R1] user-interface vty 0 4
+      idle-timeout 10 0  # 10 минут, 0 секунд
+      quit
 ```
 
 ```shell
