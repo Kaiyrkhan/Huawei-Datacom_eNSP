@@ -2,7 +2,7 @@
 > AAA (Authentication, Authorization, Accounting)  
 
 ### 🖧 Network Topology
-![Topology](images/Lab8_NetworkTopology_Remote_AAA.png)  
+![Topology](images/Lab8_NetworkTopology_Remote_AAA_HWTACACS.png)  
 
 ### Scenario (HWTACACS Client):
 1) Basic Device Configuration
