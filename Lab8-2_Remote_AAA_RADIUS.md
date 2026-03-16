@@ -198,7 +198,14 @@ student@debian:~$ ip address
 ![images](images/debian_ip_address_after.png)
 
 ```shell
-Network Engineer (Debian)
+Ping from Debian to Ubuntu
+student@debian:~$ ping -c2 172.16.128.10
+64 bytes from 172.16.128.10: icmp_seq=1 ttl=64 time=1.56 ms
+64 bytes from 172.16.128.10: icmp_seq=2 ttl=64 time=0.508 ms
+```
+
+Verify the Configuration
+```shell
 student@debian:~$ sudo apt install -y freeradius-utils
 student@debian:~$ sudo radtest user1 Huawei@123 172.16.128.10 0 Datacom@123
 Received Access-Accept
