@@ -92,8 +92,14 @@ FreeRADIUS пакеттін (package) орнату
 student@ubuntu:~$ sudo apt update
 student@ubuntu:~$ sudo apt install -y freeradius freeradius-utils
 ```
+
+Daemon-ды жүктеу және автожүктеу қызметін қосу
 ```shell
+student@ubuntu:~$ sudo systemctl start freeradius
 student@ubuntu:~$ sudo systemctl status freeradius
+
+student@ubuntu:~$ sudo systemctl enable freeradius
+student@ubuntu:~$ sudo systemctl is-enabled freeradius
 ```
 
 FreeRADIUS пакеттінің конфигурациялық файлдар тізімі
@@ -136,16 +142,16 @@ Huawei Vendor-Specific Attributes (VSA) қосу
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
 user1   Cleartext-Password := "Huawei@123"
-        Huawei-Exec-Privilege = 15,
-        Service-Type = NAS-Prompt-User
+        Service-Type = Login-User,
+        Huawei-Exec-Privilege = 15
 CTRL+O, ENTER, CTRL+X
 ```
 немесе
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/users
 user1   Cleartext-Password := "Huawei@123"
-        Service-Type = Login-User,
-        Huawei-Exec-Privilege = 15
+        Huawei-Exec-Privilege = 15,
+        Service-Type = NAS-Prompt-User
 CTRL+O, ENTER, CTRL+X
 ```
 
@@ -155,10 +161,10 @@ student@ubuntu:~$ sudo freeradius -CX
 "Configuration appears to be OK" деген хабарлама шықса, қате жоқ!
 ```
 
-Daemon-ды қайты жүктеу және автожүктеу қызметін қосу
+Daemon-ды қайта жүктеу
 ```shell
 student@ubuntu:~$ sudo systemctl restart freeradius
-student@ubuntu:~$ sudo systemctl enable freeradius
+student@ubuntu:~$ sudo systemctl reload freeradius
 ```
 
 UFW конфигурациясы
@@ -331,10 +337,10 @@ Starting - reading configuration files ...
 CTRL+C
 
 student@ubuntu:~$ sudo systemctl start freeradius
-student@ubuntu:~$ sudo systemctl enable freeradius
+student@ubuntu:~$ sudo systemctl status freeradius
 
 [R1]test-aaa user1 Huawei@123 radius-template LAN1
-Info: Account test succeed!
+Info: Account test succeeded!
 ```
 
 Қосымша ақпарат!
@@ -346,7 +352,7 @@ stelnet server enable
 display ssh server status
 
 rsa local-key-pair create
-Confirm to replace them? (y/n)[n]: y
+Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 2048]: 2048
 ```
 
@@ -370,7 +376,6 @@ Troubleshooting Commands
 ```shell
 display cu section aaa
 display radius-server configuration template LAN1
-display radius-server template LAN1
 display domain name LAB.LOCAL
 ```
 
@@ -470,8 +475,3 @@ Idle-Timeout (Автоматты түрде сессияны жабу)
 ```shell
 ```
 
-```shell
-```
-
-```shell
-```
