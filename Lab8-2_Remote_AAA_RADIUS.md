@@ -348,16 +348,15 @@ Info: Account test succeeded!
 
 SSH server permit interface
 ```shell
-ssh server permit interface Vlanif 1
-немесе
 ssh server permit interface GigabitEthernet 0/0/2
-немесе
+ssh server permit interface Vlanif 1
 ssh server permit interface all
 ```
-
-Қосымша ақпарат!
-> ssh server-source -i Vlanif 1  
-> ssh server-source all-interface  
+немесе
+```shell
+ssh server-source -i Vlanif 1
+ssh server-source all-interface
+```
 
 Enable the SSH Server
 ```shell
