@@ -323,7 +323,7 @@ Starting - reading configuration files ...
 
 ```shell
 [R1] test-aaa user1 Huawei@123 radius-template LAN1
-Info: Account test succeed!
+Info: Account test succeeded!
 ```
 
 ```shell
