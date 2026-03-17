@@ -359,8 +359,6 @@ ssh server permit interface all
 > ssh server-source -i Vlanif 1  
 > ssh server-source all-interface  
 
-**Enable SSH**
-
 Enable the SSH Server
 ```shell
 stelnet server enable
