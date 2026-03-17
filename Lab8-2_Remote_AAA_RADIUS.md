@@ -95,11 +95,11 @@ student@ubuntu:~$ sudo apt install -y freeradius freeradius-utils
 
 Daemon-ды жүктеу және автожүктеу қызметін қосу
 ```shell
-student@ubuntu:~$ sudo systemctl start freeradius
 student@ubuntu:~$ sudo systemctl status freeradius
+student@ubuntu:~$ sudo systemctl start freeradius
 
-student@ubuntu:~$ sudo systemctl enable freeradius
 student@ubuntu:~$ sudo systemctl is-enabled freeradius
+student@ubuntu:~$ sudo systemctl enable freeradius
 ```
 
 FreeRADIUS пакеттінің конфигурациялық файлдар тізімі
@@ -280,7 +280,6 @@ aaa
   authentication-mode radius local
   quit
 
-aaa
  accounting-scheme RADIUS
   accounting-mode radius
   quit
