@@ -346,6 +346,21 @@ Info: Account test succeeded!
 Қосымша ақпарат!
 > [R1] radius-server test-template LAN1 172.16.128.10 1812 user1 password Huawei@123  
 
+SSH server permit interface
+```shell
+ssh server permit interface Vlanif 1
+немесе
+ssh server permit interface GigabitEthernet 0/0/2
+немесе
+ssh server permit interface all
+```
+
+Қосымша ақпарат!
+> ssh server-source -i Vlanif 1  
+> ssh server-source all-interface  
+
+**Enable SSH**
+
 Enable the SSH Server
 ```shell
 stelnet server enable
