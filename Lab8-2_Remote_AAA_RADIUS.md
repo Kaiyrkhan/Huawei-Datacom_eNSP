@@ -386,9 +386,12 @@ aaa
 
 Troubleshooting Commands
 ```shell
-display cu section aaa
+display current-configuration section aaa
 display radius-server configuration template LAN1
 display domain name LAB.LOCAL
+```
+```shell
+student@ubuntu:~$ sudo tcpdump -i any udp port 1812 -n
 ```
 
 Network Engineer (Huawei VRP Router)
