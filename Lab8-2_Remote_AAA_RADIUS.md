@@ -111,9 +111,10 @@ RADIUS клиенттерді қосу
 ```shell
 student@ubuntu:~$ sudo nano /etc/freeradius/3.0/clients.conf
 # IPv4 Client
-client 172.16.128.0 {
+client 172.16.128.0/24 {
     ipaddr = 172.16.128.0/24
     secret = Datacom@123
+    nastype = other
 }
 CTRL+O, ENTER, CTRL+X
 ```
