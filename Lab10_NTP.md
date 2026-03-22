@@ -13,6 +13,9 @@
 **NTP серверін іске қосу**
 ```shell
 ntp-service refclock-master 2                  // LOCAL-ды уақыт
+
+int g0/0/1 (inbound)
+ntp-service multicast-server
 ```
 немесе
 ```shell
@@ -20,8 +23,7 @@ undo ntp-service refclock-master
 ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер
 ```
 ```shell
-int g0/0/1 (LAN)
-ntp-service multicast-server
+
 ```
 
 **NTP аутентификация**
@@ -51,8 +53,9 @@ ntp-service access peer 2000
 
 ```shell
 ntp-service unicast-server 172.16.11.1
-немесе
-ntp-service unicast-server 172.16.11.1 version 4
+
+int g0/0/0
+ntp-service multicast-client
 ```
 
 **NTP аутентификация**
