@@ -22,9 +22,6 @@ ntp-service multicast-server
 undo ntp-service refclock-master
 ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер
 ```
-```shell
-
-```
 
 **NTP аутентификация**
 ```shell
