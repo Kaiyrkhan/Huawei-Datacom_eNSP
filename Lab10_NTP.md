@@ -1,5 +1,13 @@
 # Configure NTP Server & Client on Huawei VRP
 
+**🖧 Желі топологиясы** 
+![Topology](images/images.png) 
+
+| Device Name | Role       | IP Address/Prefix |
+| ----------- | ---------- | ----------------- |
+| EdgeR1      | NTP Server | 172.16.11.1 /24   |
+| R1          | NTP Client | 172.16.11.10 /24  |
+
 ## NTP серверді конфигурациялау
 
 **NTP серверін іске қосу**
