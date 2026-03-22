@@ -39,6 +39,7 @@ acl 2000
  rule 5 permit source 172.16.11.0 0.0.0.255
  rule 10 deny
  quit
+
 ntp-service access peer 2000
 ```
 
