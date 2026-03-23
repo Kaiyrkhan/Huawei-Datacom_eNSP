@@ -58,21 +58,20 @@ ping 10.1.77.1
 ## Step2: Configure NAT (Easy IP)
 
 ```shell
-ping 192.168.137.1
- Request time out
+[EdgeR1] ping 192.168.137.1
  Request time out
 ```
 Windows+R ➜ Turn off Windows Defender Firewall  
 ![images](images/windows_firewall_on_to_off.png)
 
 ```shell
-ping 192.168.137.1
+[EdgeR1] ping 192.168.137.1
  Reply from 192.168.137.1: bytes=56 Sequence=1 ttl=128 time=10 ms
  Reply from 192.168.137.1: bytes=56 Sequence=2 ttl=128 time=10 ms
 ```
 
 ```shell
-ping 8.8.8.8
+[EdgeR1] ping 8.8.8.8
  Request time out
  Request time out
 ```
