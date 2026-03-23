@@ -123,25 +123,13 @@ display cu | begin ospf
 
 ```shell
 [EdgeR1] ping 8.8.8.8
- Request time out
- Request time out
+ Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=108 time=90 ms
 ```
-
-Configure the Default Static Route (EdgeR1)
-```shell
-[EdgeR1] ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
-[EdgeR1] display ip routing-table
-```
-
-```shell
-[EdgeR1] ping 8.8.8.8
- Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=108 time=100 ms
- Reply from 8.8.8.8: bytes=56 Sequence=2 ttl=108 time=90 ms
-```
-
 ```shell
 [R1] ping 8.8.8.8
  Request time out
+```
+```shell
 [S1] ping 8.8.8.8
  Request time out
 ```
@@ -154,21 +142,14 @@ Configure NAT (Easy IP)
           nat outbound 2000
 ```
 
-Configure the Default Static Route (R1, S1)
-```shell
-[S1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
-[R1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
-```
-
 Verify the Configuration
 ```shell
 [R1] ping 8.8.8.8
- Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=150 ms
- Reply from 8.8.8.8: bytes=56 Sequence=2 ttl=107 time=130 ms
-
+ Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=130 ms
+```
+```shell
 [S1] ping 8.8.8.8
- Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=140 ms
- Reply from 8.8.8.8: bytes=56 Sequence=2 ttl=107 time=120 ms
+ Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=120 ms
 ```
 
 ## Step3: NTP серверді конфигурациялау
