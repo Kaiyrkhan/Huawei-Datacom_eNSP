@@ -11,8 +11,9 @@
 
 ### Scenario
 1) Configure the IP Address;
-2) Configure NTP Server;
-3) Configure NTP Client.
+2) Configure NAT (Easy IP);
+3) Configure NTP Server;
+4) Configure NTP Client.
 
 ## Step1: Configure the IP Address
 
