@@ -2,9 +2,9 @@
 
 > AAA (Authentication, Authorization, Accounting)  
 
-> Authentication - User identity (Қолданушының жеке басын растау)  
-> Authorization - User Permissions (Қолданушының жүйеде жұмыс жасау қолжетімділігі немесе құқығы)  
-> Accounting - User Actions Logging (Қолданушының жүйеде жасаған әрекеттері)  
+> Authentication - User identity (қолданушының жеке басын растау)  
+> Authorization - User Permissions (қолданушының жүйеде жұмыс жасау қолжетімділігі немесе құқығы)  
+> Accounting - User Actions Logging (қолданушының жүйеде жасаған әрекеттері)  
 
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_RADIUS.png)  
