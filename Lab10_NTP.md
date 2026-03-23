@@ -168,7 +168,7 @@ display clock
 
 ## NTP клиентті конфигурациялау
 
-**Уақыт белдеуін баптау**
+**Уақыт белдеуін орнату (міндетті емес, ұсынылады)**
 ```shell
 <Huawei> clock timezone Almaty add 05:00:00
 <Huawei> display clock
@@ -179,13 +179,16 @@ display clock
 ntp-service authentication enable
 ntp-service authentication-keyid 1 authentication-mode md5 Datacom@123
 ntp-service reliable authentication-keyid 1
-ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
+> *Нақты физикалық құрылғыда **"hmac-sha256"** аутентификация режимін қолдану ұсынылады!*  
+> **Мысалы:** ntp-service authentication-keyid 1 authentication-mode hmac-sha256 cipher Datacom@123  
 
 **NTP серверін іске қосу**
 ```shell
-ntp-service unicast-server 10.1.77.1
+ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
+> *NTP аутентификация қолданбаған жағдайда NTP серверін іске қосу*  
+> ntp-service unicast-server 10.1.77.1  
 
 **Нәтижені тексеру**
 ```shell
