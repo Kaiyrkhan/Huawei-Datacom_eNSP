@@ -57,7 +57,7 @@ ntp-service refclock-master 2
 
 2-әдіс: Сыртқы NTP сервер уақытын қолдану
 ```shell
-undo ntp-service refclock-master
+undo ntp-service refclock-master               // LOCAL-ды уақытты өшіру
 ntp-service unicast-server 80.241.0.72
 ```
 
