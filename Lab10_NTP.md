@@ -57,9 +57,11 @@ ping 8.8.8.8
  Reply from 8.8.8.8: bytes=56 Sequence=2 ttl=108 time=90 ms
 ```
 
+Configure the IP Address
 ```shell
 <Huawei> system-view
 [Huawei] sysname S1
+[S1]
 
 int Vlanif 1
  ip addr 10.1.77.101 24
@@ -69,6 +71,7 @@ display ip int brief
 ```shell
 <Huawei> system-view
 [Huawei] sysname R1
+[R1]
 
 int g0/0/0
  ip addr 10.1.77.102 24
@@ -87,10 +90,10 @@ display ip int brief
 
 NAT (Easy IP)
 ```shell
-acl 2000
- rule permit source 10.1.77.0 0.0.0.255
-int g0/0/0
- nat outbound 2000
+[EdgeR1] acl 2000
+          rule permit source 10.1.77.0 0.0.0.255
+[EdgeR1] int g0/0/0
+          nat outbound 2000
 ```
 
 Configure the Default Gateway
