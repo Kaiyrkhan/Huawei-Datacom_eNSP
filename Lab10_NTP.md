@@ -163,7 +163,7 @@ display clock
 ```
 
 > display ntp-service sessions  
-> reach – 255 болуы керек  
+> reach – мәні 255 болуы керек!  
 > offset - сервер мен клиент арасындағы уақыт айырмашылығы  
 
 ## NTP клиентті конфигурациялау
