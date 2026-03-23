@@ -1,6 +1,6 @@
 # Configure NTP Server & Client on Huawei VRP
 
-**🖧 Желі топологиясы** 
+**🖧 Network Topology (желі топологиясы)** 
 ![Topology](images/Lab10_NetworkTopology_NTP_TFTP_FTP.png) 
 
 | Device Name | Role       | IP Address/Prefix |
