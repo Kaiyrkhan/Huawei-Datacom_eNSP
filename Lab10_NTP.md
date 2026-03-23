@@ -163,10 +163,10 @@ display clock
 
 ## NTP клиентті конфигурациялау
 
+**Уақыт белдеуін баптау**
 ```shell
-ntp-service unicast-server 10.1.77.1
-
-display cu | include ntp-service
+<Huawei> clock timezone Almaty add 05:00:00
+<Huawei> display clock
 ```
 
 **NTP аутентификация**
@@ -177,10 +177,9 @@ ntp-service reliable authentication-keyid 1
 ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
 
-**Уақыт белдеуін баптау**
+**NTP серверін іске қосу**
 ```shell
-<Huawei> clock timezone Almaty add 05:00:00
-<Huawei> display clock
+ntp-service unicast-server 10.1.77.1
 ```
 
 **Нәтижені тексеру**
@@ -190,4 +189,5 @@ display clock
 ```
 
 ```shell
+display cu | include ntp-service
 ```
