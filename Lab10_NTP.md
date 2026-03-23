@@ -193,6 +193,10 @@ acl 2001
 ntp-service access peer 2001
 ```
 
+```shell
+display cu | include ntp-service
+```
+
 **Уақыт белдеуін орнату**
 ```shell
 [EdgeR1] quit
@@ -234,13 +238,13 @@ ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 > *NTP аутентификация қолданбаған жағдайда NTP сервермен байланыс орнату*  
 > ntp-service unicast-server 10.1.77.1  
 
+```shell
+display cu | include ntp-service
+```
+
 **Нәтижені тексеру**
 ```shell
 display ntp-service status
 display ntp-service sessions
 display clock
-```
-
-```shell
-display cu | include ntp-service
 ```
