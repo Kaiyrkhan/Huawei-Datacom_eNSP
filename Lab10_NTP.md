@@ -3,11 +3,11 @@
 ### 🖧 Network Topology (желі топологиясы)
 ![Topology](images/Lab10_NetworkTopology_NTP.png) 
 
-| Device Name | Role       | interface | IP Address/Prefix |
-| ----------- | ---------- | --------- | ----------------- |
-| EdgeR1      | NTP Server | g0/0/1    | 10.1.77.1 /24     |
-| R1          | NTP Client | g0/0/0    | 10.1.77.101 /24   |
-| S1          | NTP Client | Vlanif1   | 10.1.77.102 /24   |
+| Device | Role       | interface | IP Address /Prefix |
+| ------ | ---------- | --------- | ------------------ |
+| EdgeR1 | NTP Server | g0/0/1    | 10.1.77.1 /24      |
+| R1     | NTP Client | g0/0/0    | 10.1.77.101 /24    |
+| S1     | NTP Client | Vlanif1   | 10.1.77.102 /24    |
 
 ### Scenario
 1) Configure the IP Address;
