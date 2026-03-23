@@ -50,15 +50,21 @@ ping 10.1.77.1
 
 **1-әдіс: NTP серверін іске қосу**
 ```shell
-ntp-service refclock-master 2                  // LOCAL-ды уақытты қолдану!
+ntp-service refclock-master 2                  // LOCAL-ды уақытты қолдану
 ```
 
 **2-әдіс: NTP серверін іске қосу**
 ```shell
 undo ntp-service refclock-master
-ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын қолдану!
+ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын қолдану
 ```
-> Best practice бойынша Production ортада 2-әдісті қолданған ұсынылады!  
+
+**3-әдіс: NTP серверін іске қосу**
+```shell
+ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын қолдану
+ntp-service refclock-master 5                 // тек қосымша (резерв) NTP сервер ретінде қолданылады
+```
+> Best practice бойынша Production ортада 2 және 3-әдісті қолдану ұсынылады!  
 
 **NTP аутентификация**
 ```shell
