@@ -119,13 +119,13 @@ Verify the Configuration
 
 **NTP серверін іске қосу**
 ```shell
-ntp-service refclock-master 2                  // LOCAL-ды уақытты таратады!
+ntp-service refclock-master 2                  // LOCAL-ды уақытты қолданады!
 ```
 
 **Қосымша ақпарат**
 ```shell
 undo ntp-service refclock-master
-ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын таратады!
+ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын қолданады!
 ```
 > ЕСКЕРТУ! Қосымша ақпаратты қолдану міндетті емес!  
 
