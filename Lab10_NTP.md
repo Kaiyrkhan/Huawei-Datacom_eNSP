@@ -48,23 +48,25 @@ ping 10.1.77.1
 
 ## NTP серверді конфигурациялау
 
-**1-әдіс: NTP серверін іске қосу**
+**NTP серверін іске қосу**
+
+1-әдіс: LOCAL-ды уақытты қолдану
 ```shell
-ntp-service refclock-master 2                  // LOCAL-ды уақытты қолдану
+ntp-service refclock-master 2
 ```
 
-**2-әдіс: NTP серверін іске қосу**
+2-әдіс: Сыртқы NTP сервер уақытын қолдану
 ```shell
 undo ntp-service refclock-master
-ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын қолдану
+ntp-service unicast-server 80.241.0.72
 ```
 
-**3-әдіс: NTP серверін іске қосу**
+3-әдіс: Қосымша (резерв) сервермен бірге, сыртқы NTP серверді қолдану
 ```shell
-ntp-service unicast-server 80.241.0.72        // сыртқы NTP сервер уақытын қолдану
+ntp-service unicast-server 80.241.0.72
 ntp-service refclock-master 5                 // тек қосымша (резерв) NTP сервер ретінде қолданылады
 ```
-> *Best practice бойынша Production ортада 2 және 3-әдісті қолдану ұсынылады!*  
+> Best practice бойынша Production ортада 2 және 3-әдісті қолдану ұсынылады!  
 
 **NTP аутентификация**
 ```shell
