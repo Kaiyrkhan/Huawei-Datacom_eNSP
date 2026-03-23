@@ -10,7 +10,7 @@
 | S1          | NTP Client | Vlanif1   | 10.1.77.102 /24   |
 
 
-## Configure the IP Address
+## Step1: Configure the IP Address
 
 ```shell
 <Huawei> system-view
@@ -47,7 +47,7 @@ display ip int brief
 ping 10.1.77.1
 ```
 
-## NTP серверді конфигурациялау
+## Step2: NTP серверді конфигурациялау
 
 **NTP серверін іске қосу**
 
@@ -108,7 +108,7 @@ display clock
 > reach – мәні 255 болуы керек!  
 > offset - сервер мен клиент арасындағы уақыт айырмашылығы  
 
-## NTP клиентті конфигурациялау
+## Step3: NTP клиентті конфигурациялау
 
 **Уақыт белдеуін орнату (міндетті емес, ұсынылады)**
 ```shell
