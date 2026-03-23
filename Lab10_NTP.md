@@ -61,7 +61,7 @@ undo ntp-service refclock-master               // LOCAL-ды уақытты өш
 ntp-service unicast-server 80.241.0.72
 ```
 
-3-әдіс: Сыртқы NTP сервер уақытымен бірге LOCAL-ды уақытты (резерв ретінде) қолдану
+3-әдіс: Сыртқы NTP сервер уақытымен бірге LOCAL-ды құрылғының уақытын (резервті NTP сервер ретінде) қолдану
 ```shell
 ntp-service unicast-server 80.241.0.72
 ntp-service refclock-master 5                 // тек қосымша (резерв) NTP сервер ретінде қолданылады
