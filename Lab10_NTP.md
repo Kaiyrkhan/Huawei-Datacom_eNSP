@@ -154,11 +154,22 @@ Verify the Configuration
 
 ## Step4: NTP серверді конфигурациялау
 
+**Уақыт белдеуін орнату**
+```shell
+<EdgeR1> clock timezone Almaty add 05:00:00
+немесе
+<EdgeR1> clock timezone KZ add 5
+
+<EdgeR1> clock datetime 14:26:00 2026-03-23
+<EdgeR1> display clock
+```
+
 **NTP серверін іске қосу**
 
 1-әдіс: LOCAL-ды құрылғының уақытын NTP сервер ретінде қолдану
 ```shell
-ntp-service refclock-master 2
+ntp-service enable
+ntp-service refclock-master 2                   // NTP сервер болу, stratum 2
 ```
 
 2-әдіс: Сыртқы NTP сервер уақытын қолдану
@@ -197,14 +208,6 @@ ntp-service access peer 2001
 display cu | include ntp-service
 ```
 
-**Уақыт белдеуін орнату**
-```shell
-[EdgeR1] quit
-<EdgeR1> clock timezone Almaty add 05:00:00
-<EdgeR1> clock datetime 14:26:00 2026-03-23
-<EdgeR1> display clock
-```
-
 **Нәтижені тексеру**
 ```shell
 display ntp-service status
@@ -219,6 +222,8 @@ display clock
 **Уақыт белдеуін орнату (міндетті емес, ұсынылады)**
 ```shell
 <Huawei> clock timezone Almaty add 05:00:00
+немесе
+<Huawei> clock timezone KZ add 5
 <Huawei> display clock
 ```
 
@@ -233,6 +238,7 @@ ntp-service reliable authentication-keyid 1
 
 **NTP сервермен байланыс орнату**
 ```shell
+ntp-service enable
 ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
 > *NTP аутентификация қолданбаған жағдайда NTP сервермен байланыс орнату*  
