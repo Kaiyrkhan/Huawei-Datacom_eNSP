@@ -55,7 +55,7 @@ int g0/0/0
 display ip int brief
 ```
 ```shell
-ping 10.1.77.1
+[R1] ping 10.1.77.1
  Reply from 10.1.77.1: bytes=56 Sequence=1 ttl=255 time=40 ms
 ```
 
@@ -70,7 +70,7 @@ int Vlanif 1
 display ip int brief
 ```
 ```shell
-ping 10.1.77.1
+[S1] ping 10.1.77.1
  Reply from 10.1.77.1: bytes=56 Sequence=1 ttl=255 time=60 ms
 ```
 
