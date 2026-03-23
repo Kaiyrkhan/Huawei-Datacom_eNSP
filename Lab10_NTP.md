@@ -11,9 +11,10 @@
 
 ### Scenario
 1) Configure the IP Address;
-2) Configure NAT (Easy IP);
-3) Configure NTP Server;
-4) Configure NTP Client.
+2) Configure Single-Area OSPFv2;
+3) Configure NAT (Easy IP);
+4) Configure NTP Server;
+5) Configure NTP Client.
 
 ## Step1: Configure the IP Address
 
@@ -26,7 +27,7 @@ int g0/0/0
  ip address 192.168.137.254 24
  quit
 int g0/0/1
- ip addr 10.1.77.1 24
+ ip address 10.1.77.1 24
  quit
 display ip int brief
 ```
@@ -37,7 +38,7 @@ display ip int brief
 [R1]
 
 int g0/0/0
- ip addr 10.1.77.101 24
+ ip address 10.1.77.101 24
  quit
 display ip int brief
 ping 10.1.77.1
@@ -49,13 +50,53 @@ ping 10.1.77.1
 [S1]
 
 int Vlanif 1
- ip addr 10.1.77.102 24
+ ip address 10.1.77.102 24
  quit
 display ip int brief
 ping 10.1.77.1
 ```
 
-## Step2: Configure NAT (Easy IP)
+## Step2: Configure Single-Area OSPFv2
+
+```shell
+[EdgeR1] display ip int brief
+[EdgeR1] ospf 1 router-id 1.1.1.1
+          area 0
+           network 10.1.77.0 0.0.0.255
+```
+
+Configure the Default Static Route
+```shell
+[EdgeR1] ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
+```
+
+Advertise the Default Route
+```shell
+[EdgeR1] ospf 1
+          default-route-advertise
+```
+
+```shell
+[R1] display ip int brief
+[R1] ospf 1 router-id 2.2.2.2
+      area 0
+       network 10.1.77.0 0.0.0.255
+```
+
+```shell
+[S1] display ip int brief
+[S1] ospf 1 router-id 3.3.3.3
+      area 0
+       network 10.1.77.0 0.0.0.255
+```
+
+```shell
+display ospf peer brief
+display cu section ospf
+display ip routing-table protocol ospf
+```
+
+## Step3: Configure NAT (Easy IP)
 
 ```shell
 [EdgeR1] ping 192.168.137.1
