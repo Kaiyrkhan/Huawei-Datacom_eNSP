@@ -17,7 +17,11 @@ Configure the IP Address
 <Huawei> system-view
 [Huawei] sysname EdgeR1
 
-ip address 192.168.137.254 24
+int g0/0/0
+ ip address 192.168.137.254 24
+int g0/0/1
+ ip addr 10.1.77.1 24
+
 display ip int brief
 ```
 
@@ -53,9 +57,55 @@ ping 8.8.8.8
 ```
 
 ```shell
+<Huawei> system-view
+[Huawei] sysname S1
+
+int Vlanif 1
+ ip addr 10.1.77.101 24
+display ip int brief
 ```
 
 ```shell
+<Huawei> system-view
+[Huawei] sysname R1
+
+int g0/0/0
+ ip addr 10.1.77.102 24
+display ip int brief
+```
+
+```shell
+[S1] ping 8.8.8.8
+ Request time out
+ Request time out
+
+[R1] ping 8.8.8.8
+ Request time out
+ Request time out
+```
+
+NAT (Easy IP)
+```shell
+acl 2000
+ rule permit source 10.1.77.0 0.0.0.255
+int g0/0/0
+ nat outbound 2000
+```
+
+Configure the Default Gateway
+```shell
+[S1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
+[R1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
+```
+
+```shell
+[S1] ping 8.8.8.8
+ Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=140 ms
+ Reply from 8.8.8.8: bytes=56 Sequence=2 ttl=107 time=120 ms
+
+[R1] ping 8.8.8.8
+ Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=150 ms
+ Reply from 8.8.8.8: bytes=56 Sequence=2 ttl=107 time=130 ms
 ```
 
 ## NTP серверді конфигурациялау
