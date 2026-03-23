@@ -27,7 +27,7 @@ ping 192.168.137.1
  Request time out
 ```
 Windows+R ➜ Turn off Windows Defender Firewall  
-![images](images/windows_firewall_off.png)
+![images](images/windows_firewall_on_to_off.png)
 
 ```shell
 ping 192.168.137.1
