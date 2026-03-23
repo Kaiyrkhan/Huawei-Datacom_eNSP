@@ -1,7 +1,7 @@
 # Configure NTP Server & Client on Huawei VRP
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab10_NetworkTopology_NTP.png) 
+![Topology](images/Lab10_NetworkTopology_NTP.png)  
 [Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_NTP.topo)
 
 | Device | Role       | interface | IP Address /Prefix  | default Gateway |
