@@ -124,11 +124,11 @@ ntp-service reliable authentication-keyid 1
 > *Нақты физикалық құрылғыда **"hmac-sha256"** аутентификация режимін қолдану ұсынылады!*  
 > **Мысалы:** ntp-service authentication-keyid 1 authentication-mode hmac-sha256 cipher Datacom@123  
 
-**NTP сервермен байланыстыру**
+**NTP сервермен байланыс орнату**
 ```shell
 ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
-> *NTP аутентификация қолданбаған жағдайда NTP серверін іске қосу*  
+> *NTP аутентификация қолданбаған жағдайда NTP сервермен байланыс орнату*  
 > ntp-service unicast-server 10.1.77.1  
 
 **Нәтижені тексеру**
