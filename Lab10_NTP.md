@@ -33,6 +33,18 @@ display ip int brief
 ```
 
 ```shell
+[EdgeR1] ping 192.168.137.1
+ Request time out
+```
+Windows+R ➜ Turn off Windows Defender Firewall  
+![images](images/windows_firewall_on_to_off.png)
+
+```shell
+[EdgeR1] ping 192.168.137.1
+ Reply from 192.168.137.1: bytes=56 Sequence=1 ttl=128 time=10 ms
+```
+
+```shell
 <Huawei> system-view
 [Huawei] sysname R1
 [R1]
@@ -41,7 +53,10 @@ int g0/0/0
  ip address 10.1.77.101 24
  quit
 display ip int brief
+```
+```shell
 ping 10.1.77.1
+ Reply from 10.1.77.1: bytes=56 Sequence=1 ttl=255 time=40 ms
 ```
 
 ```shell
@@ -53,7 +68,10 @@ int Vlanif 1
  ip address 10.1.77.102 24
  quit
 display ip int brief
+```
+```shell
 ping 10.1.77.1
+ Reply from 10.1.77.1: bytes=56 Sequence=1 ttl=255 time=60 ms
 ```
 
 ## Step2: Configure Single-Area OSPFv2
@@ -101,19 +119,6 @@ display cu | begin ospf
 ```
 
 ## Step3: Configure NAT (Easy IP)
-
-```shell
-[EdgeR1] ping 192.168.137.1
- Request time out
-```
-Windows+R ➜ Turn off Windows Defender Firewall  
-![images](images/windows_firewall_on_to_off.png)
-
-```shell
-[EdgeR1] ping 192.168.137.1
- Reply from 192.168.137.1: bytes=56 Sequence=1 ttl=128 time=10 ms
- Reply from 192.168.137.1: bytes=56 Sequence=2 ttl=128 time=10 ms
-```
 
 ```shell
 [EdgeR1] ping 8.8.8.8
