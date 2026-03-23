@@ -144,8 +144,9 @@ ntp-service access peer 2001
 
 **Уақыт белдеуін баптау**
 ```shell
+[EdgeR1] quit
 <EdgeR1> clock timezone Almaty add 05:00:00
-<EdgeR1> clock datetime 13:50:00 2026-03-23
+<EdgeR1> clock datetime 14:26:00 2026-03-23
 <EdgeR1> display clock
 ```
 
