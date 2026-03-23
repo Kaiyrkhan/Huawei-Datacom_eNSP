@@ -76,10 +76,10 @@ Windows+R ➜ Turn off Windows Defender Firewall
  Request time out
 ```
 
-Configure the Default Static Route
+Configure the Default Static Route (EdgeR1)
 ```shell
-ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
-display ip routing-table
+[EdgeR1] ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
+[EdgeR1] display ip routing-table
 ```
 
 ```shell
@@ -103,7 +103,7 @@ Configure NAT (Easy IP)
           nat outbound 2000
 ```
 
-Configure the Default Static Route
+Configure the Default Static Route (R1, S1)
 ```shell
 [S1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
 [R1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
