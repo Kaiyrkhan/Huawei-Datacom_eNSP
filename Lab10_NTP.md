@@ -91,9 +91,10 @@ Advertise the Default Route
 ```
 
 ```shell
+display ospf peer
 display ospf peer brief
+display ip routing-table
 display cu section ospf
-display ip routing-table protocol ospf
 ```
 
 ## Step3: Configure NAT (Easy IP)
