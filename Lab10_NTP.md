@@ -45,6 +45,7 @@ ping 8.8.8.8
  Request time out
 ```
 
+Configure the Default Static Route
 ```shell
 ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
 display ip routing-table
@@ -98,6 +99,7 @@ Configure the Default Gateway
 [R1] ip route-static 0.0.0.0 0.0.0.0 10.1.77.1
 ```
 
+Verify the Configuration
 ```shell
 [S1] ping 8.8.8.8
  Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=140 ms
