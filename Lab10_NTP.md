@@ -190,6 +190,7 @@ ntp-service unicast-server 10.1.77.1
 **Нәтижені тексеру**
 ```shell
 display ntp-service status
+display ntp-service sessions
 display clock
 ```
 
