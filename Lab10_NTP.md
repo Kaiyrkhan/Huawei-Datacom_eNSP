@@ -146,7 +146,7 @@ acl 2001
 ntp-service access peer 2001
 ```
 
-**Уақыт белдеуін баптау**
+**Уақыт белдеуін орнату**
 ```shell
 [EdgeR1] quit
 <EdgeR1> clock timezone Almaty add 05:00:00
