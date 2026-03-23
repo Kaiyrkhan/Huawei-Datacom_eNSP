@@ -118,9 +118,6 @@ Verify the Configuration
 **NTP серверін іске қосу**
 ```shell
 ntp-service refclock-master 2                  // LOCAL-ды уақыт
-
-int g0/0/1 (inbound)
-ntp-service multicast-server
 ```
 немесе
 ```shell
@@ -137,28 +134,25 @@ ntp-service reliable authentication-keyid 1
 
 **Access Control List (ACL)**
 ```shell
-acl 2000
- rule 5 permit source 172.16.11.0 0.0.0.255
+acl 2001
+ rule 5 permit source 10.1.77.0 0.0.0.255
  rule 10 deny
  quit
 
-ntp-service access peer 2000
+ntp-service access peer 2001
 ```
 
 **Уақыт белдеуін баптау**
 ```shell
-<Huawei> clock timezone Almaty add 05:00:00
-<Huawei> clock datetime 13:50:00 2026-03-22
-<Huawei> display clock
+<EdgeR1> clock timezone Almaty add 05:00:00
+<EdgeR1> clock datetime 13:50:00 2026-03-23
+<EdgeR1> display clock
 ```
 
 ## NTP клиентті конфигурациялау
 
 ```shell
-ntp-service unicast-server 172.16.11.1
-
-int g0/0/0
-ntp-service multicast-client
+ntp-service unicast-server 10.1.77.1
 ```
 
 **NTP аутентификация**
@@ -166,7 +160,7 @@ ntp-service multicast-client
 ntp-service authentication enable
 ntp-service authentication-keyid 1 authentication-mode md5 Datacom@123
 ntp-service reliable authentication-keyid 1
-ntp-service unicast-server 172.16.11.1 authentication-keyid 1
+ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
 
 **Уақыт белдеуін баптау**
@@ -185,12 +179,6 @@ display clock
 ```
 
 > offset - сервер мен клиент арасындағы уақыт айырмашылығы  
-
-```shell
-```
-
-```shell
-```
 
 ```shell
 ```
