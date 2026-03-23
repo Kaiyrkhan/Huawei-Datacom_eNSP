@@ -65,6 +65,7 @@ Configure the IP Address
 
 int Vlanif 1
  ip addr 10.1.77.101 24
+ quit
 display ip int brief
 ```
 
@@ -75,6 +76,7 @@ display ip int brief
 
 int g0/0/0
  ip addr 10.1.77.102 24
+ quit
 display ip int brief
 ```
 
