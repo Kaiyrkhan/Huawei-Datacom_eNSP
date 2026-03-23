@@ -150,10 +150,23 @@ ntp-service access peer 2001
 <EdgeR1> display clock
 ```
 
+**Нәтижені тексеру**
+```shell
+display ntp-service status
+display ntp-service sessions
+display ntp-service sessions verbose
+display clock
+```
+
+> reach – 255 болуы керек  
+> offset - сервер мен клиент арасындағы уақыт айырмашылығы  
+
 ## NTP клиентті конфигурациялау
 
 ```shell
 ntp-service unicast-server 10.1.77.1
+
+display cu | include ntp-service
 ```
 
 **NTP аутентификация**
@@ -170,16 +183,11 @@ ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 <Huawei> display clock
 ```
 
-## Нәтижені тексеру
-
+**Нәтижені тексеру**
 ```shell
 display ntp-service status
-display ntp-service sessions
-display ntp-service sessions verbose
 display clock
 ```
-
-> offset - сервер мен клиент арасындағы уақыт айырмашылығы  
 
 ```shell
 ```
