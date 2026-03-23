@@ -6,7 +6,7 @@
 | Device | Role       | interface | IP Address /Prefix  |
 | ------ | ---------- | --------- | ------------------- |
 | EdgeR1 | NTP Server | g0/0/0    | 192.168.137.254 /24 |
-| EdgeR1 | NTP Server | g0/0/1    | 10.1.77.1 /24       |
+|        |            | g0/0/1    | 10.1.77.1 /24       |
 | R1     | NTP Client | g0/0/0    | 10.1.77.101 /24     |
 | S1     | NTP Client | Vlanif1   | 10.1.77.102 /24     |
 
