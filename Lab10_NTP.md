@@ -67,7 +67,7 @@ ntp-service unicast-server 80.241.0.72
 ntp-service unicast-server 80.241.0.72
 ntp-service refclock-master 5                 // тек қосымша (резерв) NTP сервер ретінде қолданылады
 ```
-> Best practice бойынша Production ортада 2 және 3-әдісті қолдану ұсынылады!  
+> Best practice бойынша Production ортада 2 немесе 3-әдісті қолдану ұсынылады!  
 
 **NTP аутентификация**
 ```shell
