@@ -15,6 +15,7 @@
 ```shell
 <Huawei> system-view
 [Huawei] sysname EdgeR1
+[EdgeR1]
 
 int g0/0/1
  ip addr 10.1.77.1 24
