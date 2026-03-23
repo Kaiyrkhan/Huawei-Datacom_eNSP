@@ -162,6 +162,7 @@ display ntp-service sessions verbose
 display clock
 ```
 
+> display ntp-service sessions  
 > reach – 255 болуы керек  
 > offset - сервер мен клиент арасындағы уақыт айырмашылығы  
 
