@@ -50,7 +50,7 @@ ping 10.1.77.1
 
 **NTP серверін іске қосу**
 
-1-әдіс: LOCAL-ды уақытты қолдану
+1-әдіс: LOCAL-ды NTP сервер уақытын қолдану
 ```shell
 ntp-service refclock-master 2
 ```
