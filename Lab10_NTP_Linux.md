@@ -159,16 +159,16 @@ makestep 1 3
 
 Firewall конфигурациялау 
 ```shell
-$ sudo systemctl status ufw
-
+$ sudo ufw status
 $ sudo ufw enable
+$ sudo ufw status verbose
 
 NTP портын (123/UDP) ашу
 $ sudo ufw allow from 172.16.128.0/24 to any port 123 proto udp
+$ sudo ufw allow from 172.16.128.0/24 to any port 22 proto tcp
 
 $ sudo ufw reload
-
-$ sudo ufw status verbose
+$ sudo ufw status
 ```
 
 Daemon-ды қайта жүктеу және ...
