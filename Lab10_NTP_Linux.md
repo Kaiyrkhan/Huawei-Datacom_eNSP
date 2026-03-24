@@ -191,30 +191,36 @@ $ sudo ntpdate -q 80.241.0.72
 
 ## Step2: Configure NTP Client on Huawei VRP (Router, Switch)
 
-NTP қызметін қосу
+**NTP қызметін қосу**
 ```shell
 ntp-service enable
 ```
 
-NTP сервермен байланыс орнату
+**NTP сервермен байланыс орнату**
 ```shell
-ntp-service unicast-server 172.16.128.10
+ntp-service unicast-server 172.16.128.10 authentication-keyid 1
 ```
 
-Source interface көрсету
+**Source interface көрсету**
 ```shell
 [R1] ntp-service source-interface g0/0/0
 
 [S1] ntp-service source-interface Vlanif1
 ```
 
-Нәтижені тексеру
+**NTP аутентификация**
+```shell
+ntp-service authentication enable
+ntp-service authentication-keyid 1 authentication-mode md5 Datacom@123
+ntp-service reliable authentication-keyid 1
+```
+> *Нақты физикалық құрылғыда **"hmac-sha256"** аутентификация режимін қолдану ұсынылады!*  
+> **Мысалы:** ntp-service authentication-keyid 1 authentication-mode hmac-sha256 cipher Datacom@123  
+
+
+**Нәтижені тексеру**
 ```shell
 display ntp-service status
 display ntp-service sessions
 display clock
-```
-
-NTP аутентификация
-```shell
 ```
