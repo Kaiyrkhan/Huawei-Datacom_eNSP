@@ -157,7 +157,7 @@ NTP аутентификация
 ```shell
 $ sudo nano /etc/chrony/chrony.keys
 # Huawei VRP <key_id> <algorithm> <secret_key>
-1 md5 Datacom@123
+1 MD5 Datacom@123
 
 CTRL+O, ENTER, CTRL+X
 ```
