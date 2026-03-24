@@ -246,6 +246,6 @@ display clock
 ```shell
 [Huawei] display ntp-service status
  clock status: synchronized 
- clock stratum: 4 
+ clock stratum: 3 
  reference clock ID: 172.16.128.10
 ```
