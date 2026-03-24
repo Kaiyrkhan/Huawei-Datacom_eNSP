@@ -157,6 +157,7 @@ makestep 1 3
 NTP аутентификация
 ```shell
 $ sudo nano /etc/chrony/chrony.keys
+# Huawei VRP
 1 md5 Datacom@123
 
 CTRL+O, ENTER, CTRL+X
