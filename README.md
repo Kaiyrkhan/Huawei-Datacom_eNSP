@@ -3,9 +3,7 @@
 ### Course Contents
 1) Huawei VRP Basics
       - Basic Device (Router, Switch) Configuration;
-      - Remote Access (Telnet, SSH).  
-IPv4 Addressing and Subnetting  
-Packet Forwarding (Default Gateway)  
+      - Remote Access (Telnet, SSH).
 2) IP Routing
       - Static Routing;
       - Dynamic Routing. OSPFv2.
@@ -25,3 +23,6 @@ Packet Forwarding (Default Gateway)
 14) Network Automation. Python
 15) Network Automation. Ansible
 16) ReView
+
+IPv4 Addressing and Subnetting
+Packet Forwarding (Default Gateway)
