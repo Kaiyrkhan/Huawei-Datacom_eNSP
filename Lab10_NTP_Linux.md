@@ -107,14 +107,41 @@ $ ss -tulpn
 $ netstat -tulpn
 ```
 
+**NTP серверді конфигурациялау**
+
 > NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
 > Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
 ```shell
+Уақыт белдеуін (Time Zone) өзгерту
+$ sudo timedatectl set-timezone Asia/Almaty
+$ timedatectl status
 ```
 
 ```shell
+$ sudo nano /etc/chrony/chrony.conf
+#pool 2.debian.pool.ntp.org iburst
+
+# Kazakhstan NTP pool
+server ntp.nic.kz iburst
+pool 2.kz.pool.ntp.org iburst
+pool 1.kz.pool.ntp.org iburst
+
+# Global NTP pool
+pool time.google.com iburst
+pool time.cloudflare.com iburst
+
+# Log settings
+logdir /var/log/chrony
+log measurements statistics tracking
+
+# RTC синхрондау
+rtcsync
+
+# Уақыт дәлдігін тез реттеу
+makestep 1.0 3
 ```
+> "#" Comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
 
 ```shell
 ```
