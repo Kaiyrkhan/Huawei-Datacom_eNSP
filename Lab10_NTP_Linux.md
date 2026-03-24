@@ -165,9 +165,8 @@ CTRL+O, ENTER, CTRL+X
 
 Firewall конфигурациялау 
 ```shell
-$ sudo ufw status
-$ sudo ufw enable
 $ sudo ufw status verbose
+$ sudo ufw enable
 
 NTP портын (123/UDP) ашу
 $ sudo ufw allow from 172.16.128.0/24 to any port 123 proto udp
