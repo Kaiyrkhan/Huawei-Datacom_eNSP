@@ -114,11 +114,11 @@ $ netstat -tulpn
 $ sudo timedatectl set-timezone Asia/Almaty
 $ timedatectl status
 ```
+> Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
 **NTP серверді конфигурациялау**
 
 > NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
-> Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
 > артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
 
