@@ -186,9 +186,13 @@ $ sudo systemctl status chronyd
 
 ```shell
 $ ss -tulpn
+Netid  State    Local Address:Port    Peer Address:Port
+udp    -        0.0.0.0:123           0.0.0.0:
 
 $ sudo apt install -y net-tools
 $ netstat -tulpn
+Proto  Local Address  Foreign Address   State
+udp    0.0.0.0:123    0.0.0.0:*         -
 ```
 
 Нәтижені тексеру
@@ -196,14 +200,11 @@ $ netstat -tulpn
 $ sudo chronyc sources -v
 ```
 ![images](images/ubuntu_ntp_chronyc_sources_verbose.png)
+
 ```shell
 $ sudo chronyc tracking
-```
-![images](images/ubuntu_ntp_chronyc_tracking.png)
-```shell
 $ sudo chronyc activity
 ```
-![images](images/ubuntu_ntp_chronyc_activity.png)
 
 ```shell
 $ sudo apt install ntpdate
