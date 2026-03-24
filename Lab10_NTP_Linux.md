@@ -88,14 +88,14 @@ student@ubuntu:~$ ping -c4 172.16.128.254
 **Chrony пакетін (package) орнату**
 
 > Package атауы: **chrony**  
-> Daemon/Service атауы: **chronyd**  
+> Daemon/Service атауы: **chrony** немесе **chronyd**  
 
 > **chronyd** – the actual daemon to sync and serve via the Network Time Protocol  
 > **chronyc** – command-line interface for the chrony daemon  
 
 ```shell
 $ sudo apt update 
-$ sudo apt install chrony
+$ sudo apt install -y chrony
 ```
 
 ```shell
@@ -104,6 +104,8 @@ $ sudo systemctl status chronyd
 
 ```shell
 $ ss -tulpn
+
+$ sudo apt install -y net-tools
 $ netstat -tulpn
 ```
 
@@ -119,9 +121,14 @@ $ timedatectl status
 > Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
 > артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
+
 ```shell
 $ sudo nano /etc/chrony/chrony.conf
-#pool 2.debian.pool.ntp.org iburst
+
+#pool ntp.ubuntu.com        iburst maxsources 4
+#pool 0.ubuntu.pool.ntp.org iburst maxsources 1
+#pool 1.ubuntu.pool.ntp.org iburst maxsources 1
+#pool 2.ubuntu.pool.ntp.org iburst maxsources 2
 
 # Kazakhstan NTP pool
 server ntp.nic.kz iburst
@@ -132,22 +139,22 @@ pool 1.kz.pool.ntp.org iburst
 pool time.google.com iburst
 pool time.cloudflare.com iburst
 
-# Log settings
-logdir /var/log/chrony
-log measurements statistics tracking
-
-# RTC sync (синхрондау)
-rtcsync
-
-# Time adjustment (уақыт дәлдігін реттеу)
-makestep 1.0 3
-
 # Listen on all interfaces
 bindcmdaddress 0.0.0.0
 bindcmdaddress ::
 
 # Allow NTP client access from Local Network
 allow 172.16.128.0/24
+
+# Log files location
+logdir /var/log/chrony
+log tracking measurements statistics
+
+# Hardware clock synchronization
+rtcsync
+
+# Time adjustment settings (уақыт дәлдігін реттеу)
+makestep 1 3
 ```
 
 Firewall конфигурациялау 
@@ -167,8 +174,7 @@ $ sudo ufw status verbose
 Daemon-ды қайта жүктеу және ...
 ```shell
 $ sudo systemctl restart chronyd
-$ sudo systemctl enable chrony
-$ sudo systemctl status chrony
+$ sudo systemctl status chronyd
 ```
 
 Нәтижені тексеру
