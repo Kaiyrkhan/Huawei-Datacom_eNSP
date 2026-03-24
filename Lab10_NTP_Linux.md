@@ -141,7 +141,6 @@ allow 172.16.128.0/24
 
 # NTP authentication
 keyfile /etc/chrony/chrony.keys
-trustedkey 1
 
 # Log files location
 logdir /var/log/chrony
