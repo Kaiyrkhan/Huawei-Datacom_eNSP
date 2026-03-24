@@ -155,7 +155,7 @@ Verify the Configuration
 
 ## Step4: NTP серверді конфигурациялау
 
-**Уақыт белдеуін орнату**
+**Уақыт белдеуін (Time Zone) өзгерту**
 ```shell
 <EdgeR1> clock timezone Almaty add 05:00:00
 немесе
@@ -224,7 +224,7 @@ display clock
 
 ## Step5: NTP клиентті конфигурациялау
 
-**Уақыт белдеуін орнату (міндетті емес, ұсынылады)**
+**Уақыт белдеуін өзгерту (міндетті емес, ұсынылады)**
 ```shell
 <Huawei> clock timezone Almaty add 05:00:00
 немесе
