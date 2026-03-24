@@ -118,6 +118,7 @@ $ timedatectl status
 > NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
 > Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
+> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
 ```shell
 $ sudo nano /etc/chrony/chrony.conf
 #pool 2.debian.pool.ntp.org iburst
@@ -148,19 +149,26 @@ bindcmdaddress ::
 # Allow NTP client access from Local Network
 allow 172.16.128.0/24
 ```
-> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
+
+Firewall конфигурациялау 
+```shell
+$ sudo systemctl status ufw
+
+$ sudo ufw enable
 
 NTP портын (123/UDP) ашу
-```shell
-$ sudo ufw enable
 $ sudo ufw allow from 172.16.128.0/24 to any port 123 proto udp
+
 $ sudo ufw reload
+
+$ sudo ufw status verbose
 ```
 
 Daemon-ды қайта жүктеу және ...
 ```shell
 $ sudo systemctl restart chronyd
 $ sudo systemctl enable chrony
+$ sudo systemctl status chrony
 ```
 
 Нәтижені тексеру
