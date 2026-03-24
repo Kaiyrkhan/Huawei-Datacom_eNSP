@@ -10,7 +10,7 @@
 | S1     | NTP Client | 10.1.77.102 /24     |
 
 
-## Basic Device Configuration
+### Basic Device Configuration
 
 Configure the IP Address
 ```shell
