@@ -102,13 +102,6 @@ $ sudo apt install -y chrony
 $ sudo systemctl status chronyd
 ```
 
-```shell
-$ ss -tulpn
-
-$ sudo apt install -y net-tools
-$ netstat -tulpn
-```
-
 Уақыт белдеуін (Time Zone) өзгерту
 ```shell
 $ sudo timedatectl set-timezone Asia/Almaty
@@ -175,6 +168,13 @@ Daemon-ды қайта жүктеу және ...
 ```shell
 $ sudo systemctl restart chronyd
 $ sudo systemctl status chronyd
+```
+
+```shell
+$ ss -tulpn
+
+$ sudo apt install -y net-tools
+$ netstat -tulpn
 ```
 
 Нәтижені тексеру
