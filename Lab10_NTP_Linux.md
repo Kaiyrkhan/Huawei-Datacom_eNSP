@@ -4,13 +4,13 @@
 ![Topology](images/Lab10_NetworkTopology_NTP_Linux.png)  
 [Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_NTP_Linux.topo)
 
-| Device       | Role       | interface | IP Address/Prefix | Operating System |
-| ------------ | ---------- | --------- | ----------------- | ---------------- |
-| Ubuntu       | NTP Server | ens34     | 172.16.128.10/24  | Linux            |
-|              |            | ens32     | DHCP Assigned     |                  |
-| R1           | NTP Client | g0/0/0    | 172.16.128.11/24  | Huawei VRP       |
-| S1           | NTP Client | Vlanif1   | 172.16.128.12/24  | Huawei VRP       |
-| Host Machine | Bridge     | Loopback1 | 172.16.128.254/24 | Windows          |
+| Device       | Role       | interface | IP Address / Prefix | Operating System |
+| ------------ | ---------- | --------- | ------------------- | ---------------- |
+| Ubuntu       | NTP Server | ens34     | 172.16.128.10 /24   | Linux            |
+|              |            | ens32     | DHCP Assigned       |                  |
+| R1           | NTP Client | g0/0/0    | 172.16.128.11 /24   | Huawei VRP       |
+| S1           | NTP Client | Vlanif1   | 172.16.128.12 /24   | Huawei VRP       |
+| Host Machine | Bridge     | Loopback1 | 172.16.128.254 /24  | Windows          |
 
 ### Scenario
 1) Configure NTP Server on Linux;
@@ -85,4 +85,25 @@ student@ubuntu:~$ ping -c4 172.16.128.254
  64 bytes from 172.16.128.254: icmp_seq=1 ttl=128 time=0.230 ms
 ```
 
-FreeRADIUS пакеттін (package) орнату
+ChronyS пакетін (package) орнату
+
+Package атауы: chrony
+Daemon/Service атауы: chronyd
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
