@@ -182,6 +182,7 @@ Daemon-ды қайта жүктеу және ...
 $ sudo systemctl restart chronyd
 $ sudo systemctl status chronyd
 ```
+![images](images/ubuntu_ntp_systemctl_status_chronyd.png)
 
 ```shell
 $ ss -tulpn
@@ -193,14 +194,22 @@ $ netstat -tulpn
 Нәтижені тексеру
 ```shell
 $ sudo chronyc sources -v
+```
+![images](images/ubuntu_ntp_chronyc_sources_verbose.png)
+```shell
 $ sudo chronyc tracking
+```
+![images](images/ubuntu_ntp_chronyc_tracking.png)
+```shell
 $ sudo chronyc activity
 ```
+![images](images/ubuntu_ntp_chronyc_activity.png)
 
 ```shell
 $ sudo apt install ntpdate
 $ sudo ntpdate -q 80.241.0.72
 ```
+![images](images/ubuntu_ntp_ntpdate_80.241.0.72.png)
 
 ## Step2: Configure NTP Client on Huawei VRP (Router, Switch)
 
