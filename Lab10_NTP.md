@@ -165,11 +165,15 @@ Verify the Configuration
 <EdgeR1> display clock
 ```
 
-**NTP серверін іске қосу**
+**NTP қызметін іске қосу**
+```shell
+ntp-service enable
+```
+
+**NTP серверін құру**
 
 1-әдіс: LOCAL-ды құрылғының уақытын NTP сервер ретінде қолдану
 ```shell
-ntp-service enable
 ntp-service refclock-master 2                   // NTP сервер болу, stratum 2
 ```
 
@@ -225,7 +229,13 @@ display clock
 <Huawei> clock timezone Almaty add 05:00:00
 немесе
 <Huawei> clock timezone KZ add 5
+
 <Huawei> display clock
+```
+
+**NTP қызметін іске қосу**
+```shell
+ntp-service enable
 ```
 
 **NTP аутентификация**
@@ -239,11 +249,16 @@ ntp-service reliable authentication-keyid 1
 
 **NTP сервермен байланыс орнату**
 ```shell
-ntp-service enable
 ntp-service unicast-server 10.1.77.1 authentication-keyid 1
 ```
 > *NTP аутентификация қолданбаған жағдайда NTP сервермен байланыс орнату*  
 > ntp-service unicast-server 10.1.77.1  
+
+**Source interface-ті көрсету (сұраныс жіберетін интерфейс)**
+```shell
+[R1] ntp-service source-interface g0/0/0
+[S1] ntp-service source-interface Vlanif1
+```
 
 ```shell
 display cu | include ntp-service
