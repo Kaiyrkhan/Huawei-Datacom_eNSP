@@ -75,8 +75,14 @@ student@ubuntu:~$ networkctl status
 Ping from Ubuntu to Host Machine (Loopback 1)
 ```shell
 student@ubuntu:~$ ping -c4 172.16.128.254
+ 4 packets transmitted, 0 received, 100% packet loss, time 3058ms
 ```
 Windows+R ➜ Turn off Windows Defender Firewall  
 ![images](images/windows_firewall_on_to_off.png)
+
+```shell
+student@ubuntu:~$ ping -c4 172.16.128.254
+ 64 bytes from 172.16.128.254: icmp_seq=1 ttl=128 time=0.230 ms
+```
 
 FreeRADIUS пакеттін (package) орнату
