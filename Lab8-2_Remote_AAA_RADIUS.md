@@ -18,6 +18,16 @@
 | debian       | Network Engineer | Linux            | 172.16.128.102 /24  |
 | Host Machine | Bridge           | Windows          | 172.16.128.254 /24  |
 
+| Device       | Role             | interface | IP Address / Prefix | Operating System |
+| ------------ | ---------------- | --------- | ------------------- | ---------------- |
+| Ubuntu       | RADIUS Server    | ens34     | 172.16.128.10 /24   | Linux            |
+|              |                  | ens32     | DHCP Assigned       |                  |
+| R1           | RADIUS Client    | g0/0/0    | 172.16.128.11 /24   | Huawei VRP       |
+| R2           | RADIUS Client    | g0/0/0    | 172.16.128.12 /24   | Huawei VRP       |
+| R3           | Network Engineer | g0/0/0    | 172.16.128.101 /24  | Huawei VRP       |
+| Debian       | Network Engineer | ens34     | 172.16.128.102 /24  | Linux            |
+| Host Machine | Bridge           | Loopback1 | 172.16.128.254 /24  | Windows          |
+
 ## Scenario (RADIUS Client):
 1) Basic Device Configuration
      - Configure the IP Address
