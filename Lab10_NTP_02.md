@@ -3,11 +3,11 @@
 ### 🖧 Network Topology (желі топологиясы)
 ![Topology](images/Lab10_NetworkTopology_NTP.png) 
 
-| Device Name | Role       | IP Address / Prefix |
-| ----------- | ---------- | ------------------- |
-| EdgeR1      | NTP Server | 10.1.77.1 /24       |
-| R1          | NTP Client | 10.1.77.101 /24     |
-| S1          | NTP Client | 10.1.77.102 /24     |
+| Device | Role       | IP Address / Prefix |
+| ------ | ---------- | ------------------- |
+| EdgeR1 | NTP Server | 10.1.77.1 /24       |
+| R1     | NTP Client | 10.1.77.101 /24     |
+| S1     | NTP Client | 10.1.77.102 /24     |
 
 
 ## Basic Device Configuration
