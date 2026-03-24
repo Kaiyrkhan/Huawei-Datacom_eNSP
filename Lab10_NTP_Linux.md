@@ -113,7 +113,7 @@ $ timedatectl status
 
 > NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
 
-> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
+> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP серверлердің DNS атауын енгіземіз!  
 
 ```shell
 $ sudo nano /etc/chrony/chrony.conf
