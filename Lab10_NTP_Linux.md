@@ -253,10 +253,10 @@ display clock
 ```shell
 display ntp-service status
 ```
-![images](images/huawei_display_ntp-service_status_router.png)
-![images](images/huawei_display_ntp-service_status_switch.png)
+![images](images/huawei_display_ntp-service_status_router.png)  
+![images](images/huawei_display_ntp-service_status_switch.png)  
 ```shell
 display ntp-service sessions
 ```
-![images](images/huawei_display_ntp-service_sessions_router.png)
-![images](images/huawei_display_ntp-service_sessions_switch.png)
+![images](images/huawei_display_ntp-service_sessions_router.png)  
+![images](images/huawei_display_ntp-service_sessions_switch.png)  
