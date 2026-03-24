@@ -57,9 +57,9 @@ CTRL+O, ENTER, CTRL+X
 ![images](images/ubuntu_50-cloud-init_yaml.png)
 
 ```shell
-student@ubuntu:~$ sudo netplan apply
-немесе
 student@ubuntu:~$ sudo netplan try
+немесе
+student@ubuntu:~$ sudo netplan apply
 ```
 
 ```shell
