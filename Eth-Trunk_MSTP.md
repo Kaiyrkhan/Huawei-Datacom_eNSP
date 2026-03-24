@@ -60,8 +60,12 @@ Step4: Тексеру (Verification)
 display eth-trunk 1
 
 display stp brief
+
 display stp instance 1 brief
 display stp instance 2 brief
+
+display stp vlan 10
+display stp vlan 20
 ```
 
 ```shell
