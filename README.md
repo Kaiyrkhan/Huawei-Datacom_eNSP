@@ -25,4 +25,4 @@
 16) ReView
 
 IPv4 Addressing and Subnetting  
-Packet Forwarding (Default Gateway  
+Packet Forwarding (Default Gateway)  
