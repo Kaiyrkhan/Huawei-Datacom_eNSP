@@ -85,19 +85,30 @@ student@ubuntu:~$ ping -c4 172.16.128.254
  64 bytes from 172.16.128.254: icmp_seq=1 ttl=128 time=0.230 ms
 ```
 
-ChronyS пакетін (package) орнату
+**Chrony пакетін (package) орнату**
 
-Package атауы: chrony
-Daemon/Service атауы: chronyd
+> Package атауы: **chrony**  
+> Daemon/Service атауы: **chronyd**  
+
+> **chronyd** – the actual daemon to sync and serve via the Network Time Protocol  
+> **chronyc** – command-line interface for the chrony daemon  
 
 ```shell
+$ sudo apt update 
+$ sudo apt install chrony
 ```
 
 ```shell
+$ sudo systemctl status chronyd
 ```
 
 ```shell
+$ ss -tulpn
+$ netstat -tulpn
 ```
+
+> NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
+> Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
 ```shell
 ```
