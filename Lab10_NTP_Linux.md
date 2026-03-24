@@ -161,6 +161,7 @@ $ sudo nano /etc/chrony/chrony.keys
 
 CTRL+O, ENTER, CTRL+X
 ```
+> ЕСКЕРТУ: мұндағы, "MD5" **бас әріппен** жазылуы міндетті!  
 
 Firewall конфигурациялау 
 ```shell
