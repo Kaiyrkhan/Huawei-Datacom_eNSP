@@ -24,5 +24,5 @@
 15) Network Automation. Ansible
 16) ReView
 
-IPv4 Addressing and Subnetting
-Packet Forwarding (Default Gateway)
+IPv4 Addressing and Subnetting  
+Packet Forwarding (Default Gateway  
