@@ -16,13 +16,13 @@
       - Local AAA;
       - Remote AAA (HWTACACS, RADIUS).
 9) Network Address Translation (NAT)
-10) Network Services (DHCP, HTTP, DNS, NTP, FTP, TFTP)
+10) Network Services (DHCP, HTTP, DNS, NTP, FTP, TFTP, Telnet, SSH)
 11) Wireless LAN (WLAN)
 12) WAN Technologies. HDLC and PPP
-13) IPv6 Addressing and OSPFv3
-14) Network Automation. Python
-15) Network Automation. Ansible
-16) ReView
+13) Network Automation. Python
+14) Network Automation. Ansible
+15) ReView
 
 IPv4 Addressing and Subnetting  
 Packet Forwarding (Default Gateway)  
+IPv6 Addressing and OSPFv3, DHCPv6, SLAAC  
