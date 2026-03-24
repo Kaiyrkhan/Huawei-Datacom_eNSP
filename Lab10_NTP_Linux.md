@@ -203,6 +203,13 @@ $ sudo ntpdate -q 80.241.0.72
 
 ## Step2: Configure NTP Client on Huawei VRP (Router, Switch)
 
+```shell
+[R1] ping 172.16.128.10
+ Reply from 172.16.128.10: bytes=56 Sequence=3 ttl=64 time=10 ms
+[S1] ping 172.16.128.10
+ Reply from 172.16.128.10: bytes=56 Sequence=4 ttl=64 time=40 ms
+```
+
 **NTP қызметін іске қосу**
 ```shell
 ntp-service enable
