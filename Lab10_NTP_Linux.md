@@ -193,6 +193,7 @@ udp    -        0.0.0.0:123           0.0.0.0:*
 ```
 ```shell
 $ sudo apt install -y net-tools
+
 $ netstat -tulpn
 Proto  Local Address  Foreign Address   State
 udp    0.0.0.0:123    0.0.0.0:*         -
@@ -217,9 +218,33 @@ $ sudo ntpdate -q 80.241.0.72
 
 ## Step2: Configure NTP Client on Huawei VRP (Router, Switch)
 
+**Configure the IP Address**
+```shell
+<Huawei> system-view
+[Huawei] sysname R1
+[R1]
+
+int g0/0/0
+ ip address 172.16.128.11 24
+ quit
+display ip int brief
+```
 ```shell
 [R1] ping 172.16.128.10
  Reply from 172.16.128.10: bytes=56 Sequence=3 ttl=64 time=10 ms
+```
+
+```shell
+<Huawei> system-view
+[Huawei] sysname S1
+[S1]
+
+int Vlanif 1
+ ip address 172.16.128.12 24
+ quit
+display ip int brief
+```
+```shell
 [S1] ping 172.16.128.10
  Reply from 172.16.128.10: bytes=56 Sequence=4 ttl=64 time=40 ms
 ```
