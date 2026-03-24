@@ -248,14 +248,15 @@ ntp-service unicast-server 172.16.128.10 authentication-keyid 1
 
 **Нәтижені тексеру**
 ```shell
-display ntp-service status
-display ntp-service sessions
 display clock
 ```
-
 ```shell
-[Huawei] display ntp-service status
- clock status: synchronized 
- clock stratum: 3 
- reference clock ID: 172.16.128.10
+display ntp-service status
 ```
+![images](images/huawei_display_ntp-service_status_router.png)
+![images](images/huawei_display_ntp-service_status_switch.png)
+```shell
+display ntp-service sessions
+```
+![images](images/huawei_display_ntp-service_sessions_router.png)
+![images](images/huawei_display_ntp-service_sessions_switch.png)
