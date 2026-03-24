@@ -176,9 +176,12 @@ $ sudo ufw reload
 $ sudo ufw status verbose
 ```
 
-Daemon-ды қайта жүктеу және ...
+Daemon-ды қайта жүктеу
 ```shell
 $ sudo systemctl restart chronyd
+немесе
+$ sudo systemctl reload chronyd
+
 $ sudo systemctl status chronyd
 ```
 ![images](images/ubuntu_ntp_systemctl_status_chronyd.png)
@@ -187,7 +190,8 @@ $ sudo systemctl status chronyd
 $ ss -tulpn
 Netid  State    Local Address:Port    Peer Address:Port
 udp    -        0.0.0.0:123           0.0.0.0:*
-
+```
+```shell
 $ sudo apt install -y net-tools
 $ netstat -tulpn
 Proto  Local Address  Foreign Address   State
