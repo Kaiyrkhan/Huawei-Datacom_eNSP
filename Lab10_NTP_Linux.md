@@ -1,4 +1,4 @@
-# Configure NTP Server on Linux
+# Configure NTP Server on Ubuntu
 
 ### 🖧 Network Topology (желі топологиясы)
 ![Topology](images/Lab10_NetworkTopology_NTP_Linux.png)  
@@ -13,10 +13,10 @@
 | Host Machine | Bridge     | Loopback1 | 172.16.128.254 /24  | Windows          |
 
 ### Scenario
-1) Configure NTP Server on Linux;
+1) Configure NTP Server on Ubuntu;
 2) Configure NTP Client on Huawei VRP.
 
-## Configure NTP Server on Linux
+## Step1: Configure NTP Server on Ubuntu
 
 VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ ...  
 ![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
@@ -182,22 +182,39 @@ $ netstat -tulpn
 $ sudo chronyc sources -v
 $ sudo chronyc tracking
 $ sudo chronyc activity
+```
 
+```shell
 $ sudo apt install ntpdate
 $ sudo ntpdate -q 80.241.0.72
 ```
 
+## Step2: Configure NTP Client on Huawei VRP (Router, Switch)
+
+NTP қызметін қосу
 ```shell
+ntp-service enable
 ```
 
+NTP сервермен байланыс орнату
 ```shell
+ntp-service unicast-server 172.16.128.10
 ```
 
+Source interface көрсету
 ```shell
+[R1] ntp-service source-interface g0/0/0
+
+[S1] ntp-service source-interface Vlanif1
 ```
 
+Нәтижені тексеру
 ```shell
+display ntp-service status
+display ntp-service sessions
+display clock
 ```
 
+NTP аутентификация
 ```shell
 ```
