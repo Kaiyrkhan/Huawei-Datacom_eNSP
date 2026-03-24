@@ -107,16 +107,16 @@ $ ss -tulpn
 $ netstat -tulpn
 ```
 
+Уақыт белдеуін (Time Zone) өзгерту
+```shell
+$ sudo timedatectl set-timezone Asia/Almaty
+$ timedatectl status
+```
+
 **NTP серверді конфигурациялау**
 
 > NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
 > Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
-
-```shell
-Уақыт белдеуін (Time Zone) өзгерту
-$ sudo timedatectl set-timezone Asia/Almaty
-$ timedatectl status
-```
 
 > артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
 
