@@ -12,11 +12,10 @@
 | S1     | NTP Client | Vlanif1   | 172.16.128.12 /24  | 172.16.128.254  |
 
 ### Scenario
-1) Configure the IP Address;
-2) Configure NTP Server on Linux;
-3) Configure NTP Client on Huawei VRP.
+1) Configure NTP Server on Linux;
+2) Configure NTP Client on Huawei VRP.
 
-## NTP Server (Linux) конфигурациясы
+## Configure NTP Server on Linux
 
 VMware Workstation Pro ➜ Virtual Machine Settings ➜ Add Hardware Wizard ➜ ...  
 ![images](images/VMwareWorkstationPro_NetworkAdapter2.png)
