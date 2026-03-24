@@ -9,15 +9,6 @@
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_RADIUS.png)  
 
-| Device Name  | Role             | Operating System | IP Address / Prefix |
-| ------------ | ---------------- | ---------------- | ------------------- |
-| ubuntu       | RADIUS Server    | Linux            | 172.16.128.10 /24   |
-| R1           | RADIUS Client    | Huawei VRP       | 172.16.128.11 /24   |
-| R2           | RADIUS Client    | Huawei VRP       | 172.16.128.12 /24   |
-| R3           | Network Engineer | Huawei VRP       | 172.16.128.101 /24  |
-| debian       | Network Engineer | Linux            | 172.16.128.102 /24  |
-| Host Machine | Bridge           | Windows          | 172.16.128.254 /24  |
-
 | Device       | Role             | interface | IP Address / Prefix | Operating System |
 | ------------ | ---------------- | --------- | ------------------- | ---------------- |
 | Ubuntu       | RADIUS Server    | ens34     | 172.16.128.10 /24   | Linux            |
@@ -26,6 +17,7 @@
 | R2           | RADIUS Client    | g0/0/0    | 172.16.128.12 /24   | Huawei VRP       |
 | R3           | Network Engineer | g0/0/0    | 172.16.128.101 /24  | Huawei VRP       |
 | Debian       | Network Engineer | ens34     | 172.16.128.102 /24  | Linux            |
+|              |                  | ens32     | DHCP Assigned       |                  |
 | Host Machine | Bridge           | Loopback1 | 172.16.128.254 /24  | Windows          |
 
 ## Scenario (RADIUS Client):
