@@ -92,7 +92,7 @@ student@ubuntu:~$ ping -c4 172.16.128.254
 Windows+R ➜ Turn off Windows Defender Firewall  
 ![images](images/windows_firewall_on_to_off.png)
 
-FreeRADIUS пакеттін (package) орнату
+FreeRADIUS пакетін (package) орнату
 ```shell
 student@ubuntu:~$ sudo apt update
 student@ubuntu:~$ sudo apt install -y freeradius freeradius-utils
@@ -107,7 +107,7 @@ student@ubuntu:~$ sudo systemctl is-enabled freeradius
 student@ubuntu:~$ sudo systemctl enable freeradius
 ```
 
-FreeRADIUS пакеттінің конфигурациялық файлдар тізімі
+FreeRADIUS пакетінің конфигурациялық файлдар тізімі
 ```shell
 student@ubuntu:~$ sudo ls -l /etc/freeradius/3.0/
 ```
