@@ -187,7 +187,7 @@ $ sudo systemctl status chronyd
 ```shell
 $ ss -tulpn
 Netid  State    Local Address:Port    Peer Address:Port
-udp    -        0.0.0.0:123           0.0.0.0:
+udp    -        0.0.0.0:123           0.0.0.0:*
 
 $ sudo apt install -y net-tools
 $ netstat -tulpn
