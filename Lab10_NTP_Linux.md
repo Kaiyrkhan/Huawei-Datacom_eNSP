@@ -208,11 +208,6 @@ $ sudo ntpdate -q 80.241.0.72
 ntp-service enable
 ```
 
-**NTP сервермен байланыс орнату**
-```shell
-ntp-service unicast-server 172.16.128.10 authentication-keyid 1
-```
-
 **NTP аутентификация**
 ```shell
 ntp-service authentication enable
@@ -221,6 +216,11 @@ ntp-service reliable authentication-keyid 1
 ```
 > *Нақты физикалық құрылғыда **"hmac-sha256"** аутентификация режимін қолдану ұсынылады!*  
 > **Мысалы:** ntp-service authentication-keyid 1 authentication-mode hmac-sha256 cipher Datacom@123  
+
+**NTP сервермен байланыс орнату**
+```shell
+ntp-service unicast-server 172.16.128.10 authentication-keyid 1
+```
 
 **Source interface көрсету**
 ```shell
