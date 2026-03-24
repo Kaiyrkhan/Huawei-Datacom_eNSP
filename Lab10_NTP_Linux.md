@@ -118,6 +118,8 @@ $ sudo timedatectl set-timezone Asia/Almaty
 $ timedatectl status
 ```
 
+> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
+
 ```shell
 $ sudo nano /etc/chrony/chrony.conf
 #pool 2.debian.pool.ntp.org iburst
@@ -141,7 +143,6 @@ rtcsync
 # Уақыт дәлдігін тез реттеу
 makestep 1.0 3
 ```
-> "#" Comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
 
 ```shell
 ```
