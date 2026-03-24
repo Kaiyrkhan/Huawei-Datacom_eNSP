@@ -274,6 +274,10 @@ ntp-service unicast-server 172.16.128.10 authentication-keyid 1
 [S1] ntp-service source-interface Vlanif1
 ```
 
+```shell
+display cu | include ntp-service
+```
+
 **Нәтижені тексеру**
 ```shell
 display clock
