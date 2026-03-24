@@ -118,8 +118,6 @@ $ timedatectl status
 > NTP Pool Time Servers Link: https://www.ntppool.org/zone/kz  
 > Time Zones in Kazakhstan https://www.timeanddate.com/time/zone/kazakhstan  
 
-> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
-
 ```shell
 $ sudo nano /etc/chrony/chrony.conf
 #pool 2.debian.pool.ntp.org iburst
@@ -137,11 +135,54 @@ pool time.cloudflare.com iburst
 logdir /var/log/chrony
 log measurements statistics tracking
 
-# RTC синхрондау
+# RTC sync (синхрондау)
 rtcsync
 
-# Уақыт дәлдігін тез реттеу
+# Time adjustment (уақыт дәлдігін реттеу)
 makestep 1.0 3
+
+# Listen on all interfaces
+bindcmdaddress 0.0.0.0
+bindcmdaddress ::
+
+# Allow NTP client access from Local Network
+allow 172.16.128.0/24
+```
+> артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!  
+
+NTP портын (123/UDP) ашу
+```shell
+$ sudo ufw enable
+$ sudo ufw allow from 172.16.128.0/24 to any port 123 proto udp
+$ sudo ufw reload
+```
+
+Daemon-ды қайта жүктеу және ...
+```shell
+$ sudo systemctl restart chronyd
+$ sudo systemctl enable chrony
+```
+
+Нәтижені тексеру
+```shell
+$ sudo chronyc sources -v
+$ sudo chronyc tracking
+$ sudo chronyc activity
+
+$ sudo apt install ntpdate
+$ sudo ntpdate -q 80.241.0.72
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
 
 ```shell
