@@ -249,6 +249,15 @@ display ip int brief
  Reply from 172.16.128.10: bytes=56 Sequence=4 ttl=64 time=40 ms
 ```
 
+**Уақыт белдеуін өзгерту (міндетті емес, ұсынылады)**
+```shell
+<Huawei> clock timezone Almaty add 05:00:00
+немесе
+<Huawei> clock timezone KZ add 5
+
+<Huawei> display clock
+```
+
 **NTP қызметін іске қосу**
 ```shell
 ntp-service enable
