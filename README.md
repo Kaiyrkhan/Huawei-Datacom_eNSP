@@ -8,6 +8,9 @@
       - Static Routing;
       - Dynamic Routing. OSPFv2.
 3) Virtual LAN (VLAN)
+      - Access and Trunk Port;
+      - Hybrid Port;
+      - inter-VLAN Routing. 
 4) Spanning Tree Protocol (STP)
 5) Link Aggregation. Eth-Trunk
 6) Virtual Router Redundancy Protocol (VRRP)
