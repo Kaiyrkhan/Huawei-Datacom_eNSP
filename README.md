@@ -12,9 +12,16 @@
       - Hybrid Port;
       - inter-VLAN Routing. 
 4) Spanning Tree Protocol (STP)
+      - Spanning Tree Protocol (STP);
+      - Rapid Spanning Tree Protocol (RSTP);
+      - Multiple Spanning Tree Protocol (MSTP).
 5) Link Aggregation. Eth-Trunk
+      - Manual Mode;
+      - LACP Mode.
 6) Virtual Router Redundancy Protocol (VRRP)
 7) Access Control List (ACL)
+      - Basic ACL;
+      - Advanced ACL
 8) AAA (Authentication, Authorization and Accounting)
       - Local AAA;
       - Remote AAA (HWTACACS, RADIUS).
