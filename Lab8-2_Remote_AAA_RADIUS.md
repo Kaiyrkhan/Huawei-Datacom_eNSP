@@ -6,8 +6,9 @@
 > Authorization - User Permissions (қолданушының жүйеде жұмыс жасау қолжетімділігі немесе құқығы)  
 > Accounting - User Actions Logging (қолданушының жүйеде жасаған әрекеттері)  
 
-> HWTACACS - желілік құрылғылардың (Router, Switch) аутентификациясына арналған.  
-> RADIUS - WiFi, VPN аутентификациясына арналған.  
+Негізгі қолдану аясы
+> HWTACACS - желілік құрылғыларды (Router, Switch) басқару  
+> RADIUS - қолданушылардың желіге кіруі (WiFi, VPN)  
 
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_RADIUS.png)  
