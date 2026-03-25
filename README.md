@@ -26,6 +26,10 @@
       - Local AAA;
       - Remote AAA (HWTACACS, RADIUS).
 9) Network Address Translation (NAT)
+      - Static NAT;
+      - Dynamic NAT;
+      - NAPT and Easy IP (Port Address Translation);
+      - NAT Server (Port Forwarding).
 10) Network Services (DHCP, HTTP, DNS, NTP, FTP, TFTP, Telnet, SSH)
 11) Wireless LAN (WLAN)
 12) WAN Technologies. HDLC and PPP
