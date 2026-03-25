@@ -24,7 +24,7 @@
       - Advanced ACL
 8) AAA (Authentication, Authorization and Accounting)
       - Local AAA;
-      - Remote AAA (HWTACACS (Network Device), RADIUS (WiFi, VPN) + OpenLDAP).
+      - Remote AAA (HWTACACS/RADIUS + OpenLDAP).
 9) Network Address Translation (NAT)
       - Static NAT;
       - Dynamic NAT;
