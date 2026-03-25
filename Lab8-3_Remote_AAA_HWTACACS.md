@@ -6,8 +6,8 @@ AAA (Authentication, Authorization, Accounting):
 > Accounting - User Actions Logging (қолданушының жүйеде жасаған әрекеттері)  
 
 Негізгі қолдану аясы:
-> HWTACACS - желілік құрылғыларды (Router, Switch) басқару  
-> RADIUS - қолданушылардың желіге кіруі (WiFi, VPN)  
+> HWTACACS - желілік құрылғыларды басқару (SSH/Telnet)  
+> RADIUS - қолданушылардың желіге (WiFi, VPN) кіруі  
 
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_HWTACACS.png)  
