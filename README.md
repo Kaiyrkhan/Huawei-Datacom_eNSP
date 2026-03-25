@@ -54,4 +54,5 @@ Packet Forwarding (Default Gateway)
 IPv6 Addressing and OSPFv3, DHCPv6, SLAAC  
 
 Monitoring Systems (LibreNMS, Icinga, Zabbix)  
+Centralized Logging System (syslog-ng, rsyslog, Graylog)  
 Domain Controller (Samba, Active Directory, LDAP)  
