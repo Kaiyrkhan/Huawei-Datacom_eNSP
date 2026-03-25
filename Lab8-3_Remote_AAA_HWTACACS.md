@@ -1,5 +1,13 @@
 # Remote AAA configuration using HWTACACS
-> AAA (Authentication, Authorization, Accounting)  
+
+AAA (Authentication, Authorization, Accounting):
+> Authentication - User identity (қолданушының жеке басын растау)  
+> Authorization - User Permissions (қолданушының жүйеде жұмыс жасау қолжетімділігі немесе құқығы)  
+> Accounting - User Actions Logging (қолданушының жүйеде жасаған әрекеттері)  
+
+Негізгі қолдану аясы:
+> HWTACACS - желілік құрылғыларды (Router, Switch) басқару  
+> RADIUS - қолданушылардың желіге кіруі (WiFi, VPN)  
 
 ### 🖧 Network Topology
 ![Topology](images/Lab8_NetworkTopology_Remote_AAA_HWTACACS.png)  
