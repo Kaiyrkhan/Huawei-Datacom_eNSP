@@ -50,4 +50,6 @@
 Network Reference Model  
 IPv4 Addressing and Subnetting  
 Packet Forwarding (Default Gateway)  
+
+Monitoring Systems (LibreNMS, Icinga, Zabbix)  
 IPv6 Addressing and OSPFv3, DHCPv6, SLAAC  
