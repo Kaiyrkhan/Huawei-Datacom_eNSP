@@ -32,9 +32,19 @@
       - NAT Server (Port Forwarding).
 10) Network Services (DHCP, HTTP, DNS, NTP, FTP, TFTP, Telnet, SSH)
 11) Wireless LAN (WLAN)
-12) WAN Technologies. HDLC and PPP
-13) Network Automation. Python
-14) Network Automation. Ansible
+      - Access Controller (AC);
+      - Access Point (AP);
+      - PoE Switch;
+      - Station (STA).
+12) WAN Technologies
+      - HDLC;
+      - PPP (PPP PAP/CHAP Authentication);
+      - PPPoE;
+      - Frame Relay.
+13) IPv6 Basics
+14) Network Automation
+      - Python;
+      - Ansible.
 15) ReView
 
 Network Reference Model  
