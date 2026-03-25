@@ -23,6 +23,7 @@
 14) Network Automation. Ansible
 15) ReView
 
+Network Reference Model  
 IPv4 Addressing and Subnetting  
 Packet Forwarding (Default Gateway)  
 IPv6 Addressing and OSPFv3, DHCPv6, SLAAC  
