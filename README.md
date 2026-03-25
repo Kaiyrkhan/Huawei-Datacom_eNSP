@@ -8,8 +8,8 @@
       - Static Routing;
       - Dynamic Routing. OSPFv2.
 3) Virtual LAN (VLAN)
-      - Access and Trunk Port;
-      - Hybrid Port;
+      - Trunk Port;
+      - Access and Hybrid Port;
       - inter-VLAN Routing. 
 4) Spanning Tree Protocol (STP)
       - Spanning Tree Protocol (STP);
