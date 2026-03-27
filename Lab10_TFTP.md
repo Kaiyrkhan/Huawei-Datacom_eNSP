@@ -69,12 +69,12 @@ tftp> get file1
 tftp> put file2
 tftp> quit
 ```
-> get - Download file from TFTP server
-> put - Upload file from TFTP server
+> get - Download file from TFTP server  
+> put - Upload file from TFTP server  
 
 Example: Cisco IOS
 ```shell
-copy running-config tftp:
+R1# copy running-config tftp:
 
 student@tftp-server:~$ ls -l /srv/tftp/
 ```
