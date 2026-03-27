@@ -1,4 +1,4 @@
-# Configure TFTP Server on Ubuntu and TFTP Client on Huawei VRP
+# Configure TFTP Server on Ubuntu
 
 ```shell
 ```
