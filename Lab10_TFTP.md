@@ -1,18 +1,82 @@
-# Configure TFTP Server on Ubuntu
+# Configure TFTP Server on Debian
+
+About the System
+```shell
+$ uname -rs
+$ lsb_release -a
+$ cat /etc/debian_version
+```
+
+**Step1: installation of TFTP Server**
+
+> **tftpd-hpa** – HPA's TFTP Server  
+> **tftp-hpa** – HPA's TFTP Client  
 
 ```shell
+$ sudo apt update
+$ sudo apt install -y tftpd-hpa tftp-hpa
+```
+
+**Step2: Configure the TFTP Server**
+```shell
+$ sudo nano /etc/default/tftpd-hpa
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/srv/tftp"
+TFTP_ADDRESS="0.0.0.0:69"
+TFTP_OPTIONS="--secure"
+```
+> **TFTP root directory:** /srv/tftp  
+
+```shell
+$ sudo systemctl status tftpd-hpa
+$ sudo systemctl is-enabled tftpd-hpa
+```
+
+**Firewall Configuration**
+```shell
+-A INPUT -s 192.168.1.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
+-A INPUT -s 192.168.1.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
 ```
 
 ```shell
+$ ss -tulpn
+
+$ sudo apt install -y net-tools
+$ netstat -tulpn
 ```
 
 ```shell
+$ sudo chown -R tftp:tftp /srv/tftp
+немесе
+$ sudo chown -R nobody:nogroup /srv/tftp
+
+$ sudo chmod 777 -R tftp /srv/tftp
+$ ls -ld /srv/tftp
+$ ls -lR /srv/tftp
 ```
 
+Testing the TFTP Server
 ```shell
+student@tftp-server:~$ touch /srv/tftp/file1
+student@tftp-client:~$ touch file2
 ```
-
+Download and Upload files
 ```shell
+tftp 172.16.128.69
+tftp> ?
+tftp> verbose
+tftp> get file1
+tftp> put file2
+tftp> quit
+```
+> get - Download file from TFTP server
+> put - Upload file from TFTP server
+
+Example: Cisco IOS
+```shell
+copy running-config tftp:
+
+student@tftp-server:~$ ls -l /srv/tftp/
 ```
 
 **DHCP option 150 and DHCP option 66**
