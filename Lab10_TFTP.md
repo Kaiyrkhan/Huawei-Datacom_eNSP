@@ -19,6 +19,7 @@ $ sudo apt install -y tftpd-hpa tftp-hpa
 > **tftp-hpa** – HPA's TFTP Client  
 
 ```shell
+Status the tftpd-hpa Service/Daemon
 $ sudo systemctl status tftpd-hpa
 $ sudo systemctl is-enabled tftpd-hpa
 ```
