@@ -40,7 +40,6 @@ TFTP_OPTIONS="--secure"
 to
 TFTP_OPTIONS="--secure --create --listen --verbose" 
 ```
-> TFTP_OPTIONS="-s -c -l -v"  
 
 Modify Permission/Ownership on TFTP Root Directory
 ```shell
