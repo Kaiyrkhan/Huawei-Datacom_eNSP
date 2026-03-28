@@ -101,6 +101,8 @@ student@tftp-server:~$ touch /srv/tftp/f1.conf
 student@tftp-server:~$ tftp 127.0.0.1 -c get f1.conf
 student@tftp-server:~$ ls -l
 student@tftp-server:~$ pwd
+
+student@tftp-server:~$ sudo journalctl -u tftpd-hpa -f
 ```
 
 ```shell
