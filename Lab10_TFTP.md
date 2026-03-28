@@ -8,6 +8,7 @@ $ uname -rs
 Linux 6.8.0-101-generic x86_64 GNU/Linux
 $ lsb_release -a
 Ubuntu 24.04.4 LTS
+Codename: noble
 ```
 
 **Step1: installation of TFTP Server**
