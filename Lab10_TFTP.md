@@ -30,6 +30,9 @@ active (running)
 $ sudo systemctl is-enabled tftpd-hpa
 enabled
 ```
+```shell
+$ sudo journalctl -u tftpd-hpa -f
+```
 
 **Step2: Configure the TFTP Server**
 
@@ -78,10 +81,6 @@ Restart the tftpd-hpa Service/Daemon
 $ sudo systemctl restart tftpd-hpa
 ```
 
-```shell
-$ sudo journalctl -u tftpd-hpa -f
-```
-
 **Step3: Configure the Firewall**
 
 ```shell
@@ -97,14 +96,6 @@ $ sudo ufw reload
 $ sudo ufw status
 ```
 
-**Қосымша ақпарат**
-```shell
-Configure iptables
--A INPUT -s 192.168.1.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
--A INPUT -s 192.168.1.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
-```
-> *Ескерту: Қосымша ақпаратты орындау міндетті емес!*  
-
 ```shell
 $ ss -tulpna
 ```
@@ -113,6 +104,14 @@ $ sudo apt install -y net-tools
 $ netstat -tulpna
 ```
 
+**Қосымша ақпарат**
+```shell
+Configure iptables
+-A INPUT -s 172.16.128.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
+-A INPUT -s 172.16.128.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
+```
+> *Ескерту: Қосымша ақпаратты орындау міндетті емес!*  
+
 **Step4: Testing the TFTP Server**
 
 Download and Upload files
@@ -120,12 +119,9 @@ Download and Upload files
 > put - Upload file from TFTP server  
 
 ```shell
-student@tftp-server:~$ touch /srv/tftp/f1.conf
-student@tftp-server:~$ tftp 127.0.0.1 -c get f1.conf
+student@tftp-server:~$ sudo touch /srv/tftp/f1.conf
+student@tftp-server:~$ tftp 172.16.128.10 -c get f1.conf
 student@tftp-server:~$ ls -l
-student@tftp-server:~$ pwd
-
-student@tftp-server:~$ sudo journalctl -u tftpd-hpa -f
 ```
 
 ```shell
