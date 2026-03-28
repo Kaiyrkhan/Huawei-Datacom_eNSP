@@ -124,6 +124,7 @@ student@tftp-server:~$ tftp 172.16.128.10 -c get f1.conf
 student@tftp-server:~$ ls -l
 ```
 
+Example: Debian Linux
 ```shell
 student@tftp-client:~$  sudo apt update
 student@tftp-client:~$  sudo apt install -y tftp-hpa
