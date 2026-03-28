@@ -68,6 +68,7 @@ $ sudo chmod -R 755 /srv/tftp
 $ ls -ld /srv/tftp
 ```
 
+Қосымша ақпарат
 ```shell
 $ getent passwd | grep tftp
 $ getent group | grep tftp
