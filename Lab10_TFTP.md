@@ -17,19 +17,32 @@ $ sudo apt update
 $ sudo apt install -y tftpd-hpa tftp-hpa
 ```
 
+```shell
+$ sudo systemctl status tftpd-hpa
+$ sudo systemctl is-enabled tftpd-hpa
+```
+
 **Step2: Configure the TFTP Server**
 ```shell
+Edit tftpd-hpa Configuration File
 $ sudo nano /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/srv/tftp"
 TFTP_ADDRESS="0.0.0.0:69"
 TFTP_OPTIONS="--secure"
+to
+TFTP_OPTIONS="--secure --create"
 ```
 > **TFTP root directory:** /srv/tftp  
 
 ```shell
-$ sudo systemctl status tftpd-hpa
-$ sudo systemctl is-enabled tftpd-hpa
+Modify Permissions on TFTP Root Directory
+$ sudo chown -R tftp /var/lib/tftpboot
+```
+
+```shell
+Restart the tftpd-hpa Service
+$ sudo systemctl restart tftpd-hpa
 ```
 
 **Firewall Configuration**
@@ -78,6 +91,8 @@ R1# copy running-config tftp:
 
 student@tftp-server:~$ ls -l /srv/tftp/
 ```
+
+## Additional Information
 
 **DHCP option 150 and DHCP option 66**
 
