@@ -96,7 +96,7 @@ $ sudo ufw status
 ```shell
 $ ss -tulpna
 немесе
-netstat -tulpna
+$ netstat -tulpna
 ```
 
 **Step4: Testing the TFTP Server**
