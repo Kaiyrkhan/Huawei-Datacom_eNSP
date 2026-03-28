@@ -33,7 +33,7 @@ TFTP_DIRECTORY="/srv/tftp"
 TFTP_ADDRESS="0.0.0.0:69"
 TFTP_OPTIONS="--secure"
 to
-TFTP_OPTIONS="--secure --create"
+TFTP_OPTIONS="--secure --create -l -s -v"
 ```
 > **TFTP root directory:** /srv/tftp  
 
