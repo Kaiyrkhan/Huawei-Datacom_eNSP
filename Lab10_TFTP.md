@@ -84,11 +84,8 @@ $ sudo systemctl restart tftpd-hpa
 **Step3: Configure the Firewall**
 
 ```shell
-Configure UFW
 $ sudo ufw enable
 
-$ sudo ufw allow 69/udp
-немесе
 $ sudo ufw allow from 172.16.128.0/24 to any port 69 proto udp
 $ sudo ufw deny 69/udp
 
@@ -98,19 +95,9 @@ $ sudo ufw status
 
 ```shell
 $ ss -tulpna
+немесе
+netstat -tulpna
 ```
-```shell
-$ sudo apt install -y net-tools
-$ netstat -tulpna
-```
-
-**Қосымша ақпарат**
-```shell
-Configure iptables
--A INPUT -s 172.16.128.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
--A INPUT -s 172.16.128.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
-```
-> *Ескерту: Қосымша ақпаратты орындау міндетті емес!*  
 
 **Step4: Testing the TFTP Server**
 
@@ -191,6 +178,12 @@ student@tftp-server:~$ ls -lh /srv/tftp/
 ```
 
 ## Additional Information
+
+**Configure iptables**
+```shell
+-A INPUT -s 172.16.128.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
+-A INPUT -s 172.16.128.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
+```
 
 **DHCP option 150 and DHCP option 66**
 
