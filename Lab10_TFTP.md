@@ -5,10 +5,15 @@
 About the System
 ```shell
 $ uname -rs
+Linux 6.8.0-101-generic x86_64 GNU/Linux
 $ lsb_release -a
+Ubuntu 24.04.4 LTS
 ```
 
 **Step1: installation of TFTP Server**
+
+>  Package атауы: tftpd-hpa  
+> Daemon/Service атауы: tftpd-hpa  
 
 ```shell
 $ sudo apt update
