@@ -38,7 +38,7 @@ Edit tftpd-hpa Configuration File
 $ sudo nano /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/srv/tftp"
-TFTP_ADDRESS="0.0.0.0:69"
+TFTP_ADDRESS="172.16.128.10:69"
 TFTP_OPTIONS="--secure"
 to
 TFTP_OPTIONS="--secure --create --listen --verbose" 
