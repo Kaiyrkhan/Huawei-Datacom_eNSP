@@ -162,7 +162,7 @@ tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server
 <Huawei> tftp 172.16.128.10 put vrpcfg.zip
 TFTP: Uploading the file successfully
 
-student@tftp-server:~$ ls -l /srv/tftp/
+student@tftp-server:~$ ls -lh /srv/tftp/
 -rw-rw-rw- 1 tftp tftp vrpcfg.zip
 ```
 
