@@ -1,4 +1,4 @@
-# Configure TFTP Server on Ubuntu
+# Configure TFTP Server on Debian/Ubuntu
 
 > TFTP – Trivial File Transfer Protocol  
 
