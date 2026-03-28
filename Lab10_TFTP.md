@@ -60,8 +60,8 @@ drwxr-xr-x 2 root nogroup /srv/tftp
 > TFTP Root Directory: **/srv/tftp**  немесе **/var/lib/tftpboot**  
 
 > Best practice (үздік тәжірибе) бойынша және Production ортасында ең дұрыс таңдау:  
->   - Linux дистрибутив RHEL/Rocky  болса, онда "/var/lib/tftpboot" дұрыс!  
->   - Linux дистрибутив Debian/Ubuntu болса, онда "/srv/tftp" дұрыс!  
+>   - Linux дистрибутив RHEL/Rocky  болса, онда "/var/lib/tftpboot" дұрыс.  
+>   - Linux дистрибутив Debian/Ubuntu болса, онда "/srv/tftp" дұрыс.  
 
 ```shell
 Modify Ownership
