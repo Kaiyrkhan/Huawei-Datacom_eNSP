@@ -36,12 +36,12 @@ to
 TFTP_OPTIONS="--secure --create -l -s -v"
 ```
 
-> TFTP Root Directory: **/srv/tftp**  немесе **/var/lib/tftpboot**  
+Modify Permission/Ownership on TFTP Root Directory
 ```shell
 $ sudo mkdir -p /srv/tftp
 ```
+> TFTP Root Directory: **/srv/tftp**  немесе **/var/lib/tftpboot**  
 
-Modify Permission/Ownership on TFTP Root Directory
 ```shell
 Modify Ownership
 $ sudo chown -R tftp /srv/tftp
