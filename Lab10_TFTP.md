@@ -140,7 +140,7 @@ tftp> quit
 
 Example: Huawei VRP
 ```shell
-<Huawei> tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server 
+tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server 
 
 <Huawei> tftp 172.16.128.69 get f1.conf
 <Huawei> dir
@@ -150,7 +150,7 @@ Example: Huawei VRP
 ```
 
 ```shell
-<Huawei> tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server  
+tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server  
 
 <Huawei> tftp 172.16.128.69 put vrpcfg.zip
 student@tftp-server:~$ ls -l /srv/tftp/
