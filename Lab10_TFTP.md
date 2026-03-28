@@ -41,7 +41,7 @@ Edit tftpd-hpa Configuration File
 $ sudo nano /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/srv/tftp"
-TFTP_ADDRESS="172.16.128.69:69"
+TFTP_ADDRESS="172.16.128.10:69"
 TFTP_OPTIONS="--secure"
 to
 TFTP_OPTIONS="--secure --create --listen --verbose" 
@@ -120,7 +120,7 @@ Download and Upload files
 
 ```shell
 student@tftp-server:~$ sudo touch /srv/tftp/f1.conf
-student@tftp-server:~$ tftp 172.16.128.69 -c get f1.conf
+student@tftp-server:~$ tftp 172.16.128.10 -c get f1.conf
 student@tftp-server:~$ ls -l
 ```
 
@@ -130,7 +130,7 @@ student@tftp-client:~$  sudo apt install -y tftp-hpa
 
 student@tftp-client:~$ touch f2.conf
 
-student@tftp-client:~$ tftp 172.16.128.69
+student@tftp-client:~$ tftp 172.16.128.10
 tftp> ?
 tftp> verbose
 tftp> get f1.conf
@@ -142,17 +142,18 @@ Example: Huawei VRP
 ```shell
 tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server 
 
-<Huawei> tftp 172.16.128.69 get f1.conf
+<Huawei> tftp 172.16.128.10 get f1.conf
+TFTP: Downloading the file successfully
 <Huawei> dir
 немесе
-<Huawei> tftp 172.16.128.69 get f1.conf f11.cfg
+<Huawei> tftp 172.16.128.10 get f1.conf f11.cfg
 <Huawei> dir
 ```
 
 ```shell
 tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server  
 
-<Huawei> tftp 172.16.128.69 put vrpcfg.zip
+<Huawei> tftp 172.16.128.10 put vrpcfg.zip
 student@tftp-server:~$ ls -l /srv/tftp/
 ```
 
@@ -163,18 +164,18 @@ R1(config)# ip tftp source-interface g0/0/1
 R1# dir ?
 R1# dir system:
 R1# copy running-config tftp:
-Address or name of remote host []? 172.16.128.69
+Address or name of remote host []? 172.16.128.10
 Destination filename [running-config]? R1-run-config
 
 R1# dir nvram:
 R1# copy startup-config tftp:
-Address or name of remote host []? 172.16.128.69
+Address or name of remote host []? 172.16.128.10
 Destination filename [startup-config]? R1-start-config
 
 R1# dir flash:
 R1# copy flash tftp:
 Source filename []? firmware-file-name.bin
-Address or name of remote host []? 172.16.128.69
+Address or name of remote host []? 172.16.128.10
 Destination filename [firmware-file-name.bin]? Enter
 
 student@tftp-server:~$ ls -lh /srv/tftp/
