@@ -66,6 +66,9 @@ $ sudo journalctl -u tftpd-hpa -f
 ```shell
 Configure UFW
 $ sudo ufw enable
+
+$ sudo ufw allow 69/udp
+немесе
 $ sudo ufw allow from 172.16.128.0/24 to any port 69 proto udp
 $ sudo ufw deny 69/udp
 
@@ -81,7 +84,8 @@ Configure iptables
 
 ```shell
 $ ss -tulpn
-
+```
+```shell
 $ sudo apt install -y net-tools
 $ netstat -tulpn
 ```
@@ -93,8 +97,8 @@ Download and Upload files
 > put - Upload file from TFTP server  
 
 ```shell
-student@tftp-server:~$ touch /srv/tftp/file1
-student@tftp-server:~$ tftp 127.0.0.1 -c get file1
+student@tftp-server:~$ touch /srv/tftp/f1.conf
+student@tftp-server:~$ tftp 127.0.0.1 -c get f1.conf
 student@tftp-server:~$ ls -l
 student@tftp-server:~$ pwd
 ```
@@ -103,14 +107,32 @@ student@tftp-server:~$ pwd
 student@tftp-client:~$  sudo apt update
 student@tftp-client:~$  sudo apt install -y tftp-hpa
 
-student@tftp-client:~$ touch file2
+student@tftp-client:~$ touch f2.conf
 
 student@tftp-client:~$ tftp 172.16.128.69
 tftp> ?
 tftp> verbose
-tftp> get file1
-tftp> put file2
+tftp> get f1.conf
+tftp> put f2.conf
 tftp> quit
+```
+
+Example: Huawei VRP
+```shell
+<Huawei> tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server 
+
+<Huawei> tftp 172.16.128.69 get f1.conf
+<Huawei> dir
+немесе
+<Huawei> tftp 172.16.128.69 get f1.conf f11.cfg
+<Huawei> dir
+```
+
+```shell
+<Huawei> tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server  
+
+<Huawei> tftp 172.16.128.69 put vrpcfg.zip
+student@tftp-server:~$ ls -l /srv/tftp/
 ```
 
 Example: Cisco IOS
