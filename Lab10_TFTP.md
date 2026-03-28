@@ -97,11 +97,13 @@ $ sudo ufw reload
 $ sudo ufw status
 ```
 
+**Қосымша ақпарат**
 ```shell
 Configure iptables
 -A INPUT -s 192.168.1.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
 -A INPUT -s 192.168.1.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
 ```
+> *Ескерту: Қосымша ақпаратты орындау міндетті емес!*  
 
 ```shell
 $ ss -tulpna
