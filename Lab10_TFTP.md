@@ -11,13 +11,12 @@ $ cat /etc/debian_version
 
 **Step1: installation of TFTP Server**
 
-> **tftpd-hpa** – HPA's TFTP Server  
-> **tftp-hpa** – HPA's TFTP Client  
-
 ```shell
 $ sudo apt update
 $ sudo apt install -y tftpd-hpa tftp-hpa
 ```
+> **tftpd-hpa** – HPA's TFTP Server  
+> **tftp-hpa** – HPA's TFTP Client  
 
 ```shell
 $ sudo systemctl status tftpd-hpa
