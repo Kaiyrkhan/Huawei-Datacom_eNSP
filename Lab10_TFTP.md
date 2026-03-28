@@ -26,7 +26,9 @@ $ sudo apt install -y tftpd-hpa tftp-hpa
 ```shell
 Status the tftpd-hpa Service/Daemon
 $ sudo systemctl status tftpd-hpa
+active (running)
 $ sudo systemctl is-enabled tftpd-hpa
+enabled
 ```
 
 **Step2: Configure the TFTP Server**
