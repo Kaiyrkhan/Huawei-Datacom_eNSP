@@ -151,10 +151,18 @@ TFTP: Downloading the file successfully
 ```
 
 ```shell
+<R1> save
+Are you sure to continue? (y/n)[n]: y
+<R1> dir
+vrpcfg.zip
+
 tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server  
 
 <Huawei> tftp 172.16.128.10 put vrpcfg.zip
+TFTP: Uploading the file successfully
+
 student@tftp-server:~$ ls -l /srv/tftp/
+-rw-rw-rw- 1 tftp tftp vrpcfg.zip
 ```
 
 Example: Cisco IOS
