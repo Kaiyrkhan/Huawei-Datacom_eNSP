@@ -1,4 +1,4 @@
-# Configure TFTP Server on Debian
+# Configure TFTP Server on Ubuntu
 
 > TFTP – Trivial File Transfer Protocol  
 
@@ -6,7 +6,6 @@ About the System
 ```shell
 $ uname -rs
 $ lsb_release -a
-$ cat /etc/debian_version
 ```
 
 **Step1: installation of TFTP Server**
