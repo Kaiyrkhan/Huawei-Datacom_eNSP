@@ -65,8 +65,12 @@ $ sudo journalctl -u tftpd-hpa -f
 
 ```shell
 Configure UFW
+$ sudo ufw enable
 $ sudo ufw allow from 172.16.128.0/24 to any port 69 proto udp
 $ sudo ufw deny 69/udp
+
+$ sudo ufw reload
+$ sudo ufw status
 ```
 
 ```shell
