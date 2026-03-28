@@ -41,20 +41,27 @@ TFTP_OPTIONS="--secure --create -l -s -v"
 $ sudo mkdir -p /srv/tftp
 ```
 
+Modify Permission/Ownership on TFTP Root Directory
 ```shell
-Modify Ownership on TFTP Root Directory
-$ sudo chown -R tftp:tftp /srv/tftp
-немесе
-$ sudo chown -R nobody:nogroup /srv/tftp
+Modify Ownership
+$ sudo chown -R tftp /srv/tftp
 
-Modify Permission on TFTP Root Directory
+Modify Permission
 $ sudo chmod -R 755 /srv/tftp
 
 $ ls -ld /srv/tftp
 ```
 
 ```shell
-Restart the tftpd-hpa Service
+$ getent passwd | grep tftp
+$ getent group | grep tftp
+
+$ getent passwd | grep nobody
+$ getent group | grep nogroup
+```
+
+Restart the tftpd-hpa Service/Daemon
+```shell
 $ sudo systemctl restart tftpd-hpa
 ```
 
@@ -140,8 +147,26 @@ student@tftp-server:~$ ls -l /srv/tftp/
 
 Example: Cisco IOS
 ```shell
+R1(config)# ip tftp source-interface g0/0/1
+
+R1# dir ?
+R1# dir system:
 R1# copy running-config tftp:
-student@tftp-server:~$ ls -l /srv/tftp/
+Address or name of remote host []? 172.16.128.69
+Destination filename [running-config]? R1-run-config
+
+R1# dir nvram:
+R1# copy startup-config tftp:
+Address or name of remote host []? 172.16.128.69
+Destination filename [startup-config]? R1-start-config
+
+R1# dir flash:
+R1# copy flash tftp:
+Source filename []? firmware-file-name.bin
+Address or name of remote host []? 172.16.128.69
+Destination filename [firmware-file-name.bin]? Enter
+
+student@tftp-server:~$ ls -lh /srv/tftp/
 ```
 
 ## Additional Information
