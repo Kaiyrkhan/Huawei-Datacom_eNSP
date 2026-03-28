@@ -57,8 +57,20 @@ Restart the tftpd-hpa Service
 $ sudo systemctl restart tftpd-hpa
 ```
 
-**Step3: Firewall Configuration**
 ```shell
+$ sudo journalctl -u tftpd-hpa -f
+```
+
+**Step3: Configure the Firewall**
+
+```shell
+Configure UFW
+$ sudo ufw allow from 172.16.128.0/24 to any port 69 proto udp
+$ sudo ufw deny 69/udp
+```
+
+```shell
+Configure iptables
 -A INPUT -s 192.168.1.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
 -A INPUT -s 192.168.1.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
 ```
@@ -71,33 +83,35 @@ $ netstat -tulpn
 ```
 
 **Step4: Testing the TFTP Server**
+
+Download and Upload files
+> get - Download file from TFTP server  
+> put - Upload file from TFTP server  
+
 ```shell
 student@tftp-server:~$ touch /srv/tftp/file1
-student@tftp-client:~$ touch file2
+student@tftp-server:~$ tftp 127.0.0.1 -c get file1
+student@tftp-server:~$ ls -l
+student@tftp-server:~$ pwd
 ```
 
 ```shell
 student@tftp-client:~$  sudo apt update
 student@tftp-client:~$  sudo apt install -y tftp-hpa
-```
 
-```shell
-Download and Upload files
+student@tftp-client:~$ touch file2
+
 student@tftp-client:~$ tftp 172.16.128.69
-
 tftp> ?
 tftp> verbose
 tftp> get file1
 tftp> put file2
 tftp> quit
 ```
-> get - Download file from TFTP server  
-> put - Upload file from TFTP server  
 
 Example: Cisco IOS
 ```shell
 R1# copy running-config tftp:
-
 student@tftp-server:~$ ls -l /srv/tftp/
 ```
 
