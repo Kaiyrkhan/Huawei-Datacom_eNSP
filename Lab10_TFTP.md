@@ -43,11 +43,21 @@ $ sudo chown -R tftp /var/lib/tftpboot
 ```
 
 ```shell
+$ sudo chown -R tftp:tftp /srv/tftp
+немесе
+$ sudo chown -R nobody:nogroup /srv/tftp
+
+$ sudo chmod 777 -R tftp /srv/tftp
+$ ls -ld /srv/tftp
+$ ls -lR /srv/tftp
+```
+
+```shell
 Restart the tftpd-hpa Service
 $ sudo systemctl restart tftpd-hpa
 ```
 
-**Firewall Configuration**
+**Step3: Firewall Configuration**
 ```shell
 -A INPUT -s 192.168.1.0/24 -m tcp -p tcp --dport 69 -j ACCEPT
 -A INPUT -s 192.168.1.0/24 -m tcp -p udp  --dport 69 -j ACCEPT
@@ -60,24 +70,21 @@ $ sudo apt install -y net-tools
 $ netstat -tulpn
 ```
 
-```shell
-$ sudo chown -R tftp:tftp /srv/tftp
-немесе
-$ sudo chown -R nobody:nogroup /srv/tftp
-
-$ sudo chmod 777 -R tftp /srv/tftp
-$ ls -ld /srv/tftp
-$ ls -lR /srv/tftp
-```
-
-Testing the TFTP Server
+**Step4: Testing the TFTP Server**
 ```shell
 student@tftp-server:~$ touch /srv/tftp/file1
 student@tftp-client:~$ touch file2
 ```
-Download and Upload files
+
 ```shell
-tftp 172.16.128.69
+student@tftp-client:~$  sudo apt update
+student@tftp-client:~$  sudo apt install -y tftp-hpa
+```
+
+```shell
+Download and Upload files
+student@tftp-client:~$ tftp 172.16.128.69
+
 tftp> ?
 tftp> verbose
 tftp> get file1
