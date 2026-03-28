@@ -46,7 +46,8 @@ TFTP_OPTIONS="--secure --create --listen --verbose"
 
 Modify Permission/Ownership on TFTP Root Directory
 ```shell
-$ sudo mkdir -p /srv/tftp
+$ ls -ld /srv/tftp
+drwxr-xr-x 2 root nogroup /srv/tftp
 ```
 > TFTP Root Directory: **/srv/tftp**  немесе **/var/lib/tftpboot**  
 
