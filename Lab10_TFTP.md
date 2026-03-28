@@ -1,6 +1,6 @@
 # Configure TFTP Server on Debian
 
-> TFTP - Trivial File Transfer Protocol  
+> TFTP – Trivial File Transfer Protocol  
 
 About the System
 ```shell
