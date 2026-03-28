@@ -41,7 +41,7 @@ Edit tftpd-hpa Configuration File
 $ sudo nano /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/srv/tftp"
-TFTP_ADDRESS="172.16.128.10:69"
+TFTP_ADDRESS="172.16.128.69:69"
 TFTP_OPTIONS="--secure"
 to
 TFTP_OPTIONS="--secure --create --listen --verbose" 
@@ -120,7 +120,7 @@ Download and Upload files
 
 ```shell
 student@tftp-server:~$ sudo touch /srv/tftp/f1.conf
-student@tftp-server:~$ tftp 172.16.128.10 -c get f1.conf
+student@tftp-server:~$ tftp 172.16.128.69 -c get f1.conf
 student@tftp-server:~$ ls -l
 ```
 
