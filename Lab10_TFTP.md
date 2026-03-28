@@ -47,6 +47,11 @@ TFTP_OPTIONS="--secure --create --listen --verbose"
 CTRL+O, ENTER, CTRL+X
 ```
 
+Restart the tftpd-hpa Service/Daemon
+```shell
+$ sudo systemctl restart tftpd-hpa
+```
+
 Modify Permission/Ownership on TFTP Root Directory
 ```shell
 $ ls -ld /srv/tftp
@@ -75,11 +80,6 @@ $ getent group | grep tftp
 
 $ getent passwd | grep nobody
 $ getent group | grep nogroup
-```
-
-Restart the tftpd-hpa Service/Daemon
-```shell
-$ sudo systemctl restart tftpd-hpa
 ```
 
 **Step3: Configure the Firewall**
