@@ -104,11 +104,11 @@ Configure iptables
 ```
 
 ```shell
-$ ss -tulpn
+$ ss -tulpna
 ```
 ```shell
 $ sudo apt install -y net-tools
-$ netstat -tulpn
+$ netstat -tulpna
 ```
 
 **Step4: Testing the TFTP Server**
