@@ -25,8 +25,9 @@ $ sudo systemctl is-enabled tftpd-hpa
 ```
 
 **Step2: Configure the TFTP Server**
-```shell
+
 Edit tftpd-hpa Configuration File
+```shell
 $ sudo nano /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/srv/tftp"
