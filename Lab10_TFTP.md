@@ -43,6 +43,8 @@ TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/srv/tftp"
 TFTP_ADDRESS="172.16.128.10:69"
 TFTP_OPTIONS="--secure --create --listen --verbose"
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 Modify Permission/Ownership on TFTP Root Directory
