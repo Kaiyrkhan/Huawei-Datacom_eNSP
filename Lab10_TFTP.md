@@ -34,8 +34,9 @@ TFTP_DIRECTORY="/srv/tftp"
 TFTP_ADDRESS="0.0.0.0:69"
 TFTP_OPTIONS="--secure"
 to
-TFTP_OPTIONS="--secure --create -l -s -v"
+TFTP_OPTIONS="--secure --create -l -v"
 ```
+> TFTP_OPTIONS="--secure --create --listen --verbose"  
 
 Modify Permission/Ownership on TFTP Root Directory
 ```shell
