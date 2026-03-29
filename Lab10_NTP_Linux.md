@@ -288,7 +288,7 @@ ntp-service unicast-server 172.16.128.10 authentication-keyid 1
 display cu | include ntp-service
 ```
 
-**Нәтижені тексеру**
+**Нәтижені тексеру (Check the Configuration)**
 ```shell
 display clock
 ```
