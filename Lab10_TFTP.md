@@ -2,6 +2,26 @@
 
 > TFTP – Trivial File Transfer Protocol  
 
+### 🖧 Network Topology (желі топологиясы)
+![Topology](images/Lab10_NetworkTopology_TFTP.png)  
+[Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_TFTP.topo)
+
+| Device        | Role        | interface | IP Address / Prefix | Operating System  |
+| ------------- | ----------- | --------- | ------------------- | ----------------- |
+| Ubuntu        | TFTP Server | ens34     | 172.16.128.10 /24   | Ubuntu Server     |
+|               |             | ens32     | DHCP Assigned       |                   |
+| R1            | TFTP Client | g0/0/0    | 172.16.128.11 /24   | Huawei VRP        |
+| S1            | TFTP Client | Vlanif1   | 172.16.128.12 /24   | Huawei VRP        |
+| Debian        | TFTP Client | ens34     | 172.16.128.13 /24   | Debian Linux      |
+|               |             | ens32     | DHCP Assigned       |                   |
+| Host Machine  | Bridge      | Loopback1 | 172.16.128.254 /24  | Microsoft Windows |
+
+### Scenario
+1) installation of TFTP Server;
+2) Configure the TFTP Server;
+3) Configure the Firewall;
+4) Testing the TFTP Server.
+
 About the System
 ```shell
 $ uname -rs
