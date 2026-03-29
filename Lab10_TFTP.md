@@ -11,8 +11,7 @@
 | Ubuntu        | TFTP Server | ens34     | 172.16.128.10 /24   | Ubuntu Server     |
 |               |             | ens32     | DHCP Assigned       |                   |
 | R1            | TFTP Client | g0/0/0    | 172.16.128.11 /24   | Huawei VRP        |
-| S1            | TFTP Client | Vlanif1   | 172.16.128.12 /24   | Huawei VRP        |
-| Debian        | TFTP Client | ens34     | 172.16.128.13 /24   | Debian Linux      |
+| Debian        | TFTP Client | ens34     | 172.16.128.12 /24   | Debian Linux      |
 |               |             | ens32     | DHCP Assigned       |                   |
 | Host Machine  | Bridge      | Loopback1 | 172.16.128.254 /24  | Microsoft Windows |
 
