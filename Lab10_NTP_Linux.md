@@ -4,13 +4,13 @@
 ![Topology](images/Lab10_NetworkTopology_NTP_Linux.png)  
 [Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_NTP_Linux.topo)
 
-| Device       | Role       | interface | IP Address / Prefix | Operating System |
-| ------------ | ---------- | --------- | ------------------- | ---------------- |
-| Ubuntu       | NTP Server | ens34     | 172.16.128.10 /24   | Linux            |
-|              |            | ens32     | DHCP Assigned       |                  |
-| R1           | NTP Client | g0/0/0    | 172.16.128.11 /24   | Huawei VRP       |
-| S1           | NTP Client | Vlanif1   | 172.16.128.12 /24   | Huawei VRP       |
-| Host Machine | Bridge     | Loopback1 | 172.16.128.254 /24  | Windows          |
+| Device       | Role       | interface | IP Address / Prefix | Operating System  |
+| ------------ | ---------- | --------- | ------------------- | ----------------- |
+| Ubuntu       | NTP Server | ens34     | 172.16.128.10 /24   | Ubuntu Server     |
+|              |            | ens32     | DHCP Assigned       |                   |
+| R1           | NTP Client | g0/0/0    | 172.16.128.11 /24   | Huawei VRP        |
+| S1           | NTP Client | Vlanif1   | 172.16.128.12 /24   | Huawei VRP        |
+| Host Machine | Bridge     | Loopback1 | 172.16.128.254 /24  | Microsoft Windows |
 
 ### Scenario
 1) Configure NTP Server on Ubuntu;
