@@ -3,8 +3,8 @@
 > TFTP – Trivial File Transfer Protocol  
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab10_NetworkTopology_TFTP.png)  
-[Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_TFTP.topo)
+![Topology](images/Lab10_NetworkTopology_Linux_NTP_TFTP_FTP.png)  
+[Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_Linux_NTP_TFTP_FTP.topo)
 
 | Device        | Role        | interface | IP Address / Prefix | Operating System  |
 | ------------- | ----------- | --------- | ------------------- | ----------------- |
