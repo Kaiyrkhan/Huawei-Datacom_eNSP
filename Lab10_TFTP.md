@@ -22,6 +22,8 @@
 3) Configure the Firewall;
 4) Testing the TFTP Server.
 
+**Step1: installation of TFTP Server**
+
 About the System
 ```shell
 $ uname -rs
@@ -30,8 +32,6 @@ $ lsb_release -a
 Ubuntu 24.04.4 LTS
 Codename: noble
 ```
-
-**Step1: installation of TFTP Server**
 
 >  Package атауы: tftpd-hpa  
 > Daemon/Service атауы: tftpd-hpa  
