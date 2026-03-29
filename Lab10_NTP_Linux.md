@@ -14,7 +14,8 @@
 
 ### Scenario
 1) Configure NTP Server on Ubuntu;
-2) Configure NTP Client on Huawei VRP.
+2) Configure NTP Client on Huawei VRP;
+3) Configure NTP Client on Debian.
 
 ## Step1: Configure NTP Server on Ubuntu
 
