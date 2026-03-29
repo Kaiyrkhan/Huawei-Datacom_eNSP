@@ -1,8 +1,8 @@
 # Configure NTP Server on Ubuntu
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab10_NetworkTopology_NTP_Linux.png)  
-[Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_NTP_Linux.topo)
+![Topology](images/Lab10_NetworkTopology_Linux_NTP_TFTP_FTP.png)  
+[Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_Linux_NTP_TFTP_FTP.topo)
 
 | Device       | Role       | interface | IP Address / Prefix | Operating System  |
 | ------------ | ---------- | --------- | ------------------- | ----------------- |
