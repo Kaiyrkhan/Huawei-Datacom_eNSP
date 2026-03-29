@@ -58,3 +58,7 @@ Monitoring Systems (LibreNMS, Icinga, Zabbix)
 Centralized Logging System (syslog-ng/rsyslog + Graylog)  
 Router/Switch (Log) → syslog-ng (жинау) → Graylog+MongoDB (талдау) → OpenSearch 2.15.x (сақтау)  
 
+## References
+
+1) [Huawei Documentation](https://support.huawei.com/enterprise/en/doc/index.html)
+2) [Configuring a Campus Switch](https://support.huawei.com/enterprise/en/doc/EDOC1000069520/467a9c5a/example-for-configuring-a-layer-2-switch-to-work-with-a-router-for-internet-access)
