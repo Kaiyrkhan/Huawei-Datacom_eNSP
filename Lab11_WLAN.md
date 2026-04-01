@@ -104,7 +104,7 @@ display ip int brief
 
 ```shell
 dhcp enable
-ip pool STAs
+ip pool STA
  network 192.168.200.0 mask 24
  gateway-list 192.168.200.254
  dns-list 8.8.8.8
@@ -150,7 +150,7 @@ display ip int brief
 
 ```shell
 dhcp enable
- ip pool APs
+ ip pool AP
  network 10.1.43.0 mask 24
  gateway-list 10.1.43.254
  dns-list 8.8.8.8
