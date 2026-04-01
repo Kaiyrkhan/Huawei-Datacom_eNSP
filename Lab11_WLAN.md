@@ -46,6 +46,12 @@ interface g0/0/4
 ```shell
 vlan batch 43 200
 display vlan
+
+[A1] vlan 43
+[A1-vlan43] description APs
+
+[A1] vlan 200
+[A1-vlan200] description STAs
 ```
 
 ```shell
