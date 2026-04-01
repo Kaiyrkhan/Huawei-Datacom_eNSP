@@ -4,6 +4,7 @@
 ![Topology](images/Lab11_NetworkTopology_WLAN.png)  
 [Download Link for eNSP Topology File](Topology/Lab11_NetworkTopology_WLAN.topo)
 
+Table - WLAN Data Plan
 | Item                            | Value                                                                                     |
 | ------------------------------- | ----------------------------------------------------------------------------------------- |
 | Management VLAN for APs         | VLAN 43                                                                                   |
@@ -30,8 +31,8 @@
 
 ```shell
 <Huawei> system-view
-[Huawei] sysname EdgeR1
-[EdgeR1]
+[Huawei] sysname D1
+[D1]
 
 int g0/0/0
  ip address 192.168.137.254 24
