@@ -163,6 +163,7 @@ interface vlanif 15
 
 display ip pool
 ```
+> option 43 sub-option 2 ip-address 10.1.43.254  
 
 **Create an AP group**
 ```shell
@@ -170,7 +171,6 @@ wlan
  ap-group name ap-group1
  quit
 ```
-> option 43 sub-option 2 ip-address 10.1.43.254  
 
 **Create a regulatory domain profile**
 ```shell
