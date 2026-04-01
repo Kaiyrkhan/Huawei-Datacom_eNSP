@@ -84,7 +84,7 @@ interface vlanif 200
 display ip pool
 ```
 
-## AC1 (Access Controller)
+## Access Controller
 
 ```shell
 <Huawei> undo terminal monitor
