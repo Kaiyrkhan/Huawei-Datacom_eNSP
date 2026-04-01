@@ -158,7 +158,7 @@ dhcp enable
  excluded-ip-address 10.1.43.201 10.1.43.253
  lease day 5
 
-interface vlanif 15
+interface vlanif 43
  dhcp select global
 
 display ip pool
