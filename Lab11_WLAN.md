@@ -27,7 +27,7 @@ Table - WLAN Data Plan
 |                                 | Service VLAN: 200                                                                         |
 |                                 | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**      |
 
-## D1
+## D1 Switch
 
 ```shell
 <Huawei> undo terminal monitor
@@ -66,15 +66,28 @@ Switched Virtual Interface (SVI)
 int vlanif 43
  ip address 10.1.43.254 24
  description Gateway for APs
-display this
 
 int vlanif 200
  ip address 192.168.200.254 24
  description Gateway for STAs
-display this
+
+display ip int brief
 ```
 
 ```shell
+dhcp enable
+ip pool STAs
+ network 192.168.200.0 mask 24
+ gateway-list 192.168.200.254
+ dns-list 8.8.8.8
+ excluded-ip-address 192.168.200.1 192.168.200.10
+ excluded-ip-address 192.168.200.251 192.168.200.253
+ lease day 5
+
+interface vlanif 200
+ dhcp select global
+
+display ip pool
 ```
 
 ```shell
