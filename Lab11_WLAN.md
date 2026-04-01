@@ -9,9 +9,9 @@
 | Management VLAN for APs         | VLAN 43                                                                                   |
 | Service VLAN for STAs           | VLAN 200                                                                                  |
 | Default Gateway address of APs  | 10.1.43.254                                                                               |
-| IP address Pool APs             | 10.1.43.100 - 10.1.43.200                                                                 |
+| IP address Pool APs             | 10.1.43.100-10.1.43.200/24                                                                |
 | Default Gateway address of STAs | 192.168.200.254                                                                           |
-| IP address Pool STAs            | 192.168.200.10 - 192.168.200.250                                                          |
+| IP address Pool STAs            | 192.168.200.10-192.168.200.250/24                                                         |
 | AP group                        | Name: ap-group1                                                                           |
 |                                 | Referenced profiles: VAP profile **WLAN-Guest** and Regulatory domain profile **default** |
 | Regulatory domain profile       | Name: default                                                                             |
@@ -25,7 +25,6 @@
 |                                 | Forwarding mode: direct forwarding                                                        |
 |                                 | Service VLAN: 200                                                                         |
 |                                 | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**      |
-|                                 |  |
 
 ## Step1: Configure the IP Address
 
