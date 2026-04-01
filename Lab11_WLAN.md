@@ -27,18 +27,58 @@ Table - WLAN Data Plan
 |                                 | Service VLAN: 200                                                                         |
 |                                 | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**      |
 
-## Step1: Configure the IP Address
+## D1
 
 ```shell
+<Huawei> undo terminal monitor
 <Huawei> system-view
 [Huawei] sysname D1
 [D1]
 
-int g0/0/0
- ip address 192.168.137.254 24
- quit
-int g0/0/1
- ip address 10.1.77.1 24
- quit
-display ip int brief
+vlan batch 43 200
+display vlan
+
+interface g0/0/10
+ port link-type trunk
+ port trunk allow-pass vlan 43 200
+interface g0/0/13
+ port link-type trunk
+ port trunk allow-pass vlan 43 200
+interface g0/0/14
+ port link-type trunk
+ port trunk allow-pass vlan 43 200
+
+display port vlan
+```
+
+```shell
+interface Loopback 50
+ip address 50.1.1.1 32
+```
+
+```shell
+int vlanif 43
+ ip address 10.1.43.254 24
+ description Gateway for APs
+display this
+
+int vlanif 200
+ ip address 192.168.200.254 24
+ description Gateway for STAs
+display this
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
