@@ -1,8 +1,8 @@
 # Configure WLAN on Huawei VRP
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab11_NetworkTopology_WLAN.png)  
-[Download Link for eNSP Topology File](Topology/Lab11_NetworkTopology_WLAN.topo)
+![Topology](images/Lab11_NetworkTopology_WLAN_AC_AP.png)  
+[Download Link for eNSP Topology File](Topology/Lab11_NetworkTopology_WLAN_AC_AP.topo)
 
 Table - WLAN Data Plan
 | Item                            | Value                                                                                     |
