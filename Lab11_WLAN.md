@@ -58,21 +58,15 @@ display port vlan
 
 ```shell
 interface Loopback 50
-ip address 50.1.1.1 32
-```
+ ip address 50.1.1.1 32
 
-Switched Virtual Interface (SVI)
-```shell
-int vlanif 43
- ip address 10.1.43.254 24
- description Gateway for APs
-
-int vlanif 200
+interface vlanif 200
  ip address 192.168.200.254 24
  description Gateway for STAs
 
 display ip int brief
 ```
+> Switched Virtual Interface (SVI)  
 
 ```shell
 dhcp enable
@@ -90,13 +84,50 @@ interface vlanif 200
 display ip pool
 ```
 
+## AC1 (Access Controller)
+
 ```shell
+<Huawei> undo terminal monitor
+
+<Huawei> system-view
+[Huawei] sysname AC1
+[AC1]
 ```
 
 ```shell
+vlan batch 43 200
+display vlan brief
+
+interface g0/0/10
+ port link-type trunk
+ port trunk allow-pass vlan 43 200
+
+display vlan brief
+display port vlan
 ```
 
 ```shell
+interface vlanif 43
+ ip address 10.1.43.254 24
+ description Gateway for APs
+
+display ip int brief
+```
+
+```shell
+dhcp enable
+ ip pool APs
+ network 10.1.43.0 mask 24
+ gateway-list 10.1.43.254
+ dns-list 8.8.8.8
+ excluded-ip-address 10.1.43.1 10.1.43.100
+ excluded-ip-address 10.1.43.201 10.1.43.253
+ lease day 5
+
+interface vlanif 15
+ dhcp select global
+
+display ip pool
 ```
 
 ```shell
