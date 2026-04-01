@@ -31,19 +31,24 @@ Table - WLAN Data Plan
 
 ```shell
 <Huawei> undo terminal monitor
+
 <Huawei> system-view
 [Huawei] sysname D1
 [D1]
+```
 
+```shell
 vlan batch 43 200
 display vlan
 
 interface g0/0/10
  port link-type trunk
  port trunk allow-pass vlan 43 200
+
 interface g0/0/13
  port link-type trunk
  port trunk allow-pass vlan 43 200
+
 interface g0/0/14
  port link-type trunk
  port trunk allow-pass vlan 43 200
@@ -56,6 +61,7 @@ interface Loopback 50
 ip address 50.1.1.1 32
 ```
 
+Switched Virtual Interface (SVI)
 ```shell
 int vlanif 43
  ip address 10.1.43.254 24
