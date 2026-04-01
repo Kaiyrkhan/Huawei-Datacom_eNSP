@@ -27,6 +27,40 @@ Table - WLAN Data Plan
 |                                 | Service VLAN: 200                                                                         |
 |                                 | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**      |
 
+
+## A1 and A2 Switch
+
+```shell
+<Huawei> undo terminal monitor
+
+<Huawei> system-view
+[Huawei] sysname A1
+[A1]
+```
+
+```shell
+interface g0/0/4
+ poe enable
+```
+
+```shell
+vlan batch 43 200
+display vlan
+```
+
+```shell
+interface g0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 43 200
+
+interface g0/0/4
+ port link-type trunk
+ port trunk pvid vlan 43
+ port trunk allow-pass vlan 43 200
+
+display port vlan
+```
+
 ## D1 Switch
 
 ```shell
@@ -130,5 +164,90 @@ interface vlanif 15
 display ip pool
 ```
 
+**Create an AP group**
 ```shell
+wlan
+ ap-group name ap-group1
+ quit
+```
+
+**Create a regulatory domain profile**
+```shell
+wlan
+ regulatory-domain-profile name default
+ country-code KZ
+ quit
+```
+
+**AP group пен Regulatory domain profile-ды байланыстыру**
+```shell
+wlan
+ ap-group name ap-group1
+ regulatory-domain-profile name default
+ quit
+```
+
+**CAPWAP tunnel**
+```shell
+capwap source interface Vlanif 43
+```
+
+**Import APs to the AC**
+```shell
+wlan
+ ap auth-mode mac-auth
+ ap-id 0 ap-mac 00E0-FC84-1B70
+ ap-name AP1
+ ap-group ap-group1
+ quit
+
+ ap-id 1 ap-mac 00E0-FCDA-5BF0
+ ap-name AP2
+ ap-group ap-group1
+ quit
+
+display ap all
+```
+
+**Create security profile**
+```shell
+wlan
+ security-profile name WLAN-Guest
+ security wpa-wpa2 psk pass-phrase Huawei@123 aes
+ quit
+```
+
+**Create SSID profile**
+```shell
+wlan
+ssid-profile name WLAN-Guest
+ssid Guest-WiFi
+quit
+```
+
+**Create VAP profile**
+```shell
+wlan
+ vap-profile name WLAN-Guest
+ forward-mode direct-forward
+ service-vlan vlan-id 200
+ security-profile WLAN-Guest
+ ssid-profile WLAN-Guest
+ quit
+```
+
+**Bind the VAP profile to the AP group**
+```shell
+wlan
+ ap-group name ap-group1
+ vap-profile WLAN-Guest wlan 1 radio all
+```
+
+**Check the Configuration**
+```shell
+STA> ipconfig
+STA> ping 50.1.1.1
+```
+```shell
+<AC1> display station all
 ```
