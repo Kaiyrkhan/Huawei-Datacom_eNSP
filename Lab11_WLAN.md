@@ -216,6 +216,9 @@ wlan
 
 display ap all
 ```
+> Access Point: AirEngine6761-21  
+> MAC Address: 90F9-B722-2000  
+> MAC Address: 90F9-B722-17C0  
 
 **Create security profile**
 ```shell
@@ -236,7 +239,7 @@ quit
 **Create VAP profile**
 ```shell
 wlan
- vap-profile name WLAN-Guest
+ vap-profile name WLAN
  forward-mode direct-forward
  service-vlan vlan-id 200
  security-profile WLAN-Guest
