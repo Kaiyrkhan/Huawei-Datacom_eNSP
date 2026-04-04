@@ -320,10 +320,10 @@ Checking AP Group
 ```
 
 ```shell
-<AC1> display station all
+STA1> ipconfig
+STA2> ipconfig
 ```
 
 ```shell
-STA1> ipconfig
-STA2> ipconfig
+<AC1> display station all
 ```
