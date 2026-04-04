@@ -139,6 +139,51 @@ display ip pool
 
 ## AC (Access Controller)
 
+```shell
+<Huawei> undo terminal monitor
+
+<Huawei> system-view
+[Huawei] sysname AC1
+[AC1]
+```
+
+```shell
+vlan batch 43 100 200
+display vlan brief
+
+interface g0/0/10
+ port link-type trunk
+ port trunk allow-pass vlan 43 100 200
+
+display vlan brief
+display port vlan
+```
+
+```shell
+interface vlanif 43
+ ip address 10.1.43.254 24
+ description Gateway for APs
+
+display ip int brief
+```
+
+AP DHCP Pool
+```shell
+dhcp enable
+ ip pool AP
+ network 10.1.43.0 mask 24
+ gateway-list 10.1.43.254
+ dns-list 8.8.8.8
+ excluded-ip-address 10.1.43.1 10.1.43.100
+ excluded-ip-address 10.1.43.201 10.1.43.253
+ lease day 5
+
+interface vlanif 43
+ dhcp select global
+
+display ip pool
+```
+
 **1-қадам: WLAN mode**
 ```shell
 system-view
