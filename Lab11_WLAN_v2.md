@@ -177,7 +177,7 @@ display port vlan
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
- description Gateway for APs
+ description Default Gateway for APs
 
 display ip int brief
 ```
