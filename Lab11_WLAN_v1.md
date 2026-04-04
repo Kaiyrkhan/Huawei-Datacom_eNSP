@@ -27,6 +27,7 @@ Table1 - WLAN Data Plan
 |                                 | Service VLAN: 200                                                                         |
 |                                 | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**      |
 
+> Wireless STA (Station) — клиент құрылғы  
 
 ## A1 and A2 Switch
 
