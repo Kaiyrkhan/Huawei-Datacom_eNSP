@@ -108,7 +108,7 @@ interface vlanif 200
 
 display ip int brief
 ```
-> Switched Virtual Interface (SVI)  
+> Vlanif — Switched Virtual Interface (SVI)  
 
 DHCP Pool for STAs
 ```shell
