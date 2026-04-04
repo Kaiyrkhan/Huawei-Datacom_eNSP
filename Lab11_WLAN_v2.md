@@ -15,6 +15,7 @@ Table1 - WLAN Data Plan
 | DHCP Pool for Staff                     | 192.168.100.10 - 192.168.100.250/24                                                                     |
 | Default Gateway for Guest               | 192.168.200.254                                                                                         |
 | DHCP Pool for Guest                     | 192.168.200.10 - 192.168.200.250/24                                                                     |
+| AP Name                                 | AP1, AP2                                                                                                |
 | AP Group                                | Name: ap-group1                                                                                         |
 |                                         | Referenced profiles: VAP profile **VAP-Staff** and **VAP-Guest**, Regulatory domain profile **default** |
 | Regulatory Domain Profile               | Name: default                                                                                           |
