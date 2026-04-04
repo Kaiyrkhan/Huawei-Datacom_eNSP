@@ -90,8 +90,18 @@ display port vlan
 
 ```shell
 vlan batch 43 100 200
-display vlan
 
+vlan 43
+ description MGMT VLAN
+vlan 100
+ description Service VLAN
+vlan 200
+ description Service VLAN
+
+display vlan
+```
+
+```shell
 interface g0/0/10
  port link-type trunk
  port trunk allow-pass vlan 43 100 200
@@ -107,23 +117,23 @@ interface g0/0/14
 display port vlan
 ```
 
+Switched Virtual Interface (SVI)  
 ```shell
 interface vlanif 100
  ip address 192.168.100.254 24
- description Default Gateway for Staff
+ description Default Gateway for VLAN100
 
 interface vlanif 200
  ip address 192.168.200.254 24
- description Default Gateway for Guest
+ description Default Gateway for VLAN200
 
 display ip int brief
 ```
-> Vlanif — Switched Virtual Interface (SVI)  
 
-DHCP Pool for Staff
+DHCP Pool
 ```shell
 dhcp enable
-ip pool Staff
+ip pool VLAN100
  network 192.168.100.0 mask 24
  gateway-list 192.168.100.254
  dns-list 8.8.8.8
@@ -135,9 +145,9 @@ interface vlanif 100
  dhcp select global
 ```
 
-DHCP Pool for Guest
+DHCP Pool
 ```shell
-ip pool Guest
+ip pool VLAN200
  network 192.168.200.0 mask 24
  gateway-list 192.168.200.254
  dns-list 8.8.8.8
@@ -163,13 +173,22 @@ display ip pool
 
 ```shell
 vlan batch 43 100 200
-display vlan brief
 
+vlan 43
+ description MGMT VLAN
+vlan 100
+ description Service VLAN
+vlan 200
+ description Service VLAN
+
+display vlan brief
+```
+
+```shell
 interface g0/0/10
  port link-type trunk
  port trunk allow-pass vlan 43 100 200
 
-display vlan brief
 display port vlan
 ```
 
