@@ -140,8 +140,6 @@ display ip pool
 ## AC (Access Controller)
 
 ```shell
-<Huawei> undo terminal monitor
-
 <Huawei> system-view
 [Huawei] sysname AC1
 [AC1]
