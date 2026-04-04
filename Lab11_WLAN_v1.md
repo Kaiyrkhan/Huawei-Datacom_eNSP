@@ -239,7 +239,7 @@ quit
 **Create VAP profile**
 ```shell
 wlan
- vap-profile name WLAN
+ vap-profile name VAP-Guest
  forward-mode direct-forward
  service-vlan vlan-id 200
  security-profile WLAN-Guest
@@ -251,7 +251,7 @@ wlan
 ```shell
 wlan
  ap-group name ap-group1
- vap-profile WLAN-Guest wlan 1 radio all
+ vap-profile VAP-Guest wlan 1 radio all
 ```
 
 **Check the Configuration**
