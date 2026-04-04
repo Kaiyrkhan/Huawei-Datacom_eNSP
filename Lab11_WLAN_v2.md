@@ -145,7 +145,6 @@ interface vlanif 100
  dhcp select global
 ```
 
-DHCP Pool
 ```shell
 ip pool VLAN200
  network 192.168.200.0 mask 24
