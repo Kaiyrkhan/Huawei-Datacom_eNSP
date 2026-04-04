@@ -241,13 +241,42 @@ quit
 > Forwarding Mode — трафикті бағыттау режимі  
 
 **6-қадам: AP Group**
+
+> AP Group-ға барлық Profile-дерді байланыстыру   
+
 ```shell
 ap-group name ap-group1
  regulatory-domain-profile default
-
  vap-profile VAP-Staff wlan 1 radio all
  vap-profile VAP-Guest wlan 2 radio all
 quit
+```
+
+CAPWAP tunnel
+```shell
+capwap source interface Vlanif 43
+```
+
+Import APs to the AC
+```shell
+wlan
+ ap auth-mode mac-auth
+ ap-id 0 ap-mac 00E0-FC84-1B70
+ ap-name AP1
+ ap-group ap-group1
+ quit
+
+ ap-id 1 ap-mac 00E0-FCDA-5BF0
+ ap-name AP2
+ ap-group ap-group1
+ quit
+```
+> Access Point: **AirEngine 6761-21**  
+> MAC Address: 90F9-B722-2000  
+> MAC Address: 90F9-B722-17C0  
+
+```shell
+display ap all
 ```
 
 **Verify the Configuration**
