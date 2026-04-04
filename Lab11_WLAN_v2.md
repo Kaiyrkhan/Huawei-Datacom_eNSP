@@ -12,9 +12,9 @@ Table - WLAN Data Plan
 | AP Default Gateway                      | 10.1.43.254                                                                                             |
 | AP DHCP Pool                            | 10.1.43.100 - 10.1.43.200/24                                                                            |
 | Staff STA Default Gateway               | 192.168.100.254                                                                                         |
-| Staff VLAN DHCP Pool                    | 192.168.100.10 - 192.168.100.250/24                                                                     |
+| Staff STA DHCP Pool                     | 192.168.100.10 - 192.168.100.250/24                                                                     |
 | Guest STA Default Gateway               | 192.168.200.254                                                                                         |
-| Guest VLAN DHCP Pool                    | 192.168.200.10 - 192.168.200.250/24                                                                     |
+| Guest STA DHCP Pool                     | 192.168.200.10 - 192.168.200.250/24                                                                     |
 | AP Group                                | Name: ap-group1                                                                                         |
 |                                         | Referenced profiles: VAP profile **VAP-Staff** and **VAP-Guest**, Regulatory domain profile **default** |
 | Regulatory Domain Profile               | Name: default                                                                                           |
