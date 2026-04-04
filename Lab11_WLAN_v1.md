@@ -110,6 +110,7 @@ display ip int brief
 ```
 > Switched Virtual Interface (SVI)  
 
+DHCP Pool for STAs
 ```shell
 dhcp enable
 ip pool STA
@@ -156,6 +157,7 @@ interface vlanif 43
 display ip int brief
 ```
 
+DHCP Pool for APs
 ```shell
 dhcp enable
  ip pool AP
@@ -171,16 +173,15 @@ interface vlanif 43
 
 display ip pool
 ```
-> option 43 sub-option 2 ip-address 10.1.43.254  
 
-**Create an AP group**
+**Create the AP Group**
 ```shell
 wlan
  ap-group name ap-group1
  quit
 ```
 
-**Create a regulatory domain profile**
+**Create a Regulatory Domain Profile**
 ```shell
 wlan
  regulatory-domain-profile name default
@@ -188,7 +189,7 @@ wlan
  quit
 ```
 
-**AP group пен Regulatory domain profile-ды байланыстыру**
+**AP Group пен Regulatory Domain Profile-ды байланыстыру**
 ```shell
 wlan
  ap-group name ap-group1
@@ -221,7 +222,7 @@ display ap all
 > MAC Address: 90F9-B722-2000  
 > MAC Address: 90F9-B722-17C0  
 
-**Create security profile**
+**Create a Security Profile**
 ```shell
 wlan
  security-profile name WLAN-Guest
@@ -229,7 +230,7 @@ wlan
  quit
 ```
 
-**Create SSID profile**
+**Create a SSID Profile**
 ```shell
 wlan
 ssid-profile name WLAN-Guest
@@ -237,7 +238,7 @@ ssid Guest-WiFi
 quit
 ```
 
-**Create VAP profile**
+**Create a VAP Profile**
 ```shell
 wlan
  vap-profile name VAP-Guest
@@ -248,14 +249,14 @@ wlan
  quit
 ```
 
-**Bind the VAP profile to the AP group**
+**Bind the VAP Profile to the AP Group**
 ```shell
 wlan
  ap-group name ap-group1
  vap-profile VAP-Guest wlan 1 radio all
 ```
 
-**Check the Configuration**
+**Verify the Configuration**
 ```shell
 STA> ipconfig
 STA> ping 50.1.1.1
