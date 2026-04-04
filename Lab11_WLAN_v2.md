@@ -207,6 +207,11 @@ interface vlanif 43
 display ip int brief
 ```
 
+CAPWAP Tunnel
+```shell
+capwap source interface Vlanif 43
+```
+
 DHCP Pool for APs
 ```shell
 dhcp enable
@@ -292,11 +297,6 @@ ap-group name ap-group1
  vap-profile VAP-Staff wlan 1 radio all
  vap-profile VAP-Guest wlan 2 radio all
 quit
-```
-
-CAPWAP tunnel
-```shell
-[AC1] capwap source interface Vlanif 43
 ```
 
 Import APs to the AC
