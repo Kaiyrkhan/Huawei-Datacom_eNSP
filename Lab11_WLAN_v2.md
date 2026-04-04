@@ -83,47 +83,61 @@ display port vlan
 ## D1 Switch
 
 ```shell
-<Huawei> undo terminal monitor
-
 <Huawei> system-view
 [Huawei] sysname D1
 [D1]
 ```
 
 ```shell
-vlan batch 43 200
+vlan batch 43 100 200
 display vlan
 
 interface g0/0/10
  port link-type trunk
- port trunk allow-pass vlan 43 200
+ port trunk allow-pass vlan 43 100 200
 
 interface g0/0/13
  port link-type trunk
- port trunk allow-pass vlan 43 200
+ port trunk allow-pass vlan 43 100 200
 
 interface g0/0/14
  port link-type trunk
- port trunk allow-pass vlan 43 200
+ port trunk allow-pass vlan 43 100 200
 
 display port vlan
 ```
 
 ```shell
-interface Loopback 50
- ip address 50.1.1.1 32
+interface vlanif 100
+ ip address 192.168.100.254 24
+ description Default Gateway for Staff
 
 interface vlanif 200
  ip address 192.168.200.254 24
- description Gateway for STAs
+ description Default Gateway for Guest
 
 display ip int brief
 ```
 > Vlanif — Switched Virtual Interface (SVI)  
 
+DHCP Pool for Staff
 ```shell
 dhcp enable
-ip pool STA
+ip pool Staff
+ network 192.168.100.0 mask 24
+ gateway-list 192.168.100.254
+ dns-list 8.8.8.8
+ excluded-ip-address 192.168.100.1 192.168.100.10
+ excluded-ip-address 192.168.100.251 192.168.100.253
+ lease day 5
+
+interface vlanif 100
+ dhcp select global
+```
+
+DHCP Pool for Guest
+```shell
+ip pool Guest
  network 192.168.200.0 mask 24
  gateway-list 192.168.200.254
  dns-list 8.8.8.8
@@ -133,7 +147,9 @@ ip pool STA
 
 interface vlanif 200
  dhcp select global
+```
 
+```shell
 display ip pool
 ```
 
@@ -165,7 +181,7 @@ interface vlanif 43
 display ip int brief
 ```
 
-AP DHCP Pool
+DHCP Pool for APs
 ```shell
 dhcp enable
  ip pool AP
