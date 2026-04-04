@@ -269,7 +269,7 @@ quit
 
 CAPWAP tunnel
 ```shell
-capwap source interface Vlanif 43
+[AC1] capwap source interface Vlanif 43
 ```
 
 Import APs to the AC
