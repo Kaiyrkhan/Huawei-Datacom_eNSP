@@ -125,7 +125,7 @@ interface vlanif 200
 display ip pool
 ```
 
-## Access Controller
+## AC (Access Controller)
 
 ```shell
 <Huawei> system-view
