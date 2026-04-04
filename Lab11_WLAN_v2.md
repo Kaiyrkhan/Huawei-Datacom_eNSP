@@ -58,10 +58,8 @@ vlan batch 43 100 200
 
 vlan 43
  description MGMT VLAN
-
 vlan 100
  description Service VLAN
-
 vlan 200
  description Service VLAN
 
