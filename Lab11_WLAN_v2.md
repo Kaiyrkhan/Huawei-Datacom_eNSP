@@ -4,7 +4,7 @@
 ![Topology](images/Lab11_NetworkTopology_WLAN_v2.png)  
 [Download Link for eNSP Topology File](Topology/Lab11_NetworkTopology_WLAN_v2.topo)
 
-Table - WLAN Data Plan
+Table1 - WLAN Data Plan
 | Item                                    | Value                                                                                                   |
 | ----------------------------------------| --------------------------------------------------------------------------------------------------------|
 | Management VLAN for APs                 | VLAN 43                                                                                                 |
