@@ -130,7 +130,7 @@ interface vlanif 200
 display ip int brief
 ```
 
-DHCP Pool
+DHCP Pool for STAs
 ```shell
 dhcp enable
 ip pool VLAN100
