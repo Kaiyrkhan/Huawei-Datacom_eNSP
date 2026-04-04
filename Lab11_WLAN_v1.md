@@ -32,8 +32,6 @@ Table1 - WLAN Data Plan
 ## A1 and A2 Switch
 
 ```shell
-<Huawei> undo terminal monitor
-
 <Huawei> system-view
 [Huawei] sysname A1
 [A1]
@@ -48,10 +46,10 @@ interface g0/0/4
 vlan batch 43 200
 
 [A1] vlan 43
-[A1-vlan43] description APs
+[A1-vlan43] description MGMT VLAN
 
 [A1] vlan 200
-[A1-vlan200] description STAs
+[A1-vlan200] description Service VLAN
 
 display vlan
 ```
@@ -72,8 +70,6 @@ display port vlan
 ## D1 Switch
 
 ```shell
-<Huawei> undo terminal monitor
-
 <Huawei> system-view
 [Huawei] sysname D1
 [D1]
@@ -101,10 +97,12 @@ display port vlan
 ```shell
 interface Loopback 50
  ip address 50.1.1.1 32
+```
 
+```shell
 interface vlanif 200
  ip address 192.168.200.254 24
- description Gateway for STAs
+ description Default Gateway for STAs
 
 display ip int brief
 ```
@@ -152,7 +150,7 @@ display port vlan
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
- description Gateway for APs
+ description Default Gateway for APs
 
 display ip int brief
 ```
