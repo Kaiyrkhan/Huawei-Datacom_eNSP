@@ -213,8 +213,8 @@ wlan
 
 display ap all
 ```
-> Access Point Model: AirEngine6761-21  
-> Access Point Type: AP2050DN  
+> Access Point Model: **AirEngine 6761-21**  
+> Access Point Type: **AP2050DN**  
 > MAC Address: 90F9-B722-2000  
 > MAC Address: 90F9-B722-17C0  
 
