@@ -91,6 +91,7 @@ display port vlan
 [D1]
 ```
 
+Create VLANs
 ```shell
 vlan batch 43 100 200
 
@@ -104,6 +105,7 @@ vlan 200
 display vlan
 ```
 
+Configure the Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/10
  port link-type trunk
@@ -120,7 +122,7 @@ interface g0/0/14
 display port vlan
 ```
 
-Switched Virtual Interface (SVI)  
+Switch Virtual Interface (SVI)
 ```shell
 interface vlanif 100
  ip address 192.168.100.254 24
@@ -173,6 +175,7 @@ display ip pool
 [AC1]
 ```
 
+Create VLANs
 ```shell
 vlan batch 43 100 200
 
@@ -186,6 +189,7 @@ vlan 200
 display vlan brief
 ```
 
+Configure the Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/10
  port link-type trunk
@@ -194,6 +198,7 @@ interface g0/0/10
 display port vlan
 ```
 
+Switch Virtual Interface (SVI)
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
