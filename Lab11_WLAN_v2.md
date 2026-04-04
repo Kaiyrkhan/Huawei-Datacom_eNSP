@@ -327,7 +327,7 @@ display ap all
 General Status
 <AC1> display ap all
 State: "Normal"
-State: "Fault немесе idle" болса байланыс жоқ!
+State: "Fault немесе idle" болса, AP-мен байланыс жоқ дегенді білдіреді!
 ```
 
 ```shell
