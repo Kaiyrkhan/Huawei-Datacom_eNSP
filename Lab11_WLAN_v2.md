@@ -15,25 +15,25 @@ Table - WLAN Data Plan
 | Staff STA IP Address Pool  | 192.168.100.10 - 192.168.100.250/24                                                                       |
 | Guest STA Default Gateway  | 192.168.200.254                                                                                           |
 | Guest STA IP Address Pool  | 192.168.200.10 - 192.168.200.250/24                                                                       |
-| AP group                   | Name: ap-group1                                                                                           |
+| AP Group                   | Name: ap-group1                                                                                           |
 |                            | Referenced profiles: VAP profile **VAP-Staff** and **VAP-Guest**, Regulatory domain profile **default**   |
-| Regulatory domain profile  | Name: default                                                                                             |
+| Regulatory Domain Profile  | Name: default                                                                                             |
 |                            | Country code: KZ                                                                                          |
-| SSID profile (Staff)       | Name: WLAN-Staff                                                                                          |
+| SSID Profile (Staff)       | Name: WLAN-Staff                                                                                          |
 |                            | SSID name: Staff-WiFi                                                                                     |
-| Security profile (Staff)   | Name: WLAN-Staff                                                                                          |
+| Security Profile (Staff)   | Name: WLAN-Staff                                                                                          |
 |                            | Security policy: WPA-WPA2+PSK+AES                                                                         |
 |                            | Password: Huawei@123                                                                                      |
-| SSID profile (Guest)       | Name: WLAN-Guest                                                                                          |
+| SSID Profile (Guest)       | Name: WLAN-Guest                                                                                          |
 |                            | SSID name: Guest-WiFi                                                                                     |
-| Security profile (Guest)   | Name: WLAN-Guest                                                                                          |
+| Security Profile (Guest)   | Name: WLAN-Guest                                                                                          |
 |                            | Security policy: WPA-WPA2+PSK+AES                                                                         |
 |                            | Password: Huawei@123                                                                                      |
-| VAP profile (Staff)        | Name: VAP-Staff                                                                                           |
+| VAP Profile (Staff)        | Name: VAP-Staff                                                                                           |
 |                            | Forwarding mode: Direct forwarding                                                                        |
 |                            | Service VLAN: 100                                                                                         |
 |                            | Referenced profiles: SSID profile **WLAN-Staff** and Security profile **WLAN-Staff**                      |
-| VAP profile (Guest)        | Name: VAP-Guest                                                                                           |
+| VAP Profile (Guest)        | Name: VAP-Guest                                                                                           |
 |                            | Forwarding mode: Direct forwarding                                                                        |
 |                            | Service VLAN: 200                                                                                         |
 |                            | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**                      |
