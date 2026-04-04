@@ -294,6 +294,7 @@ quit
 ```shell
 ap-group name ap-group1
  regulatory-domain-profile default
+
  vap-profile VAP-Staff wlan 1 radio all
  vap-profile VAP-Guest wlan 2 radio all
 quit
