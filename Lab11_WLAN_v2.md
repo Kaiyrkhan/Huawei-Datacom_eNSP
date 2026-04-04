@@ -81,7 +81,7 @@ interface g0/0/4
 
 display port vlan
 ```
-> PVID (Port VLAN ID)  
+> PVID (Port VLAN ID) — Switch кіріс трафик үшін VLAN43 tag-ін алады, нәтижесінде untagged Frame-нен tagged Frame-ге өзгереді. Ал шығыс трафик үшін tag-ті алып тастап, AP-ға untagged Frame жібереді!  
 
 ## D1 Switch
 
