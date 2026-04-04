@@ -7,7 +7,7 @@
 Table - WLAN Data Plan
 | Item                                    | Value                                                                                                   |
 | ----------------------------------------| --------------------------------------------------------------------------------------------------------|
-| Management VLAN for APs                 | VLAN 43                                                                                                 |
+| Management (MGMT) VLAN for APs          | VLAN 43                                                                                                 |
 | Service VLAN for STAs                   | VLAN 100, VLAN 200                                                                                      |
 | Default Gateway for AP                  | 10.1.43.254                                                                                             |
 | DHCP Pool for APs                       | 10.1.43.100 - 10.1.43.200/24                                                                            |
