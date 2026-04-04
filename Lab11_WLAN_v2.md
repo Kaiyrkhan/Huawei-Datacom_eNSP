@@ -43,8 +43,6 @@ Table1 - WLAN Data Plan
 ## A1 and A2 Switch
 
 ```shell
-<Huawei> undo terminal monitor
-
 <Huawei> system-view
 [Huawei] sysname A1
 [A1]
@@ -56,13 +54,16 @@ interface g0/0/4
 ```
 
 ```shell
-vlan batch 43 200
+vlan batch 43 100 200
 
 [A1] vlan 43
-[A1-vlan43] description APs
+[A1-vlan43] description MGMT VLAN
+
+[A1] vlan 100
+[A1-vlan100] description Service VLAN
 
 [A1] vlan 200
-[A1-vlan200] description STAs
+[A1-vlan200] description Service VLAN
 
 display vlan
 ```
@@ -70,12 +71,12 @@ display vlan
 ```shell
 interface g0/0/1
  port link-type trunk
- port trunk allow-pass vlan 43 200
+ port trunk allow-pass vlan 43 100 200
 
 interface g0/0/4
  port link-type trunk
  port trunk pvid vlan 43
- port trunk allow-pass vlan 43 200
+ port trunk allow-pass vlan 43 100 200
 
 display port vlan
 ```
