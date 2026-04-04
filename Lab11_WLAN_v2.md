@@ -54,6 +54,7 @@ interface g0/0/4
  poe enable
 ```
 
+Create VLANs
 ```shell
 vlan batch 43 100 200
 
@@ -67,6 +68,7 @@ vlan 200
 display vlan
 ```
 
+Configure the Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
@@ -79,6 +81,7 @@ interface g0/0/4
 
 display port vlan
 ```
+> PVID (Port VLAN ID)  
 
 ## D1 Switch
 
