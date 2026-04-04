@@ -287,7 +287,7 @@ wlan
  quit
 ```
 > Access Point: **AirEngine 6761-21**  
-> Access Point Type: AP2050DN  
+> Access Point Type: **AP2050DN**  
 > AP1 MAC Address: 90F9-B722-2000  
 > AP2 MAC Address: 90F9-B722-17C0  
 
