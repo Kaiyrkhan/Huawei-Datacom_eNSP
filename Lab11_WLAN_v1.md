@@ -2,7 +2,7 @@
 
 ### 🖧 Network Topology (желі топологиясы)
 ![Topology](images/Lab11_NetworkTopology_WLAN_AC_AP.png)  
-[Download Link for eNSP Topology File](Topology/Lab11_NetworkTopology_WLAN_AC_AP.topo)
+[Download Link for eNSP Topology File](Topology/Lab11_NetworkTopology_WLAN_v1.topo)
 
 Table - WLAN Data Plan
 | Item                            | Value                                                                                     |
