@@ -215,8 +215,8 @@ display ap all
 ```
 > Access Point Model: **AirEngine 6761-21**  
 > Access Point Type: **AP2050DN**  
-> MAC Address: 90F9-B722-2000  
-> MAC Address: 90F9-B722-17C0  
+> AP1 MAC Address: 90F9-B722-2000  
+> AP2 MAC Address: 90F9-B722-17C0  
 
 **Create a Security Profile**
 ```shell
