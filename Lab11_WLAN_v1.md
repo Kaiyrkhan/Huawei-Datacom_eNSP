@@ -9,10 +9,10 @@ Table1 - WLAN Data Plan
 | ------------------------------- | ----------------------------------------------------------------------------------------- |
 | Management VLAN for APs         | VLAN 43                                                                                   |
 | Service VLAN for STAs           | VLAN 200                                                                                  |
-| AP Default Gateway              | 10.1.43.254                                                                               |
-| AP DHCP Pool                    | 10.1.43.100 - 10.1.43.200/24                                                              |
-| Guest STA Default Gateway       | 192.168.200.254                                                                           |
-| Guest STA DHCP Pool             | 192.168.200.10 - 192.168.200.250/24                                                       |
+| Default Gateway for AP          | 10.1.43.254                                                                               |
+| DHCP Pool for AP                | 10.1.43.100 - 10.1.43.200/24                                                              |
+| Default Gateway for Guest       | 192.168.200.254                                                                           |
+| DHCP Pool fot Guest             | 192.168.200.10 - 192.168.200.250/24                                                       |
 | AP Group                        | Name: ap-group1                                                                           |
 |                                 | Referenced profiles: VAP profile **VAP-Guest** and Regulatory domain profile **default**  |
 | Regulatory Domain Profile       | Name: default                                                                             |
