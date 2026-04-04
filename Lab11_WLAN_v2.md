@@ -119,7 +119,7 @@ interface vlanif 200
 
 display ip int brief
 ```
-> Switched Virtual Interface (SVI)  
+> Vlanif — Switched Virtual Interface (SVI)  
 
 ```shell
 dhcp enable
