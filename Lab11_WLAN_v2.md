@@ -137,6 +137,109 @@ interface vlanif 200
 display ip pool
 ```
 
+## AC (Access Controller)
+
+**1-қадам: WLAN mode**
+```shell
+system-view
+wlan
+```
+
+**2-қадам: Create a Regulatory Domain Profile**
+```shell
+regulatory-domain-profile name default
+ country-code kz
+quit
+```
+
+**3-қадам: Create Security Profiles**
+```shell
+security-profile name WLAN-Staff
+ security wpa-wpa2 psk pass-phrase Huawei@123 aes
+quit
+```
+```shell
+security-profile name WLAN-Guest
+ security wpa-wpa2 psk pass-phrase Huawei@123 aes
+quit
+```
+
+**4-қадам: Create SSID Profiles**
+```shell
+ssid-profile name WLAN-Staff
+ ssid Staff-WiFi
+quit
+```
+
+```shell
+ssid-profile name WLAN-Guest
+ ssid Guest-WiFi
+quit
+```
+
+**5-қадам: Create VAP Profiles**
+```shell
+vap-profile name VAP-Staff
+ forwarding-mode direct-forward
+ service-vlan vlan-id 100
+ ssid-profile WLAN-Staff
+ security-profile WLAN-Staff
+quit
+```
+
+```shell
+vap-profile name VAP-Guest
+ forwarding-mode direct-forward
+ service-vlan vlan-id 200
+ ssid-profile WLAN-Guest
+ security-profile WLAN-Guest
+quit
+```
+> Forwarding Mode — трафикті бағыттау режимі  
+
+**6-қадам: AP Group**
+```shell
+ap-group name ap-group1
+ regulatory-domain-profile default
+
+ vap-profile VAP-Staff wlan 1 radio all
+ vap-profile VAP-Guest wlan 2 radio all
+quit
+```
+
+**Verify the Configuration**
+```shell
+General Status
+<AC1> display ap all
+State: "Normal"
+State: "Fault немесе idle" болса байланыс жоқ!
+```
+
+```shell
+Checking Profiles
+<AC1> display wlan vap-profile all
+<AC1> display wlan ssid-profile all
+<AC1> display wlan security-profile all
+```
+
+```shell
+<AC1> display wlan vap all
+```
+
+```shell
+Checking AP Group
+<AC1> display ap-group name ap-group1
+```
+
+```shell
+<AC1> display station all
+```
+
+```shell
+STA1> ipconfig
+STA2> ipconfig
+```
+
 ## Access Controller
 
 ```shell
