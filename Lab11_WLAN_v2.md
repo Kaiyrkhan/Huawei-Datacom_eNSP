@@ -296,7 +296,7 @@ wlan
 display ap all
 ```
 
-**Verify the Configuration**
+**7-қадам: Verify the Configuration**
 ```shell
 General Status
 <AC1> display ap all
