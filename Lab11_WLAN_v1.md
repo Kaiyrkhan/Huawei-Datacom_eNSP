@@ -94,11 +94,6 @@ display port vlan
 ```
 
 ```shell
-interface Loopback 50
- ip address 50.1.1.1 32
-```
-
-```shell
 interface vlanif 200
  ip address 192.168.200.254 24
  description Default Gateway for STAs
@@ -106,6 +101,11 @@ interface vlanif 200
 display ip int brief
 ```
 > Vlanif — Switched Virtual Interface (SVI)  
+
+```shell
+interface Loopback 50
+ ip address 50.1.1.1 32
+```
 
 DHCP Pool for STAs
 ```shell
