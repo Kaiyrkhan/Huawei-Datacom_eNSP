@@ -43,6 +43,7 @@ interface g0/0/4
  poe enable
 ```
 
+Create VLANs
 ```shell
 vlan batch 43 200
 
@@ -54,6 +55,7 @@ vlan 200
 display vlan
 ```
 
+Configure the Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
@@ -75,10 +77,20 @@ display port vlan
 [D1]
 ```
 
+Create VLANs
 ```shell
 vlan batch 43 200
-display vlan
 
+vlan 43
+ description MGMT VLAN
+vlan 200
+ description Service VLAN
+
+display vlan
+```
+
+Configure the Trunk Port and Allowed VLANs
+```shell
 interface g0/0/10
  port link-type trunk
  port trunk allow-pass vlan 43 200
@@ -94,6 +106,7 @@ interface g0/0/14
 display port vlan
 ```
 
+Configure the VLANIF Interface
 ```shell
 interface vlanif 200
  ip address 192.168.200.254 24
@@ -101,7 +114,6 @@ interface vlanif 200
 
 display ip int brief
 ```
-> Vlanif — Switched Virtual Interface (SVI)  
 
 ```shell
 interface Loopback 50
@@ -111,7 +123,7 @@ interface Loopback 50
 DHCP Pool for STAs
 ```shell
 dhcp enable
-ip pool STA
+ip pool VLAN200
  network 192.168.200.0 mask 24
  gateway-list 192.168.200.254
  dns-list 8.8.8.8
@@ -133,18 +145,28 @@ display ip pool
 [AC1]
 ```
 
+Create VLANs
 ```shell
 vlan batch 43 200
-display vlan brief
 
+vlan 43
+ description MGMT VLAN
+vlan 200
+ description Service VLAN
+
+display vlan brief
+```
+
+Configure the Trunk Port and Allowed VLANs
+```shell
 interface g0/0/10
  port link-type trunk
  port trunk allow-pass vlan 43 200
 
-display vlan brief
 display port vlan
 ```
 
+Configure the VLANIF Interface
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
