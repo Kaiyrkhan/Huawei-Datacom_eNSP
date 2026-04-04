@@ -254,9 +254,15 @@ wlan
 
 **Verify the Configuration**
 ```shell
-STA> ipconfig
-STA> ping 50.1.1.1
+STA1> ipconfig
+STA2> ipconfig
 ```
+
+```shell
+STA1> ping 50.1.1.1
+STA2> ping 50.1.1.1
+```
+
 ```shell
 <AC1> display station all
 ```
