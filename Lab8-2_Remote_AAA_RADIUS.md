@@ -25,12 +25,12 @@ AAA (Authentication, Authorization, Accounting):
 
 ## Scenario (RADIUS Client):
 1) Basic Device Configuration
-     - Configure the IP Address
-2) Create a RADIUS Server Template
-3) Configure the AAA Scheme
-4) Configure the AAA Domain
-5) Enable the SSH Server
-6) Configure the VTY User Interface
+     - Configure IP Address
+2) Create RADIUS Server Template
+3) Configure AAA Scheme
+4) Configure AAA Domain
+5) Enable SSH Server
+6) Configure VTY User Interface
 7) Configure Local Backup Authentication
 8) Verify the Configuration
 
