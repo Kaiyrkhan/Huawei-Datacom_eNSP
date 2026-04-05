@@ -155,7 +155,7 @@ Access-Accept
 
 ---
 
-**Create a HWTACACS Server Template**
+**Create HWTACACS Server Template**
 ```shell
 [R1] hwtacacs enable
 
@@ -166,7 +166,7 @@ hwtacacs-server template LAN2
  hwtacacs-server shared-key cipher Datacom@123
 ```
 
-**Configure the AAA Scheme**
+**Configure AAA Scheme**
 ```shell
 aaa
 authentication-scheme HWTACACS
@@ -181,7 +181,7 @@ accounting-scheme HWTACACS
  accounting realtime 3
 ```
 
-**Configure the AAA Domain**
+**Configure AAA Domain**
 ```shell
 aaa
 domain LAB.LOCAL
@@ -200,7 +200,7 @@ display hwtacacs-server template LAN2
 display domain name LAB.LOCAL
 ```
 
-**Enable the SSH Server**
+**Enable SSH Server**
 ```shell
 stelnet server enable
 display ssh server status
@@ -208,7 +208,7 @@ display ssh server status
 rsa local-key-pair create
 ```
 
-**Configure the VTY User Interface**
+**Configure VTY User Interface**
 ```shell
 user-interface vty 0 4
  authentication-mode aaa
