@@ -5,10 +5,10 @@
 [Download Link for eNSP Topology File](Topology/Lab7_NetworkTopology_ACL.topo)
 
 ## Scenario:
-1) Configure IP address;
+1) Configure IP Address;
 2) Configure OSPF;
 3) Configure Remote Access (Telnet);
-4) Create an ACL;
+4) Create ACL;
 5) Verify the Configuration.
 
 ## Step1: Configure IP address
