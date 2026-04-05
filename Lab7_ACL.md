@@ -8,7 +8,7 @@
 1) Configure IP address;
 2) Configure OSPF;
 3) Configure Remote Access (Telnet);
-4) Create a ACL;
+4) Create an ACL;
 5) Verify the Configuration.
 
 ## Step1: Configure IP address
