@@ -3,10 +3,12 @@
 2) Link Aggregation. LACP
 3) MSTP (Multiple Spanning Tree Protocol)
 4) VRRP (Virtual Router Redundancy Protocol)
-5) OSPF
+5) Single-Area OSPFv2
 6) DHCP
 7) NAT (Easy IP)
-8) DNS және HTTP
+8) Remote Access (SSH, Telnet)
+9) DNS және HTTP
+10) TFTP, FTP and NTP
 
 ## A1 and A2 Switch
 ```shell
