@@ -148,7 +148,51 @@ display stp vlan 12
 display stp vlan 50
 ```
 
+## D1 and D2 Switch
+
+D1 Switch
 ```shell
+interface vlanif 11
+ ip address 172.16.11.1 24
+ vrrp vrid 11 virtual-ip 172.16.11.254
+ vrrp vrid 11 priority 105
+ quit
+
+interface vlanif 12
+ ip address 172.16.12.1 24
+ vrrp vrid 12 virtual-ip 172.16.12.254
+ quit
+
+interface vlanif 50
+ ip address 10.1.50.1 24
+ vrrp vrid 50 virtual-ip 10.1.50.254
+ vrrp vrid 50 priority 105
+ quit
+
+display ip int brief
+display vrrp brief
+```
+
+D2 Switch
+```shell
+interface vlanif 11
+ ip address 172.16.11.2 24
+ vrrp vrid 11 virtual-ip 172.16.11.254
+ quit
+
+interface vlanif 12
+ ip address 172.16.12.2 24
+ vrrp vrid 12 virtual-ip 172.16.12.254
+ vrrp vrid 12 priority 105
+ quit
+
+interface vlanif 50
+ ip address 10.1.50.2 24
+ vrrp vrid 50 virtual-ip 10.1.50.254
+ quit
+
+display ip int brief
+display vrrp brief
 ```
 
 ```shell
