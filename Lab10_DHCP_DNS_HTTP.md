@@ -1,8 +1,8 @@
 ## Scenario
 1) Configure VLAN:    
-       - Create VLANs;  
-       - Configure Access Port;  
-       - Configure Trunk Port and Allowed VLANs.  
+      - Create VLANs;
+      - Configure Access Port;
+      - Configure Trunk Port and Allowed VLANs.
 2) Link Aggregation. LACP
 3) MSTP (Multiple Spanning Tree Protocol)
 4) VRRP (Virtual Router Redundancy Protocol)
