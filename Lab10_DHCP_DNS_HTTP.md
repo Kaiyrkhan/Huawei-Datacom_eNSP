@@ -340,9 +340,43 @@ display ospf peer
 ```
 
 ```shell
+dhcp enable
+
+ip pool VLAN11
+ network 172.16.11.0 mask 24
+ gateway-list 172.16.11.254
+ dns-list 172.16.128.53
+ excluded-ip-address 172.16.11.1 172.16.11.10
+ excluded-ip-address 172.16.11.251 172.16.11.253
+ lease day 5
+
+ip pool VLAN12
+ network 172.16.12.0 mask 24
+ gateway-list 172.16.12.254
+ dns-list 172.16.128.53
+ excluded-ip-address 172.16.12.1 172.16.12.10
+ excluded-ip-address 172.16.12.251 172.16.12.253
+ lease day 5
+
+interface g0/0/0
+ dhcp select global
+
+display ip pool
+display ip pool name VLAN11
+display dhcp server statistics
 ```
 
+DHCP Relay Agent (D1 and D2 Switch)
 ```shell
+dhcp enable
+
+interface vlanif 11
+ dhcp select relay
+ dhcp relay server-ip 50.5.5.5
+
+interface vlanif 12
+ dhcp select relay
+ dhcp relay server-ip 50.5.5.5
 ```
 
 ```shell
