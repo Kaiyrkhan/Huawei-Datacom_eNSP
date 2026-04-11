@@ -111,20 +111,22 @@ stp region-configuration
  instance 3 vlan 50
  active region-configuration
  quit
+
+check region-configuration
 ```
 
 D1 Switch
 ```shell
-stp instance 1 priority root primary
-stp instance 2 priority root secondary
-stp instance 3 priority root primary
+stp instance 1 root primary
+stp instance 2 root secondary
+stp instance 3 root primary
 ```
 
 D2 Switch
 ```shell
-stp instance 2 priority root primary
-stp instance 1 priority root secondary
-stp instance 3 priority root secondary
+stp instance 2 root primary
+stp instance 1 root secondary
+stp instance 3 root secondary
 ```
 
 ## A1 and A2 Switch
@@ -136,6 +138,8 @@ stp region-configuration
  instance 3 vlan 50
  active region-configuration
  quit
+
+check region-configuration
 ```
 
 ```shell
@@ -193,6 +197,140 @@ interface vlanif 50
 
 display ip int brief
 display vrrp brief
+```
+
+## Configure OSPF
+
+D1 Switch
+
+```shell
+interface vlanif 1
+ ip address 10.1.1.106 30
+ quit
+interface Loopback 50
+ ip address 50.3.3.3 32
+ quit
+
+display ip int brief
+```
+
+```shell
+ospf 1 router-id 50.3.3.3
+ area 0
+ network 10.1.1.104 0.0.0.3
+ network 172.16.11.0 0.0.0.255
+ network 172.16.12.0 0.0.0.255
+ network 10.1.50.0 0.0.0.255
+ network 50.3.3.3 0.0.0.0
+
+display cu | begin ospf
+```
+
+D2 Switch
+```shell
+interface vlanif 1
+ ip address 10.1.1.110 30
+ quit
+interface Loopback 50
+ ip address 50.4.4.4 32
+ quit
+
+display ip int brief
+```
+
+```shell
+ospf 1 router-id 50.4.4.4
+ area 0
+ network 10.1.1.108 0.0.0.3
+ network 172.16.11.0 0.0.0.255
+ network 172.16.12.0 0.0.0.255
+ network 10.1.50.0 0.0.0.255
+ network 50.4.4.4 0.0.0.0
+
+display ospf peer
+```
+
+C1 Switch
+```shell
+undo terminal monitor
+system-view
+sysname C1
+
+interface g0/0/0
+ ip address 10.1.1.102 30
+ quit
+interface g0/0/1
+ ip address 10.1.1.105 30
+ quit
+interface g0/0/2
+ ip address 10.1.1.109 30
+ quit
+interface g0/0/3
+ ip address 10.10.10.1 24
+ quit
+interface Loopback 50
+ ip address 50.2.2.2 32
+ quit
+
+display ip int brief
+
+ospf 1 router-id 50.2.2.2
+ area 0
+ network 10.1.1.100 0.0.0.3
+ network 10.1.1.104 0.0.0.3
+ network 10.1.1.108 0.0.0.3
+ network 10.10.10.0 0.0.0.255
+ network 50.2.2.2 0.0.0.0
+
+display ospf peer
+```
+
+EdgeRT1
+```shell
+undo terminal monitor
+system-view
+sysname EdgeRT1
+
+interface g0/0/0
+ ip address 10.1.1.101 30
+ quit
+interface g0/0/2
+ ip address 172.16.128.1 24
+ quit
+interface g0/0/1
+ ip address 192.168.137.254 24
+ quit
+interface Loopback 50
+ ip address 50.1.1.1 32
+ quit
+
+display ip int brief
+
+ospf 1 router-id 50.1.1.1
+ area 0
+ network 10.1.1.100 0.0.0.3
+ network 172.16.128.0 0.0.0.255
+ network 50.1.1.1 0.0.0.0
+
+display ospf peer
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
 
 ```shell
