@@ -152,7 +152,7 @@ display stp vlan 12
 display stp vlan 50
 ```
 
-## D1 and D2 Switch
+## Configure VRRP (Virtual Router Redundancy Protocol)
 
 D1 Switch
 ```shell
@@ -199,7 +199,7 @@ display ip int brief
 display vrrp brief
 ```
 
-## Configure OSPF
+## Configure Single-Area OSPF
 
 D1 Switch
 
@@ -315,7 +315,7 @@ ospf 1 router-id 50.1.1.1
 display ospf peer
 ```
 
-## DHCP Server
+## Configure DHCP Server
 ```shell
 undo terminal monitor
 system-view
