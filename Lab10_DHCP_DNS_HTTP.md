@@ -315,7 +315,28 @@ ospf 1 router-id 50.1.1.1
 display ospf peer
 ```
 
+## DHCP Server
 ```shell
+undo terminal monitor
+system-view
+sysname DHCP
+
+interface g0/0/0
+ ip address 10.10.10.67 24
+ quit
+interface Loopback 50
+ ip address 50.5.5.5 32
+ quit
+
+display ip int brief
+
+ospf 1 router-id 50.5.5.5
+ area 0
+ network 10.10.10.0 0.0.0.255
+ network 50.5.5.5 0.0.0.0
+ quit
+
+display ospf peer
 ```
 
 ```shell
