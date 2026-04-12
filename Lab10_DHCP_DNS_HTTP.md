@@ -633,6 +633,27 @@ Default Gateway
 ip route-static 0.0.0.0 0.0.0.0 10.1.50.254
 ```
 
+A1 Switch
+```shell
+ping 10.1.50.102
+ Reply from 10.1.50.102: bytes=56 Sequence=4 ttl=255 time=30 ms
+
+ping 50.3.3.3
+ Reply from 50.3.3.3: bytes=56 Sequence=3 ttl=255 time=20 ms
+
+ping 50.4.4.4
+ Reply from 50.4.4.4: bytes=56 Sequence=5 ttl=255 time=60 ms
+
+ping 50.2.2.2
+ Reply from 50.2.2.2: bytes=56 Sequence=1 ttl=254 time=60 ms
+
+ping 50.5.5.5
+ Reply from 50.5.5.5: bytes=56 Sequence=3 ttl=253 time=70 ms
+
+ping 50.1.1.1
+ Reply from 50.1.1.1: bytes=56 Sequence=3 ttl=253 time=70 ms
+```
+
 ## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeRT1, DHCP
 
 Configure Local User Authentication and Authorization
@@ -689,7 +710,4 @@ The server is not authenticated. Continue to access it? (y/n)[n]: y
 Save the server's public key? (y/n)[n]: y
 
 Enter password: Huawei@123
-```
-
-```shell
 ```
