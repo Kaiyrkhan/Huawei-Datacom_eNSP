@@ -5,8 +5,8 @@
 4) VRRP (Virtual Router Redundancy Protocol)
 5) Single-Area OSPFv2
 6) DHCP
-7) NAT (Easy IP)
-8) DNS және HTTP
+7) DNS және HTTP
+8) NAT (Easy IP)
 9) Remote Access (SSH, Telnet)
 10) TFTP, FTP and NTP
 
@@ -483,6 +483,51 @@ PC3> ipconfig
 PC4> ipconfig
 ```
 
+## DNS and HTTP
+
+DNS Server
+```shell
+Basic Config:
+Local Address: 172.16.128.53
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.128.1
+DNS: 8.8.8.8                        // Public DNS Server
+
+Server info:
+Hostname: lab.local
+IP Address: 172.16.128.80          // Web Server
+```
+
+HTTP Server
+```shell
+Local Address: 172.16.128.80
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.128.1
+DNS: 172.16.128.53
+```
+
+index.html
+```shell
+<!DOCTYPE html>
+<html>
+<head>
+   	 <meta charset="UTF-8">
+   	 <title>Example</title>
+</head>
+<body>
+   	 <h1>Welcome to Almaty!</h1>
+</body>
+</html>
+```
+
+HTTP Client
+```shell
+Local Address: 172.16.11.80
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.11.254
+DNS: 172.16.128.53
+```
+
 ## Configure NAT (Easy IP)
 
 EdgeRT1
@@ -523,46 +568,6 @@ C1 Switch
 display ip routing-table
 display ip routing-table protocol ospf
 display ospf routing
-```
-
-## DNS and HTTP
-
-DNS Server
-```shell
-Local Address: 172.16.128.53
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.128.1
-DNS: 8.8.8.8
-```
-
-HTTP Server
-```shell
-Local Address: 172.16.128.80
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.128.1
-DNS: 172.16.128.53
-```
-
-index.html
-```shell
-<!DOCTYPE html>
-<html>
-<head>
-   	 <meta charset="UTF-8">
-   	 <title>Example</title>
-</head>
-<body>
-   	 <h1>Welcome to Almaty!</h1>
-</body>
-</html>
-```
-
-HTTP Client
-```shell
-Local Address: 172.16.11.80
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.11.254
-DNS: 172.16.128.53
 ```
 
 ## Configure Remote Access (SSH, Telnet)
