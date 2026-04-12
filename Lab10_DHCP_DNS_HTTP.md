@@ -396,7 +396,7 @@ ospf 1 router-id 50.1.1.1
 display ospf peer brief
 ```
 
-DHCP Server
+DHCP
 ```shell
 undo terminal monitor
 system-view
