@@ -555,6 +555,11 @@ display ssh server status
 ```
 
 ```shell
+display current-configuration | include ssh
+display current-configuration | include stelnet
+```
+
+```shell
 ssh client first-time enable
 
 stelnet 50.3.3.3
@@ -562,9 +567,6 @@ Please input the username: student
 The server is not authenticated. Continue to access it? (y/n)[n]: y
 Save the server's public key? (y/n)[n]: y
 Enter password: Huawei@123
-```
-
-```shell
 ```
 
 ```shell
