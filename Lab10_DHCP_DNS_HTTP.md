@@ -6,8 +6,8 @@
 5) Single-Area OSPFv2
 6) DHCP
 7) NAT (Easy IP)
-8) Remote Access (SSH, Telnet)
-9) DNS және HTTP
+8) DNS және HTTP
+9) Remote Access (SSH, Telnet)
 10) TFTP, FTP and NTP
 
 ## A1 and A2 Switch
