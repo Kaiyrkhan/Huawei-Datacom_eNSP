@@ -488,27 +488,32 @@ PC4> ipconfig
 DNS Server
 ```shell
 Basic Config:
-Local Address: 172.16.128.53
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.128.1
-DNS: 8.8.8.8                        // Public DNS Server
+ Local Address: 172.16.128.53
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.128.1
+ DNS: 8.8.8.8                        // Public DNS Server
 
 Server info:
-Hostname: lab.local
-IP Address: 172.16.128.80          // Web Server
-"Add" батырмасын басамыз!
-Service ➜ Start
+ Hostname: lab.local
+ IP Address: 172.16.128.80          // Web Server
+ "Add" батырмасын басамыз!
+ DNSServer ➜ Service ➜ Start
 ```
 
 HTTP Server
 ```shell
-Local Address: 172.16.128.80
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.128.1
-DNS: 172.16.128.53
+Basic Config:
+ Local Address: 172.16.128.80
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.128.1
+ DNS: 172.16.128.53
+
+Server info:
+ Root Path: C:\Users\student\Documents\www\
+ HTTPServer ➜ Service ➜ Start
 ```
 
-index.html
+C:\Users\student\Documents\www\index.html
 ```shell
 <!DOCTYPE html>
 <html>
@@ -524,10 +529,11 @@ index.html
 
 HTTP Client
 ```shell
-Local Address: 172.16.11.80
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.11.254
-DNS: 172.16.128.53
+Basic Config:
+ Local Address: 172.16.11.80
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.11.254
+ DNS: 172.16.128.53
 ```
 
 ## Configure NAT (Easy IP)
