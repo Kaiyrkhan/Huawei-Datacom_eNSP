@@ -647,11 +647,11 @@ ping 50.4.4.4
 ping 50.2.2.2
  Reply from 50.2.2.2: bytes=56 Sequence=1 ttl=254 time=60 ms
 
-ping 50.5.5.5
- Reply from 50.5.5.5: bytes=56 Sequence=3 ttl=253 time=70 ms
-
 ping 50.1.1.1
  Reply from 50.1.1.1: bytes=56 Sequence=3 ttl=253 time=70 ms
+
+ping 50.5.5.5
+ Reply from 50.5.5.5: bytes=56 Sequence=3 ttl=253 time=70 ms
 ```
 
 ## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeRT1, DHCP
