@@ -516,6 +516,7 @@ Gateway: 172.16.11.254
 DNS: 172.16.128.53
 ```
 
+## Remote Access (SSH, Telnet)
 ```shell
 ```
 
