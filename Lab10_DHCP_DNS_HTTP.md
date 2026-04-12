@@ -438,6 +438,7 @@ ip pool VLAN11
  excluded-ip-address 172.16.11.1 172.16.11.100
  excluded-ip-address 172.16.11.201 172.16.11.253
  lease day 5
+ quit
 
 ip pool VLAN12
  network 172.16.12.0 mask 24
@@ -446,9 +447,11 @@ ip pool VLAN12
  excluded-ip-address 172.16.12.1 172.16.12.100
  excluded-ip-address 172.16.12.201 172.16.12.253
  lease day 5
+ quit
 
 interface g0/0/0
  dhcp select global
+ quit
 ```
 
 Verify Configuration
@@ -465,10 +468,12 @@ dhcp enable
 interface vlanif 11
  dhcp select relay
  dhcp relay server-ip 50.5.5.5
+ quit
 
 interface vlanif 12
  dhcp select relay
  dhcp relay server-ip 50.5.5.5
+ quit
 ```
 
 ## Configure NAT (Easy IP)
@@ -478,9 +483,11 @@ EdgeRT1
 acl 2000
  rule permit source 172.16.11.0 0.0.0.255
  rule permit source 172.16.12.0 0.0.0.255
+ quit
 
 int g0/0/1
-nat outbound 2000
+ nat outbound 2000
+ quit
 ```
 
 Verify Configuration
@@ -501,6 +508,7 @@ Advertise the Default Route
 ```shell
 ospf 1
  default-route-advertise
+ quit
 ```
 
 C1 Switch
