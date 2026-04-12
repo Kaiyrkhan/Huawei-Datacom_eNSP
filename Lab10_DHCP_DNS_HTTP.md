@@ -145,8 +145,8 @@ stp region-configuration
 D1 Switch
 ```shell
 stp instance 1 root primary
-stp instance 2 root secondary
 stp instance 3 root primary
+stp instance 2 root secondary
 ```
 
 D2 Switch
