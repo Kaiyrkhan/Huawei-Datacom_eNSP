@@ -467,12 +467,12 @@ dhcp enable
 
 interface vlanif 11
  dhcp select relay
- dhcp relay server-ip 50.5.5.5
+ dhcp relay server-ip 10.10.10.67
  quit
 
 interface vlanif 12
  dhcp select relay
- dhcp relay server-ip 50.5.5.5
+ dhcp relay server-ip 10.10.10.67
  quit
 ```
 
