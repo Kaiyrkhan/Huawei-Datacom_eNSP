@@ -434,7 +434,7 @@ dhcp enable
 ip pool VLAN11
  network 172.16.11.0 mask 24
  gateway-list 172.16.11.254
- dns-list 172.16.128.53
+ dns-list 8.8.8.8
  excluded-ip-address 172.16.11.1 172.16.11.100
  excluded-ip-address 172.16.11.201 172.16.11.253
  lease day 5
