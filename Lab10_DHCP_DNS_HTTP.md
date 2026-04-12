@@ -371,6 +371,12 @@ interface Loopback 50
 display ip int brief
 ```
 
+firewall.cpl
+```shell
+ping 192.168.137.1
+ Reply from 192.168.137.1: bytes=56 Sequence=2 ttl=128 time=10 ms
+```
+
 ```shell
 display ip int brief
 
