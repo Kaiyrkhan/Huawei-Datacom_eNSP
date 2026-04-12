@@ -171,6 +171,7 @@ stp region-configuration
  quit
 ```
 
+Verify Configuration
 ```shell
 display stp instance 1 brief
 display stp instance 2 brief
