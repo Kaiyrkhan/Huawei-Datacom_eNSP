@@ -437,7 +437,83 @@ interface vlanif 12
  dhcp relay server-ip 50.5.5.5
 ```
 
+## Configure NAT (Easy IP)
+
+EdgeRT1
 ```shell
+acl 2000
+ rule permit source 172.16.11.0 0.0.0.255
+ rule permit source 172.16.12.0 0.0.0.255
+
+int g0/0/1
+nat outbound 2000
+```
+
+Verify Configuration
+```shell
+display cu section acl
+display nat outbound
+display nat session all verbose
+```
+
+Default Static Route
+```shell
+ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
+
+display cu section static
+```
+
+Advertise the Default Route
+```shell
+ospf 1
+ default-route-advertise
+```
+
+C1 Switch
+```shell
+display ip routing-table
+display ip routing-table protocol ospf
+display ospf routing
+```
+
+## DNS and HTTP
+
+index.html
+```shell
+<!DOCTYPE html>
+<html>
+<head>
+   	 <meta charset="UTF-8">
+   	 <title>Example</title>
+</head>
+<body>
+   	 <h1>Welcome to Almaty!</h1>
+</body>
+</html>
+```
+
+HTTP Server
+```shell
+Local Address: 172.16.128.80
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.128.1
+DNS: 172.16.128.53
+```
+
+DNS Server
+```shell
+Local Address: 172.16.128.53
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.128.1
+DNS: 8.8.8.8
+```
+
+HTTP Client
+```shell
+Local Address: 172.16.11.80
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.11.254
+DNS: 172.16.128.53
 ```
 
 ```shell
