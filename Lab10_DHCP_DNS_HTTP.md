@@ -496,6 +496,8 @@ DNS: 8.8.8.8                        // Public DNS Server
 Server info:
 Hostname: lab.local
 IP Address: 172.16.128.80          // Web Server
+"Add" батырмасын басамыз!
+Service ➜ Start
 ```
 
 HTTP Server
