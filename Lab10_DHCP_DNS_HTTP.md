@@ -271,6 +271,7 @@ ospf 1 router-id 50.3.3.3
  network 10.1.50.0 0.0.0.255
  network 50.3.3.3 0.0.0.0
  quit
+ quit
 
 display cu | begin ospf
 ```
@@ -297,6 +298,7 @@ ospf 1 router-id 50.4.4.4
  network 172.16.12.0 0.0.0.255
  network 10.1.50.0 0.0.0.255
  network 50.4.4.4 0.0.0.0
+ quit
  quit
 
 display ospf peer
