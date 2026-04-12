@@ -137,7 +137,8 @@ display int eth-trunk 1
 Configure MSTP
 ```shell
 display stp
-
+```
+```shell
 stp region-configuration
  region-name HQ1
  revision-level 1
@@ -147,6 +148,9 @@ stp region-configuration
  active region-configuration
  check region-configuration
  quit
+```
+```shell
+display cu | begin stp
 ```
 
 D1 Switch
@@ -176,6 +180,9 @@ stp region-configuration
  active region-configuration
  check region-configuration
  quit
+```
+```shell
+display cu | begin stp
 ```
 
 Verify Configuration
