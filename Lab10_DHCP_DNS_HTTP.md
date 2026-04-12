@@ -661,8 +661,13 @@ Configure Local User Authentication and Authorization
 aaa
  local-user student password cipher Huawei@123
  local-user student service-type terminal ssh telnet
- local-user student privilege level 3
+ local-user student privilege level 15
  quit
+```
+
+```shell
+ssh user student authentication-type password
+ssh user student service-type stelnet
 ```
 
 Configure VTY Lines
@@ -679,6 +684,8 @@ rsa local-key-pair create
 
 Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 3072]: 2048
+
+display rsa local-key-pair public
 ```
 
 SSH server Permit interface
