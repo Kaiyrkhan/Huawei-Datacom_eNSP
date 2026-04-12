@@ -516,7 +516,69 @@ Gateway: 172.16.11.254
 DNS: 172.16.128.53
 ```
 
-## Remote Access (SSH, Telnet)
+## Configure Remote Access (SSH, Telnet)
+
+Configure Local User Authentication and Authorization
+```shell
+aaa
+ local-user student password cipher Huawei@123
+ local-user student service-type terminal ssh
+ local-user student privilege level 3
+```
+
+Configure VTY Lines
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh telnet
+```
+
+Generate RSA Key
+```shell
+rsa local-key-pair create
+Warning: Confirm to replace them! Continue? [Y/N] Y
+Input the bits in the modulus[default = 3072]: 2048
+```
+
+SSH server Permit interface
+```shell
+[Switch] ssh server-source -i Vlanif 50
+```
+```shell
+[Router] ssh server permit interface Loopback 50
+```
+
+Enable SSH
+```shell
+stelnet server enable
+display ssh server status
+```
+
+```shell
+ssh client first-time enable
+
+stelnet 50.3.3.3
+Please input the username: student
+The server is not authenticated. Continue to access it? (y/n)[n]: y
+Save the server's public key? (y/n)[n]: y
+Enter password: Huawei@123
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
 ```shell
 ```
 
