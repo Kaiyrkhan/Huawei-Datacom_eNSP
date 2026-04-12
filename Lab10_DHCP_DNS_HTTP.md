@@ -347,7 +347,7 @@ ospf 1 router-id 50.2.2.2
 display ospf peer brief
 ```
 
-EdgeRT1
+EdgeRT1 Router
 ```shell
 undo terminal monitor
 system-view
@@ -396,7 +396,7 @@ ospf 1 router-id 50.1.1.1
 display ospf peer brief
 ```
 
-DHCP
+DHCP Router
 ```shell
 undo terminal monitor
 system-view
