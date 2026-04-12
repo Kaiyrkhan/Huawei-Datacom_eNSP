@@ -476,6 +476,13 @@ interface vlanif 12
  quit
 ```
 
+```shell
+PC1> ipconfig /renew
+PC2> ipconfig
+PC3> ipconfig
+PC4> ipconfig
+```
+
 ## Configure NAT (Easy IP)
 
 EdgeRT1
