@@ -590,6 +590,14 @@ display ip routing-table protocol ospf
 display ospf routing
 ```
 
+```shell
+PC1> ping 8.8.8.8
+PC2> ping 8.8.8.8
+PC3> ping 8.8.8.8
+PC4> ping 8.8.8.8
+ From 8.8.8.8: bytes=32 seq=3 ttl=105 time=156 ms
+```
+
 ## Configure Remote Access (SSH, Telnet)
 
 Configure Local User Authentication and Authorization
