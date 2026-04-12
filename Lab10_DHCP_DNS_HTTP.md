@@ -1,3 +1,8 @@
+# Network Services (DHCP, HTTP, DNS, TFTP, FTP, NTP, Telnet, SSH)
+
+### 🖧 Network Topology (желі топологиясы)
+![Topology](images/Lab10_NetworkTopology_DHCP_DNS_HTTP.png)  
+
 ## Scenario
 1) Configure VLAN (Create VLANs and Access Port, Trunk Port)  
    LACP Link Aggregation. Eth-Trunk  
