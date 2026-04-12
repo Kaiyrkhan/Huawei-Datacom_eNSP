@@ -478,6 +478,14 @@ display ospf routing
 
 ## DNS and HTTP
 
+DNS Server
+```shell
+Local Address: 172.16.128.53
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.128.1
+DNS: 8.8.8.8
+```
+
 HTTP Server
 ```shell
 Local Address: 172.16.128.80
@@ -498,14 +506,6 @@ index.html
    	 <h1>Welcome to Almaty!</h1>
 </body>
 </html>
-```
-
-DNS Server
-```shell
-Local Address: 172.16.128.53
-Subnet Mask: 255.255.255.0
-Gateway: 172.16.128.1
-DNS: 8.8.8.8
 ```
 
 HTTP Client
