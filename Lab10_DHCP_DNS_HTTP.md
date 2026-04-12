@@ -530,7 +530,7 @@ Configure VTY Lines
 ```shell
 user-interface vty 0 4
  authentication-mode aaa
- protocol inbound ssh telnet
+ protocol inbound all
 ```
 
 Generate RSA Key
