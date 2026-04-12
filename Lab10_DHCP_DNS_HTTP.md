@@ -301,7 +301,7 @@ ospf 1 router-id 50.4.4.4
  quit
  quit
 
-display ospf peer
+display ospf peer brief
 ```
 
 C1 Switch
@@ -341,8 +341,10 @@ ospf 1 router-id 50.2.2.2
  network 10.1.1.108 0.0.0.3
  network 10.10.10.0 0.0.0.255
  network 50.2.2.2 0.0.0.0
+ quit
+ quit
 
-display ospf peer
+display ospf peer brief
 ```
 
 EdgeRT1
@@ -377,8 +379,10 @@ ospf 1 router-id 50.1.1.1
  network 10.1.1.100 0.0.0.3
  network 172.16.128.0 0.0.0.255
  network 50.1.1.1 0.0.0.0
+ quit
+ quit
 
-display ospf peer
+display ospf peer brief
 ```
 
 DHCP Server
@@ -407,8 +411,9 @@ ospf 1 router-id 50.5.5.5
  network 10.10.10.0 0.0.0.255
  network 50.5.5.5 0.0.0.0
  quit
+ quit
 
-display ospf peer
+display ospf peer brief
 ```
 
 ## Configure DHCP Server
