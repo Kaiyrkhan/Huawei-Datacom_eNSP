@@ -52,8 +52,8 @@ display vlan
 Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
- port link-type trunk                                             // Trunk Port
- port trunk allow-pass vlan 11 12 50                              // Allowed VLANs
+ port link-type trunk
+ port trunk allow-pass vlan 11 12 50
  quit
 
 interface g0/0/2
