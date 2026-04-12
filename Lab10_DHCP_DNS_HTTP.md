@@ -610,6 +610,7 @@ aaa
  local-user student password cipher Huawei@123
  local-user student service-type terminal ssh telnet
  local-user student privilege level 3
+ quit
 ```
 
 Configure VTY Lines
@@ -617,6 +618,7 @@ Configure VTY Lines
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound all
+ quit
 ```
 
 Generate RSA Key
