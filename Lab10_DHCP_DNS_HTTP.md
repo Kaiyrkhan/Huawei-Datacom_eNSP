@@ -624,6 +624,7 @@ user-interface vty 0 4
 Generate RSA Key
 ```shell
 rsa local-key-pair create
+
 Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 3072]: 2048
 ```
@@ -652,8 +653,10 @@ ssh client first-time enable
 
 stelnet 50.3.3.3
 Please input the username: student
+
 The server is not authenticated. Continue to access it? (y/n)[n]: y
 Save the server's public key? (y/n)[n]: y
+
 Enter password: Huawei@123
 ```
 
