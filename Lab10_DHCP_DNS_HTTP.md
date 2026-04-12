@@ -1,10 +1,7 @@
 ## Scenario
-1) Configure VLAN:    
-      - Create VLANs;
-      - Configure Access Port;
-      - Configure Trunk Port and Allowed VLANs.
-2) Link Aggregation. LACP
-3) MSTP (Multiple Spanning Tree Protocol)
+1) Configure VLAN (Create VLANs and Access Port, Trunk Port)  
+   LACP Link Aggregation. Eth-Trunk  
+   MSTP (Multiple Spanning Tree Protocol)  
 4) VRRP (Virtual Router Redundancy Protocol)
 5) Single-Area OSPFv2
 6) DHCP
@@ -20,11 +17,21 @@ system-view
 sysname A1
 ```
 
+Create VLANs
 ```shell
 vlan batch 11 12 50
+
+vlan 11
+ description Service VLAN
+vlan 12
+ description Service VLAN
+vlan 50
+ description MGMT VLAN
+
 display vlan
 ```
 
+Configure Access Port
 ```shell
 interface Ethernet0/0/1
  port link-type access
@@ -42,10 +49,11 @@ interface Ethernet0/0/2
 display vlan
 ```
 
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
- port link-type trunk
- port trunk allow-pass vlan 11 12 50
+ port link-type trunk                                             // Trunk Port
+ port trunk allow-pass vlan 11 12 50                              // Allowed VLANs
  quit
 
 interface g0/0/2
@@ -63,35 +71,21 @@ system-view
 sysname D1
 ```
 
+Create VLANs
 ```shell
 vlan batch 11 12 50
+
+vlan 11
+ description Service VLAN
+vlan 12
+ description Service VLAN
+vlan 50
+ description MGMT VLAN
+
 display vlan
 ```
 
-```shell
-interface Eth-Trunk 1
- port link-type trunk
- port trunk allow-pass vlan 11 12 50
- mode lacp-static
-
-display port vlan
-```
-
-```shell
-interface g0/0/3
- eth-trunk 1
- quit
-interface g0/0/4
- eth-trunk 1
- quit
-```
-
-```shell
-display int brief
-display eth-trunk 1
-display int eth-trunk 1
-```
-
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
@@ -106,18 +100,46 @@ interface g0/0/2
 display port vlan
 ```
 
+Configure LACP Link Aggregation
+```shell
+interface Eth-Trunk 1                                          // Create Eth-Trunk
+ port link-type trunk                                          // Trunk Port
+ port trunk allow-pass vlan 11 12 50                           // Allowed VLANs         
+ mode lacp-static                                              // Link Aggregation Mode
+
+display port vlan
+```
+
+Add a Port to the Eth-Trunk
+```shell
+interface g0/0/3
+ eth-trunk 1
+ quit
+interface g0/0/4
+ eth-trunk 1
+ quit
+```
+
+Verify Configuration
+```shell
+display int brief
+display eth-trunk 1
+display int eth-trunk 1
+```
+
+Configure MSTP
 ```shell
 display stp
 
 stp region-configuration
  region-name HQ1
- instance 1 vlan 10
- instance 2 vlan 20
+ revision-level 1
+ instance 1 vlan 11
+ instance 2 vlan 12
  instance 3 vlan 50
  active region-configuration
+ check region-configuration
  quit
-
-check region-configuration
 ```
 
 D1 Switch
@@ -135,23 +157,27 @@ stp instance 3 root secondary
 ```
 
 ## A1 and A2 Switch
+
+Configure MSTP
 ```shell
 stp region-configuration
  region-name HQ1
+ revision-level 1
  instance 1 vlan 11
  instance 2 vlan 12
  instance 3 vlan 50
  active region-configuration
+ check region-configuration
  quit
-
-check region-configuration
 ```
 
 ```shell
 display stp instance 1 brief
 display stp instance 2 brief
 display stp instance 3 brief
+```
 немесе
+```shell
 display stp vlan 11
 display stp vlan 12
 display stp vlan 50
