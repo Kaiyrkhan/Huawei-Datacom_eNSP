@@ -573,7 +573,7 @@ Default Static Route
 ```shell
 ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
 
-display cu section static
+display cu | include static
 ```
 
 Advertise the Default Route
