@@ -602,7 +602,7 @@ NAT Table
 [EdgeRT1] display nat session all verbose
 ```
 
-## Configure Remote Access (SSH, Telnet)
+## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeRT1, DHCP
 
 Configure Local User Authentication and Authorization
 ```shell
