@@ -534,6 +534,18 @@ Basic Config:
  Subnet Mask: 255.255.255.0
  Gateway: 172.16.11.254
  DNS: 172.16.128.53
+
+URL: http://lab.local
+немесе
+URL: http://172.16.128.80
+
+Нәтиже:
+HTTP/1.1 200 OK
+Server: ENSP HttpServer
+Auth: HUAWEI
+Cache-Control: private
+Content-Type: text/html
+Content-Length: 179
 ```
 
 ## Configure NAT (Easy IP)
