@@ -656,7 +656,7 @@ ping 50.5.5.5
 
 ## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeRT1, DHCP
 
-Configure Local User Authentication and Authorization
+Step1: Configure Local User Authentication and Authorization
 ```shell
 aaa
  local-user student password cipher Huawei@123
@@ -670,7 +670,7 @@ ssh user student authentication-type password
 ssh user student service-type stelnet
 ```
 
-Configure VTY Lines
+Step2: Configure VTY Lines
 ```shell
 user-interface vty 0 4
  authentication-mode aaa
@@ -678,7 +678,7 @@ user-interface vty 0 4
  quit
 ```
 
-Generate RSA Key
+Step3: Generate RSA Key
 ```shell
 rsa local-key-pair create
 
@@ -696,7 +696,7 @@ SSH server Permit interface
 [Router] ssh server permit interface Loopback 50
 ```
 
-Enable SSH
+Step4: Enable SSH
 ```shell
 stelnet server enable
 display ssh server status
@@ -707,7 +707,7 @@ display current-configuration | include ssh
 display current-configuration | include stelnet
 ```
 
-SSH Connect
+**Verify SSH Connectivity**
 ```shell
 [A1] ssh client first-time enable
 
@@ -731,7 +731,7 @@ Enter password: Huawei@123
 [A1] stelnet 10.1.50.102
 ```
 
-Telnet Connect
+**Verify Telnet Connectivity**
 ```shell
 <A1> telnet 50.3.3.3
  Username: student
