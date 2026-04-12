@@ -231,7 +231,7 @@ display ip int brief
 display vrrp brief
 ```
 
-## Configure Single-Area OSPF
+## Configure Single-Area OSPFv2
 
 D1 Switch
 
