@@ -723,6 +723,14 @@ Enter password: Huawei@123
 [A1]
 ```
 
+```shell
+[A1] stelnet 50.4.4.4
+[A1] stelnet 50.2.2.2
+[A1] stelnet 50.1.1.1
+[A1] stelnet 50.5.5.5
+[A1] stelnet 10.1.50.102
+```
+
 Telnet Connect
 ```shell
 <A1> telnet 50.3.3.3
@@ -733,4 +741,12 @@ Telnet Connect
 [D2] quit
 <D1> quit
 <A1> 
+```
+
+```shell
+<A1> telnet 50.4.4.4
+<A1> telnet 50.2.2.2
+<A1> telnet 50.1.1.1
+<A1> telnet 50.5.5.5
+<A1> telnet 10.1.50.102
 ```
