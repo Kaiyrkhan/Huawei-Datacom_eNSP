@@ -247,6 +247,8 @@ display ip int brief
 ```
 
 ```shell
+display ip int brief
+
 ospf 1 router-id 50.3.3.3
  area 0
  network 10.1.1.104 0.0.0.3
@@ -271,6 +273,8 @@ display ip int brief
 ```
 
 ```shell
+display ip int brief
+
 ospf 1 router-id 50.4.4.4
  area 0
  network 10.1.1.108 0.0.0.3
@@ -287,7 +291,9 @@ C1 Switch
 undo terminal monitor
 system-view
 sysname C1
+```
 
+```shell
 interface g0/0/0
  ip address 10.1.1.102 30
  quit
@@ -304,6 +310,10 @@ interface Loopback 50
  ip address 50.2.2.2 32
  quit
 
+display ip int brief
+```
+
+```shell
 display ip int brief
 
 ospf 1 router-id 50.2.2.2
@@ -322,7 +332,9 @@ EdgeRT1
 undo terminal monitor
 system-view
 sysname EdgeRT1
+```
 
+```shell
 interface g0/0/0
  ip address 10.1.1.101 30
  quit
@@ -337,6 +349,10 @@ interface Loopback 50
  quit
 
 display ip int brief
+```
+
+```shell
+display ip int brief
 
 ospf 1 router-id 50.1.1.1
  area 0
@@ -347,12 +363,14 @@ ospf 1 router-id 50.1.1.1
 display ospf peer
 ```
 
-## Configure DHCP Server
+DHCP Server
 ```shell
 undo terminal monitor
 system-view
 sysname DHCP
+```
 
+```shell
 interface g0/0/0
  ip address 10.10.10.67 24
  quit
@@ -360,6 +378,10 @@ interface Loopback 50
  ip address 50.5.5.5 32
  quit
 
+display ip int brief
+```
+
+```shell
 display ip int brief
 
 ospf 1 router-id 50.5.5.5
@@ -371,6 +393,7 @@ ospf 1 router-id 50.5.5.5
 display ospf peer
 ```
 
+## Configure DHCP Server
 ```shell
 dhcp enable
 
@@ -378,21 +401,24 @@ ip pool VLAN11
  network 172.16.11.0 mask 24
  gateway-list 172.16.11.254
  dns-list 172.16.128.53
- excluded-ip-address 172.16.11.1 172.16.11.10
- excluded-ip-address 172.16.11.251 172.16.11.253
+ excluded-ip-address 172.16.11.1 172.16.11.100
+ excluded-ip-address 172.16.11.201 172.16.11.253
  lease day 5
 
 ip pool VLAN12
  network 172.16.12.0 mask 24
  gateway-list 172.16.12.254
  dns-list 172.16.128.53
- excluded-ip-address 172.16.12.1 172.16.12.10
- excluded-ip-address 172.16.12.251 172.16.12.253
+ excluded-ip-address 172.16.12.1 172.16.12.100
+ excluded-ip-address 172.16.12.201 172.16.12.253
  lease day 5
 
 interface g0/0/0
  dhcp select global
+```
 
+Verify Configuration
+```shell
 display ip pool
 display ip pool name VLAN11
 display dhcp server statistics
@@ -409,9 +435,6 @@ interface vlanif 11
 interface vlanif 12
  dhcp select relay
  dhcp relay server-ip 50.5.5.5
-```
-
-```shell
 ```
 
 ```shell
