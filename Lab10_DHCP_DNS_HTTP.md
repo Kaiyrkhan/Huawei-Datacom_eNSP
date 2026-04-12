@@ -602,6 +602,37 @@ NAT Table
 [EdgeRT1] display nat session all verbose
 ```
 
+## A1 and A2 Switch
+
+
+A1 Switch
+```shell
+interface vlanif 50
+ ip address 10.1.50.101 24
+ quit
+
+display ip int brief
+```
+
+Default Gateway
+```shell
+ip route-static 0.0.0.0 0.0.0.0 10.1.50.254
+```
+
+A2 Switch
+```shell
+interface vlanif 50
+ ip address 10.1.50.102 24
+ quit
+
+display ip int brief
+```
+
+Default Gateway
+```shell
+ip route-static 0.0.0.0 0.0.0.0 10.1.50.254
+```
+
 ## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeRT1, DHCP
 
 Configure Local User Authentication and Authorization
@@ -658,21 +689,6 @@ The server is not authenticated. Continue to access it? (y/n)[n]: y
 Save the server's public key? (y/n)[n]: y
 
 Enter password: Huawei@123
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
 ```
 
 ```shell
