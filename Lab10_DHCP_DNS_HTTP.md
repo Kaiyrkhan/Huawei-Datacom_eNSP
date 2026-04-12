@@ -718,6 +718,11 @@ The server is not authenticated. Continue to access it? (y/n)[n]: y
 Save the server's public key? (y/n)[n]: y
 
 Enter password: Huawei@123
+
+<D1> system-view
+[D2] quit
+<D1> quit
+[A1]
 ```
 
 Telnet Connect
