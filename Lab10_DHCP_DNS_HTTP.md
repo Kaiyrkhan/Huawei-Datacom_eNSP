@@ -709,14 +709,12 @@ display current-configuration | include stelnet
 
 SSH Connect
 ```shell
-ssh client first-time enable
+[A1] ssh client first-time enable
 
 [A1] stelnet 50.3.3.3
 Please input the username: student
-
 The server is not authenticated. Continue to access it? (y/n)[n]: y
 Save the server's public key? (y/n)[n]: y
-
 Enter password: Huawei@123
 
 <D1> system-view
@@ -730,6 +728,7 @@ Telnet Connect
 <A1> telnet 50.3.3.3
  Username: student
  Password: Huawei@123
+
 <D1> system-view
 [D2] quit
 <D1> quit
