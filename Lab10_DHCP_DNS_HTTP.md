@@ -522,7 +522,7 @@ Configure Local User Authentication and Authorization
 ```shell
 aaa
  local-user student password cipher Huawei@123
- local-user student service-type terminal ssh
+ local-user student service-type terminal ssh telnet
  local-user student privilege level 3
 ```
 
