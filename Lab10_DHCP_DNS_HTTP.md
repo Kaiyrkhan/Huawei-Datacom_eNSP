@@ -23,10 +23,13 @@ vlan batch 11 12 50
 
 vlan 11
  description Service VLAN
+ quit
 vlan 12
  description Service VLAN
+ quit
 vlan 50
  description MGMT VLAN
+ quit
 
 display vlan
 ```
@@ -77,10 +80,13 @@ vlan batch 11 12 50
 
 vlan 11
  description Service VLAN
+ quit
 vlan 12
  description Service VLAN
+ quit
 vlan 50
  description MGMT VLAN
+ quit
 
 display vlan
 ```
