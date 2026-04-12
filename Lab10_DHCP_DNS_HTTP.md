@@ -566,7 +566,6 @@ Verify Configuration
 ```shell
 display cu section acl
 display nat outbound
-display nat session all verbose
 ```
 
 Default Static Route
@@ -596,6 +595,11 @@ PC2> ping 8.8.8.8
 PC3> ping 8.8.8.8
 PC4> ping 8.8.8.8
  From 8.8.8.8: bytes=32 seq=3 ttl=105 time=156 ms
+```
+
+NAT Table
+```shell
+[EdgeRT1] display nat session all verbose
 ```
 
 ## Configure Remote Access (SSH, Telnet)
