@@ -535,9 +535,9 @@ Basic Config:
  Gateway: 172.16.11.254
  DNS: 172.16.128.53
 
- HTTPClinet ➜ URL: http://lab.local
+ HTTPClient ➜ URL: http://lab.local
 немесе
- HTTPClinet ➜ URL: http://172.16.128.80
+ HTTPClient ➜ URL: http://172.16.128.80
 
 Нәтиже:
 HTTP/1.1 200 OK
