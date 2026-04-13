@@ -1,7 +1,8 @@
 # Network Services (DHCP, HTTP, DNS, TFTP, FTP, NTP, Telnet, SSH)
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab10_NetworkTopology_DHCP_DNS_HTTP.png)  
+![Topology](images/Lab10_NetworkTopology_NetworkServices.png)  
+[Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_NetworkServices.topo)
 
 ## Scenario
 1) Configure VLAN (Create VLANs and Access Port, Trunk Port)  
