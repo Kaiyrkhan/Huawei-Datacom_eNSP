@@ -489,7 +489,7 @@ PC3> ipconfig
 PC4> ipconfig
 ```
 
-## DNS and HTTP
+## Configure DNS, HTTP and FTP
 
 DNS Server
 ```shell
