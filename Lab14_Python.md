@@ -189,10 +189,10 @@ student@ubuntu:~$ pip3 --version
 ```
 
 ```shell
-student@ubuntu:~$ python3 -m venv netmiko_vrp
-student@ubuntu:~$ source netmiko_vrp/bin/activate
+student@ubuntu:~$ python3 -m venv netmiko_vrp					// Create Virtual Environment (venv)
+student@ubuntu:~$ source netmiko_vrp/bin/activate				// Activate Virtual Environment (venv)
 ```
-> student@ubuntu:~$ deactivate  
+> student@ubuntu:~$ deactivate  								// Deactivate Virtual Environment (venv)
 
 ```shell
 (netmiko_vrp) student@ubuntu:~$ python -m pip install paramiko
@@ -220,7 +220,11 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-student@ubuntu:~$ nano script1_netmiko.py
+student@ubuntu:~$ python script1_netmiko.py
+```
+
+```shell
+student@ubuntu:~$ nano script2_netmiko.py
 
 from netmiko import ConnectHandler
 
@@ -244,6 +248,10 @@ print(output)
 
 
 CTRL+O, ENTER, CTRL+X
+```
+
+```shell
+student@ubuntu:~$ python script2_netmiko.py
 ```
 
 ```shell
