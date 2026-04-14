@@ -192,7 +192,8 @@ student@ubuntu:~$ pip3 --version
 student@ubuntu:~$ python3 -m venv netmiko_vrp					// Create Virtual Environment (venv)
 student@ubuntu:~$ source netmiko_vrp/bin/activate				// Activate Virtual Environment (venv)
 ```
-> student@ubuntu:~$ deactivate  								// Deactivate Virtual Environment (venv)
+> Deactivate Virtual Environment (venv)  
+> student@ubuntu:~$ deactivate  
 
 ```shell
 (netmiko_vrp) student@ubuntu:~$ python -m pip install paramiko
@@ -246,7 +247,6 @@ print(output)
 output = net_connect.send_command('display cu section ospf')
 print(output)
 
-
 CTRL+O, ENTER, CTRL+X
 ```
 
@@ -254,19 +254,57 @@ CTRL+O, ENTER, CTRL+X
 student@ubuntu:~$ python script2_netmiko.py
 ```
 
+## Python NAPALM Library
+
+*NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library that implements a set of functions to interact with different network device Operating Systems using a unified API.*
+
 ```shell
+student@ubuntu:~$ python3 -m venv napalm_vrp
+student@ubuntu:~$ source napalm_vrp/bin/activate
+(napalm_vrp) student@ubuntu:~$ python -m pip install napalm-huawei-vrp
+(napalm_vrp) student@ubuntu:~$ python -m pip list
 ```
 
 ```shell
+student@ubuntu:~$ nano script1_napalm.py
+
+from napalm import get_network_driver
+import pprint
+
+driver = get_network_driver('huawei_vrp')
+device = driver(hostname='172.16.128.11', username='user1', password='Huawei@123')
+device.open()
+
+# Get Facts API. Return general device information
+get_facts = device.get_facts()
+pprint.pprint(get_facts)
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+student@ubuntu:~$ python script1_napalm.py
 ```
 
 ```shell
+student@ubuntu:~$ nano script2_napalm.py
+
+from napalm import get_network_driver
+import pprint
+
+driver = get_network_driver('huawei_vrp')
+device = driver(hostname='172.16.128.1', username='user2', password='user@123')
+device.open()
+
+# Send Any CLI command
+send_command = device.cli(['display version'])
+pprint.pprint(send_command)
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+student@ubuntu:~$ python script2_napalm.py
 ```
 
 ```shell
