@@ -54,6 +54,41 @@ display telnet server status
 **Configure Ubuntu Server**
 
 ```shell
+student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens32:
+      dhcp4: true
+    ens34:
+      dhcp4: false
+      addresses:
+        - 172.16.128.10/24
+
+CTRL+O, ENTER, CTRL+X
+```
+> **ЕСКЕРТУ:** *YAML файлында бос орындар (indentation) өте маңызды. Әр қатарда 2 бос орын қолдануды ұмытпаңыз! (Tab пернесін қолданбаған дұрыс)*  
+
+```shell
+student@ubuntu:~$ sudo netplan try
+немесе
+student@ubuntu:~$ sudo netplan apply
+```
+
+```shell
+student@ubuntu:~$ ip address
+```
+
+Windows+R ➜ Turn off Windows Defender Firewall  
+![images](images/windows_firewall_on_to_off.png)
+
+Ping from Ubuntu to R1
+```shell
+student@ubuntu:~$ ping -c4 172.16.128.11
+```
+
+```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
 Host 172.16.128.11
     KexAlgorithms +diffie-hellman-group1-sha1
