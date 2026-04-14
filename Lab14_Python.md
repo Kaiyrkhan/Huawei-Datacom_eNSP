@@ -1,7 +1,7 @@
 # Network Automation. Python
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab13_NetworkTopology_NetworkAutomation.png)  
+![Topology](images/Lab14_NetworkTopology_NetworkAutomation.png)  
 
 ## Scenario
 1) Configure Remote Access (Telnet, SSH);
