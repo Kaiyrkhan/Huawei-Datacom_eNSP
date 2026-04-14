@@ -169,9 +169,93 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-```shell
 student@ubuntu:~$ python3 script2_telnet.py
 ```
+
+## Python NetMiko Library
+
+> Netmiko – Multi-vendor library to simplify CLI connections to network devices  
+> Paramiko – SSH2 protocol library  
+
+```shell
+student@ubuntu:~$ sudo apt update
+student@ubuntu:~$ sudo apt install -y build-essential libssl-dev libffi-dev
+```
+
+```shell
+student@ubuntu:~$ python3 --version
+student@ubuntu:~$ sudo apt install -y python3-pip
+student@ubuntu:~$ pip3 --version
+```
+
+```shell
+student@ubuntu:~$ python3 -m venv netmiko_vrp
+student@ubuntu:~$ source netmiko_vrp/bin/activate
+```
+> student@ubuntu:~$ deactivate  
+
+```shell
+(netmiko_vrp) student@ubuntu:~$ python -m pip install paramiko
+(netmiko_vrp) student@ubuntu:~$ python -m pip install netmiko
+(netmiko_vrp) student@ubuntu:~$ python -m pip list
+```
+
+```shell
+student@ubuntu:~$ nano script1_netmiko.py
+
+from netmiko import ConnectHandler
+
+AR2220 = {
+	'device_type': 'huawei',
+	'host': '172.16.128.11',
+	'username': 'user1',
+	'password': 'Huawei@123'
+}
+
+net_connect = ConnectHandler(**AR2220)
+output = net_connect.send_command('display version')
+print(output)
+
+CTRL+O, ENTER, CTRL+X
+```
+
+```shell
+student@ubuntu:~$ nano script1_netmiko.py
+
+from netmiko import ConnectHandler
+
+AR2220 = {
+	'device_type': 'huawei',
+	'host': '172.16.128.11',
+	'username': 'user1',
+	'password': 'Huawei@123'
+}
+
+net_connect = ConnectHandler(**AR2220)
+output = net_connect.send_command('display cu int g0/0/1')
+print(output)
+
+commands = ['interface GigabitEthernet 0/0/1', 'ip address 10.1.1.101 30', 'display this', 'ospf 1 router-id 50.1.1.1', 'area 0', 'network 10.1.1.100 0.0.0.3', network 172.16.128.0 0.0.0.255']
+output = net_connect.send_config_set(commands)
+print(output)
+
+output = net_connect.send_command('display cu section ospf')
+print(output)
+
+
+CTRL+O, ENTER, CTRL+X
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
 
 ```shell
