@@ -1,7 +1,15 @@
 # Network Automation. Python
 
-### Configure Remote Access (Telnet, SSH)
+### 🖧 Network Topology (желі топологиясы)
+![Topology](images/Lab13_NetworkTopology_NetworkAutomation.png)  
 
+## Scenario
+1) Configure Remote Access (Telnet, SSH);
+2) Python TELNET Library;
+3) Python Netmiko Library;
+4) Python NAPALM Library.
+
+## Configure Remote Access (Telnet, SSH)
 
 ```shell
 Configure Local User Authentication and Authorization
@@ -55,6 +63,8 @@ CTRL+O, ENTER, CTRL+X
 student@ubuntu:~$ ssh user1@172.16.128.11
 student@ubuntu:~$ telnet 172.16.128.11
 ```
+
+## Python TELNET Library
 
 ```shell
 ```
