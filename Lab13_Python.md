@@ -1,9 +1,10 @@
 # Network Automation. Python
 
-## Configure Remote Access (Telnet, SSH)
+### Configure Remote Access (Telnet, SSH)
 
-Configure Local User Authentication and Authorization
+
 ```shell
+Configure Local User Authentication and Authorization
 aaa
  local-user user1 password irreversible-cipher Huawei@123
  local-user user1 service-type terminal ssh
@@ -15,15 +16,15 @@ ssh user student authentication-type password
 ssh user student service-type stelnet
 ```
 
-Configure VTY Lines
 ```shell
+Configure VTY Lines
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound all
 ```
 
-Generate RSA Key
 ```shell
+Generate RSA Key
 rsa local-key-pair create
 
 Warning: Confirm to replace them! Continue? [Y/N] Y
@@ -32,8 +33,8 @@ Input the bits in the modulus[default = 3072]: 2048
 display rsa local-key-pair public
 ```
 
-Enable SSH
 ```shell
+Enable SSH
 stelnet server enable
 
 display ssh server status
