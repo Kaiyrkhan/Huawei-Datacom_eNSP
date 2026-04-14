@@ -11,6 +11,8 @@
 
 ## Configure Remote Access (Telnet, SSH)
 
+**Configure Huawei VRP Router**
+
 ```shell
 Configure Local User Authentication and Authorization
 aaa
@@ -48,6 +50,8 @@ stelnet server enable
 display ssh server status
 display telnet server status
 ```
+
+**Configure Ubuntu Server**
 
 ```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
