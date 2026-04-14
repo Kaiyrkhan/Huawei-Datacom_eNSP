@@ -20,8 +20,8 @@ aaa
 ```
 
 ```shell
-ssh user student authentication-type password
-ssh user student service-type stelnet
+ssh user user1 authentication-type password
+ssh user user1 service-type stelnet
 ```
 
 ```shell
