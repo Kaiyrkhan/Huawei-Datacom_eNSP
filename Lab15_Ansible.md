@@ -114,11 +114,12 @@ student@ubuntu:~$ telnet 172.16.128.11
 Installing Ansible on Ubuntu
 https://docs.ansible.com/projects/ansible/latest/installation_guide/index.html
 
-
 ```shell
 $ sudo apt update
+
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository --yes --update ppa:ansible/ansible
+
 $ sudo apt update
 $ sudo apt install ansible
 ```
@@ -136,33 +137,85 @@ $ ls /etc/ansible/
 $ sudo apt install python3-venv
 
 Create Virtual Environment
-$ python3 -m venv ansible_vrp
+$ python3 -m venv ansible_huawei_vrp
 
 Activate Virtual Environment
-$ source ansible_vrp/bin/activate
+$ source ansible_huawei_vrp/bin/activate
 
 $ python
 CTRL+D
-```
-> Deactivate Virtual Environment  
-> student@ubuntu:~$ deactivate  
 
-```shell
+Deactivate Virtual Environment
+(ansible_huawei_vrp) student@ubuntu:~$ deactivate
 ```
 
 ```shell
+$ source ansible_huawei_vrp/bin/activate
+
+$ python -m pip install ansible
+$ python -m pip list
 ```
 
 ```shell
+$ ls -l /etc/ansible/hosts
+
+$ sudo nano /etc/ansible/hosts
+localhost ansible_connection=local
+
+[switch]
+172.16.128.11
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+$ sudo nano /etc/ansible/sysname.yml
+---
+- name: CloudEngine Basic Configuration
+  hosts: switch
+  connection: network_cli
+  gather_facts: no
+  vars:
+	cli:
+  	host: "{{ inventory_hostname }}"
+  	port: "{{ ansible_ssh_port }}"
+  	username: "{{ username }}"
+  	password: "{{ password }}"
+  	transport: cli
+
+  tasks:
+	- name: "Configure Sysname"
+  	ce_config:
+    	lines: sysname SW1
+
+	- name: "Save Configuration"
+  	ce_config:
+    	save: yes
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+$ sudo nano /etc/ansible/switch.yml
+---
+username: "user1"
+password: "Huawei@123"
+ansible_ssh_port: 22
+ansible_network_os: ce
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+$ ls -l /etc/ansible/
+hosts
+switch.yml
+sysname.yml
+```
+
+```shell
+$ cd /etc/ansible/
+$ ansible-playbook sysname.ym
 ```
 
 ```shell
@@ -258,3 +311,7 @@ $ sudo nano /etc/ansible/vlan_ip_address.yml
 
 ```shell
 ```
+
+## References
+
+1) [Virtual Environments and Packages](https://docs.python.org/3/tutorial/venv.html)
