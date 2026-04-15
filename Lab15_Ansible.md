@@ -215,7 +215,7 @@ sysname.yml
 
 ```shell
 $ cd /etc/ansible/
-$ ansible-playbook sysname.ym
+$ ansible-playbook sysname.yml
 ```
 
 ```shell
