@@ -15,11 +15,12 @@
 Configure Local User Authentication and Authorization
 aaa
  local-user user1 password irreversible-cipher Huawei@123
- local-user user1 service-type terminal ssh
+ local-user user1 service-type ssh
  local-user user1 privilege level 15
 ```
 
 ```shell
+ssh user user1
 ssh user user1 authentication-type password
 ssh user user1 service-type stelnet
 ```
@@ -110,6 +111,74 @@ student@ubuntu:~$ telnet 172.16.128.11
 
 ## Ansible on Ubuntu Server
 
+Installing Ansible on Ubuntu
+https://docs.ansible.com/projects/ansible/latest/installation_guide/index.html
+
+
+```shell
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt update
+$ sudo apt install ansible
+```
+
+```shell
+$ ansible --version
+$ ansible-playbook --version
+```
+
+```shell
+$ ls /etc/ansible/
+```
+
+```shell
+$ sudo apt install python3-venv
+
+Create Virtual Environment
+$ python3 -m venv ansible_vrp
+
+Activate Virtual Environment
+$ source ansible_vrp/bin/activate
+
+$ python
+CTRL+D
+```
+> Deactivate Virtual Environment  
+> student@ubuntu:~$ deactivate  
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+---
+
 ```shell
 $ sudo mkdir /etc/ansible/
 $ sudo mkdir /etc/ansible/group_var
@@ -185,18 +254,6 @@ $ sudo nano /etc/ansible/vlan_ip_address.yml
           quit
           save
           y
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
 ```
 
 ```shell
