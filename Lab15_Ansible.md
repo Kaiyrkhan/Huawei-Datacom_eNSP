@@ -257,6 +257,8 @@ ansible_password: Huawei@123
 ansible_connection: network_cli
 ansible_network_os: community.network.ce
 ```
+> ansible_host: 172.16.128.11  
+> ansible_network_os: huawei.ansible.ce  
 
 **Example #1**
 ```shell
