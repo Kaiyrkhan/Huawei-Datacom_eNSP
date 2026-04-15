@@ -17,7 +17,7 @@
 Configure Local User Authentication and Authorization
 aaa
  local-user user1 password irreversible-cipher Huawei@123
- local-user user1 service-type terminal ssh
+ local-user user1 service-type terminal ssh telnet
  local-user user1 privilege level 15
 ```
 
