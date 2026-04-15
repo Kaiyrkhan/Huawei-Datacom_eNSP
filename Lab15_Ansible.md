@@ -1,11 +1,11 @@
 # Network Programmability and Automation. Ansible
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab14_NetworkTopology_NetworkAutomation_Python.png)
+![Topology](images/Lab15_NetworkTopology_NetworkAutomation_Ansible.png)
 
 ## Scenario
-1) Configure Remote Access (Telnet, SSH);
-2) Ansible.
+1) Configure Remote Access (SSH);
+2) Ansible on Ubuntu Server.
 
 ## Configure Remote Access (SSH)
 
@@ -80,7 +80,7 @@ student@ubuntu:~$ ip address
 Windows+R ➜ Turn off Windows Defender Firewall  
 ![images](images/windows_firewall_on_to_off.png)
 
-Ping from Ubuntu to R1
+Ping from Ubuntu to SW1
 ```shell
 student@ubuntu:~$ ping -c4 172.16.128.11
 ```
@@ -108,12 +108,83 @@ student@ubuntu:~$ ssh user1@172.16.128.11
 student@ubuntu:~$ telnet 172.16.128.11
 ```
 
-## Ansible
+## Ansible on Ubuntu Server
 
 ```shell
+$ sudo mkdir /etc/ansible/
+$ sudo mkdir /etc/ansible/group_var
+
+$ sudo touch /etc/ansible/hosts 
+$ sudo chmod 777 /etc/ansible/hosts 
 ```
 
 ```shell
+$ sudo nano  /etc/ansible/hosts
+
+localhost ansible_connection=local
+
+[switch]
+172.16.128.11
+```
+
+```shell
+$ sudo nano /etc/ansible/group_vars/switch.yml
+
+ansible_user: user1
+ansible_password: Huawei@123
+ansible_connection: network_cli
+ansible_network_os: community.network.ce
+```
+
+**Example #1**
+```shell
+$ sudo nano /etc/ansible/sysname.yml
+
+---
+- name: Change hostname manually using CLI command
+  hosts: switch
+  gather_facts: no
+  connection: ansible.netcommon.network_cli
+
+  tasks:
+    - name: Set new hostname
+      ansible.netcommon.cli_command:
+        command: |
+          system-view
+          sysname SW1
+          quit
+          save
+          y
+```
+
+**Example #2**
+```shell
+$ sudo nano /etc/ansible/vlan_ip_address.yml
+
+---
+- name: Create VLAN and assign IP address on Huawei Switch
+  hosts: switch
+  gather_facts: no
+  connection: ansible.netcommon.network_cli
+
+  tasks:
+    - name: Create VLAN 20
+      ansible.netcommon.cli_command:
+        command: |
+          system-view
+          vlan 20
+          quit
+
+    - name: Configure VLAN 20 interface with IP address
+      ansible.netcommon.cli_command:
+        command: |
+          system-view
+          interface Vlanif20
+          ip address 192.168.20.1 255.255.255.0
+          quit
+          quit
+          save
+          y
 ```
 
 ```shell
