@@ -22,6 +22,7 @@ aaa
 ```
 
 ```shell
+ssh user user1
 ssh user user1 authentication-type password
 ssh user user1 service-type stelnet
 ```
