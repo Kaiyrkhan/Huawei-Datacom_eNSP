@@ -1,7 +1,7 @@
 # Network Programmability and Automation. Ansible
 
 ### 🖧 Network Topology (желі топологиясы)
-![Topology](images/Lab15_NetworkTopology_NetworkAutomation_Ansible.png)
+![Topology](images/Lab14_NetworkTopology_Programmability_Automation.png)
 
 ## Scenario
 1) Configure Remote Access (SSH);
