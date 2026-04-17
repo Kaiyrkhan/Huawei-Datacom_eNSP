@@ -191,7 +191,7 @@ tn.write(b'system-view \n')
 ConfigMode = tn.read_until(ConfigPrompt.encode('ascii'))
 print(ConfigMode.decode('ascii'))
 
-tn.write(b'interface Loopback 0 \n')
+tn.write(b'interface Loopback 50 \n')
 ConfigMode = tn.read_until(ConfigPrompt.encode('ascii'))
 print(ConfigMode.decode('ascii'))
 
