@@ -362,7 +362,7 @@ ospf 1 router-id 10.0.10.4
 return
 ```
 
-**Core1 Switch (C1)**
+**Core Switch (C1)**
 
 ```shell
 #
@@ -461,7 +461,7 @@ user-interface vty 0 4
 return
 ```
 
-**Core2 Switch (C2)**
+**Core Switch (C2)**
 
 ```shell
 #
@@ -628,7 +628,7 @@ wlan
 return
 ```
 
-**R1 Router**
+**Router (R1)**
 
 ```shell
 #
@@ -685,7 +685,7 @@ user-interface vty 0 4
 return
 ```
 
-**R4 Router**
+**Router (R4)**
 
 ```shell
 #
@@ -705,7 +705,7 @@ interface LoopBack0
 return
 ```
 
-**R2 Router**
+**Router (R2)**
 
 ```shell
 #
