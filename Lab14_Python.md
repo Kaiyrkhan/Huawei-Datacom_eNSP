@@ -49,6 +49,10 @@ user-interface vty 0 4
  protocol inbound all
 ```
 
+```shell
+ssh client first-time enable
+```
+
 **Configure Ubuntu Server**
 
 ```shell
