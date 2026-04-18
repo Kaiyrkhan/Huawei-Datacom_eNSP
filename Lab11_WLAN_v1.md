@@ -183,6 +183,7 @@ dhcp enable
  network 10.1.43.0 mask 24
  gateway-list 10.1.43.254
  dns-list 8.8.8.8
+ option 43 sub-option 2 ip-address 10.1.43.254
  excluded-ip-address 10.1.43.1 10.1.43.100
  excluded-ip-address 10.1.43.201 10.1.43.253
  lease day 5
