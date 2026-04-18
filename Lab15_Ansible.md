@@ -20,14 +20,15 @@ aaa
 ```
 
 ```shell
-# Enable SSH
-stelnet server enable
-display ssh server status
+# Configure SSH User Settings
+ssh user user1 authentication-type password
+ssh user user1 service-type stelnet
 ```
 
 ```shell
-ssh user user1 authentication-type password
-ssh user user1 service-type stelnet
+# Enable SSH
+stelnet server enable
+display ssh server status
 ```
 
 ```shell
