@@ -85,12 +85,12 @@ Windows+R ➜ Turn off Windows Defender Firewall
 
 Ping from Ubuntu to SW1
 ```shell
-student@ubuntu:~$ ping -c4 172.16.128.11
+student@ubuntu:~$ ping -c4 172.16.128.12
 ```
 
 ```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
-Host 172.16.128.11
+Host 172.16.128.12
     KexAlgorithms +diffie-hellman-group1-sha1
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
@@ -107,8 +107,7 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-student@ubuntu:~$ ssh user1@172.16.128.11
-student@ubuntu:~$ telnet 172.16.128.11
+student@ubuntu:~$ ssh user1@172.16.128.12
 ```
 
 ## Ansible on Ubuntu Server
