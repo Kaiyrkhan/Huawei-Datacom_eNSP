@@ -50,6 +50,7 @@ user-interface vty 0 4
 ```
 
 ```shell
+# Configure SSH Client Settings
 ssh client first-time enable
 ```
 
