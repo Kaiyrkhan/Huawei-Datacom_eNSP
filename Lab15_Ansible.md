@@ -12,28 +12,26 @@
 **Configure Huawei VRP Router**
 
 ```shell
-Configure Local User Authentication and Authorization
+# Configure Local User Authentication and Authorization
 aaa
- local-user user1 password irreversible-cipher Huawei@123
- local-user user1 service-type ssh
+ local-user user1 password cipher Huawei@123
+ local-user user1 service-type terminal ssh
  local-user user1 privilege level 15
 ```
 
 ```shell
-ssh user user1
+# Enable SSH
+stelnet server enable
+display ssh server status
+```
+
+```shell
 ssh user user1 authentication-type password
 ssh user user1 service-type stelnet
 ```
 
 ```shell
-Configure VTY Lines
-user-interface vty 0 4
- authentication-mode aaa
- protocol inbound all
-```
-
-```shell
-Generate RSA Key
+# Generate RSA Key
 rsa local-key-pair create
 
 Warning: Confirm to replace them! Continue? [Y/N] Y
@@ -43,10 +41,14 @@ display rsa local-key-pair public
 ```
 
 ```shell
-Enable SSH
-stelnet server enable
+# Configure VTY Lines
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+```
 
-display ssh server status
+```shell
+ssh client first-time enable
 ```
 
 **Configure Ubuntu Server**
