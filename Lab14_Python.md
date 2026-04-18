@@ -119,6 +119,8 @@ student@ubuntu:~$ telnet 172.16.128.11
 student@ubuntu:~$ python3 --version
 ```
 
+**Example #1**
+
 ```shell
 student@ubuntu:~$ sudo nano script1_telnet.py
 
@@ -163,6 +165,8 @@ CTRL+O, ENTER, CTRL+X
 ```shell
 student@ubuntu:~$ python3 script1_telnet.py
 ```
+
+**Example #2**
 
 ```shell
 student@ubuntu:~$ sudo nano script2_telnet.py
@@ -225,25 +229,27 @@ student@ubuntu:~$ sudo apt install -y build-essential libssl-dev libffi-dev
 
 ```shell
 student@ubuntu:~$ python3 --version
-student@ubuntu:~$ sudo apt install -y python3-pip
+student@ubuntu:~$ sudo apt install -y python3-pip python3-venv
 student@ubuntu:~$ pip3 --version
 ```
 
 ```shell
-student@ubuntu:~$ python3 -m venv netmiko_vrp					// Create Virtual Environment (venv)
-student@ubuntu:~$ source netmiko_vrp/bin/activate				// Activate Virtual Environment (venv)
+student@ubuntu:~$ python3 -m venv netmiko_huawei_vrp					// Create Virtual Environment (venv)
+student@ubuntu:~$ source netmiko_huawei_vrp/bin/activate				// Activate Virtual Environment (venv)
 ```
 > Deactivate Virtual Environment (venv)  
-> student@ubuntu:~$ deactivate  
+> (netmiko_huawei_vrp) student@ubuntu:~$ deactivate  
 
 ```shell
-(netmiko_vrp) student@ubuntu:~$ python -m pip install paramiko
-(netmiko_vrp) student@ubuntu:~$ python -m pip install netmiko
-(netmiko_vrp) student@ubuntu:~$ python -m pip list
+(netmiko_huawei_vrp) student@ubuntu:~$ python -m pip install paramiko
+(netmiko_huawei_vrp) student@ubuntu:~$ python -m pip install netmiko
+(netmiko_huawei_vrp) student@ubuntu:~$ python -m pip list
 ```
 
+**Example #1**
+
 ```shell
-student@ubuntu:~$ nano script1_netmiko.py
+(netmiko_huawei_vrp) student@ubuntu:~$ nano script1_netmiko.py
 
 from netmiko import ConnectHandler
 
@@ -262,11 +268,13 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-student@ubuntu:~$ python script1_netmiko.py
+(netmiko_huawei_vrp) student@ubuntu:~$ python script1_netmiko.py
 ```
 
+**Example #2**
+
 ```shell
-student@ubuntu:~$ nano script2_netmiko.py
+(netmiko_huawei_vrp) student@ubuntu:~$ nano script2_netmiko.py
 
 from netmiko import ConnectHandler
 
@@ -292,7 +300,7 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-student@ubuntu:~$ python script2_netmiko.py
+(netmiko_huawei_vrp) student@ubuntu:~$ python script2_netmiko.py
 ```
 
 ## Python NAPALM Library
@@ -300,14 +308,16 @@ student@ubuntu:~$ python script2_netmiko.py
 *NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library that implements a set of functions to interact with different network device Operating Systems using a unified API.*
 
 ```shell
-student@ubuntu:~$ python3 -m venv napalm_vrp
-student@ubuntu:~$ source napalm_vrp/bin/activate
-(napalm_vrp) student@ubuntu:~$ python -m pip install napalm-huawei-vrp
-(napalm_vrp) student@ubuntu:~$ python -m pip list
+student@ubuntu:~$ python3 -m venv napalm_huawei_vrp
+student@ubuntu:~$ source napalm_huawei_vrp/bin/activate
+(napalm_huawei_vrp) student@ubuntu:~$ python -m pip install napalm-huawei-vrp
+(napalm_huawei_vrp) student@ubuntu:~$ python -m pip list
 ```
 
+**Example #1**
+
 ```shell
-student@ubuntu:~$ nano script1_napalm.py
+(napalm_huawei_vrp) student@ubuntu:~$ nano script1_napalm.py
 
 from napalm import get_network_driver
 import pprint
@@ -324,17 +334,19 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-student@ubuntu:~$ python script1_napalm.py
+(napalm_huawei_vrp) student@ubuntu:~$ python script1_napalm.py
 ```
 
+**Example #2**
+
 ```shell
-student@ubuntu:~$ nano script2_napalm.py
+(napalm_huawei_vrp) student@ubuntu:~$ nano script2_napalm.py
 
 from napalm import get_network_driver
 import pprint
 
 driver = get_network_driver('huawei_vrp')
-device = driver(hostname='172.16.128.1', username='user2', password='user@123')
+device = driver(hostname='172.16.128.11', username='user1', password='Huawei@123')
 device.open()
 
 # Send Any CLI command
@@ -345,8 +357,10 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
-student@ubuntu:~$ python script2_napalm.py
+(napalm_huawei_vrp) student@ubuntu:~$ python script2_napalm.py
 ```
+
+**Example #3**
 
 ```shell
 ```
