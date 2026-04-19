@@ -116,7 +116,6 @@ display port vlan
 **Access Switch (A1 and A2)**
 
 ```shell
-# Configure MSTP
 stp region-configuration
  region-name HCIP
  revision-level 1
