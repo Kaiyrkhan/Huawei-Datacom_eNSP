@@ -111,6 +111,45 @@ interface g0/0/2
 display port vlan
 ```
 
+```shell
+# Configure MSTP
+
+stp region-configuration
+ region-name HCIP
+ revision-level 1
+ instance 1 vlan 10
+ instance 2 vlan 20
+ active region-configuration
+```
+
+```shell
+# Configure DHCP Relay Agent
+
+interface Vlanif60
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+
+interface Vlanif80
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+
+interface Vlanif90
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
 ---
 
 **Access Switch (A1)**
