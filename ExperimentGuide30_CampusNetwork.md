@@ -59,17 +59,18 @@ system-view
 sysname A1
 ```
 
-| Item                          | Value            |
-| ------------------------------| -----------------|
-| Management VLAN for APs       | VLAN 60          |
-| Service VLAN for Wireless LAN | VLAN 80, VLAN 90 |
-| Service VLAN for Wired LAN    | VLAN 10, VLAN 20 |
-
 ```shell
 # Create VLANs
 vlan batch 10 20 60 80 90
 display vlan
 ```
+
+Table -VLANs
+| Item                          | Value            |
+| ------------------------------| -----------------|
+| Management VLAN for APs       | VLAN 60          |
+| Service VLAN for Wireless LAN | VLAN 80, VLAN 90 |
+| Service VLAN for Wired LAN    | VLAN 10, VLAN 20 |
 
 ```shell
 # Configure Access Port
