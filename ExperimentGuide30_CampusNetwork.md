@@ -4,6 +4,7 @@
 ![Topology](images/30_ExperimentGuide_CampusNetwork.png)  
 [Download Link for eNSP Topology File](Topology/30_ExperimentGuide_CampusNetwork.topo)
 
+Table - IPv4 Addresses
 | Device | interface | IP Address /Prefix  |
 | ------ | ---------- | ------------------ |
 | R1     | Loopback0  | 10.0.1.1 /32       |
