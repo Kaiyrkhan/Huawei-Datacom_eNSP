@@ -114,6 +114,74 @@ display port vlan
 **Distribution Switch (D1 and D2)**
 
 ```shell
+# Configure hostname
+system-view
+sysname D1
+```
+
+```shell
+# Create VLANs
+vlan batch 10 20 60 80 90 201 203
+display vlan
+```
+
+```shell
+# Configure Access Port
+
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 201
+ stp disable
+
+interface GigabitEthernet0/0/2
+ port link-type access
+ port default vlan 203
+ stp disable
+```
+
+```shell
+# Configure Trunk Port and Allowed VLANs
+
+interface GigabitEthernet0/0/3
+ port link-type trunk
+ port trunk allow-pass vlan 10 20 60 80 90
+
+interface GigabitEthernet0/0/4
+ port link-type trunk
+ port trunk allow-pass vlan 10 20 60 80 90
+```
+
+```shell
+# Configure Eth-Trunk
+
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 10 20 60 80 90
+ mode lacp-static
+
+interface GigabitEthernet0/0/23
+ eth-trunk 1
+
+interface GigabitEthernet0/0/24
+ eth-trunk 1
+```
+
+```shell
+# Create VLANIF interfaces
+
+interface Vlanif201
+ ip address 10.0.201.2 255.255.255.0
+
+interface Vlanif203
+ ip address 10.0.203.2 255.255.255.0
+```
+
+```shell
+interface Loopback0
+ ip address 10.0.10.3 32
+```
+
+```shell
 ```
 
 ```shell
@@ -130,6 +198,64 @@ stp region-configuration
  instance 1 vlan 10
  instance 2 vlan 20
  active region-configuration
+```
+
+**Distribution Switch (D1 and D2)**
+
+```shell
+stp region-configuration
+ region-name HCIP
+ revision-level 1
+ instance 1 vlan 10
+ instance 2 vlan 20
+ active region-configuration
+
+stp instance 1 root primary
+stp instance 2 root secondary
+```
+
+```shell
+```
+
+```shell
+```
+
+## Configure VRRP
+
+**Distribution Switch (D1 and D2)**
+
+```shell
+interface Vlanif10
+ ip address 172.16.10.1 255.255.255.0
+ vrrp vrid 1 virtual-ip 172.16.10.254
+ vrrp vrid 1 priority 110
+
+interface Vlanif20
+ ip address 172.16.20.1 255.255.255.0
+ vrrp vrid 2 virtual-ip 172.16.20.254
+```
+
+```shell
+```
+
+## Configure OSPF
+
+**Distribution Switch (D1 and D2)**
+
+```shell
+ospf 1 router-id 10.0.10.3
+ area 0.0.0.0
+  network 10.0.201.2 0.0.0.0
+  network 10.0.203.2 0.0.0.0
+  network 10.0.10.3 0.0.0.0
+  network 172.16.10.1 0.0.0.0
+  network 172.16.20.1 0.0.0.0
+  network 172.16.60.1 0.0.0.0
+  network 172.16.80.1 0.0.0.0
+  network 172.16.90.1 0.0.0.0
+```
+
+```shell
 ```
 
 ```shell
@@ -155,6 +281,51 @@ interface Vlanif80
  dhcp relay server-ip 10.0.100.2
 
 interface Vlanif90
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+```
+
+**Distribution Switch (D1 and D2)**
+
+```shell
+# Configure DHCP
+
+dhcp enable
+
+ip pool AP
+ gateway-list 172.16.60.1
+ network 172.16.60.0 mask 255.255.255.0
+ option 43 sub-option 2 ip-address 10.0.100.2
+
+ip pool EMPLOYEE
+ gateway-list 172.16.80.1
+ network 172.16.80.0 mask 255.255.255.0
+ dns-list 114.114.114.114
+
+ip pool GUEST
+ gateway-list 172.16.90.1
+ network 172.16.90.0 mask 255.255.255.0
+ dns-list 114.114.114.114
+```
+
+```shell
+# Configure DHCP Relay Agent
+
+interface Vlanif60
+ ip address 172.16.60.1 255.255.255.0
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+
+interface Vlanif80
+ ip address 172.16.80.1 255.255.255.0
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+
+interface Vlanif90
+ ip address 172.16.90.1 255.255.255.0
  dhcp select global
  dhcp select relay
  dhcp relay server-ip 10.0.100.2
