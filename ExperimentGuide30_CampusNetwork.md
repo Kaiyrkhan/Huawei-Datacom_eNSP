@@ -51,7 +51,7 @@ Table - IPv4 Addresses
 9) Configure NAT Server;
 10) Configure SSH.
 
-## initial Configuration
+## Configure VLAN (Create VLANs and Access Port, Trunk Port)
 
 ```shell
 # Configure hostname
