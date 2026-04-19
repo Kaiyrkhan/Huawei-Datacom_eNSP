@@ -111,6 +111,14 @@ interface g0/0/2
 display port vlan
 ```
 
+**Distribution Switch (D1 and D2)**
+
+```shell
+```
+
+```shell
+```
+
 ## Configure MSTP
 
 **Access Switch (A1 and A2)**
