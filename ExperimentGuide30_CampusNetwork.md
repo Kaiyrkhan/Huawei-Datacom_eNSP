@@ -4,6 +4,26 @@
 ![Topology](images/30_ExperimentGuide_CampusNetwork.png)  
 [Download Link for eNSP Topology File](Topology/30_ExperimentGuide_CampusNetwork.topo)
 
+| Device | interface | IP Address /Prefix |
+| ------ | ---------- | ------------------ |
+| R1     | Loopback0  | 10.0.1.1 /32       |
+|        | g0/0/0     | 10.0.2.1 /24       |
+|        | g0/0/1     | 10.0.4.1 /24       |
+|        | g0/0/2     | 10.0.3.1 /24       |
+|        | g1/0/0     | 202.96.1.1 /24     |
+| R4     | Loopback0  | 202.100.4.1 /32    |
+|        | g0/0/0     | 202.96.1.4 /24     |
+| R2     | Loopback0  | 10.0.20.1 /32      |
+|        | g0/0/0     | 10.0.3.2 /24       |
+|        | g0/0/1     | 192.168.100.1 /24  |
+| AC1    | Loopback0  | 10.10.10.10 /24    |
+|        | VLANif 100 | 10.0.100.2 /24     |
+|        | g0/0/0     | 10.0.0.0 /24       |
+|        | g0/0/0     | 10.0.0.0 /24       |
+|        | g0/0/0     | 10.0.0.0 /24       |
+|        | g0/0/0     | 10.0.0.0 /24       |
+|        | g0/0/0     | 10.0.0.0 /24       |
+
 ## Scenario
 1) initial Configuration;
 2) Configure OSPF;
