@@ -67,11 +67,11 @@ vlan batch 10 20 60 80 90
 display vlan
 ```
 
-| Item                          | Value            |
-| ------------------------------| -----------------|
-| Management VLAN for APs       | VLAN 60          |
-| Service VLAN for Wireless LAN | VLAN 80, VLAN 90 |
-| Service VLAN for Wired LAN    | VLAN 10, VLAN 20 |
+| Item                          | Value                                       |
+| ------------------------------| --------------------------------------------|
+| Management VLAN for APs       | VLAN 60                                     |
+| Service VLAN for Wireless LAN | SSID Employee: VLAN 80, SSID Guest: VLAN 90 |
+| Service VLAN for Wired LAN    | VLAN 10, VLAN 20                            |
 
 ```shell
 # Configure Access Port
