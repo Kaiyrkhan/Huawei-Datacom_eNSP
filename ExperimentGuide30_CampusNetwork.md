@@ -122,21 +122,37 @@ sysname D1
 
 ```shell
 # Create VLANs
+
+# D1 Switch
 vlan batch 10 20 60 80 90 201 203
+
+# D2 Switch
+vlan batch 10 20 60 80 90 202 204
+
 display vlan
 ```
 
 ```shell
 # Configure Access Port
 
+# D1 Switch
 interface GigabitEthernet0/0/1
  port link-type access
  port default vlan 201
  stp disable
-
 interface GigabitEthernet0/0/2
  port link-type access
  port default vlan 203
+ stp disable
+
+# D2 Switch
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 202
+ stp disable
+interface GigabitEthernet0/0/2
+ port link-type access
+ port default vlan 204
  stp disable
 ```
 
@@ -162,30 +178,36 @@ interface Eth-Trunk1
 
 interface GigabitEthernet0/0/23
  eth-trunk 1
-
 interface GigabitEthernet0/0/24
  eth-trunk 1
 ```
 
 ```shell
-# Create VLANIF interfaces
+# Create VLANIF interface
 
+# D1 Switch
 interface Vlanif201
  ip address 10.0.201.2 255.255.255.0
-
 interface Vlanif203
  ip address 10.0.203.2 255.255.255.0
+
+# D2 Switch
+interface Vlanif202
+ ip address 10.0.202.2 255.255.255.0
+interface Vlanif204
+ ip address 10.0.204.2 255.255.255.0
 ```
 
 ```shell
+# Create Loopback interface
+
+# D1 Switch
 interface Loopback0
  ip address 10.0.10.3 32
-```
 
-```shell
-```
-
-```shell
+# D2 Switch
+interface Loopback0
+ ip address 10.0.10.4 32
 ```
 
 ## Configure MSTP
@@ -213,13 +235,11 @@ stp region-configuration
 ```
 
 ```shell
-# D1
+# D1 Switch
 stp instance 1 root primary
 stp instance 2 root secondary
-```
 
-```shell
-# D2
+# D2 Switch
 stp instance 1 root secondary
 stp instance 2 root primary
 ```
@@ -229,6 +249,7 @@ stp instance 2 root primary
 **Distribution Switch (D1 and D2)**
 
 ```shell
+# D1 Switch
 interface Vlanif10
  ip address 172.16.10.1 255.255.255.0
  vrrp vrid 1 virtual-ip 172.16.10.254
@@ -240,6 +261,15 @@ interface Vlanif20
 ```
 
 ```shell
+# D2 Switch
+interface Vlanif10
+ ip address 172.16.10.2 255.255.255.0
+ vrrp vrid 1 virtual-ip 172.16.10.254
+
+interface Vlanif20
+ ip address 172.16.20.2 255.255.255.0
+ vrrp vrid 2 virtual-ip 172.16.20.254
+ vrrp vrid 2 priority 110
 ```
 
 ## Configure OSPF
@@ -247,6 +277,7 @@ interface Vlanif20
 **Distribution Switch (D1 and D2)**
 
 ```shell
+# D1 Switch
 ospf 1 router-id 10.0.10.3
  area 0.0.0.0
   network 10.0.201.2 0.0.0.0
@@ -257,12 +288,18 @@ ospf 1 router-id 10.0.10.3
   network 172.16.60.1 0.0.0.0
   network 172.16.80.1 0.0.0.0
   network 172.16.90.1 0.0.0.0
-```
 
-```shell
-```
-
-```shell
+# D2 Switch
+ospf 1 router-id 10.0.10.4
+ area 0.0.0.0
+  network 10.0.202.2 0.0.0.0
+  network 10.0.204.2 0.0.0.0
+  network 10.0.10.4 0.0.0.0
+  network 172.16.10.2 0.0.0.0
+  network 172.16.20.2 0.0.0.0
+  network 17.16.60.2 0.0.0.0
+  network 17.16.80.2 0.0.0.0
+  network 17.16.90.2 0.0.0.0
 ```
 
 ## Configure DHCP
@@ -316,6 +353,7 @@ ip pool GUEST
 ```shell
 # Configure DHCP Relay Agent
 
+# D1 Switch
 interface Vlanif60
  ip address 172.16.60.1 255.255.255.0
  dhcp select global
@@ -333,9 +371,25 @@ interface Vlanif90
  dhcp select global
  dhcp select relay
  dhcp relay server-ip 10.0.100.2
-```
 
-```shell
+# D2 Switch
+interface Vlanif60
+ ip address 172.16.60.2 255.255.255.0
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+
+interface Vlanif80
+ ip address 172.16.80.2 255.255.255.0
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
+
+interface Vlanif90
+ ip address 172.16.90.2 255.255.255.0
+ dhcp select global
+ dhcp select relay
+ dhcp relay server-ip 10.0.100.2
 ```
 
 ```shell
