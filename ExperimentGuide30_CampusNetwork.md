@@ -39,6 +39,7 @@ Table - IPv4 Addresses
 |        | VLANIF 202 | 10.0.202.2 /24     |
 |        | VLANIF 204 | 10.0.204.2 /24     |
 
+Table - VLANs
 | Item                          | Value                                       |
 | ------------------------------| --------------------------------------------|
 | Management VLAN for APs       | VLAN 60                                     |
