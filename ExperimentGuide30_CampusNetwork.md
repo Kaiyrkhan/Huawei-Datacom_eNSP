@@ -40,10 +40,10 @@ Table - IPv4 Addresses
 |        | VLANIF 204 | 10.0.204.2 /24     |
 
 ## Scenario
-1) initial Configuration;
-2) Configure OSPF;
-3) Configure MSTP;
-4) Configure VRRP;
+1) Configure VLAN;
+2) Configure MSTP;
+3) Configure VRRP;
+4) Configure OSPF;
 5) Configure DHCP;
 6) Configure AP Onboarding;
 7) Configure WLAN Services;
