@@ -209,15 +209,18 @@ stp region-configuration
  instance 1 vlan 10
  instance 2 vlan 20
  active region-configuration
+```
 
+```shell
+# D1
 stp instance 1 root primary
 stp instance 2 root secondary
 ```
 
 ```shell
-```
-
-```shell
+# D2
+stp instance 1 root secondary
+stp instance 2 root primary
 ```
 
 ## Configure VRRP
