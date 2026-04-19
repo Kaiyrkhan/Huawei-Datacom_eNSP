@@ -39,6 +39,12 @@ Table - IPv4 Addresses
 |        | VLANIF 202 | 10.0.202.2 /24     |
 |        | VLANIF 204 | 10.0.204.2 /24     |
 
+| Item                          | Value                                       |
+| ------------------------------| --------------------------------------------|
+| Management VLAN for APs       | VLAN 60                                     |
+| Service VLAN for Wireless LAN | SSID Employee: VLAN 80, SSID Guest: VLAN 90 |
+| Service VLAN for Wired LAN    | VLAN 10, VLAN 20                            |
+
 ## Scenario
 1) Configure VLAN;
 2) Configure MSTP;
@@ -66,12 +72,6 @@ sysname A1
 vlan batch 10 20 60 80 90
 display vlan
 ```
-
-| Item                          | Value                                       |
-| ------------------------------| --------------------------------------------|
-| Management VLAN for APs       | VLAN 60                                     |
-| Service VLAN for Wireless LAN | SSID Employee: VLAN 80, SSID Guest: VLAN 90 |
-| Service VLAN for Wired LAN    | VLAN 10, VLAN 20                            |
 
 ```shell
 # Configure Access Port
