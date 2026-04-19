@@ -125,6 +125,8 @@ stp region-configuration
 ```shell
 # Configure DHCP Relay Agent
 
+dhcp enable
+
 interface Vlanif60
  dhcp select global
  dhcp select relay
