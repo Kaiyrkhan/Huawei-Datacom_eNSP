@@ -53,6 +53,8 @@ Table - IPv4 Addresses
 
 ## Configure VLAN (Create VLANs and Access Port, Trunk Port)
 
+**Access Switch (A1 and A2)**
+
 ```shell
 # Configure hostname
 system-view
