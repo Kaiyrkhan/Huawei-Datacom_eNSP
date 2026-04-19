@@ -32,7 +32,11 @@
 |        | VLANif 204 | 10.0.204.1 /24     |
 |        | VLANif 205 | 10.0.205.2 /24     |
 | D1     | Loopback0  | 10.0.10.3 /32      |
+|        | VLANif 201 | 10.0.201.2 /24     |
+|        | VLANif 203 | 10.0.203.2 /24     |
 | D2     | Loopback0  | 10.0.10.4 /32      |
+|        | VLANif 202 | 10.0.202.2 /24     |
+|        | VLANif 204 | 10.0.204.2 /24     |
 
 ## Scenario
 1) initial Configuration;
