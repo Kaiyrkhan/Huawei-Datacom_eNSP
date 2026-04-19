@@ -65,7 +65,6 @@ vlan batch 10 20 60 80 90
 display vlan
 ```
 
-Table -VLANs
 | Item                          | Value            |
 | ------------------------------| -----------------|
 | Management VLAN for APs       | VLAN 60          |
