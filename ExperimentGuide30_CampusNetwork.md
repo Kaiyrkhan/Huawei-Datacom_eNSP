@@ -39,6 +39,12 @@ Table - IPv4 Addresses
 |        | VLANIF 202 | 10.0.202.2 /24     |
 |        | VLANIF 204 | 10.0.204.2 /24     |
 
+| Item                          | Value            |
+| ------------------------------| -----------------|
+| Management VLAN for APs       | VLAN 60          |
+| Service VLAN for Wireless LAN | VLAN 80, VLAN 90 |
+| Service VLAN for Wired LAN    | VLAN 10, VLAN 20 |
+
 ## Scenario
 1) initial Configuration;
 2) Configure OSPF;
@@ -50,6 +56,77 @@ Table - IPv4 Addresses
 8) Configure NAT;
 9) Configure NAT Server;
 10) Configure SSH.
+
+## initial Configuration
+
+```shell
+# Configure hostname
+system-view
+sysname A1
+```
+
+```shell
+# Create VLANs
+vlan batch 10 20 60 80 90
+
+vlan 10
+ description Service VLAN
+ quit
+vlan 20
+ description Service VLAN
+ quit
+vlan 60
+ description MGMT VLAN for APs
+ quit
+vlan 80
+ description Service VLAN for SSID Employee
+ quit
+vlan 90
+ description Service VLAN for SSID Guest
+ quit
+
+display vlan
+```
+
+```shell
+# Configure Access Port
+
+interface Ethernet0/0/1
+ port link-type access
+ port default vlan 10
+ quit
+
+interface Ethernet0/0/2
+ port link-type access
+ port default vlan 20
+ quit
+
+display vlan
+```
+
+```shell
+# Configure Trunk Port and Allowed VLANs
+
+interface Ethernet0/0/22
+ port link-type trunk
+ port trunk pvid vlan 60
+ port trunk allow-pass vlan 60 80 90
+ quit
+
+interface g0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 10 20 60 80 90
+ quit
+
+interface g0/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 10 20 60 80 90
+ quit
+
+display port vlan
+```
+
+---
 
 **Access Switch (A1)**
 
