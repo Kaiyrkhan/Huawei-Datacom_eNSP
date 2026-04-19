@@ -4,7 +4,7 @@
 ![Topology](images/30_ExperimentGuide_CampusNetwork.png)  
 [Download Link for eNSP Topology File](Topology/30_ExperimentGuide_CampusNetwork.topo)
 
-| Device | interface | IP Address /Prefix |
+| Device | interface | IP Address /Prefix  |
 | ------ | ---------- | ------------------ |
 | R1     | Loopback0  | 10.0.1.1 /32       |
 |        | g0/0/0     | 10.0.2.1 /24       |
@@ -18,11 +18,12 @@
 |        | g0/0/1     | 192.168.100.1 /24  |
 | AC1    | Loopback0  | 10.10.10.10 /24    |
 |        | VLANif 100 | 10.0.100.2 /24     |
-|        | g0/0/0     | 10.0.0.0 /24       |
-|        | g0/0/0     | 10.0.0.0 /24       |
-|        | g0/0/0     | 10.0.0.0 /24       |
-|        | g0/0/0     | 10.0.0.0 /24       |
-|        | g0/0/0     | 10.0.0.0 /24       |
+| C1     | Loopback0  | 10.0.10.1 /32      |
+|        | VLANif 100 | 10.0.100.1 /24     |
+|        | VLANif 101 | 10.0.2.2 /24       |
+|        | VLANif 102 | 10.0.102.1 /24     |
+|        | VLANif 201 | 10.0.201.1 /24     |
+|        | VLANif 202 | 10.0.202.1 /24     |
 
 ## Scenario
 1) initial Configuration;
