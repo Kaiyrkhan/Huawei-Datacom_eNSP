@@ -80,10 +80,10 @@ display port vlan
 
 ## D1 Switch
 
+Configure Hostname
 ```shell
-<Huawei> system-view
-[Huawei] sysname D1
-[D1]
+system-view
+sysname D1
 ```
 
 Create VLANs
@@ -164,10 +164,10 @@ display ip pool
 
 ## AC (Access Controller)
 
+Configure Hostname
 ```shell
-<Huawei> system-view
-[Huawei] sysname AC1
-[AC1]
+system-view
+sysname AC1
 ```
 
 Create VLANs
