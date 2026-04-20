@@ -10,9 +10,9 @@ Table1 - WLAN Data Plan
 | Management VLAN for APs         | VLAN 43                                                                                   |
 | Service VLAN for STAs           | VLAN 200                                                                                  |
 | Default Gateway for AP          | 10.1.43.254                                                                               |
-| DHCP Pool for AP                | 10.1.43.100 - 10.1.43.200/24                                                              |
+| DHCP Pool for AP                | 10.1.43.101 - 10.1.43.200/24                                                              |
 | Default Gateway for Guest       | 192.168.200.254                                                                           |
-| DHCP Pool for Guest             | 192.168.200.10 - 192.168.200.250/24                                                       |
+| DHCP Pool for Guest             | 192.168.200.11 - 192.168.200.250/24                                                       |
 | AP Name                         | AP1, AP2                                                                                  |
 | AP Group                        | Name: ap-group1                                                                           |
 |                                 | Referenced profiles: VAP profile **VAP-Guest** and Regulatory domain profile **default**  |
@@ -32,15 +32,10 @@ Table1 - WLAN Data Plan
 
 ## A1 and A2 Switch
 
+Configure Hostname
 ```shell
-<Huawei> system-view
-[Huawei] sysname A1
-[A1]
-```
-
-```shell
-interface g0/0/4
- poe enable
+system-view
+sysname A1
 ```
 
 Create VLANs
@@ -55,7 +50,7 @@ vlan 200
 display vlan
 ```
 
-Configure the Trunk Port and Allowed VLANs
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
@@ -72,10 +67,10 @@ display port vlan
 
 ## D1 Switch
 
+Configure Hostname
 ```shell
-<Huawei> system-view
-[Huawei] sysname D1
-[D1]
+system-view
+sysname D1
 ```
 
 Create VLANs
@@ -90,7 +85,7 @@ vlan 200
 display vlan
 ```
 
-Configure the Trunk Port and Allowed VLANs
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/10
  port link-type trunk
@@ -107,7 +102,7 @@ interface g0/0/14
 display port vlan
 ```
 
-Configure the VLANIF Interface
+Create VLANIF interface
 ```shell
 interface vlanif 200
  ip address 192.168.200.254 24
@@ -116,6 +111,7 @@ interface vlanif 200
 display ip int brief
 ```
 
+Create Loopback interface
 ```shell
 interface Loopback 50
  ip address 50.1.1.1 32
@@ -140,10 +136,10 @@ display ip pool
 
 ## AC (Access Controller)
 
+Configure Hostname
 ```shell
-<Huawei> system-view
-[Huawei] sysname AC1
-[AC1]
+system-view
+sysname AC1
 ```
 
 Create VLANs
@@ -158,7 +154,7 @@ vlan 200
 display vlan brief
 ```
 
-Configure the Trunk Port and Allowed VLANs
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/10
  port link-type trunk
@@ -167,7 +163,7 @@ interface g0/0/10
 display port vlan
 ```
 
-Configure the VLANIF Interface
+Create VLANIF interface
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
@@ -276,7 +272,7 @@ wlan
  vap-profile VAP-Guest wlan 1 radio all
 ```
 
-**Verify the Configuration**
+**Verify Configuration**
 ```shell
 STA1> ipconfig
 STA2> ipconfig
