@@ -32,6 +32,11 @@ ssh user user1 service-type stelnet
 stelnet server enable
 display ssh server status
 ```
+```shell
+# Enable Telnet
+display telnet server status
+telnet server enable
+```
 
 ```shell
 # Generate RSA Key
