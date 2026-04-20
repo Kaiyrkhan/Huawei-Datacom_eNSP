@@ -194,7 +194,7 @@ $ sudo nano /etc/ansible/sysname.yml
 ---
 - name: Huawei VRP Switch Configuration
   hosts: switch
-  gather_facts: false
+  gather_facts: no
 
   tasks:
     - name: Configure Sysname
@@ -209,7 +209,7 @@ $ sudo nano /etc/ansible/vlanif.yml
 ---
 - name: Huawei VRP Switch Configuration
   hosts: switch
-  gather_facts: false
+  gather_facts: no
 
   tasks:
     - name: Create VLANIF interface
@@ -227,7 +227,7 @@ $ sudo nano /etc/ansible/ospf.yml
 ---
 - name: Huawei VRP Switch Configuration
   hosts: switch
-  gather_facts: false
+  gather_facts: no
 
   tasks:
     - name: Configure Single-Area OSPF
