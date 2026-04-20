@@ -186,6 +186,7 @@ all:
 
 немесе
 
+Modern model (заманауи үлгі)
 ```shell
 $ sudo nano /etc/ansible/inventory.yml
 all:
@@ -206,6 +207,7 @@ all:
 
 немесе
 
+Traditional model (дәстүрлі үлгі)
 ```shell
 [switches]
 SW1 ansible_host=172.16.128.12
