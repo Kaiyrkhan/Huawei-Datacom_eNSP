@@ -176,7 +176,7 @@ $ ls -l /etc/ansible/
 $ sudo nano /etc/ansible/inventory.yml
 all:
   hosts:
-    switch:
+    SW1:
       ansible_host: 172.16.128.12
       ansible_user:user1
       ansible_password: Huawei@123
@@ -188,8 +188,8 @@ all:
 $ sudo nano /etc/ansible/sysname.yml
 ---
 - name: Huawei VRP Switch Configuration
-  hosts: switch
-  gather_facts: no
+  hosts: SW1
+  gather_facts: false
 
   tasks:
     - name: Configure Sysname
@@ -208,8 +208,8 @@ $ ansible-playbook -i inventory.yml sysname.yml
 $ sudo nano /etc/ansible/vlanif.yml
 ---
 - name: Huawei VRP Switch Configuration
-  hosts: switch
-  gather_facts: no
+  hosts: SW1
+  gather_facts: false
 
   tasks:
     - name: Create VLANIF interface
@@ -231,8 +231,8 @@ $ ansible-playbook -i inventory.yml vlanif.yml
 $ sudo nano /etc/ansible/ospf.yml
 ---
 - name: Huawei VRP Switch Configuration
-  hosts: switch
-  gather_facts: no
+  hosts: SW1
+  gather_facts: false
 
   tasks:
     - name: Configure Single-Area OSPF
