@@ -677,10 +677,14 @@ ssh user student authentication-type password
 ssh user student service-type stelnet
 ```
 
-Step3: Enable SSH
+Step3: Enable SSH/Telnet
 ```shell
 stelnet server enable
 display ssh server status
+```
+```shell
+display telnet server status
+telnet server enable
 ```
 
 Step4: Generate RSA Key
