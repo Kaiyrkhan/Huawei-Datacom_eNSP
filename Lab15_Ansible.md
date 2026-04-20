@@ -185,11 +185,6 @@ all:
 ```
 
 ```shell
-$ cd /etc/ansible/
-$ ansible-playbook -i inventory.yml sysname.yml
-```
-
-```shell
 $ sudo nano /etc/ansible/sysname.yml
 ---
 - name: Huawei VRP Switch Configuration
@@ -202,6 +197,11 @@ $ sudo nano /etc/ansible/sysname.yml
         commands:
           - system-view
           - sysname SW1
+```
+
+```shell
+$ cd /etc/ansible/
+$ ansible-playbook -i inventory.yml sysname.yml
 ```
 
 ```shell
@@ -223,6 +223,10 @@ $ sudo nano /etc/ansible/vlanif.yml
 ```
 
 ```shell
+$ ansible-playbook -i inventory.yml vlanif.yml
+```
+
+```shell
 $ sudo nano /etc/ansible/ospf.yml
 ---
 - name: Huawei VRP Switch Configuration
@@ -238,6 +242,10 @@ $ sudo nano /etc/ansible/ospf.yml
           - network 172.16.11.0 0.0.0.255
           - quit
           - quit
+```
+
+```shell
+$ ansible-playbook -i inventory.yml ospf.yml
 ```
 
 ---
