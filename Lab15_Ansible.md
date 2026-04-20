@@ -92,19 +92,19 @@ student@ubuntu:~$ ping -c4 172.16.128.12
 
 ```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
-Host 172.16.128.12
-    KexAlgorithms +diffie-hellman-group1-sha1
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedAlgorithms +ssh-rsa
-    Ciphers +aes128-cbc
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+KexAlgorithms +diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+HostKeyAlgorithms=+ssh-rsa
 CTRL+O, ENTER, CTRL+X
 ```
 немесе
 ```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
-Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
-KexAlgorithms +diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
-HostKeyAlgorithms=+ssh-rsa
+Host 172.16.128.12
+    KexAlgorithms +diffie-hellman-group1-sha1
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    Ciphers +aes128-cbc
 CTRL+O, ENTER, CTRL+X
 ```
 
