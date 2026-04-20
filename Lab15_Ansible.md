@@ -178,14 +178,50 @@ all:
   hosts:
     SW1:
       ansible_host: 172.16.128.12
-      ansible_user:user1
+      ansible_user: user1
       ansible_password: Huawei@123
       ansible_network_os: community.network.ce
       ansible_connection: ansible.netcommon.network_cli
 ```
 
+немесе
+
+```shell
+$ sudo nano /etc/ansible/inventory.yml
+all:
+  children:
+    switches:
+      hosts:
+        SW1:
+          ansible_host: 172.16.128.12
+        SW2:
+          ansible_host: 172.16.128.13
+      vars:
+        ansible_user: user1
+        ansible_password: Huawei@123
+        ansible_network_os: community.network.ce
+        ansible_connection: ansible.netcommon.network_cli
+        is_production: true
+```
+
+немесе
+
+```shell
+[switches]
+SW1 ansible_host=172.16.128.12
+SW2 ansible_host=172.16.128.13
+
+[switches:vars]
+ansible_user=admin
+ansible_password=Huawei@123
+ansible_network_os=community.network.ce
+ansible_connection=ansible.netcommon.network_cli
+is_production=true
+```
+
 ```shell
 $ sudo nano /etc/ansible/sysname.yml
+
 ---
 - name: Huawei VRP Switch Configuration
   hosts: SW1
@@ -206,6 +242,7 @@ $ ansible-playbook -i inventory.yml sysname.yml
 
 ```shell
 $ sudo nano /etc/ansible/vlanif.yml
+
 ---
 - name: Huawei VRP Switch Configuration
   hosts: SW1
@@ -229,6 +266,7 @@ $ ansible-playbook -i inventory.yml vlanif.yml
 
 ```shell
 $ sudo nano /etc/ansible/ospf.yml
+
 ---
 - name: Huawei VRP Switch Configuration
   hosts: SW1
