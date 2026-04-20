@@ -44,6 +44,7 @@ Table1 - WLAN Data Plan
 ## A1 and A2 Switch
 
 ```shell
+# Configure hostname
 <Huawei> system-view
 [Huawei] sysname A1
 [A1]
@@ -68,7 +69,7 @@ vlan 200
 display vlan
 ```
 
-Configure the Trunk Port and Allowed VLANs
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
@@ -105,7 +106,7 @@ vlan 200
 display vlan
 ```
 
-Configure the Trunk Port and Allowed VLANs
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/10
  port link-type trunk
@@ -122,7 +123,7 @@ interface g0/0/14
 display port vlan
 ```
 
-Configure the VLANIF Interface
+Create VLANIF Interface
 ```shell
 interface vlanif 100
  ip address 192.168.100.254 24
@@ -189,7 +190,7 @@ vlan 200
 display vlan brief
 ```
 
-Configure the Trunk Port and Allowed VLANs
+Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/10
  port link-type trunk
@@ -198,7 +199,7 @@ interface g0/0/10
 display port vlan
 ```
 
-Configure the VLANIF Interface
+Create VLANIF Interface
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
