@@ -155,9 +155,13 @@ Deactivate Virtual Environment
 ```shell
 $ source ansible_huawei_vrp/bin/activate
 
-$ python -m pip install ansible
-$ python -m pip list
+$ pip install --upgrade pip
+$ pip install ansible
+$ pip install paramiko
+$ pip list
 ```
+> python -m pip install ansible  
+> python -m pip list  
 
 ```shell
 $ ls -l /etc/ansible/hosts
