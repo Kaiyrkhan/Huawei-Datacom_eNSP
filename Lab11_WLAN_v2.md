@@ -10,11 +10,11 @@ Table1 - WLAN Data Plan
 | Management VLAN for APs                 | VLAN 43                                                                                                 |
 | Service VLAN for STAs                   | VLAN 100, VLAN 200                                                                                      |
 | Default Gateway for AP                  | 10.1.43.254                                                                                             |
-| DHCP Pool for APs                       | 10.1.43.100 - 10.1.43.200/24                                                                            |
+| DHCP Pool for APs                       | 10.1.43.101 - 10.1.43.200/24                                                                            |
 | Default Gateway for Staff               | 192.168.100.254                                                                                         |
-| DHCP Pool for Staff                     | 192.168.100.10 - 192.168.100.250/24                                                                     |
+| DHCP Pool for Staff                     | 192.168.100.11 - 192.168.100.250/24                                                                     |
 | Default Gateway for Guest               | 192.168.200.254                                                                                         |
-| DHCP Pool for Guest                     | 192.168.200.10 - 192.168.200.250/24                                                                     |
+| DHCP Pool for Guest                     | 192.168.200.11 - 192.168.200.250/24                                                                     |
 | AP Name                                 | AP1, AP2                                                                                                |
 | AP Group                                | Name: ap-group1                                                                                         |
 |                                         | Referenced profiles: VAP profile **VAP-Staff** and **VAP-Guest**, Regulatory domain profile **default** |
