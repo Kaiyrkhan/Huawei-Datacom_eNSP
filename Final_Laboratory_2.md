@@ -39,6 +39,18 @@ Table1 - WLAN Data Plan
 |                                         | Service VLAN: 200                                                                                       |
 |                                         | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**                    |
 
+## Scenario
+1) Configure VLAN
+2) VRRP (Virtual Router Redundancy Protocol)
+3) Single-Area OSPFv2
+4) DHCP
+5) NAT (Easy IP)
+6) Remote Access (SSH, Telnet)
+7) DNS and HTTP
+8) FTP
+9) WLAN
+10) TFTP and NTP
+
 ```shell
 ```
 
