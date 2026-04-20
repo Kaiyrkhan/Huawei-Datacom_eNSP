@@ -43,16 +43,10 @@ Table1 - WLAN Data Plan
 
 ## A1 and A2 Switch
 
+Configure Hostname
 ```shell
-# Configure hostname
-<Huawei> system-view
-[Huawei] sysname A1
-[A1]
-```
-
-```shell
-interface g0/0/4
- poe enable
+system-view
+sysname A1
 ```
 
 Create VLANs
