@@ -215,6 +215,7 @@ $ sudo nano /etc/ansible/vlanif.yml
     - name: Create VLANIF interface
       community.network.ce_command:
         commands:
+          - system-view
           - vlan 11
           - quit
           - interface Vlanif 11
@@ -237,6 +238,7 @@ $ sudo nano /etc/ansible/ospf.yml
     - name: Configure Single-Area OSPF
       community.network.ce_command:
         commands:
+          - system-view
           - ospf 1 router-id 50.1.1.1
           - area 0.0.0.0
           - network 172.16.11.0 0.0.0.255
