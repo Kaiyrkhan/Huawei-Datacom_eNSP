@@ -1,6 +1,6 @@
 # Configure Network Services (DHCP, HTTP, DNS, TFTP, FTP, NTP, Telnet, SSH)
 
-### 🖧 Network Topology (желі топологиясы)
+### 🖧 Network Topology
 ![Topology](images/Lab10_NetworkTopology_NetworkServices.png)  
 [Download Link for eNSP Topology File](Topology/Lab10_NetworkTopology_NetworkServices.topo)
 
