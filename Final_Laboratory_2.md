@@ -40,7 +40,7 @@ Table1 - WLAN Data Plan
 |                                         | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**                    |
 
 ## Scenario
-1) Configure VLAN (Create VLANs and Access Port, Trunk Port)  
+1) Configure VLAN (Create VLANs, Access and Trunk Port)  
    Link Aggregation. Eth-Trunk  
    MSTP (Multiple Spanning Tree Protocol)  
 2) VRRP (Virtual Router Redundancy Protocol)
