@@ -39,3 +39,11 @@ Table1 - WLAN Data Plan
 |                                         | Service VLAN: 200                                                                                       |
 |                                         | Referenced profiles: SSID profile **WLAN-Guest** and Security profile **WLAN-Guest**                    |
 
+```shell
+```
+
+```shell
+```
+
+```shell
+```
