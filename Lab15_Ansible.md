@@ -129,6 +129,10 @@ $ sudo apt install ansible -y
 ```
 
 ```shell
+$ ansible-galaxy collection install community.network
+```
+
+```shell
 $ ansible --version
 $ ansible-playbook --version
 ```
@@ -178,9 +182,17 @@ CTRL+O, ENTER, CTRL+X
 
 ```shell
 $ sudo nano /etc/ansible/sysname.yml
-- name: Set Hostname
-  huawei.ansible.ce_system:
-    hostname: SW1
+---
+- name: Huawei VRP Switch Configuration
+  hosts: switch
+  gather_facts: false
+
+  tasks:
+    - name: Configure Sysname
+      community.network.ce_command:
+        commands:
+          - system-view
+          - sysname SW1
 ```
 
 ```shell
