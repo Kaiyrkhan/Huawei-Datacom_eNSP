@@ -119,6 +119,7 @@ https://docs.ansible.com/projects/ansible/latest/installation_guide/index.html
 
 ```shell
 $ sudo apt update
+$ sudo apt upgrade -y
 
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository --yes --update ppa:ansible/ansible
@@ -164,15 +165,22 @@ $ pip list
 > python -m pip list  
 
 ```shell
-$ ls -l /etc/ansible/hosts
+$ ls -l /etc/ansible/
 
 $ sudo nano /etc/ansible/hosts
 localhost ansible_connection=local
 
 [switch]
-172.16.128.11
+172.16.128.12
 
 CTRL+O, ENTER, CTRL+X
+```
+
+```shell
+$ sudo nano /etc/ansible/sysname.yml
+- name: Set Hostname
+  huawei.ansible.ce_system:
+    hostname: SW1
 ```
 
 ```shell
