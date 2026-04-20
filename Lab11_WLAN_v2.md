@@ -8,7 +8,7 @@ Table1 - WLAN Data Plan
 | Item                                    | Value                                                                                                   |
 | ----------------------------------------| --------------------------------------------------------------------------------------------------------|
 | Management VLAN for APs                 | VLAN 43                                                                                                 |
-| Service VLAN for STAs                   | SSID Staff: VLAN 100, SSID Guest: VLAN 200                                                                                      |
+| Service VLAN for STAs                   | SSID Staff: VLAN 100, SSID Guest: VLAN 200                                                              |
 | Default Gateway for AP                  | 10.1.43.254                                                                                             |
 | DHCP Pool for APs                       | 10.1.43.101 - 10.1.43.200/24                                                                            |
 | Default Gateway for Staff               | 192.168.100.254                                                                                         |
