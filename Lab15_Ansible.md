@@ -170,14 +170,23 @@ $ pip list
 
 ```shell
 $ ls -l /etc/ansible/
+```
 
-$ sudo nano /etc/ansible/hosts
-localhost ansible_connection=local
+```shell
+$ sudo nano /etc/ansible/inventory.yml
+all:
+  hosts:
+    switch:
+      ansible_host: 172.16.128.12
+      ansible_user:user1
+      ansible_password: Huawei@123
+      ansible_network_os: community.network.ce
+      ansible_connection: ansible.netcommon.network_cli
+```
 
-[switch]
-172.16.128.12
-
-CTRL+O, ENTER, CTRL+X
+```shell
+$ cd /etc/ansible/
+$ ansible-playbook -i inventory.yml sysname.yml
 ```
 
 ```shell
@@ -193,6 +202,54 @@ $ sudo nano /etc/ansible/sysname.yml
         commands:
           - system-view
           - sysname SW1
+```
+
+```shell
+$ sudo nano /etc/ansible/vlanif.yml
+---
+- name: Huawei VRP Switch Configuration
+  hosts: switch
+  gather_facts: false
+
+  tasks:
+    - name: Create VLANIF interface
+      community.network.ce_command:
+        commands:
+          - vlan 11
+          - quit
+          - interface Vlanif 11
+          - ip address 172.16.11.1 24
+          - quit
+```
+
+```shell
+$ sudo nano /etc/ansible/ospf.yml
+---
+- name: Huawei VRP Switch Configuration
+  hosts: switch
+  gather_facts: false
+
+  tasks:
+    - name: Configure Single-Area OSPF
+      community.network.ce_command:
+        commands:
+          - ospf 1 router-id 50.1.1.1
+          - area 0.0.0.0
+          - network 172.16.11.0 0.0.0.255
+          - quit
+          - quit
+```
+
+---
+
+```shell
+$ sudo nano /etc/ansible/hosts
+localhost ansible_connection=local
+
+[switch]
+172.16.128.12
+
+CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
