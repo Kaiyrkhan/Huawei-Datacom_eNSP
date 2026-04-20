@@ -671,20 +671,19 @@ aaa
  quit
 ```
 
+Step2: Configure SSH User Settings
 ```shell
 ssh user student authentication-type password
 ssh user student service-type stelnet
 ```
 
-Step2: Configure VTY Lines
+Step3: Enable SSH
 ```shell
-user-interface vty 0 4
- authentication-mode aaa
- protocol inbound all
- quit
+stelnet server enable
+display ssh server status
 ```
 
-Step3: Generate RSA Key
+Step4: Generate RSA Key
 ```shell
 rsa local-key-pair create
 
@@ -692,6 +691,14 @@ Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 3072]: 2048
 
 display rsa local-key-pair public
+```
+
+Step5: Configure VTY Lines
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound all
+ quit
 ```
 
 SSH server Permit interface
@@ -702,19 +709,14 @@ SSH server Permit interface
 [Router] ssh server permit interface Loopback 50
 ```
 
-Step4: Enable SSH
 ```shell
-stelnet server enable
-display ssh server status
-```
-
-```shell
-display current-configuration | include ssh
-display current-configuration | include stelnet
+display cu | include ssh
+display cu | include stelnet
 ```
 
 **Verify SSH Connectivity**
 ```shell
+# Configure SSH Client Settings
 [A1] ssh client first-time enable
 
 [A1] stelnet 50.3.3.3
