@@ -117,7 +117,7 @@ interface g0/0/14
 display port vlan
 ```
 
-Create VLANIF Interface
+Create VLANIF interface
 ```shell
 interface vlanif 100
  ip address 192.168.100.254 24
@@ -193,7 +193,7 @@ interface g0/0/10
 display port vlan
 ```
 
-Create VLANIF Interface
+Create VLANIF interface
 ```shell
 interface vlanif 43
  ip address 10.1.43.254 24
