@@ -11,10 +11,11 @@
 4) VRRP (Virtual Router Redundancy Protocol)
 5) Single-Area OSPFv2
 6) DHCP
-7) DNS және HTTP
-8) NAT (Easy IP)
-9) Remote Access (SSH, Telnet)
-10) TFTP, FTP and NTP
+7) NAT (Easy IP)
+8) Remote Access (SSH, Telnet)
+9) DNS and HTTP
+10) FTP
+11) TFTP and NTP
 
 ## A1 and A2 Switch
 ```shell
