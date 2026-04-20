@@ -137,7 +137,7 @@ $ ls -l /etc/ansible/
 ```
 
 ```shell
-$ sudo apt install python3-venv
+$ sudo apt install python3-pip python3-venv -y
 
 Create Virtual Environment
 $ python3 -m venv ansible_huawei_vrp
