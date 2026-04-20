@@ -99,19 +99,19 @@ student@ubuntu:~$ ping -c4 172.16.128.11
 
 ```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
-Host 172.16.128.11
-    KexAlgorithms +diffie-hellman-group1-sha1
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedAlgorithms +ssh-rsa
-    Ciphers +aes128-cbc
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+KexAlgorithms +diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+HostKeyAlgorithms=+ssh-rsa
 CTRL+O, ENTER, CTRL+X
 ```
 немесе
 ```shell
 student@ubuntu:~$ sudo nano ~/.ssh/config
-Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
-KexAlgorithms +diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
-HostKeyAlgorithms=+ssh-rsa
+Host 172.16.128.11
+    KexAlgorithms +diffie-hellman-group1-sha1
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    Ciphers +aes128-cbc
 CTRL+O, ENTER, CTRL+X
 ```
 
@@ -231,7 +231,6 @@ student@ubuntu:~$ python3 script2_telnet.py
 
 ```shell
 student@ubuntu:~$ sudo apt update
-student@ubuntu:~$ sudo apt install -y build-essential libssl-dev libffi-dev
 ```
 
 ```shell
@@ -242,9 +241,9 @@ student@ubuntu:~$ pip3 --version
 
 ```shell
 student@ubuntu:~$ python3 -m venv netmiko_huawei_vrp					// Create Virtual Environment (venv)
-student@ubuntu:~$ source netmiko_huawei_vrp/bin/activate				// Activate Virtual Environment (venv)
+student@ubuntu:~$ source netmiko_huawei_vrp/bin/activate				// Activate Virtual Environment
 ```
-> Deactivate Virtual Environment (venv)  
+> Deactivate Virtual Environment 
 > (netmiko_huawei_vrp) student@ubuntu:~$ deactivate  
 
 ```shell
