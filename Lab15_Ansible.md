@@ -1,6 +1,6 @@
 # Network Programmability and Automation. Ansible
 
-### 🖧 Network Topology (желі топологиясы)
+### 🖧 Network Topology
 ![Topology](images/Lab14_NetworkTopology_Programmability_Automation.png)
 
 ## Scenario
