@@ -1,7 +1,8 @@
 # Network Programmability and Automation. Ansible
 
 ### 🖧 Network Topology
-![Topology](images/Lab14_NetworkTopology_Programmability_Automation.png)
+![Topology](images/Lab14_NetworkTopology_Programmability_Automation.png)  
+[Download Link for eNSP Topology File](Topology/Lab14_NetworkTopology_Programmability_Automation.topo)  
 
 ## Scenario
 1) Configure Remote Access (SSH);
