@@ -109,6 +109,7 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+# Verify SSH Connectivity
 student@ubuntu:~$ ssh user1@172.16.128.12
 ```
 
@@ -138,11 +139,7 @@ $ ansible-playbook --version
 ```
 
 ```shell
-$ ls -l /etc/ansible/
-```
-
-```shell
-$ sudo apt install python3-pip python3-venv -y
+$ sudo apt install -y python3-pip python3-venv
 
 Create Virtual Environment
 $ python3 -m venv ansible_huawei_vrp
@@ -150,23 +147,22 @@ $ python3 -m venv ansible_huawei_vrp
 Activate Virtual Environment
 $ source ansible_huawei_vrp/bin/activate
 
-$ python
+$ python3
 CTRL+D
 
 Deactivate Virtual Environment
 (ansible_huawei_vrp) student@ubuntu:~$ deactivate
+student@ubuntu:~$
 ```
 
 ```shell
 $ source ansible_huawei_vrp/bin/activate
 
-$ pip install --upgrade pip
-$ pip install ansible
-$ pip install paramiko
-$ pip list
+$ python3 -m pip install --upgrade pip
+$ python3 -m pip install ansible
+$ python3 -m pip install paramiko
+$ python3 -m pip list
 ```
-> python -m pip install ansible  
-> python -m pip list  
 
 ```shell
 $ ls -l /etc/ansible/
@@ -176,7 +172,7 @@ $ ls -l /etc/ansible/
 $ sudo nano /etc/ansible/inventory.yml
 all:
   hosts:
-    SW1:
+    switch:
       ansible_host: 172.16.128.12
       ansible_user: user1
       ansible_password: Huawei@123
@@ -200,6 +196,7 @@ all:
       vars:
         ansible_user: user1
         ansible_password: Huawei@123
+        ansible_ssh_port: 22
         ansible_network_os: community.network.ce
         ansible_connection: ansible.netcommon.network_cli
         is_production: true
@@ -221,12 +218,13 @@ ansible_connection=ansible.netcommon.network_cli
 is_production=true
 ```
 
+**Example #1: Configure Sysname**
 ```shell
 $ sudo nano /etc/ansible/sysname.yml
 
 ---
 - name: Huawei VRP Switch Configuration
-  hosts: SW1
+  hosts: switch
   gather_facts: false
 
   tasks:
@@ -242,12 +240,13 @@ $ cd /etc/ansible/
 $ ansible-playbook -i inventory.yml sysname.yml
 ```
 
+**Example #2: Create VLANIF interface**
 ```shell
 $ sudo nano /etc/ansible/vlanif.yml
 
 ---
 - name: Huawei VRP Switch Configuration
-  hosts: SW1
+  hosts: switch
   gather_facts: false
 
   tasks:
@@ -263,15 +262,17 @@ $ sudo nano /etc/ansible/vlanif.yml
 ```
 
 ```shell
+$ cd /etc/ansible/
 $ ansible-playbook -i inventory.yml vlanif.yml
 ```
 
+**Example #3: Configure Single-Area OSPF**
 ```shell
 $ sudo nano /etc/ansible/ospf.yml
 
 ---
 - name: Huawei VRP Switch Configuration
-  hosts: SW1
+  hosts: switch
   gather_facts: false
 
   tasks:
@@ -287,162 +288,8 @@ $ sudo nano /etc/ansible/ospf.yml
 ```
 
 ```shell
-$ ansible-playbook -i inventory.yml ospf.yml
-```
-
----
-
-```shell
-$ sudo nano /etc/ansible/hosts
-localhost ansible_connection=local
-
-[switch]
-172.16.128.12
-
-CTRL+O, ENTER, CTRL+X
-```
-
-```shell
-$ sudo nano /etc/ansible/sysname.yml
----
-- name: CloudEngine Basic Configuration
-  hosts: switch
-  connection: network_cli
-  gather_facts: no
-  vars:
-	cli:
-  	host: "{{ inventory_hostname }}"
-  	port: "{{ ansible_ssh_port }}"
-  	username: "{{ username }}"
-  	password: "{{ password }}"
-  	transport: cli
-
-  tasks:
-	- name: "Configure Sysname"
-  	ce_config:
-    	lines: sysname SW1
-
-	- name: "Save Configuration"
-  	ce_config:
-    	save: yes
-
-CTRL+O, ENTER, CTRL+X
-```
-
-```shell
-$ sudo nano /etc/ansible/switch.yml
----
-username: "user1"
-password: "Huawei@123"
-ansible_ssh_port: 22
-ansible_network_os: ce
-
-CTRL+O, ENTER, CTRL+X
-```
-
-```shell
-$ ls -l /etc/ansible/
-hosts
-switch.yml
-sysname.yml
-```
-
-```shell
 $ cd /etc/ansible/
-$ ansible-playbook sysname.yml
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
----
-
-```shell
-$ sudo mkdir /etc/ansible/
-$ sudo mkdir /etc/ansible/group_var
-
-$ sudo touch /etc/ansible/hosts 
-$ sudo chmod 777 /etc/ansible/hosts 
-```
-
-```shell
-$ sudo nano  /etc/ansible/hosts
-
-localhost ansible_connection=local
-
-[switch]
-172.16.128.11
-```
-
-```shell
-$ sudo nano /etc/ansible/group_vars/switch.yml
-
-ansible_user: user1
-ansible_password: Huawei@123
-ansible_connection: network_cli
-ansible_network_os: community.network.ce
-```
-> ansible_host: 172.16.128.11  
-> ansible_network_os: huawei.ansible.ce  
-
-**Example #1**
-```shell
-$ sudo nano /etc/ansible/sysname.yml
-
----
-- name: Change hostname manually using CLI command
-  hosts: switch
-  gather_facts: no
-  connection: ansible.netcommon.network_cli
-
-  tasks:
-    - name: Set new hostname
-      ansible.netcommon.cli_command:
-        command: |
-          system-view
-          sysname SW1
-          quit
-          save
-          y
-```
-
-**Example #2**
-```shell
-$ sudo nano /etc/ansible/vlan_ip_address.yml
-
----
-- name: Create VLAN and assign IP address on Huawei Switch
-  hosts: switch
-  gather_facts: no
-  connection: ansible.netcommon.network_cli
-
-  tasks:
-    - name: Create VLAN 20
-      ansible.netcommon.cli_command:
-        command: |
-          system-view
-          vlan 20
-          quit
-
-    - name: Configure VLAN 20 interface with IP address
-      ansible.netcommon.cli_command:
-        command: |
-          system-view
-          interface Vlanif20
-          ip address 192.168.20.1 255.255.255.0
-          quit
-          quit
-          save
-          y
+$ ansible-playbook -i inventory.yml ospf.yml
 ```
 
 ```shell
