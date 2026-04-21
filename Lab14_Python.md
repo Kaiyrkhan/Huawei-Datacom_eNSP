@@ -116,7 +116,10 @@ CTRL+O, ENTER, CTRL+X
 ```
 
 ```shell
+# Verify SSH Connectivity
 student@ubuntu:~$ ssh user1@172.16.128.11
+
+# Verify Telnet Connectivity
 student@ubuntu:~$ telnet 172.16.128.11
 ```
 
