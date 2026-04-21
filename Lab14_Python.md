@@ -250,9 +250,9 @@ student@ubuntu:~$ source netmiko_huawei_vrp/bin/activate				// Activate Virtual 
 > (netmiko_huawei_vrp) student@ubuntu:~$ deactivate  
 
 ```shell
-(netmiko_huawei_vrp) student@ubuntu:~$ python -m pip install paramiko
-(netmiko_huawei_vrp) student@ubuntu:~$ python -m pip install netmiko
-(netmiko_huawei_vrp) student@ubuntu:~$ python -m pip list
+(netmiko_huawei_vrp) student@ubuntu:~$ python3 -m pip install paramiko
+(netmiko_huawei_vrp) student@ubuntu:~$ python3 -m pip install netmiko
+(netmiko_huawei_vrp) student@ubuntu:~$ python3 -m pip list
 ```
 
 **Example #1**
@@ -319,8 +319,8 @@ CTRL+O, ENTER, CTRL+X
 ```shell
 student@ubuntu:~$ python3 -m venv napalm_huawei_vrp
 student@ubuntu:~$ source napalm_huawei_vrp/bin/activate
-(napalm_huawei_vrp) student@ubuntu:~$ python -m pip install napalm-huawei-vrp
-(napalm_huawei_vrp) student@ubuntu:~$ python -m pip list
+(napalm_huawei_vrp) student@ubuntu:~$ python3 -m pip install napalm-huawei-vrp
+(napalm_huawei_vrp) student@ubuntu:~$ python3 -m pip list
 ```
 
 **Example #1**
