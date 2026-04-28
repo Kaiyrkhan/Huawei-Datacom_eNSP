@@ -51,7 +51,8 @@ Table1 - WLAN Data Plan
 7) DNS and HTTP
 8) FTP
 9) WLAN
-10) TFTP and NTP
+10) TFTP
+11) NTP
 
 ```shell
 ```
