@@ -15,7 +15,8 @@
 8) Remote Access (SSH, Telnet)
 9) DNS and HTTP
 10) FTP
-11) TFTP and NTP
+11) TFTP
+12) NTP
 
 ## A1 and A2 Switch
 ```shell
