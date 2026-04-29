@@ -611,32 +611,29 @@ NAT Table
 
 ## A1 and A2 Switch
 
-
 A1 Switch
 ```shell
+# Create VLANIF interface
 interface vlanif 50
  ip address 10.1.50.101 24
  quit
-
 display ip int brief
 ```
-
-Default Gateway
 ```shell
+# Default Gateway
 ip route-static 0.0.0.0 0.0.0.0 10.1.50.254
 ```
 
 A2 Switch
 ```shell
+# Create VLANIF interface
 interface vlanif 50
  ip address 10.1.50.102 24
  quit
-
 display ip int brief
 ```
-
-Default Gateway
 ```shell
+# Default Gateway
 ip route-static 0.0.0.0 0.0.0.0 10.1.50.254
 ```
 
