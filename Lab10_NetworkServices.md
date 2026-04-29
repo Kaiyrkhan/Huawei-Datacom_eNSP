@@ -1,4 +1,4 @@
-# Configure Network Services (DHCP, HTTP, DNS, TFTP, FTP, NTP, Telnet, SSH)
+# Configure Network Services (DHCP, HTTP, DNS, FTP, TFTP, NTP, Telnet, SSH)
 
 ### 🖧 Network Topology
 ![Topology](images/Lab10_NetworkTopology_NetworkServices.png)  
