@@ -16,7 +16,7 @@
 9) HTTP and DNS
 10) FTP
 11) TFTP
-12) NTP (EdgeRT1)
+12) NTP (EdgeR1)
 
 ## A1 and A2 Switch
 ```shell
@@ -27,12 +27,12 @@ sysname A1
 
 Create VLANs
 ```shell
-vlan batch 11 12 50
+vlan batch 111 112 50
 
-vlan 11
+vlan 111
  description Service VLAN
  quit
-vlan 12
+vlan 112
  description Service VLAN
  quit
 vlan 50
@@ -46,15 +46,15 @@ Configure Access Port
 ```shell
 interface Ethernet0/0/1
  port link-type access
- port default vlan 11
+ port default vlan 111
  quit
 interface Ethernet0/0/3
  port link-type access
- port default vlan 11
+ port default vlan 111
  quit
 interface Ethernet0/0/2
  port link-type access
- port default vlan 12
+ port default vlan 112
  quit
 
 display vlan
@@ -64,12 +64,12 @@ Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
- port trunk allow-pass vlan 11 12 50
+ port trunk allow-pass vlan 111 112 50
  quit
 
 interface g0/0/2
  port link-type trunk
- port trunk allow-pass vlan 11 12 50
+ port trunk allow-pass vlan 111 112 50
  quit
 
 display port vlan
@@ -84,12 +84,12 @@ sysname D1
 
 Create VLANs
 ```shell
-vlan batch 11 12 50
+vlan batch 111 112 50
 
-vlan 11
+vlan 111
  description Service VLAN
  quit
-vlan 12
+vlan 112
  description Service VLAN
  quit
 vlan 50
@@ -103,12 +103,12 @@ Configure Trunk Port and Allowed VLANs
 ```shell
 interface g0/0/1
  port link-type trunk
- port trunk allow-pass vlan 11 12 50
+ port trunk allow-pass vlan 111 112 50
  quit
 
 interface g0/0/2
  port link-type trunk
- port trunk allow-pass vlan 11 12 50
+ port trunk allow-pass vlan 111 112 50
  quit
 
 display port vlan
@@ -118,7 +118,7 @@ Configure LACP Link Aggregation
 ```shell
 interface Eth-Trunk 1                                          // Create Eth-Trunk
  port link-type trunk                                          // Trunk Port
- port trunk allow-pass vlan 11 12 50                           // Allowed VLANs         
+ port trunk allow-pass vlan 111 112 50                         // Allowed VLANs         
  mode lacp-static                                              // Link Aggregation Mode
  quit
 
@@ -150,8 +150,8 @@ display stp
 stp region-configuration
  region-name HQ1
  revision-level 1
- instance 1 vlan 11
- instance 2 vlan 12
+ instance 1 vlan 111
+ instance 2 vlan 112
  instance 3 vlan 50
  active region-configuration
  check region-configuration
@@ -182,8 +182,8 @@ Configure MSTP
 stp region-configuration
  region-name HQ1
  revision-level 1
- instance 1 vlan 11
- instance 2 vlan 12
+ instance 1 vlan 111
+ instance 2 vlan 112
  instance 3 vlan 50
  active region-configuration
  check region-configuration
@@ -201,8 +201,8 @@ display stp instance 3 brief
 ```
 немесе
 ```shell
-display stp vlan 11
-display stp vlan 12
+display stp vlan 111
+display stp vlan 112
 display stp vlan 50
 ```
 
@@ -210,15 +210,15 @@ display stp vlan 50
 
 D1 Switch
 ```shell
-interface vlanif 11
- ip address 172.16.11.1 24
- vrrp vrid 11 virtual-ip 172.16.11.254
- vrrp vrid 11 priority 105
+interface vlanif 111
+ ip address 172.16.111.1 24
+ vrrp vrid 111 virtual-ip 172.16.111.254
+ vrrp vrid 111 priority 105
  quit
 
-interface vlanif 12
- ip address 172.16.12.1 24
- vrrp vrid 12 virtual-ip 172.16.12.254
+interface vlanif 112
+ ip address 172.16.112.1 24
+ vrrp vrid 112 virtual-ip 172.16.112.254
  quit
 
 interface vlanif 50
@@ -233,15 +233,15 @@ display vrrp brief
 
 D2 Switch
 ```shell
-interface vlanif 11
- ip address 172.16.11.2 24
- vrrp vrid 11 virtual-ip 172.16.11.254
+interface vlanif 111
+ ip address 172.16.111.2 24
+ vrrp vrid 111 virtual-ip 172.16.111.254
  quit
 
-interface vlanif 12
- ip address 172.16.12.2 24
- vrrp vrid 12 virtual-ip 172.16.12.254
- vrrp vrid 12 priority 105
+interface vlanif 112
+ ip address 172.16.112.2 24
+ vrrp vrid 112 virtual-ip 172.16.112.254
+ vrrp vrid 112 priority 105
  quit
 
 interface vlanif 50
@@ -253,7 +253,7 @@ display ip int brief
 display vrrp brief
 ```
 
-## Configure Single-Area OSPFv2
+## Configure Single-Area OSPF
 
 D1 Switch
 
@@ -274,8 +274,8 @@ display ip int brief
 ospf 1 router-id 50.3.3.3
  area 0
  network 10.1.1.104 0.0.0.3
- network 172.16.11.0 0.0.0.255
- network 172.16.12.0 0.0.0.255
+ network 172.16.111.0 0.0.0.255
+ network 172.16.112.0 0.0.0.255
  network 10.1.50.0 0.0.0.255
  network 50.3.3.3 0.0.0.0
  quit
@@ -302,8 +302,8 @@ display ip int brief
 ospf 1 router-id 50.4.4.4
  area 0
  network 10.1.1.108 0.0.0.3
- network 172.16.11.0 0.0.0.255
- network 172.16.12.0 0.0.0.255
+ network 172.16.111.0 0.0.0.255
+ network 172.16.112.0 0.0.0.255
  network 10.1.50.0 0.0.0.255
  network 50.4.4.4 0.0.0.0
  quit
@@ -355,11 +355,11 @@ ospf 1 router-id 50.2.2.2
 display ospf peer brief
 ```
 
-EdgeRT1 Router
+EdgeR1 Router
 ```shell
 undo terminal monitor
 system-view
-sysname EdgeRT1
+sysname EdgeR1
 ```
 
 ```shell
@@ -439,21 +439,21 @@ display ospf peer brief
 ```shell
 dhcp enable
 
-ip pool VLAN11
- network 172.16.11.0 mask 24
- gateway-list 172.16.11.254
+ip pool VLAN111
+ network 172.16.111.0 mask 24
+ gateway-list 172.16.111.254
  dns-list 8.8.8.8
- excluded-ip-address 172.16.11.1 172.16.11.100
- excluded-ip-address 172.16.11.201 172.16.11.253
+ excluded-ip-address 172.16.111.1 172.16.111.100
+ excluded-ip-address 172.16.111.201 172.16.111.253
  lease day 5
  quit
 
-ip pool VLAN12
- network 172.16.12.0 mask 24
- gateway-list 172.16.12.254
+ip pool VLAN112
+ network 172.16.112.0 mask 24
+ gateway-list 172.16.112.254
  dns-list 172.16.128.53
- excluded-ip-address 172.16.12.1 172.16.12.100
- excluded-ip-address 172.16.12.201 172.16.12.253
+ excluded-ip-address 172.16.112.1 172.16.112.100
+ excluded-ip-address 172.16.112.201 172.16.112.253
  lease day 5
  quit
 
@@ -465,7 +465,7 @@ interface g0/0/0
 Verify Configuration
 ```shell
 display ip pool
-display ip pool name VLAN11
+display ip pool name VLAN111
 display dhcp server statistics
 ```
 
@@ -473,12 +473,12 @@ DHCP Relay Agent (D1 and D2 Switch)
 ```shell
 dhcp enable
 
-interface vlanif 11
+interface vlanif 111
  dhcp select relay
  dhcp relay server-ip 10.10.10.67
  quit
 
-interface vlanif 12
+interface vlanif 112
  dhcp select relay
  dhcp relay server-ip 10.10.10.67
  quit
@@ -491,7 +491,7 @@ PC3> ipconfig
 PC4> ipconfig
 ```
 
-## Configure DNS, HTTP and FTP
+## Configure HTTP and DNS
 
 DNS Server
 ```shell
@@ -558,11 +558,11 @@ Content-Length: 179
 
 ## Configure NAT (Easy IP)
 
-EdgeRT1
+EdgeR1
 ```shell
 acl 2000
- rule permit source 172.16.11.0 0.0.0.255
- rule permit source 172.16.12.0 0.0.0.255
+ rule permit source 172.16.111.0 0.0.0.255
+ rule permit source 172.16.112.0 0.0.0.255
  quit
 
 int g0/0/1
@@ -607,7 +607,7 @@ PC4> ping 8.8.8.8
 
 NAT Table
 ```shell
-[EdgeRT1] display nat session all verbose
+[EdgeR1] display nat session all verbose
 ```
 
 ## A1 and A2 Switch
@@ -659,7 +659,7 @@ ping 50.5.5.5
  Reply from 50.5.5.5: bytes=56 Sequence=3 ttl=253 time=70 ms
 ```
 
-## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeRT1, DHCP
+## Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeR1, DHCP
 
 Step1: Configure Local User Authentication and Authorization
 ```shell
