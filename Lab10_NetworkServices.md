@@ -968,7 +968,7 @@ student@ubuntu:~$ ls -lh /srv/tftp/
 
 ## Configure NTP on Huawei VRP
 
-**NTP серверді конфигурациялау**
+**NTP серверді конфигурациялау (EdgeR1)**
 
 ```shell
 # Уақыт белдеуін (Time Zone) өзгерту
@@ -1007,17 +1007,17 @@ display ntp-service sessions verbose
 display clock
 ```
 
-**NTP клиентті конфигурациялау**
+**NTP клиентті конфигурациялау (C1, D1, D2, A1, A2, DHCP Server)**
 
 ```shell
+# Уақыт белдеуін (Time Zone) өзгерту
 <C1> clock timezone Almaty add 05:00:00
-
 <C1> display clock
 ```
 
 ```shell
 # NTP қызметін іске қосу
-[C1] ntp-service enable
+ntp-service enable
 ```
 
 ```shell
@@ -1029,7 +1029,7 @@ ntp-service reliable authentication-keyid 1
 
 ```shell
 # NTP сервермен байланыс орнату
-[C1] ntp-service unicast-server 50.1.1.1 authentication-keyid 1
+ntp-service unicast-server 50.1.1.1 authentication-keyid 1
 ```
 
 ```shell
