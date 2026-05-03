@@ -491,71 +491,6 @@ PC3> ipconfig
 PC4> ipconfig
 ```
 
-## Configure HTTP and DNS
-
-DNS Server
-```shell
-Basic Config:
- Local Address: 172.16.128.53
- Subnet Mask: 255.255.255.0
- Gateway: 172.16.128.1
- DNS: 8.8.8.8                        // Public DNS Server
-
-Server info:
- Hostname: lab.local
- IP Address: 172.16.128.80          // Web Server
- "Add" батырмасын басамыз!
- DNSServer ➜ Service ➜ Start
-```
-
-HTTP Server
-```shell
-Basic Config:
- Local Address: 172.16.128.80
- Subnet Mask: 255.255.255.0
- Gateway: 172.16.128.1
- DNS: 172.16.128.53
-
-Server info:
- Root Path: C:\Users\student\Documents\www\
- HTTPServer ➜ Service ➜ Start
-```
-
-C:\Users\student\Documents\www\index.html
-```shell
-<!DOCTYPE html>
-<html>
-<head>
-   	 <meta charset="UTF-8">
-   	 <title>Example</title>
-</head>
-<body>
-   	 <h1>Welcome to Almaty!</h1>
-</body>
-</html>
-```
-
-HTTP Client
-```shell
-Basic Config:
- Local Address: 172.16.11.80
- Subnet Mask: 255.255.255.0
- Gateway: 172.16.11.254
- DNS: 172.16.128.53
-
- HTTPClient ➜ URL: http://lab.local
-немесе
- HTTPClient ➜ URL: http://172.16.128.80
-
-Нәтиже:
-HTTP/1.1 200 OK
-Server: ENSP HttpServer
-Auth: HUAWEI
-Cache-Control: private
-Content-Type: text/html
-Content-Length: 179
-```
-
 ## Configure NAT (Easy IP)
 
 EdgeR1
@@ -760,4 +695,69 @@ Enter password: Huawei@123
 <A1> telnet 50.1.1.1
 <A1> telnet 50.5.5.5
 <A1> telnet 10.1.50.102
+```
+
+## Configure HTTP and DNS
+
+DNS Server
+```shell
+Basic Config:
+ Local Address: 172.16.128.53
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.128.1
+ DNS: 8.8.8.8                        // Public DNS Server
+
+Server info:
+ Hostname: lab.local
+ IP Address: 172.16.128.80          // Web Server
+ "Add" батырмасын басамыз!
+ DNSServer ➜ Service ➜ Start
+```
+
+HTTP Server
+```shell
+Basic Config:
+ Local Address: 172.16.128.80
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.128.1
+ DNS: 172.16.128.53
+
+Server info:
+ Root Path: C:\Users\student\Documents\www\
+ HTTPServer ➜ Service ➜ Start
+```
+
+C:\Users\student\Documents\www\index.html
+```shell
+<!DOCTYPE html>
+<html>
+<head>
+   	 <meta charset="UTF-8">
+   	 <title>Example</title>
+</head>
+<body>
+   	 <h1>Welcome to Almaty!</h1>
+</body>
+</html>
+```
+
+HTTP Client
+```shell
+Basic Config:
+ Local Address: 172.16.11.80
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.11.254
+ DNS: 172.16.128.53
+
+ HTTPClient ➜ URL: http://lab.local
+немесе
+ HTTPClient ➜ URL: http://172.16.128.80
+
+Нәтиже:
+HTTP/1.1 200 OK
+Server: ENSP HttpServer
+Auth: HUAWEI
+Cache-Control: private
+Content-Type: text/html
+Content-Length: 179
 ```
