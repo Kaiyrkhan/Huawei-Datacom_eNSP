@@ -125,6 +125,16 @@ interface Eth-Trunk 1                                          // Create Eth-Tru
 display port vlan
 ```
 
+```shell
+interface Eth-Trunk 1
+ port link-type trunk
+ port trunk allow-pass vlan 111 112 50        
+ mode lacp-static
+ quit
+
+display port vlan
+```
+
 Add a Port to the Eth-Trunk
 ```shell
 interface g0/0/3
