@@ -641,7 +641,7 @@ Step4: Generate RSA Key
 rsa local-key-pair create
 
 Warning: Confirm to replace them! Continue? [Y/N] Y
-Input the bits in the modulus[default = 3072]: 2048
+Input the bits in the modulus[default = 1024]: 2048
 
 display rsa local-key-pair public
 ```
