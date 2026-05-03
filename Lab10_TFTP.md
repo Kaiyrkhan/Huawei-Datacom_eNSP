@@ -26,6 +26,7 @@ About the System
 ```shell
 $ uname -rs
 Linux 6.8.0-101-generic x86_64 GNU/Linux
+
 $ lsb_release -a
 Ubuntu 24.04.4 LTS
 Codename: noble
@@ -41,10 +42,11 @@ $ sudo apt install -y tftpd-hpa tftp-hpa
 > **tftpd-hpa** – HPA's TFTP Server  
 > **tftp-hpa** – HPA's TFTP Client  
 
-```shell
 Status the tftpd-hpa Service/Daemon
+```shell
 $ sudo systemctl status tftpd-hpa
 active (running)
+
 $ sudo systemctl is-enabled tftpd-hpa
 enabled
 ```
@@ -89,6 +91,7 @@ Modify Permission
 $ sudo chmod -R 755 /srv/tftp
 
 $ ls -ld /srv/tftp
+drwxr-xr-x 2 tftp nogroup /srv/tftp
 ```
 
 Қосымша ақпарат
@@ -127,10 +130,12 @@ Download and Upload files
 ```shell
 student@tftp-server:~$ sudo touch /srv/tftp/f1.conf
 student@tftp-server:~$ tftp 172.16.128.10 -c get f1.conf
+
 student@tftp-server:~$ ls -l
+-rw-rw-r-- 1 student student f1.conf
 ```
 
-Example: Debian Linux
+Example: TFTP Client - Debian Linux
 ```shell
 student@tftp-client:~$  sudo apt update
 student@tftp-client:~$  sudo apt install -y tftp-hpa
@@ -145,25 +150,31 @@ tftp> put f2.conf
 tftp> quit
 ```
 
-Example: Huawei VRP
+Example: TFTP Client - Huawei VRP Router/Switch
 ```shell
-tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server 
+# Download file from TFTP server
+tftp <tftp-server-ip> get <remote-file>
 
 <Huawei> tftp 172.16.128.10 get f1.conf
 TFTP: Downloading the file successfully
+
 <Huawei> dir
-немесе
-<Huawei> tftp 172.16.128.10 get f1.conf f11.cfg
-<Huawei> dir
+  Idx  Attr     Size(Byte)  Date        Time(LMT)  FileName 
+    0  -rw-              0  May 03 2026 11:37:46   f1.conf
 ```
 
-```shell
-<R1> save
-Are you sure to continue? (y/n)[n]: y
-<R1> dir
-vrpcfg.zip
+> tftp 172.16.128.10 get f1.conf  
+> tftp 172.16.128.10 get f1.conf f11.cfg  
 
-tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server  
+```shell
+<Huawei> save
+Are you sure to continue? (y/n)[n]: y
+<Huawei> dir
+  Idx  Attr     Size(Byte)  Date        Time(LMT)  FileName 
+   10  -rw-            864  May 03 2026 03:58:19   vrpcfg.zip
+
+# Upload file from TFTP server
+tftp <tftp-server-ip> put <local-file>
 
 <Huawei> tftp 172.16.128.10 put vrpcfg.zip
 TFTP: Uploading the file successfully
