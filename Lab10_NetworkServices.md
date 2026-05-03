@@ -16,7 +16,7 @@
 9) HTTP and DNS
 10) FTP
 11) TFTP
-12) NTP (EdgeR1)
+12) NTP
 
 ## A1 and A2 Switch
 ```shell
