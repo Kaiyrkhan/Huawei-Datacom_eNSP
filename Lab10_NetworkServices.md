@@ -798,7 +798,9 @@ Example #1
 User(172.16.128.21:(none)): ENTER
 Enter password: ENTER
 
+[EdgeR1-ftp]
 [EdgeR1-ftp] ?
+
 [EdgeR1-ftp] dir
 -rwxrwxrwx  1  nogroup  0 May 3  2026  file1.txt
 
