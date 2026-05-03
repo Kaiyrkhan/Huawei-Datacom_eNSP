@@ -934,23 +934,29 @@ student@ubuntu:~$ ls -l
 
 Huawei VRP Router/Switch
 ```shell
+# Ping from EdgeR1 to TFTP Server
 <EdgeR1> ping 172.16.128.69
   Reply from 172.16.128.69: bytes=56 Sequence=2 ttl=64 time=10 ms
 ```
 
 ```shell
-tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server
+# Download file from TFTP server
+tftp <tftp-server-ip> get <remote-file>
 
 <EdgeR1> tftp 172.16.128.69 get f1.conf
-немесе
-<EdgeR1> tftp 172.16.128.69 get f1.conf f11.cfg
+TFTP: Downloading the file successfully
 
-<Huawei> dir
+<EdgeR1> dir
+  Idx  Attr     Size(Byte)  Date        Time(LMT)  FileName 
+    0  -rw-              0  May 03 2026 11:37:46   f1.conf
 ```
+
+> Қосымша ақпарат  
+> <EdgeR1> tftp 172.16.128.69 get f1.conf f11.cfg  
 
 ```shell
 # Upload file from TFTP server
-tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server
+tftp <tftp-server-ip> put <local-file>
 
 <EdgeR1> tftp 172.16.128.69 put vrpcfg.zip
 TFTP: Uploading the file successfully
@@ -958,4 +964,9 @@ TFTP: Uploading the file successfully
 student@ubuntu:~$ ls -lh /srv/tftp/
 -rw-r--r-- 1 root root f1.conf
 -rw-rw-rw- 1 tftp tftp vrpcfg.zip
+```
+
+## Configure NTP
+
+```shell
 ```
