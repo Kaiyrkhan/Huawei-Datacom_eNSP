@@ -974,7 +974,7 @@ student@ubuntu:~$ ls -lh /srv/tftp/
 # Уақыт белдеуін (Time Zone) өзгерту
 <EdgeR1> clock timezone KZ add 5
 
-<EdgeR1> clock datetime 17:13:00 2026-05-03
+<EdgeR1> clock datetime 17:45:00 2026-05-03
 <EdgeR1> display clock
 ```
 
