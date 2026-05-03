@@ -788,7 +788,7 @@ Basic Config:
  DNS: 172.16.128.53
 
 Server info:
- Root Path: C:\Users\student\Documents\tftpboot
+ Root Path: C:\Users\student\Documents\tftpboot\file1.txt
  FtpServer ➜ Service ➜ Start
 ```
 
