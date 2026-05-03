@@ -834,7 +834,7 @@ Enter password: ENTER
 -rwxrwxrwx  1  nogroup  864 May 3  2026  vrpcfg.zip
 ```
 
-## Configure TFTP
+## Configure TFTP on Ubuntu Server
 
 About the System
 ```shell
@@ -966,7 +966,7 @@ student@ubuntu:~$ ls -lh /srv/tftp/
 -rw-rw-rw- 1 tftp tftp vrpcfg.zip
 ```
 
-## Configure NTP
+## Configure NTP on Huawei VRP
 
 ```shell
 ```
