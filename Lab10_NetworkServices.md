@@ -951,7 +951,6 @@ TFTP: Downloading the file successfully
     0  -rw-              0  May 03 2026 11:37:46   f1.conf
 ```
 
-> Қосымша ақпарат  
 > <EdgeR1> tftp 172.16.128.69 get f1.conf f11.cfg  
 
 ```shell
