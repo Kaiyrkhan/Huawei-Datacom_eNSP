@@ -968,5 +968,80 @@ student@ubuntu:~$ ls -lh /srv/tftp/
 
 ## Configure NTP on Huawei VRP
 
+**NTP серверді конфигурациялау**
+
 ```shell
+# Уақыт белдеуін (Time Zone) өзгерту
+<EdgeR1> clock timezone Almaty add 05:00:00
+
+<EdgeR1> clock datetime 17:13:00 2026-05-03
+<EdgeR1> display clock
+```
+
+```shell
+# NTP қызметін іске қосу
+[EdgeR1] ntp-service enable
+```
+
+```shell
+# NTP сервер болу, stratum 3
+[EdgeR1] ntp-service refclock-master 3
+```
+
+```shell
+# NTP аутентификация
+ntp-service authentication enable
+ntp-service authentication-keyid 1 authentication-mode md5 Datacom@123
+ntp-service reliable authentication-keyid 1
+```
+
+```shell
+display cu | include ntp-service
+```
+
+```shell
+# Нәтижені тексеру
+display ntp-service status
+display ntp-service sessions
+display ntp-service sessions verbose
+display clock
+```
+
+**NTP клиентті конфигурациялау**
+
+```shell
+<C1> clock timezone Almaty add 05:00:00
+
+<C1> display clock
+```
+
+```shell
+# NTP қызметін іске қосу
+[C1] ntp-service enable
+```
+
+```shell
+# NTP аутентификация
+ntp-service authentication enable
+ntp-service authentication-keyid 1 authentication-mode md5 Datacom@123
+ntp-service reliable authentication-keyid 1
+```
+
+```shell
+# NTP сервермен байланыс орнату
+[C1] ntp-service unicast-server 50.1.1.1 authentication-keyid 1
+```
+
+```shell
+# Source interface-ті көрсету (сұраныс жіберетін интерфейс)
+[C1] ntp-service source-interface Loopback 50
+[D1] ntp-service source-interface Loopback 50
+[A1] ntp-service source-interface Vlanif50
+```
+
+```shell
+# Нәтижені тексеру
+display ntp-service status
+display ntp-service sessions
+display clock
 ```
