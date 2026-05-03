@@ -833,3 +833,92 @@ Enter password: ENTER
 -rwxrwxrwx  1  nogroup  0 May 3  2026  file1.txt
 -rwxrwxrwx  1  nogroup  864 May 3  2026  vrpcfg.zip
 ```
+
+## Configure TFTP
+
+About the System
+```shell
+student@ubuntu:~$ uname -rs
+Linux 6.8.0-101-generic x86_64 GNU/Linux
+
+student@ubuntu:~$ lsb_release -a
+Ubuntu 24.04.4 LTS
+Codename: noble
+```
+
+>  Package атауы: tftpd-hpa  
+> Daemon/Service атауы: tftpd-hpa  
+
+installation
+```shell
+student@ubuntu:~$ sudo apt update
+student@ubuntu:~$ sudo apt install -y tftpd-hpa tftp-hpa
+```
+> **tftpd-hpa** – HPA's TFTP Server  
+> **tftp-hpa** – HPA's TFTP Client  
+
+Status the tftpd-hpa Service/Daemon
+```shell
+student@ubuntu:~$ sudo systemctl status tftpd-hpa
+active (running)
+
+student@ubuntu:~$ sudo systemctl is-enabled tftpd-hpa
+enabled
+```
+
+Edit tftpd-hpa Configuration File
+```shell
+student@ubuntu:~$ sudo nano /etc/default/tftpd-hpa
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/srv/tftp"
+TFTP_ADDRESS="172.16.128.69:69"
+TFTP_OPTIONS="--secure --create --listen --verbose"
+
+CTRL+O, ENTER, CTRL+X
+```
+
+Restart the tftpd-hpa Service/Daemon
+```shell
+student@ubuntu:~$ sudo systemctl restart tftpd-hpa
+```
+
+Modify Permission/Ownership on TFTP Root Directory
+```shell
+student@ubuntu:~$ ls -ld /srv/tftp
+drwxr-xr-x 2 root nogroup /srv/tftp
+
+Modify Ownership
+student@ubuntu:~$ sudo chown -R tftp /srv/tftp
+
+Modify Permission
+student@ubuntu:~$ sudo chmod -R 755 /srv/tftp
+
+student@ubuntu:~$ ls -ld /srv/tftp
+drwxr-xr-x 2 tftp nogroup /srv/tftp
+```
+
+Configure the Firewall
+```shell
+student@ubuntu:~$ sudo ufw enable
+
+student@ubuntu:~$ sudo ufw allow from 172.16.128.0/24 to any port 69 proto udp
+student@ubuntu:~$ sudo ufw deny 69/udp
+
+student@ubuntu:~$ sudo ufw reload
+student@ubuntu:~$ sudo ufw status
+```
+
+```shell
+student@ubuntu:~$ ss -tulpna
+немесе
+student@ubuntu:~$ netstat -tulpna
+```
+
+**Testing the TFTP Server**
+
+Download and Upload files
+> get - Download file from TFTP server  
+> put - Upload file from TFTP server  
+
+```shell
+```
