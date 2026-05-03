@@ -9,7 +9,7 @@
    LACP Link Aggregation. Eth-Trunk  
    MSTP (Multiple Spanning Tree Protocol)  
 4) VRRP (Virtual Router Redundancy Protocol)
-5) Single-Area OSPFv2
+5) Single-Area OSPF
 6) DHCP
 7) NAT (Easy IP)
 8) Remote Access (SSH, Telnet)
