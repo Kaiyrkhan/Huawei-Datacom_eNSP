@@ -549,6 +549,11 @@ PC3> ping 8.8.8.8
 PC4> ping 8.8.8.8
  From 8.8.8.8: bytes=32 seq=3 ttl=105 time=156 ms
 ```
+```shell
+PC1> ping google.com
+PC3> ping google.com
+ From 142.250.181.238: bytes=32 seq=1 ttl=106 time=156 ms
+```
 
 NAT Table
 ```shell
