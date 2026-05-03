@@ -1016,11 +1016,6 @@ display clock
 ```
 
 ```shell
-# NTP қызметін іске қосу
-ntp-service enable
-```
-
-```shell
 # NTP аутентификация
 ntp-service authentication enable
 ntp-service authentication-keyid 1 authentication-mode md5 Datacom@123
