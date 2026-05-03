@@ -776,3 +776,58 @@ Cache-Control: private
 Content-Type: text/html
 Content-Length: 179
 ```
+
+## Configure FTP
+
+FTP Server
+```shell
+Basic Config:
+ Local Address: 172.16.128.21
+ Subnet Mask: 255.255.255.0
+ Gateway: 172.16.128.1
+ DNS: 172.16.128.53
+
+Server info:
+ Root Path: C:\Users\student\Documents\www\
+ FtpServer ➜ Service ➜ Start
+```
+
+Example #1
+```shell
+<EdgeR1> ftp 172.16.128.21
+User(172.16.128.21:(none)): ENTER
+Enter password: ENTER
+
+[EdgeR1-ftp] ?
+[EdgeR1-ftp] dir
+-rwxrwxrwx  1  nogroup  0 May 3  2026  file1.txt
+
+[EdgeR1-ftp] get file1.txt
+226 Transfer finished successfully. Data connection closed.
+[EdgeR1-ftp] bye
+
+<EdgeR1> dir
+Idx  Attr     Size(Byte)  Date        Time(LMT)  FileName 
+  6  -rw-              0  May 03 2026 03:53:41   file1.txt
+```
+
+Example #2
+```shell
+<EdgeR1> save
+Are you sure to continue? (y/n)[n]: y
+<EdgeR1> dir
+  Idx  Attr     Size(Byte)  Date        Time(LMT)  FileName 
+    8  -rw-            864  May 03 2026 03:58:19   vrpcfg.zip
+
+<EdgeR1> ftp 172.16.128.21
+User(172.16.128.21:(none)): ENTER
+Enter password: ENTER
+
+[EdgeR1-ftp]
+[EdgeR1-ftp] put vrpcfg.zip
+226 Transfer finished successfully. Data connection closed.
+
+[EdgeR1-ftp] dir
+-rwxrwxrwx  1  nogroup  0 May 3  2026  file1.txt
+-rwxrwxrwx  1  nogroup  864 May 3  2026  vrpcfg.zip
+```
