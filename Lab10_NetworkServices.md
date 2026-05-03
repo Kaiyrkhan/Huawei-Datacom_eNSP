@@ -984,8 +984,8 @@ student@ubuntu:~$ ls -lh /srv/tftp/
 ```
 
 ```shell
-# NTP сервер болу, stratum 3
-[EdgeR1] ntp-service refclock-master 3
+# LOCAL-ды құрылғының уақытын NTP сервер ретінде қолдану
+[EdgeR1] ntp-service refclock-master 3                        // NTP сервер болу, stratum 3
 ```
 
 ```shell
