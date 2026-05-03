@@ -453,8 +453,8 @@ ip pool VLAN111
  network 172.16.111.0 mask 24
  gateway-list 172.16.111.254
  dns-list 8.8.8.8
- excluded-ip-address 172.16.111.1 172.16.111.100
- excluded-ip-address 172.16.111.201 172.16.111.253
+ excluded-ip-address 172.16.111.1 172.16.111.10
+ excluded-ip-address 172.16.111.251 172.16.111.253
  lease day 5
  quit
 
@@ -462,8 +462,8 @@ ip pool VLAN112
  network 172.16.112.0 mask 24
  gateway-list 172.16.112.254
  dns-list 172.16.128.53
- excluded-ip-address 172.16.112.1 172.16.112.100
- excluded-ip-address 172.16.112.201 172.16.112.253
+ excluded-ip-address 172.16.112.1 172.16.112.10
+ excluded-ip-address 172.16.112.251 172.16.112.253
  lease day 5
  quit
 
@@ -495,10 +495,10 @@ interface vlanif 112
 ```
 
 ```shell
-PC1> ipconfig /renew
+PC1> ipconfig
 PC2> ipconfig
 PC3> ipconfig
-PC4> ipconfig
+PC4> ipconfig /renew
 ```
 
 ## Configure NAT (Easy IP)
