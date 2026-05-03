@@ -13,7 +13,7 @@
 6) DHCP
 7) NAT (Easy IP)
 8) Remote Access (SSH, Telnet)
-9) DNS and HTTP
+9) HTTP and DNS
 10) FTP
 11) TFTP
 12) NTP (EdgeRT1)
