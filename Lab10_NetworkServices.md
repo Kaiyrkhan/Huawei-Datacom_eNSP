@@ -846,10 +846,11 @@ Ubuntu 24.04.4 LTS
 Codename: noble
 ```
 
+**Step1: installation of TFTP Server**
+
 >  Package атауы: tftpd-hpa  
 > Daemon/Service атауы: tftpd-hpa  
 
-installation
 ```shell
 student@ubuntu:~$ sudo apt update
 student@ubuntu:~$ sudo apt install -y tftpd-hpa tftp-hpa
@@ -865,6 +866,8 @@ active (running)
 student@ubuntu:~$ sudo systemctl is-enabled tftpd-hpa
 enabled
 ```
+
+**Step2: Configure the TFTP Server**
 
 Edit tftpd-hpa Configuration File
 ```shell
@@ -897,7 +900,8 @@ student@ubuntu:~$ ls -ld /srv/tftp
 drwxr-xr-x 2 tftp nogroup /srv/tftp
 ```
 
-Configure the Firewall
+**Step3: Configure the Firewall**
+
 ```shell
 student@ubuntu:~$ sudo ufw enable
 
@@ -914,11 +918,44 @@ student@ubuntu:~$ ss -tulpna
 student@ubuntu:~$ netstat -tulpna
 ```
 
-**Testing the TFTP Server**
+**Step4: Testing the TFTP Server**
 
 Download and Upload files
 > get - Download file from TFTP server  
 > put - Upload file from TFTP server  
 
 ```shell
+student@ubuntu:~$ sudo touch /srv/tftp/f1.conf
+student@ubuntu:~$ tftp 172.16.128.69 -c get f1.conf
+
+student@ubuntu:~$ ls -l
+-rw-rw-r-- 1 student student f1.conf
+```
+
+Huawei VRP Router/Switch
+```shell
+<EdgeR1> ping 172.16.128.69
+  Reply from 172.16.128.69: bytes=56 Sequence=2 ttl=64 time=10 ms
+```
+
+```shell
+tftp <tftp-server-ip> get <remote-file> — Download file from TFTP server
+
+<EdgeR1> tftp 172.16.128.69 get f1.conf
+немесе
+<EdgeR1> tftp 172.16.128.69 get f1.conf f11.cfg
+
+<Huawei> dir
+```
+
+```shell
+# Upload file from TFTP server
+tftp <tftp-server-ip> put <local-file> — Upload file from TFTP server
+
+<EdgeR1> tftp 172.16.128.69 put vrpcfg.zip
+TFTP: Uploading the file successfully
+
+student@ubuntu:~$ ls -lh /srv/tftp/
+-rw-r--r-- 1 root root f1.conf
+-rw-rw-rw- 1 tftp tftp vrpcfg.zip
 ```
