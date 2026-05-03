@@ -777,7 +777,7 @@ Content-Type: text/html
 Content-Length: 179
 ```
 
-## Configure FTP
+## Configure FTP on Huawei VRP
 
 FTP Server
 ```shell
@@ -834,7 +834,7 @@ Enter password: ENTER
 -rwxrwxrwx  1  nogroup  864 May 3  2026  vrpcfg.zip
 ```
 
-## Configure TFTP on Ubuntu Server
+## Configure TFTP Server on Ubuntu Server
 
 About the System
 ```shell
