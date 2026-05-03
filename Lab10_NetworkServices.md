@@ -759,9 +759,9 @@ C:\Users\student\Documents\www\index.html
 HTTP Client
 ```shell
 Basic Config:
- Local Address: 172.16.11.10
+ Local Address: 172.16.111.10
  Subnet Mask: 255.255.255.0
- Gateway: 172.16.11.254
+ Gateway: 172.16.111.254
  DNS: 172.16.128.53
 
  HTTPClient ➜ URL: http://lab.local
