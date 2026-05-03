@@ -797,8 +797,8 @@ Example #1
 <EdgeR1> ftp 172.16.128.21
 User(172.16.128.21:(none)): ENTER
 Enter password: ENTER
-
 [EdgeR1-ftp]
+
 [EdgeR1-ftp] ?
 
 [EdgeR1-ftp] dir
@@ -824,8 +824,8 @@ Are you sure to continue? (y/n)[n]: y
 <EdgeR1> ftp 172.16.128.21
 User(172.16.128.21:(none)): ENTER
 Enter password: ENTER
-
 [EdgeR1-ftp]
+
 [EdgeR1-ftp] put vrpcfg.zip
 226 Transfer finished successfully. Data connection closed.
 
