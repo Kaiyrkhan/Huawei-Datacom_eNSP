@@ -57,7 +57,7 @@ interface Ethernet0/0/2
  port default vlan 112
  quit
 
-display vlan
+display port vlan
 ```
 
 Configure Trunk Port and Allowed VLANs
