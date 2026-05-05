@@ -487,12 +487,12 @@ dhcp enable
 
 interface vlanif 111
  dhcp select relay
- dhcp relay server-ip 10.10.10.67
+ dhcp relay server-ip 172.16.128.67
  quit
 
 interface vlanif 112
  dhcp select relay
- dhcp relay server-ip 10.10.10.67
+ dhcp relay server-ip 172.16.128.67
  quit
 ```
 
