@@ -147,8 +147,8 @@ interface g0/0/4
 display int brief
 ```
 
-Verify Configuration
 ```shell
+# Verify Configuration
 display eth-trunk 1
 ```
 
