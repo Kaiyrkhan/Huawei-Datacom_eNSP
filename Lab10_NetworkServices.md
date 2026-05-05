@@ -121,8 +121,6 @@ interface Eth-Trunk 1                                          // Create Eth-Tru
  port trunk allow-pass vlan 111 112 50                         // Allowed VLANs         
  mode lacp-static                                              // Link Aggregation Mode
  quit
-
-display port vlan
 ```
 
 ```shell
