@@ -848,6 +848,31 @@ Ubuntu 24.04.4 LTS
 Codename: noble
 ```
 
+Желілік интерфейсті конфигурациялау
+```shell
+student@ubuntu:~$ sudo nano /etc/netplan/50-cloud-init.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens32:
+      dhcp4: true
+    ens34:
+      dhcp4: false
+      addresses:
+        - 172.16.128.10/24
+
+CTRL+O, ENTER, CTRL+X
+```
+
+```shell
+student@ubuntu:~$ sudo netplan apply
+```
+
+```shell
+student@ubuntu:~$ ip address
+```
+
 **Step1: installation of TFTP Server**
 
 >  Package атауы: tftpd-hpa  
