@@ -133,6 +133,8 @@ interface Eth-Trunk 1
  quit
 
 display port vlan
+
+display eth-trunk 1
 ```
 
 Add a Port to the Eth-Trunk
@@ -143,13 +145,13 @@ interface g0/0/3
 interface g0/0/4
  eth-trunk 1
  quit
+
+display int brief
 ```
 
 Verify Configuration
 ```shell
-display int brief
 display eth-trunk 1
-display int eth-trunk 1
 ```
 
 Configure MSTP
