@@ -860,7 +860,7 @@ network:
     ens34:
       dhcp4: false
       addresses:
-        - 172.16.128.10/24
+        - 172.16.128.69/24
 
 CTRL+O, ENTER, CTRL+X
 ```
