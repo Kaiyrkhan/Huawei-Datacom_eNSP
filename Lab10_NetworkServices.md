@@ -156,6 +156,8 @@ Configure MSTP
 ```shell
 display stp
 ```
+
+D1 Switch
 ```shell
 stp region-configuration
  region-name HQ1
@@ -170,8 +172,6 @@ stp region-configuration
 ```shell
 display cu | begin stp
 ```
-
-D1 Switch
 ```shell
 stp instance 1 root primary
 stp instance 3 root primary
@@ -179,6 +179,17 @@ stp instance 2 root secondary
 ```
 
 D2 Switch
+```shell
+stp region-configuration
+ region-name HQ1
+ revision-level 1
+ instance 1 vlan 111
+ instance 2 vlan 112
+ instance 3 vlan 50
+ active region-configuration
+ check region-configuration
+ quit
+```
 ```shell
 stp instance 2 root primary
 stp instance 1 root secondary
