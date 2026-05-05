@@ -425,7 +425,7 @@ sysname DHCP
 
 ```shell
 interface g0/0/0
- ip address 10.10.10.67 24
+ ip address 172.16.128.67 24
  quit
 interface Loopback 50
  ip address 50.5.5.5 32
@@ -439,7 +439,7 @@ display ip int brief
 
 ospf 1 router-id 50.5.5.5
  area 0
- network 10.10.10.0 0.0.0.255
+ network 172.16.128.0 0.0.0.255
  network 50.5.5.5 0.0.0.0
  quit
  quit
