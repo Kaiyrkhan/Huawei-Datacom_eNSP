@@ -495,13 +495,15 @@ interface vlanif 112
 ```shell
 <DHCP> display dhcp server statistics
 
-DHCP Server Statistics: 
+DHCP Server Statistics:
+ 
  Client Request          : 8
   Dhcp Discover          : 4
   Dhcp Request           : 4
   Dhcp Decline           : 0
   Dhcp Release           : 0
   Dhcp Inform            : 0
+
   Server Reply           : 8
   Dhcp Offer             : 4
   Dhcp Ack               : 4
