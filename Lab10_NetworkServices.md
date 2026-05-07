@@ -590,9 +590,14 @@ Destination/Mask   Proto   Pre   Cost   Flags   NextHop         Interface
 ```
 
 ```shell
-# C1 Switch
 <C1> display ip routing-table
+Destination/Mask   Proto   Pre   Cost   Flags   NextHop         Interface
+       0.0.0.0/0   O_ASE   150   1      D       10.1.1.101      GigabitEthernet 0/0/0
+
 <C1> display ospf routing
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          1         Type2      1           10.1.1.101      50.1.1.1
 ```
 
 ```shell
