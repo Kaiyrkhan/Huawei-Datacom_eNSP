@@ -83,7 +83,7 @@ Warning: Confirm to replace them! Continue? [Y/N] Y
 Input the bits in the modulus[default = 2048]: 2048
 ```
 
-**SSH server permit interface**
+**SSH server Permit interface**
 ```shell
 ssh server permit interface Vlanif 1
 немесе
