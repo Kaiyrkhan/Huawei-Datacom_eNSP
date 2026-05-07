@@ -729,14 +729,6 @@ user-interface vty 0 4
  quit
 ```
 
-SSH server Permit interface
-```shell
-[Switch] ssh server-source -i Vlanif 50
-```
-```shell
-[Router] ssh server permit interface Loopback 50
-```
-
 ```shell
 display cu | include ssh
 display cu | include stelnet
