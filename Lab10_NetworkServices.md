@@ -493,6 +493,23 @@ interface vlanif 112
 ```
 
 ```shell
+<DHCP> display dhcp server statistics
+
+DHCP Server Statistics: 
+ Client Request          : 8
+  Dhcp Discover          : 4
+  Dhcp Request           : 4
+  Dhcp Decline           : 0
+  Dhcp Release           : 0
+  Dhcp Inform            : 0
+  Server Reply           : 8
+  Dhcp Offer             : 4
+  Dhcp Ack               : 4
+  Dhcp Nak               : 0
+  Bad Messages           : 0 
+```
+
+```shell
 PC1> ipconfig
 PC2> ipconfig
 PC3> ipconfig
