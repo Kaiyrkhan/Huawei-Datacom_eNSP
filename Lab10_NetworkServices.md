@@ -746,7 +746,7 @@ Save the server's public key? (y/n)[n]: y
 Enter password: Huawei@123
 
 <D1> system-view
-[D2] quit
+[D1] quit
 <D1> quit
 [A1]
 ```
@@ -766,7 +766,7 @@ Enter password: Huawei@123
  Password: Huawei@123
 
 <D1> system-view
-[D2] quit
+[D1] quit
 <D1> quit
 <A1> 
 ```
