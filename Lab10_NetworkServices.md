@@ -802,7 +802,7 @@ Basic Config:
  Local Address: 172.16.128.80
  Subnet Mask: 255.255.255.0
  Gateway: 172.16.128.1
- DNS: 172.16.128.53
+ DNS: 172.16.128.53                 // Local DNS Server
 
 Server info:
  Root Path: C:\Users\student\Documents\www\
