@@ -275,6 +275,12 @@ vlan 4
  quit
 display vlan
 
+# Configure Access Port
+interface GigabitEthernet0/0/5
+ port link-type access
+ port default vlan 4
+display port vlan
+
 # Create VLANIF interface
 interface vlanif 4
  ip address 10.1.1.106 30
@@ -313,6 +319,12 @@ D2 Switch
 vlan 8
  quit
 display vlan
+
+# Configure Access Port
+interface GigabitEthernet0/0/5
+ port link-type access
+ port default vlan 8
+display port vlan
 
 # Create VLANIF interface
 interface vlanif 8
