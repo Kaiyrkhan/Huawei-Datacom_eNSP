@@ -270,19 +270,27 @@ display vrrp brief
 D1 Switch
 
 ```shell
-interface vlanif 1
+# Create VLANs
+vlan 4
+
+# Create VLANIF interface
+interface vlanif 4
  ip address 10.1.1.106 30
  quit
+```
+
+```shell
+# Create Loopback interface
 interface Loopback 50
  ip address 50.3.3.3 32
  quit
-
-display ip int brief
 ```
 
 ```shell
 display ip int brief
+```
 
+```shell
 ospf 1 router-id 50.3.3.3
  area 0
  network 10.1.1.104 0.0.0.3
@@ -297,20 +305,29 @@ display cu | begin ospf
 ```
 
 D2 Switch
+
 ```shell
-interface vlanif 1
+# Create VLANs
+vlan 8
+
+# Create VLANIF interface
+interface vlanif 8
  ip address 10.1.1.110 30
  quit
+```
+
+```shell
+# Create Loopback interface
 interface Loopback 50
  ip address 50.4.4.4 32
  quit
-
-display ip int brief
 ```
 
 ```shell
 display ip int brief
+```
 
+```shell
 ospf 1 router-id 50.4.4.4
  area 0
  network 10.1.1.108 0.0.0.3
