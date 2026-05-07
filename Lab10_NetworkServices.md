@@ -859,7 +859,11 @@ Server info:
  FtpServer ➜ Service ➜ Start
 ```
 
-Example #1
+Download and Upload files
+> get - Download file from FTP server  
+> put - Upload file from FTP server  
+
+Example #1: Download file from FTP server
 ```shell
 <EdgeR1> ftp 172.16.128.21
 User(172.16.128.21:(none)): ENTER
@@ -880,7 +884,7 @@ Idx  Attr     Size(Byte)  Date        Time(LMT)  FileName
   6  -rw-              0  May 03 2026 03:53:41   file1.txt
 ```
 
-Example #2
+Example #2: Upload file from FTP server  
 ```shell
 <EdgeR1> save
 Are you sure to continue? (y/n)[n]: y
