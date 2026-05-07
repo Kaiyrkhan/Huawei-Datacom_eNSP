@@ -272,6 +272,8 @@ D1 Switch
 ```shell
 # Create VLANs
 vlan 4
+ quit
+dispaly vlan
 
 # Create VLANIF interface
 interface vlanif 4
@@ -309,6 +311,8 @@ D2 Switch
 ```shell
 # Create VLANs
 vlan 8
+ quit
+dispaly vlan
 
 # Create VLANIF interface
 interface vlanif 8
