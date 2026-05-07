@@ -521,6 +521,47 @@ PC4> ipconfig /renew
 ## Configure NAT (Easy IP)
 
 EdgeR1
+
+```shell
+ping 192.168.137.1
+ Reply from 192.168.137.1: bytes=56 Sequence=2 ttl=128 time=10 ms
+
+ping 8.8.8.8
+ Request time out
+```
+
+Default Static Route
+```shell
+ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
+
+display cu | include static
+```
+
+```shell
+ping 8.8.8.8
+ Reply from 8.8.8.8: bytes=56 Sequence=1 ttl=107 time=90 ms
+```
+
+Advertise the Default Route
+```shell
+ospf 1
+ default-route-advertise
+ quit
+```
+
+```shell
+<EdgeR1> display ip routing-table
+
+Destination/Mask   Proto   Pre   Cost   Flags   NextHop         Interface
+       0.0.0.0/0   Static  60    0      RD      192.168.137.1   GigabitEthernet 0/0/1
+```
+
+```shell
+# C1 Switch
+<C1> display ip routing-table
+<C1> display ospf routing
+```
+
 ```shell
 acl 2000
  rule permit source 172.16.111.0 0.0.0.255
@@ -536,27 +577,6 @@ Verify Configuration
 ```shell
 display cu section acl
 display nat outbound
-```
-
-Default Static Route
-```shell
-ip route-static 0.0.0.0 0.0.0.0 192.168.137.1
-
-display cu | include static
-```
-
-Advertise the Default Route
-```shell
-ospf 1
- default-route-advertise
- quit
-```
-
-C1 Switch
-```shell
-display ip routing-table
-display ip routing-table protocol ospf
-display ospf routing
 ```
 
 ```shell
