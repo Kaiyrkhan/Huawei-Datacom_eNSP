@@ -635,7 +635,7 @@ NAT Table
 [EdgeR1] display nat session all verbose
 ```
 
-## A1 and A2 Switch
+## Configure A1 and A2 Switch for Remote Access
 
 A1 Switch
 ```shell
