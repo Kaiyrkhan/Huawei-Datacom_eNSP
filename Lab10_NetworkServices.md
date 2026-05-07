@@ -341,9 +341,6 @@ interface g0/0/1
 interface g0/0/2
  ip address 10.1.1.109 30
  quit
-interface g0/0/3
- ip address 10.10.10.1 24
- quit
 interface Loopback 50
  ip address 50.2.2.2 32
  quit
