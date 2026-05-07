@@ -1024,6 +1024,8 @@ Download and Upload files
 student@ubuntu:~$ sudo touch /srv/tftp/f1.conf
 student@ubuntu:~$ tftp 172.16.128.69 -c get f1.conf
 
+student@ubuntu:~$ pwd
+/home/student
 student@ubuntu:~$ ls -l
 -rw-rw-r-- 1 student student f1.conf
 ```
