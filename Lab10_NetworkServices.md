@@ -356,7 +356,6 @@ ospf 1 router-id 50.2.2.2
  network 10.1.1.100 0.0.0.3
  network 10.1.1.104 0.0.0.3
  network 10.1.1.108 0.0.0.3
- network 10.10.10.0 0.0.0.255
  network 50.2.2.2 0.0.0.0
  quit
  quit
