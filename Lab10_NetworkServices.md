@@ -684,7 +684,7 @@ ping 50.5.5.5
  Reply from 50.5.5.5: bytes=56 Sequence=3 ttl=253 time=70 ms
 ```
 
-**Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeR1, DHCP**
+### Configure Remote Access (SSH, Telnet) - A1, A2, D1, D2, C1, EdgeR1, DHCP
 
 Step1: Configure Local User Authentication and Authorization
 ```shell
