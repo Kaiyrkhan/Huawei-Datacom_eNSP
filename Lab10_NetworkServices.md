@@ -207,15 +207,15 @@ display cu | begin stp
 
 Verify Configuration
 ```shell
-display stp instance 1 brief
-display stp instance 2 brief
-display stp instance 3 brief
-```
-немесе
-```shell
 display stp vlan 111
 display stp vlan 112
 display stp vlan 50
+```
+немесе
+```shell
+display stp instance 1 brief
+display stp instance 2 brief
+display stp instance 3 brief
 ```
 
 ## Configure VRRP (Virtual Router Redundancy Protocol)
