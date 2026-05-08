@@ -265,7 +265,7 @@ quit
 **5-қадам: Create VAP Profiles**
 ```shell
 vap-profile name VAP-Staff
- forwarding-mode direct-forward
+ forward-mode direct-forward
  service-vlan vlan-id 100
  ssid-profile WLAN-Staff
  security-profile WLAN-Staff
@@ -274,7 +274,7 @@ quit
 
 ```shell
 vap-profile name VAP-Guest
- forwarding-mode direct-forward
+ forward-mode direct-forward
  service-vlan vlan-id 200
  ssid-profile WLAN-Guest
  security-profile WLAN-Guest
