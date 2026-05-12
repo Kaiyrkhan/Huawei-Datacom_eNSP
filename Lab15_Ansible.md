@@ -1,4 +1,4 @@
-# Network Programmability and Automation. Ansible
+# Network Automation and Programmability. Ansible
 
 ### 🖧 Network Topology
 ![Topology](images/Lab14_NetworkTopology_Programmability_Automation.png)  
