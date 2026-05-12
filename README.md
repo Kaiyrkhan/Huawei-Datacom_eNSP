@@ -42,7 +42,7 @@
       - PPPoE;
       - Frame Relay.
 13) IPv6 Basics
-14) Network Automation
+14) Network Automation and Programmability
       - Python;
       - Ansible.
 15) ReView
