@@ -1,4 +1,4 @@
-# Network Programmability and Automation. Python
+# Network Automation and Programmability. Python
 
 ### 🖧 Network Topology
 ![Topology](images/Lab14_NetworkTopology_Programmability_Automation.png)  
