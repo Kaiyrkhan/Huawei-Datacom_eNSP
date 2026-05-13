@@ -1,8 +1,8 @@
 # Final Laboratory #2
 
 ### 🖧 Network Topology
-![Topology](images/2_Final_Laboratory_NetworkTopology_v1.png)  
-[Download Link for eNSP Topology File](Topology/2_Final_Laboratory_NetworkTopology_v1.topo)
+![Topology](images/Final_Laboratory_NetworkTopology_v1.png)  
+[Download Link for eNSP Topology File](Topology/Final_Laboratory_NetworkTopology_v1.topo)
 
 Table1 - WLAN Data Plan
 | Item                                    | Value                                                                                                   |
