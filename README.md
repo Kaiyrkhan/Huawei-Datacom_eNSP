@@ -6,10 +6,11 @@
       - Remote Access (Telnet, SSH).
 2) IP Routing
       - Static Routing;
-      - Dynamic Routing. OSPFv2.
+      - Dynamic Routing. OSPF.
 3) Virtual LAN (VLAN)
       - Trunk Port;
-      - Access and Hybrid Port;
+      - Access Port;
+      - Hybrid Port;
       - inter-VLAN Routing. 
 4) Spanning Tree Protocol (STP)
       - Spanning Tree Protocol (STP);
