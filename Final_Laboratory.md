@@ -1099,3 +1099,7 @@ student@ubuntu:~$ ls -lh /srv/tftp/
 -rw-rw-rw- 1 tftp tftp vrpcfg.zip
 ```
 
+## Configure WLAN
+
+```shell
+```
