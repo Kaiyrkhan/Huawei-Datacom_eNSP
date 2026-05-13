@@ -43,15 +43,15 @@ Table1 - WLAN Data Plan
 1) Configure VLAN (Create VLANs and Access Port, Trunk Port)  
    LACP Link Aggregation. Eth-Trunk  
    MSTP (Multiple Spanning Tree Protocol)  
-4) VRRP (Virtual Router Redundancy Protocol)
-5) Single-Area OSPF
-6) DHCP
-7) NAT (Easy IP)
-8) Remote Access (SSH, Telnet)
-9) DNS and HTTP
-10) FTP
-11) TFTP
-12) NTP
+2) VRRP (Virtual Router Redundancy Protocol)
+3) Single-Area OSPF
+4) DHCP
+5) NAT (Easy IP)
+6) Remote Access (SSH, Telnet)
+7) DNS and HTTP
+8) FTP
+9) TFTP
+10) WLAN
 
 ## A1 and A2 Switch
 ```shell
