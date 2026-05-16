@@ -1,4 +1,4 @@
-# HCIA-Datacom
+# HCIA-Datacom (eNSP)
 
 ### Course Contents
 1) Huawei VRP Basics
