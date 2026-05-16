@@ -19,6 +19,8 @@
 10) WLAN
 
 ## A1 and A2 Switch
+
+Configure Device Hostname
 ```shell
 undo terminal monitor
 system-view
@@ -76,6 +78,8 @@ display port vlan
 ```
 
 ## D1 and D2 Switch
+
+Configure Device Hostname
 ```shell
 undo terminal monitor
 system-view
@@ -359,6 +363,7 @@ display ospf peer brief
 
 C1 Switch
 ```shell
+# Configure Device Hostname
 undo terminal monitor
 system-view
 sysname C1
@@ -398,6 +403,7 @@ display ospf peer brief
 
 EdgeR1 Router
 ```shell
+# Configure Device Hostname
 undo terminal monitor
 system-view
 sysname EdgeR1
