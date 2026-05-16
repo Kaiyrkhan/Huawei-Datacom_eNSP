@@ -1,6 +1,6 @@
-# Eth-Trunk and MSTP configuration in eNSP Simulator
+# Eth-Trunk and MSTP configuration
 
-**HQ-D1 and HQ-D2**
+**D1 and D2 Switch**
 
 ```shell
 vlan batch 10 20
@@ -43,13 +43,13 @@ stp region-configuration
 
 Root placement (load-balancing)
 
-**HQ-D1**
+**D1**
 ```shell
 stp instance 1 root primary
 stp instance 2 root secondary
 ```
 
-**HQ-D2**
+**D2**
 ```shell
 stp instance 2 root primary
 stp instance 1 root secondary
@@ -71,28 +71,4 @@ display stp vlan 20
 ```shell
 display interface eth-trunk 1
 display lacp statistics eth-trunk 1
-```
-
-# Eth-Trunk and MSTP configuration in a Production Environment
-
-**HQ-D1 and HQ-D2**
-
-Step1: Eth-Trunk конфигурациялау
-```shell
-interface Eth-Trunk1
- mode lacp-static
- port link-type trunk
- port trunk allow-pass vlan 10 20
- stp disable
-```
-
-Step2: Физикалық порттарды Eth-Trunk-қа қосу
-```shell
-interface g0/0/1
- eth-trunk 1
- stp disable
-
-interface g0/0/2
- eth-trunk 1
- stp disable
 ```
