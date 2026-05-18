@@ -53,7 +53,8 @@ IPv4 Addressing and Subnetting
 Packet Forwarding (Default Gateway)  
 
 IPv6 Addressing and Subnetting  
-OSPFv3, DHCPv6, SLAAC  
+OSPFv3  
+DHCPv6 and SLAAC  
 
 Monitoring Systems (LibreNMS, Icinga, Zabbix)  
 
