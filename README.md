@@ -17,8 +17,8 @@
       - Rapid Spanning Tree Protocol (RSTP);
       - Multiple Spanning Tree Protocol (MSTP).
 5) Link Aggregation. Eth-Trunk
-      - Manual Mode;
-      - LACP Mode.
+      - Manual Mode (Load Balancing);
+      - LACP Mode (Static, Dynamic).
 6) Virtual Router Redundancy Protocol (VRRP)
 7) Access Control List (ACL)
       - Basic ACL;
