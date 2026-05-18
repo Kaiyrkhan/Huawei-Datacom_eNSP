@@ -52,7 +52,8 @@ Network Reference Model
 IPv4 Addressing and Subnetting  
 Packet Forwarding (Default Gateway)  
 
-IPv6 Addressing and OSPFv3, DHCPv6, SLAAC  
+IPv6 Addressing and Subnetting  
+OSPFv3, DHCPv6, SLAAC  
 
 Monitoring Systems (LibreNMS, Icinga, Zabbix)  
 
